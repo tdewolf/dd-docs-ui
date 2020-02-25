@@ -11,7 +11,10 @@
   var feedBackMsg = document.querySelector('.feed-back-msg')
   var submitBtn = document.querySelector('.submit-btn')
   var leaveYesBtn = document.querySelector('.yes-btn')
-  // for config 
+  var feedbackInfoBtn = document.querySelector('.info-btn')
+  var feedbackModal = document.querySelector('.feedback-modal')
+  var closeModalPopup = document.querySelector('.close-popup')
+  // for config
   var yesBtnData = helpYesBtn.dataset
   var noBtnData = helpNoBtn.dataset
 
@@ -33,7 +36,6 @@
     leaveAddtinalBox.style.display = 'block'
   })
   skipLeaveBtn.addEventListener('click', function (e) {
-
     leaveAddtinalBox.style.display = 'none'
     feedBackFormBox.style.display = 'block'
   })
@@ -41,7 +43,7 @@
   feedBackMsg.addEventListener('keyup', function (e) {
     var textareaValue = this.value
 
-    if (textareaValue != '') {
+    if (textareaValue !== '') {
       submitBtn.classList.remove('disabled')
     } else {
       submitBtn.classList.add('disabled')
@@ -49,5 +51,12 @@
   })
   leaveYesBtn.addEventListener('click', function (e) {
     leaveAddtinalBox.style.display = 'none'
+  })
+  feedbackInfoBtn.addEventListener('click', function (e) {
+    feedbackModal.classList.add('show')
+  })
+
+  closeModalPopup.addEventListener('click', function (e) {
+    feedbackModal.classList.remove('show')
   })
 })()
