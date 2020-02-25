@@ -1,5 +1,5 @@
 var hash = window.location.hash
-var smallBreak = 768 // Your small screen breakpoint in pixels
+// var smallBreak = 768 // Your small screen breakpoint in pixels
 find('.doc .tabset').forEach(function (tabset) {
   var active
   var checkActiveClass
