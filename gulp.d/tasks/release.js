@@ -50,7 +50,8 @@ function versionBundle (bundleFile, tagName) {
 
 module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async () => {
   const octokit = new Octokit({ auth: `token ${token}` })
-  const branchName = process.env.GIT_BRANCH || 'master'
+  let branchName = process.env.GIT_BRANCH || 'master'
+  if (branchName.startsWith('origin/')) branchName = branchName.substr(7)
   const variant = branchName === 'master' ? 'prod' : branchName
   const ref = `heads/${branchName}`
   const tagName = `${variant}-${await getNextReleaseNumber({ octokit, owner, repo, variant })}`
