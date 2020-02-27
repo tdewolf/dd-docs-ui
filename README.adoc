@@ -1,6 +1,6 @@
 = Couchbase Documentation UI
 // Variables:
-:current-release: v239
+:current-release: prod-1
 // Settings:
 :!example-caption:
 :experimental:
@@ -17,7 +17,7 @@ ifdef::env-github[]
 :badges:
 endif::[]
 // Project URIs:
-:project-repo-name: couchbase/docs-ui
+:project-repo-name: couchbase/docs-ui-sandbox
 :url-project: https://github.com/{project-repo-name}
 :url-site: https://docs.couchbase.com
 :url-repo: git@github.com:{project-repo-name}.git
