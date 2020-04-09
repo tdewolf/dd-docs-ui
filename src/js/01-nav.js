@@ -1,4 +1,4 @@
-; (function () {
+;(function () {
   'use strict'
 
   var nav = document.querySelector('nav.nav')
@@ -12,7 +12,7 @@
     if (e.detail > 1) e.preventDefault()
   })
 
-  find(/*'.nav-toggle',*/'.in-toggle', navMenu.element).forEach(function (toggleBtn) {
+  find(/*'.nav-toggle',*/ '.in-toggle', navMenu.element).forEach(function (toggleBtn) {
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
     toggleBtn.addEventListener('click', toggleActive.bind(navItem))
     // var dataDepth = toggleBtn.getAttribute('data-depth')
@@ -68,7 +68,7 @@
   // var navWrap = document.querySelector('.currentNav-wrap')
 
   navMenuControl.addEventListener('click', function () {
-  //   navWrap.style.display = 'none'
+    //   navWrap.style.display = 'none'
     for (var i = 0; i < navItems.length; i++) {
       navItems[i].classList.remove('is-active')
       navItems[i].classList.remove('is-inactive')

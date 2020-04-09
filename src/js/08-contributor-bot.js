@@ -29,7 +29,7 @@
       var totaltWeekLength = totalWeek.length - 1 // array
       var lastCommitWeek = totalWeek[totaltWeekLength]
       var lastCommitTimeStamp = lastCommitWeek.w // object
-      var lastCommitDate = new Date(lastCommitTimeStamp * 1000)// convert timestamp to date
+      var lastCommitDate = new Date(lastCommitTimeStamp * 1000) // convert timestamp to date
       var getDate = lastCommitDate.getDate()
       var getYear = lastCommitDate.getFullYear()
       // eslint-disable-next-line no-array-constructor
@@ -57,26 +57,30 @@
       }
       // map function
 
-      contributors.slice(0).reverse().map(function (contributor, index, arrayobj) {
-        //show only top 5 contributor
-        if (index <= 4) {
-          var contributorAvtar = contributor.author.avatar_url
-          // var contributorTotalCommit = contributor.total
-          var authorURL = contributor.author.html_url
-          // append child in ul
-          var li = document.createElement('li')
-          var anchor = document.createElement('a')
-          var image = document.createElement('img')
-          image.setAttribute('src', contributorAvtar)
-          image.setAttribute('alt', '')
-          anchor.setAttribute('href', authorURL)
-          anchor.setAttribute('target', '_blank')
-          li.appendChild(anchor)
-          anchor.appendChild(image)
-          contributorList.appendChild(li)
-        }
-      })
-    }).catch(function (err) {
+      contributors
+        .slice(0)
+        .reverse()
+        .map(function (contributor, index, arrayobj) {
+          //show only top 5 contributor
+          if (index <= 4) {
+            var contributorAvtar = contributor.author.avatar_url
+            // var contributorTotalCommit = contributor.total
+            var authorURL = contributor.author.html_url
+            // append child in ul
+            var li = document.createElement('li')
+            var anchor = document.createElement('a')
+            var image = document.createElement('img')
+            image.setAttribute('src', contributorAvtar)
+            image.setAttribute('alt', '')
+            anchor.setAttribute('href', authorURL)
+            anchor.setAttribute('target', '_blank')
+            li.appendChild(anchor)
+            anchor.appendChild(image)
+            contributorList.appendChild(li)
+          }
+        })
+    })
+    .catch(function (err) {
       console.log(err, 13)
     })
 })()

@@ -27,21 +27,27 @@
 
           for (var j = 1; j <= columns; j++) {
             // console.log(i, j, 23)
-            if (elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')') != null &&
-            elem.querySelector(' tr:nth-child(' + j + ') td:nth-child(' + i + ')') !== undefined) {
+            if (
+              elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')') != null &&
+              elem.querySelector(' tr:nth-child(' + j + ') td:nth-child(' + i + ')') !== undefined
+            ) {
               // console.log(elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')'), 25)
               if (elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')').offsetHeight > maxHeight) {
                 maxHeight = elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')').offsetHeight
               }
-              if (elem.querySelectorAll('tr:nth-child(' + j + ') td:nth-child(' + i + ')').scrollHeight >
-              elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')').offsetHeight) {
+              if (
+                elem.querySelectorAll('tr:nth-child(' + j + ') td:nth-child(' + i + ')').scrollHeight >
+                elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')').offsetHeight
+              ) {
                 maxHeight = elem.querySelectorAll('tr:nth-child(' + j + ') td:nth-child(' + i + ')').scrollHeight
               }
             }
           }
           for (var k = 1; k <= columns; k++) {
-            if (elem.querySelector('tr:nth-child(' + k + ') td:nth-child(' + i + ')') != null && elem.querySelector(
-              'tr:nth-child(' + k + ') td:nth-child(' + i + ')') !== undefined) {
+            if (
+              elem.querySelector('tr:nth-child(' + k + ') td:nth-child(' + i + ')') != null &&
+              elem.querySelector('tr:nth-child(' + k + ') td:nth-child(' + i + ')') !== undefined
+            ) {
               elem.querySelector('tr:nth-child(' + k + ') td:nth-child(' + i + ')').style.height = maxHeight + 'px'
               elem.querySelector('th:nth-child(' + i + ')').style.height = maxHeight + 'px'
             }
@@ -50,8 +56,11 @@
       })
     } else {
       // document.querySelectorAll('table.tableblock td, table.tableblock th')[0].removeAttribute('style')
-      document.querySelectorAll('table.tableblock tbody tr td, table.tableblock thead tr th').forEach(
-        function (elem, ind) { elem.style.height = 'auto' })
+      document
+        .querySelectorAll('table.tableblock tbody tr td, table.tableblock thead tr th')
+        .forEach(function (elem, ind) {
+          elem.style.height = 'auto'
+        })
     }
   }
 })()
