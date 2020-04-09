@@ -13,8 +13,6 @@
     {{else}}
     <span class="nav-text">{{{./content}}}</span>
     {{/if}}
-    </span>
-    {{/if}}
 {{> nav-tree navigation=./items level=(add ../level 1) crumbLevel=(add ../crumbLevel (and ./content 1)) crumbAtLevel=(lookup @root.page.breadcrumbs (add ../crumbLevel (and ./content 1)))}}
   </li>
   {{/each}}
