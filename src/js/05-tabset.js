@@ -12,11 +12,20 @@ find('.doc .tabset').forEach(function (tabset) {
       checkActiveClass = setTimeout(function () {
         var activeTabList = tab.classList.contains('is-active')
         if (activeTabList) {
-          document.querySelector('.tabs').insertAdjacentHTML('beforebegin', ' <div class="active-tab-item-row"> <a href="#" id="activeTabItem"></a> <div>')
-          document.querySelector('.tabs').insertAdjacentHTML('beforeend', '<a href="#" class="dropddown-btn dropdown-btn-down"> More <i class="fas fa-chevron-circle-down"></i> </a>')
+          document
+            .querySelector('.tabs')
+            .insertAdjacentHTML(
+              'beforebegin',
+              '<div class="active-tab-item-row"><a href="#" id="activeTabItem"></a><div>'
+            )
+          document
+            .querySelector('.tabs')
+            .insertAdjacentHTML(
+              'beforeend',
+              '<a href="#" class="dropddown-btn dropdown-btn-down">More <i class="fas fa-chevron-circle-down"></i></a>'
+            )
           document.getElementById('activeTabItem').innerText = tab.innerText
           var dropdownBtn = document.querySelector('.dropdown-btn-down')
-          var dropdownBtnIcon = document.querySelector('.dropdown-btn .fas')
           dropdownBtn.addEventListener('click', function (e) {
             e.preventDefault()
             if (dropdownMenu.style.display === 'block' || dropdownMenu.classList.contains('show')) {
@@ -52,7 +61,7 @@ find('.doc .tabset').forEach(function (tabset) {
     }
   }
   tabset.classList.remove('is-loading')
-  clearTimeout(this.checkActiveClass, 20000)
+  clearTimeout(checkActiveClass, 20000)
 })
 
 function activateTab (e) {

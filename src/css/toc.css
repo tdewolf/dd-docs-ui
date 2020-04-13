@@ -3,12 +3,9 @@
 }
 
 .toc-menu {
-  /* border: 0 solid var(--color-brand-red);
-  border-width: 0 0 0 0.25rem;
-  border-image: linear-gradient(var(--color-brand-purple), var(--color-brand-pink)) 0 0 0 100%; */
   margin-bottom: 1.5rem;
 }
-/* .toc.sidebar .toc-menu {position: fixed;width: inherit; position: sticky;top: var(--height-to-body)max-height: var(--height-nav);overflow-y: auto; -ms-overflow-style: none;} */
+
 .sidebar-box {
   position: fixed; /* for IE */
   width: inherit; /* for position: fixed */
@@ -46,7 +43,6 @@
   height: 16px;
   width: 16px;
   background: url(../img/heading-icon.svg) no-repeat center center;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 

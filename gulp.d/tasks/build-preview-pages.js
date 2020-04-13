@@ -92,8 +92,8 @@ function registerHelpers (src) {
 
 function compileLayouts (src, layouts) {
   return vfs.src('layouts/*.hbs', { base: src, cwd: src }).pipe(
-    map((file, enc, next) => {
-      layouts[file.stem] = handlebars.compile(file.contents.toString(), { preventIndent: true })
+    map(({ stem, contents, basename }, enc, next) => {
+      layouts[stem] = handlebars.compile(contents.toString(), { srcName: basename, preventIndent: true })
       next()
     })
   )

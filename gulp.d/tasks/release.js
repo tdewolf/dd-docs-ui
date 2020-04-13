@@ -35,14 +35,17 @@ function collectReleases ({ octokit, owner, repo, filter, page = 1, accum = [] }
 
 function versionBundle (bundleFile, tagName) {
   return new Promise((resolve, reject) =>
-    zip.src(bundleFile)
+    zip
+      .src(bundleFile)
       .on('error', reject)
-      .pipe((() => {
-        const meta = new File({ path: 'ui.yml', contents: Buffer.from(`version: ${tagName}\n`) })
-        const stream = map((file, _, next) => file.path === meta.path && file !== meta ? next() : next(null, file))
-        stream.write(meta)
-        return stream
-      })())
+      .pipe(
+        (() => {
+          const meta = new File({ path: 'ui.yml', contents: Buffer.from(`version: ${tagName}\n`) })
+          const stream = map((file, _, next) => (file.path === meta.path && file !== meta ? next() : next(null, file)))
+          stream.write(meta)
+          return stream
+        })()
+      )
       .pipe(zip.dest(bundleFile))
       .on('finish', () => resolve(bundleFile))
   )
@@ -65,9 +68,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (
   const readmeBlob = await octokit.gitdata
     .createBlob({ owner, repo, content: readmeContent, encoding: 'utf-8' })
     .then((result) => result.data.sha)
-  let tree = await octokit.gitdata
-    .getCommit({ owner, repo, commit_sha: commit })
-    .then((result) => result.data.tree.sha)
+  let tree = await octokit.gitdata.getCommit({ owner, repo, commit_sha: commit }).then((result) => result.data.tree.sha)
   tree = await octokit.gitdata
     .createTree({
       owner,
