@@ -5,6 +5,7 @@ const fs = require('fs-extra')
 const { obj: map } = require('through2')
 const Octokit = require('@octokit/rest')
 const path = require('path')
+const vfs = require('vinyl-fs')
 const zip = require('gulp-vinyl-zip')
 
 function getNextReleaseNumber ({ octokit, owner, repo, variant }) {
@@ -35,23 +36,21 @@ function collectReleases ({ octokit, owner, repo, filter, page = 1, accum = [] }
 
 function versionBundle (bundleFile, tagName) {
   return new Promise((resolve, reject) =>
-    zip
+    vfs
       .src(bundleFile)
-      .on('error', reject)
+      .pipe(zip.src().on('error', reject))
       .pipe(
-        (() => {
-          const meta = new File({ path: 'ui.yml', contents: Buffer.from(`version: ${tagName}\n`) })
-          const stream = map((file, _, next) => (file.path === meta.path && file !== meta ? next() : next(null, file)))
-          stream.write(meta)
-          return stream
-        })()
+        map((file, enc, next) => next(null, file), function (done) {
+          this.push(new File({ path: 'ui.yml', contents: Buffer.from(`version: ${tagName}\n`) }))
+          done()
+        })
       )
       .pipe(zip.dest(bundleFile))
       .on('finish', () => resolve(bundleFile))
   )
 }
 
-module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async () => {
+module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (done) => {
   const octokit = new Octokit({ auth: `token ${token}` })
   let branchName = process.env.GIT_BRANCH || 'master'
   if (branchName.startsWith('origin/')) branchName = branchName.substr(7)
