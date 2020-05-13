@@ -97,7 +97,8 @@
   line-height: 1.125rem;
   color: var(--color-brand-blue);
 }
-.toc .any-feedback a{
+
+.toc .any-feedback a {
   font-size: 0.875rem;
   line-height: 20px;
   text-decoration: none;
@@ -106,7 +107,6 @@
   margin-bottom: 15px;
   display: inline-block;
   width: 100%;
-
 }
 
 .is-this-helpful-box .action-btn-row .info-btn {
