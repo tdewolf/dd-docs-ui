@@ -44,7 +44,7 @@
   border-radius: 5px;
   border: 1px solid var(--color-brand-gray5);
   resize: vertical;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--color-brand-gray4);
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -96,6 +96,17 @@
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: var(--color-brand-blue);
+}
+.toc .any-feedback a{
+  font-size: 0.875rem;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--color-brand-blue);
+  font-weight: var(--weight-normal);
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+
 }
 
 .is-this-helpful-box .action-btn-row .info-btn {
