@@ -3,7 +3,9 @@
 .doc.landing-page-doc h1 {
   color: var(--color-brand-gray1);
   font-size: 2.5rem;
+  line-height: ;
   font-weight: var(--weight-semibold);
+  margin-bottom: 15px;
 }
 
 .doc.landing-page-doc p {
@@ -16,25 +18,25 @@
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .doc.landing-page-doc .sub-heading {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   width: 100%;
 }
 
 .card-row .column {
   max-width: 48%;
-  /* flex-basis: 48%; */
-  margin-bottom: 35px;
+  flex-basis: 48%;
+  margin-bottom: 25px;
 }
 
 .card-row.three-column-row .column {
   flex-basis: 25%;
 }
 
-.card-row .column + .column {
+.card-row .three-column-row + .column {
   padding-left: 5%;
 }
 
@@ -45,7 +47,7 @@
 .doc.landing-page-doc h3 {
   font-size: 1.5rem;
   line-height: 130%;
-  color: var(--color-brand-gray4);
+  color: var(--color-brand-black);
   margin: 0;
 }
 
@@ -55,15 +57,20 @@
 
 .doc.landing-page-doc .media-left {
   margin-left: 30px;
+  width: 100px;
+  margin-top: 0;
 }
 
+.doc.landing-page-doc .paragraph{
+  margin-top: 0;
+}
 .doc.landing-page-doc img {
   max-width: 100%;
 }
 
 .doc.landing-page-doc ul {
   padding: 0;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .doc.landing-page-doc ul li {
@@ -88,10 +95,9 @@
   margin-bottom: 15px;
 }
 
-.doc.landing-page-doc h4 {
-  font-size: 1.125rem;
+.doc.landing-page-doc h3 {
   margin: 0;
-  color: var(--color-brand-gray4);
+  color: var(--color-brand-black);
 }
 
 .doc.landing-page-doc h2 {
@@ -102,7 +108,28 @@
   content: none;
 }
 
+.card-row .column .content{
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.card-row.two-column-row .column:nth-child(even) {
+  padding-left: 5%;
+}
+
+iframe{
+  width: 100%;
+  height: 315px;
+}
+
 /* Responsive CSS  */
+
+@media screen and (max-width: 1169px) {
+  .card-row.three-column-row .column{
+    flex-basis: 33%;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .card-row .column,
@@ -110,9 +137,11 @@
     flex-basis: 100%;
     max-width: 100%;
   }
-
-  .card-row {
+  .card-row .column{
     margin-bottom: 15px;
+  }
+  .card-row {
+    margin-bottom: 0;
   }
 
   .doc.landing-page-doc .media-left {
@@ -129,5 +158,8 @@
 
   .card-row.border-column-row .column + .column {
     border-left: 0;
+  }
+  .card-row.two-column-row .column:nth-child(even){
+    padding-left: 0;
   }
 }
