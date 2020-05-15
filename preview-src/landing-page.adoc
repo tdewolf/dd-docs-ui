@@ -1,4 +1,4 @@
-= Couchbase Tutorials
+= Couchbase Adoc
 :page-layout: landing-page
 :page-role: tiles
 :!sectids:

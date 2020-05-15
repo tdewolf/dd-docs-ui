@@ -3,14 +3,18 @@
 .doc.landing-page-doc h1 {
   color: var(--color-brand-gray1);
   font-size: 2.5rem;
-  line-height: ;
   font-weight: var(--weight-semibold);
   margin-bottom: 15px;
 }
 
+.doc.landing-page-doc .text-color-brand-blue {
+  color: var(--color-brand-blue);
+}
+
 .doc.landing-page-doc p {
   font-size: 1rem;
-  color: var(--color-brand-gray1);
+  color: var(--color-brand-black);
+  font-family: "Open Sans", sans-serif;
 }
 
 .card-row {
@@ -20,6 +24,7 @@
   flex-wrap: wrap;
   margin-bottom: 0;
 }
+
 .doc.landing-page-doc .heading {
   margin-bottom: 16px;
   width: 100%;
@@ -28,6 +33,34 @@
 .doc.landing-page-doc .sub-heading {
   margin-bottom: 8px;
   width: 100%;
+}
+
+.doc.landing-page-doc .sub-heading.two-column-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.doc.landing-page-doc .filter-info h5 {
+  display: inline-block;
+  margin-right: 16px;
+  margin-top: 0;
+  font-weight: var(--weight-normal);
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-brand-black);
+}
+
+.doc.landing-page-doc .filter-info h5 .fas,
+.doc.landing-page-doc .filter-info h5 img {
+  margin-right: 8px;
+}
+
+.doc.landing-page-doc .filter-info span {
+  color: var(--color-brand-light-blue);
+  border-radius: 8px;
+  border: 1px solid var(--color-brand-light-blue);
+  padding: 6px 10px;
 }
 
 .card-row .column {
@@ -55,19 +88,42 @@
   margin: 0;
 }
 
+.doc.landing-page-doc .text-color-brand-blue-secondary {
+  color: var(--color-brand-blue-secondary);
+}
+
+.doc.landing-page-doc .other-info-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.doc.landing-page-doc .other-info-list .box {
+  padding-right: 40px;
+}
+
+.doc.landing-page-doc .other-info-list .box:last-child {
+  padding-right: 0;
+}
+
+.doc.landing-page-doc .box h5 {
+  margin: 0 0 8px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .doc.landing-page-doc figure {
   margin-bottom: 0;
 }
 
 .doc.landing-page-doc .media-left {
-  margin-left: 30px;
+  margin-left: 40px;
   width: 100px;
   margin-top: 0;
 }
 
-.doc.landing-page-doc .paragraph{
+.doc.landing-page-doc .paragraph {
   margin-top: 0;
 }
+
 .doc.landing-page-doc img {
   max-width: 100%;
 }
@@ -81,6 +137,8 @@
   list-style: none;
   margin-bottom: 8px;
   font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-brand-black);
 }
 
 .doc.landing-page-doc ul li a {
@@ -99,39 +157,220 @@
   margin-bottom: 15px;
 }
 
-.doc.landing-page-doc h3 {
-  margin: 0;
-  color: var(--color-brand-black);
-}
-
 .doc.landing-page-doc h2 {
   margin: 0;
+  color: var(--color-brand-black);
 }
 
 .doc.landing-page-doc h2::after {
   content: none;
 }
 
-.card-row .column .content{
-  margin-bottom: 10px;
+.card-row .column .content {
+  margin-bottom: 16px;
   display: inline-block;
   width: 100%;
 }
 
-.card-row.two-column-row .column:nth-child(even) {
-  padding-left: 5%;
+.card-row .column .content p {
+  text-align: justify;
 }
 
-iframe{
+.card-row.two-column-row .column:nth-child(odd) {
+  padding-right: 40px;
+}
+
+.card-row.two-column-row .column:nth-child(even) {
+  padding-left: 40px;
+}
+
+/* .card-row.two-column-row .column:nth-child(even) {
+  padding-left: 5%;
+} */
+
+.doc.landing-page-doc iframe {
   width: 100%;
   height: 315px;
+}
+
+/* CSS for nav filter */
+.nav.tutorials-filter .nav-menu {
+  top: calc(0.91rem + var(--height-navbar));
+  padding: 20px;
+  background: var(--color-brand-gray7);
+}
+
+.nav.tutorials-filter .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav.tutorials-filter .heading h3 {
+  margin: 0;
+}
+
+.nav.tutorials-filter .heading a {
+  text-decoration: none;
+}
+
+.nav.tutorials-filter .heading img {
+  margin-left: 8px;
+}
+
+.nav.tutorials-filter ul.nav-list {
+  padding-left: 30px;
+}
+
+.nav.tutorials-filter ul li {
+  margin-bottom: 16px;
+}
+
+.nav.tutorials-filter ul li a {
+  font-size: 1rem;
+  line-height: 22px;
+  color: var(--color-brand-black);
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav.tutorials-filter ul li a:hover {
+  color: var(--color-brand-blue);
+}
+
+.nav.tutorials-filter .arrow {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.nav.tutorials-filter .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--color-brand-gray5);
+}
+
+.nav.tutorials-filter .arrow-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid var(--color-brand-gray5);
+}
+
+.nav.tutorials-filter .sub-menu {
+  margin-top: 20px;
+  padding-left: 28px;
+}
+
+.nav.tutorials-filter .sub-menu li {
+  list-style: none;
+}
+
+/* checkbox css  */
+
+/* Base for label styling */
+.nav.tutorials-filter [type="checkbox"]:not(:checked),
+.nav.tutorials-filter [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.nav.tutorials-filter [type="checkbox"]:not(:checked) + label,
+.nav.tutorials-filter [type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+.nav.tutorials-filter [type="checkbox"]:not(:checked) + label::before,
+.nav.tutorials-filter [type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.5px solid #707070;
+  background: #fff;
+  border-radius: 2px;
+}
+/* checked mark aspect */
+.nav.tutorials-filter [type="checkbox"]:not(:checked) + label::after,
+.nav.tutorials-filter [type="checkbox"]:checked + label::after {
+  content: "\2713\0020";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 0.875rem;
+  line-height: 0.8;
+  color: var(--color-brand-blue);
+  transition: all 0.2s;
+}
+/* checked mark aspect changes */
+.nav.tutorials-filter [type="checkbox"]:not(:checked) + label::after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.nav.tutorials-filter [type="checkbox"]:checked + label::after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+.nav.tutorials-filter [type="checkbox"]:disabled:not(:checked) + label::before,
+.nav.tutorials-filter [type="checkbox"]:disabled:checked + label::before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+.nav.tutorials-filter [type="checkbox"]:disabled:checked + label::after {
+  color: #999;
+}
+
+.nav.tutorials-filter [type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+/* .nav.tutorials-filter [type="checkbox"]:checked:focus + label:before,
+.nav.tutorials-filter [type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px solid var(--color-brand-blue);
+} */
+
+/* hover style just for information */
+.nav.tutorials-filter label:hover::before {
+  border: 2px solid var(--color-brand-blue);
+  outline: none;
+}
+
+.nav.tutorials-filter label,
+.nav.tutorials-filter label:focus,
+.nav.tutorials-filter label:active,
+.nav.tutorials-filter label::before,
+.nav.tutorials-filter label::after {
+  outline: none;
+  outline-width: 0;
 }
 
 /* Responsive CSS  */
 
 @media screen and (max-width: 1169px) {
-  .card-row.three-column-row .column{
+  .card-row.three-column-row .column {
     flex-basis: 33%;
+  }
+
+  .nav.tutorials-filter {
+    width: 16rem;
+  }
+
+  .doc.landing-page-doc .sub-heading.two-column-heading .filter-info {
+    margin-top: 15px;
   }
 }
 
@@ -141,9 +380,11 @@ iframe{
     flex-basis: 100%;
     max-width: 100%;
   }
-  .card-row .column{
+
+  .card-row .column {
     margin-bottom: 15px;
   }
+
   .card-row {
     margin-bottom: 0;
   }
@@ -163,7 +404,13 @@ iframe{
   .card-row.border-column-row .column + .column {
     border-left: 0;
   }
-  .card-row.two-column-row .column:nth-child(even){
+
+  .card-row.two-column-row .column:nth-child(even) {
     padding-left: 0;
+  }
+
+  .card-row.two-column-row .column:nth-child(odd),
+  .card-row.two-column-row .column:nth-child(even) {
+    padding: 0;
   }
 }
