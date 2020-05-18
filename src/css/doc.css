@@ -8,7 +8,7 @@
 .doc h4,
 .doc h5,
 .doc h6 {
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
   letter-spacing: -0.025rem;
   line-height: 1.2;
   margin: 1.5rem 0 -0.25rem;
@@ -27,7 +27,7 @@
 }
 
 .doc h2 {
-  font-size: 1.875rem;
+  font-size: 2rem;
   margin: 2.25rem 0 2.5rem;
   max-width: fit-content;
   /* NOTE used to restrict width of key line */
