@@ -16,52 +16,55 @@
   var closeModalPopup = document.querySelector('.close-popup')
   var anyFeedbackBtn = document.querySelector('.any-feedback-btn')
   // for config
-  var yesBtnData = helpYesBtn.dataset
-  var noBtnData = helpNoBtn.dataset
 
-  helpYesBtn.addEventListener('click', function (e) {
-    // dialogBox.style.display = 'block'
-    this.classList.add('active')
-    helpNoBtn.classList.remove('active')
-    console.log(yesBtnData, 16)
-  })
-  helpNoBtn.addEventListener('click', function (e) {
-    // dialogBox.style.display = 'block'
-    this.classList.add('active')
-    helpYesBtn.classList.remove('active')
-    console.log(noBtnData, 27)
-  })
 
-  anyFeedbackBtn.addEventListener('click', function (e) {
-    e.preventDefault()
-    dialogBox.style.display = 'block'
-    feedBackFormBox.style.display = 'block'
-    this.classList.add('active')
-  })
+  if(document.querySelector('.is-this-helpful-box')){
+   var  yesBtnData = helpYesBtn.dataset
+   var noBtnData = helpNoBtn.dataset
+    helpYesBtn.addEventListener('click', function (e) {
+      // dialogBox.style.display = 'block'
+      this.classList.add('active')
+      helpNoBtn.classList.remove('active')
+      console.log(yesBtnData, 16)
+    })
 
-  skipBtnMsg.addEventListener('click', function (e) {
-    dialogBox.style.display = 'none'
-    feedBackMsg.value = ''
-  })
-  // skipLeaveBtn.addEventListener('click', function (e) {
-  //   leaveAddtinalBox.style.display = 'none'
-  //   feedBackFormBox.style.display = 'block'
-  // })
 
-  feedBackMsg.addEventListener('keyup', function (e) {
-    var textareaValue = this.value
+    helpNoBtn.addEventListener('click', function (e) {
+      // dialogBox.style.display = 'block'
+      this.classList.add('active')
+      helpYesBtn.classList.remove('active')
+      console.log(noBtnData, 27)
+    })
+    anyFeedbackBtn.addEventListener('click', function (e) {
+      e.preventDefault()
+      dialogBox.style.display = 'block'
+      feedBackFormBox.style.display = 'block'
+      this.classList.add('active')
+    })
 
-    if (textareaValue !== '') {
-      submitBtn.classList.remove('disabled')
-    } else {
-      submitBtn.classList.add('disabled')
-    }
-  })
-  feedbackInfoBtn.addEventListener('click', function (e) {
-    feedbackModal.classList.add('show')
-  })
+    skipBtnMsg.addEventListener('click', function (e) {
+      dialogBox.style.display = 'none'
+      feedBackMsg.value = ''
+    })
 
-  closeModalPopup.addEventListener('click', function (e) {
-    feedbackModal.classList.remove('show')
-  })
+    feedBackMsg.addEventListener('keyup', function (e) {
+      var textareaValue = this.value
+
+      if (textareaValue !== '') {
+        submitBtn.classList.remove('disabled')
+      } else {
+        submitBtn.classList.add('disabled')
+      }
+    })
+    feedbackInfoBtn.addEventListener('click', function (e) {
+      feedbackModal.classList.add('show')
+    })
+
+    closeModalPopup.addEventListener('click', function (e) {
+      feedbackModal.classList.remove('show')
+    })
+  }
+
+
+
 })()

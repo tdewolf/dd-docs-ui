@@ -21,14 +21,14 @@
   margin: 15px 0;
 }
 
-.is-this-helpful-box .btn-row .helpfull-btn {
+.is-this-helpful-box .btn-row .helpful-btn {
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: var(--color-brand-gray4);
 }
 
-.is-this-helpful-box .btn-row .helpfull-btn:hover,
-.is-this-helpful-box .btn-row .helpfull-btn.active {
+.is-this-helpful-box .btn-row .helpful-btn:hover,
+.is-this-helpful-box .btn-row .helpful-btn.active {
   color: var(--color-brand-blue);
   text-decoration: none;
 }

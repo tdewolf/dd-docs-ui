@@ -64,17 +64,31 @@
   //   var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
   //   navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
   // }
-  var navMenuControl = document.querySelector('.main-nav-parent')
-  // var navWrap = document.querySelector('.currentNav-wrap')
+  // var navMenuControl = document.querySelector('.main-nav-parent')
+  // // var navWrap = document.querySelector('.currentNav-wrap')
 
-  navMenuControl.addEventListener('click', function () {
-    //   navWrap.style.display = 'none'
-    for (var i = 0; i < navItems.length; i++) {
-      navItems[i].classList.remove('is-active')
-      navItems[i].classList.remove('is-inactive')
-    }
-    this.style.display = 'none'
-  })
+  // navMenuControl.addEventListener('click', function () {
+  //   //   navWrap.style.display = 'none'
+  //   for (var i = 0; i < navItems.length; i++) {
+  //     navItems[i].classList.remove('is-active')
+  //     navItems[i].classList.remove('is-inactive')
+  //   }
+  //   this.style.display = 'none'
+  // })
+
+  var navMenuControl
+  if(document.querySelector('.main-nav-parent')){
+   navMenuControl = document.querySelector('.main-nav-parent')
+
+   navMenuControl.addEventListener('click', function () {
+     //   navWrap.style.display = 'none'
+     for (var i = 0; i < navItems.length; i++) {
+       navItems[i].classList.remove('is-active')
+       navItems[i].classList.remove('is-inactive')
+     }
+     this.style.display = 'none'
+   })
+  }
 
   // Toggle class
   function toggleActive (e) {

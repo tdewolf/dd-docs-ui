@@ -2,3 +2,252 @@
 :page-layout: landing-page-tutorials
 :page-role: tiles
 :!sectids:
+
+
+[.column]
+====== {empty}
+++++
+    <div class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5>
+        <img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
+        Advanced</h5>
+        <span>Developer</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+++++
+</div>
+++++
+
+
+
+[.column]
+====== {empty}
+++++
+    <div class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5>
+        <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
+        Intermediate</h5>
+        <span>DevOps</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Lorem ipsum
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+++++
+    <div class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5>
+        <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
+        Intermediate</h5>
+        <span>Developer</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Lorem ipsum
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+++++
+    <div class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5>
+        <img src="_/img/landing-page-icon/beginner-icon.svg" alt="" />
+        Beginner</h5>
+        <span>Architect</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+++++
+    <div class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5>
+        <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
+        Intermediate</h5>
+        <span>Developer</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Lorem ipsum
+
+++++
+</div>
+++++
+
+[.column]
+====== {empty}
+++++
+    <div class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5>
+        <img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
+        Advanced</h5>
+        <span>Architect</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+++++
+</div>
+++++
