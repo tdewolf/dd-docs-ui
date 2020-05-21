@@ -14,9 +14,7 @@
 
   $filterCheckboxes.on('change', function() {
 
-  var selectedFilters = {
-
-  };
+  var selectedFilters = {};
 
    $filterCheckboxes.filter(':checked').each(function() {
 
@@ -24,9 +22,9 @@
       selectedFilters[this.name] = [];
       //console.log(selectedFilters, 23)
     }
-
-    selectedFilters[this.name].push(this.value);
     console.log(selectedFilters, 27)
+    selectedFilters[this.name].push(this.value.toLowerCase());
+
   });
 
   // create a collection containing all of the filterable elements
@@ -39,9 +37,9 @@
     $filteredResults = $filteredResults.filter(function() {
 
       var matched = false,
-        currentFilterValues = $(this).find('.sub-heading').data('level').split(' ');
-       var test = $(this).find('.languages li p').text();
-        console.log(currentFilterValues, test, 48);
+        currentFilterValues = $(this).find('.sub-heading').data('category').toLowerCase().split(' ');
+     //  var test = $(this).find('.languages li p').text();
+        console.log(currentFilterValues, 48);
 
       // loop over each category value in the current .data-filter-column's data-category
       $.each(currentFilterValues, function(_, currentFilterValue) {
