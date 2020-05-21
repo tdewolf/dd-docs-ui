@@ -5,17 +5,18 @@
 
 
 [.column]
+[.data-filter-column]
 ====== {empty}
 ++++
-    <div class="sub-heading two-column-heading">
-        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
-        <div class="filter-info">
-        <h5>
-        <img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
-        Advanced</h5>
-        <span>Developer</span>
-        </div>
-    </div>
+<div data-level="advanced" class="sub-heading two-column-heading">
+<h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+<div class="filter-info">
+<h5 >
+<img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
+Advanced</h5>
+<span data-role="advanced">Developer</span>
+</div>
+</div>
 ++++
 [.content]
 
@@ -26,22 +27,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 ++++
 
 [.box]
+[.link]
 
 * xref:#[Lorem ipsum]
 * xref:#[Lorem ipsum]
 * xref:#[Lorem ipsum]
 
 [.box]
+[.component]
+
 .Component
 * Lorem ipsum
 * Lorem ipsum
 * Lorem ipsum
 
 [.box]
+[.languages]
+
 .Languages
-* Lorem ipsum
-* Lorem ipsum
-* Lorem ipsum
+* Java
+* Swift
+* Javascript
 
 ++++
 </div>
@@ -50,12 +56,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 
 [.column]
+[.data-filter-column]
 ====== {empty}
 ++++
-    <div class="sub-heading two-column-heading">
+    <div data-level="intermediate" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
-        <h5>
+        <h5 >
         <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
         Intermediate</h5>
         <span>DevOps</span>
@@ -78,8 +85,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.box]
 .Component
-* Lorem ipsum
-* Lorem ipsum
+* C#
+* Node
 * Lorem ipsum
 
 [.box]
@@ -91,12 +98,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 ++++
 
 [.column]
+[.data-filter-column]
 ====== {empty}
 ++++
-    <div class="sub-heading two-column-heading">
+    <div data-level="intermediate" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
-        <h5>
+        <h5 >
         <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
         Intermediate</h5>
         <span>Developer</span>
@@ -124,19 +132,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.box]
 .Languages
-* Lorem ipsum
+* .NET
 
 ++++
 </div>
 ++++
 
 [.column]
+[.data-filter-column]
 ====== {empty}
 ++++
-    <div class="sub-heading two-column-heading">
+    <div data-level="beginner" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
-        <h5>
+        <h5 >
         <img src="_/img/landing-page-icon/beginner-icon.svg" alt="" />
         Beginner</h5>
         <span>Architect</span>
@@ -163,21 +172,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.box]
 .Languages
-* Lorem ipsum
-* Lorem ipsum
-* Lorem ipsum
+* AsciiDoc
+* Java
+* PHP
 
 ++++
 </div>
 ++++
 
 [.column]
+[.data-filter-column]
 ====== {empty}
 ++++
-    <div class="sub-heading two-column-heading">
+    <div data-level="intermediate" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
-        <h5>
+        <h5 >
         <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
         Intermediate</h5>
         <span>Developer</span>
@@ -205,19 +215,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.box]
 .Languages
-* Lorem ipsum
+* React
 
 ++++
 </div>
 ++++
 
 [.column]
+[.data-filter-column]
 ====== {empty}
 ++++
-    <div class="sub-heading two-column-heading">
+    <div data-level="advanced" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
-        <h5>
+        <h5 >
         <img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
         Advanced</h5>
         <span>Architect</span>
@@ -244,9 +255,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.box]
 .Languages
-* Lorem ipsum
-* Lorem ipsum
-* Lorem ipsum
+* Angular
+* React
+* Vue
 
 ++++
 </div>

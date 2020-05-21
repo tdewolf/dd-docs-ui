@@ -20,7 +20,7 @@
 .card-row {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 0;
 }
@@ -64,8 +64,8 @@
 }
 
 .card-row .column {
-  max-width: 48%;
-  flex-basis: 48%;
+  max-width: 46%;
+  flex-basis: 46%;
   margin-bottom: 25px;
 }
 
@@ -180,12 +180,16 @@
   text-align: justify;
 }
 
-.card-row.two-column-row .column:nth-child(odd) {
+/* .card-row.two-column-row .column.show:nth-child(odd) {
   padding-right: 40px;
 }
 
-.card-row.two-column-row .column:nth-child(even) {
+.card-row.two-column-row .column.show:nth-child(even) {
   padding-left: 40px;
+} */
+
+.card-row.two-column-row .column.data-filter-column.hide{
+  display: none;
 }
 
 /* .card-row.two-column-row .column:nth-child(even) {
@@ -238,10 +242,14 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+
 }
 
 .nav.tutorials-filter ul li a:hover {
   color: var(--color-brand-blue);
+}
+.nav.tutorials-filter ul li a.active .arrow.arrow-right {
+  transform: rotate(90deg);
 }
 
 .nav.tutorials-filter .arrow {
@@ -323,7 +331,8 @@
   transform: scale(0);
 }
 
-.nav.tutorials-filter [type="checkbox"]:checked + label::after {
+.nav.tutorials-filter [type="checkbox"]:checked + label::after,
+.nav.tutorials-filter .active[type="checkbox"] + label::after {
   opacity: 1;
   transform: scale(1);
 }
