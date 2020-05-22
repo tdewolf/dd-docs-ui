@@ -1,78 +1,89 @@
-(function($) {
-
-  'use strict';
-
+(function ($) {
+  'use strict'
   // for slide toggle
-  $( ".nav-link" ).click(function(){
+  $('.nav-link').click(function () {
     $(this).toggleClass('active')
     $(this).next('.sub-menu').slideToggle(10)
   })
 
+// add class even odd
+var $allData = $('.data-filter-column')
+for(var i= 0; i < $allData.length; i++) {
+  console.log(i, 445, $allData[i])
+  if((i % 2) == 1) {
+      $allData[i].classList.add('even')
+  }else{
+    $allData[i].classList.add('odd')
+  }
+}
 
-  // for filter menu
-  var $filterCheckboxes = $('input[type="checkbox"]');
-
-  $filterCheckboxes.on('change', function() {
-
-  var selectedFilters = {};
-
-   $filterCheckboxes.filter(':checked').each(function() {
-
-    if (!selectedFilters.hasOwnProperty(this.name)) {
-      selectedFilters[this.name] = [];
-      //console.log(selectedFilters, 23)
-    }
-    console.log(selectedFilters, 27)
-    selectedFilters[this.name].push(this.value.toLowerCase());
-
-  });
-
-  // create a collection containing all of the filterable elements
-  var $filteredResults = $('.data-filter-column');
-
-  // loop over the selected filter name -> (array) values pairs
-  $.each(selectedFilters, function(name, filterValues) {
-
-    // filter each .data-filter-column element
-    $filteredResults = $filteredResults.filter(function() {
-
-      var matched = false,
-        currentFilterValues = $(this).find('.sub-heading').data('category').toLowerCase().split(' ');
-     //  var test = $(this).find('.languages li p').text();
-        console.log(currentFilterValues, 48);
-
-      // loop over each category value in the current .data-filter-column's data-category
-      $.each(currentFilterValues, function(_, currentFilterValue) {
-        console.log('enter');
-
-        // if the current category exists in the selected filters array
-        // set matched to true, and stop looping. as we're ORing in each
-        // set of filters, we only need to match once
-
-        if ($.inArray(currentFilterValue, filterValues) != -1) {
-          console.log('true');
-          matched = true;
-          return false;
+    // for filter menu
+    var $filterMenuCheckboxes = $('input[type="checkbox"]')
+    $filterMenuCheckboxes.on('change', function () {
+      var selectedFiltersData = {}
+      $filterMenuCheckboxes.filter(':checked').each(function () {
+        if (!selectedFiltersData.hasOwnProperty(this.name)) {
+          selectedFiltersData[this.name] = []
         }
-      });
+      // console.log(selectedFiltersData, 27)
+        selectedFiltersData[this.name].push(this.value.toLowerCase())
+      })
+      // create a collection containing all of the filterable elements
+      var $filteredResultsData = $('.data-filter-column')
+      // loop over the selected filter name -> (array) values pairs
+      $filteredResultsData.removeClass('even')
+      $filteredResultsData.removeClass('odd')
+      $.each(selectedFiltersData, function (name, filterValues) {
+        // filter each .data-filter-column element
+          $filteredResultsData = $filteredResultsData.filter(function () {
+          var matched = false,
+          currentFilterValues = $(this).find('.sub-heading').data('category').toLowerCase().split(' ')
 
-      // if matched is true the current .data-filter-column element is returned
-      return matched;
 
-    });
-  });
 
-  $('.data-filter-column').addClass('hide').filter($filteredResults).addClass('show').removeClass('hide');
-    // reset all check mark
-    $('#clearALLBtn').click(function(event){
-      selectedFilters = [];
-      $('.data-filter-column').removeClass('hide')
-      var inputs = $('.check-mark')
-      for(var i = 0; i < inputs.length; i++) {
-        inputs[i].checked = false
-      }
+          $.each(currentFilterValues, function (_, currentFilterValue) {
+          //  console.log('enter', currentFilterValues, currentFilterValue)
+            if ($.inArray(currentFilterValue, filterValues) != -1) {
+              console.log('true', currentFilterValue, filterValues)
+              matched = true
+              return false
+            }
+          })
+          // if matched is true the current .data-filter-column element is returned
+          return matched
+        })
+      })
+
+
+    $('.data-filter-column').addClass('hide').filter($filteredResultsData).addClass('show').removeClass('hide')
+  // add class for data-filter-column
+  for(var i= 0; i < $filteredResultsData.length; i++) {
+          console.log(i, 445, $filteredResultsData[i])
+          if((i % 2) == 1) {
+              $filteredResultsData[i].classList.add('even')
+          }else{
+            $filteredResultsData[i].classList.add('odd')
+          }
+        }
+      // reset all check mark
+      $('#clearALLBtn').click(function (event) {
+        selectedFiltersData = []
+        $('.data-filter-column').removeClass('hide').removeClass('show').removeClass('odd').removeClass('even')
+        var inputs = $('.check-mark')
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].checked = false
+        }
+        for(var i= 0; i < $allData.length; i++) {
+          console.log(i, 445, $allData[i])
+          // $allData[i].classList.remove('even')
+          // $allData[i].classList.remove('odd')
+          if((i % 2) == 1) {
+              $allData[i].classList.add('even')
+          }else{
+            $allData[i].classList.add('odd')
+          }
+        }
+
+      })
     })
-});
-
-
-})(jQuery);
+})(jQuery)

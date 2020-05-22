@@ -20,7 +20,7 @@
 .card-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
   margin-bottom: 0;
 }
@@ -36,10 +36,11 @@
 }
 
 .doc.landing-page-doc .sub-heading.two-column-heading {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: block;
 }
 
 .doc.landing-page-doc .filter-info h5 {
@@ -56,6 +57,13 @@
   margin-right: 8px;
 }
 
+.doc.landing-page-doc .filter-info{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
 .doc.landing-page-doc .filter-info span {
   color: var(--color-brand-light-blue);
   border-radius: 8px;
@@ -64,8 +72,8 @@
 }
 
 .card-row .column {
-  max-width: 46%;
-  flex-basis: 46%;
+  max-width: 50%;
+  flex-basis: 50%;
   margin-bottom: 25px;
 }
 
@@ -180,15 +188,28 @@
   text-align: justify;
 }
 
-/* .card-row.two-column-row .column.show:nth-child(odd) {
+.card-row.two-column-row .column:not(.data-filter-column):nth-child(odd){
   padding-right: 40px;
 }
 
-.card-row.two-column-row .column.show:nth-child(even) {
+.card-row.two-column-row .column:not(.data-filter-column):nth-child(even){
   padding-left: 40px;
-} */
+}
+
+
+.card-row.two-column-row .column.data-filter-column.even {
+  padding-left: 40px;
+}
+.card-row.two-column-row .column.data-filter-column.odd {
+  padding-right: 40px;
+}
+
+
 
 .card-row.two-column-row .column.data-filter-column.hide{
+  display: none;
+}
+.hide{
   display: none;
 }
 
@@ -419,12 +440,17 @@
     border-left: 0;
   }
 
-  .card-row.two-column-row .column:nth-child(even) {
+  .card-row.two-column-row .column.data-filter-column.even,
+  .card-row.two-column-row .column.data-filter-column.odd {
     padding-left: 0;
+    padding-right: 0;
   }
 
   .card-row.two-column-row .column:nth-child(odd),
-  .card-row.two-column-row .column:nth-child(even) {
-    padding: 0;
+  .card-row.two-column-row .column:nth-child(even),
+  .card-row.two-column-row .column:not(.data-filter-column):nth-child(even),
+  .card-row.two-column-row .column:not(.data-filter-column):nth-child(odd) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
