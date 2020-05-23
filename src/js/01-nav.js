@@ -79,7 +79,6 @@
   var navMenuControl
   if (document.querySelector('.main-nav-parent')) {
     navMenuControl = document.querySelector('.main-nav-parent')
-
     navMenuControl.addEventListener('click', function () {
       //   navWrap.style.display = 'none'
       for (var i = 0; i < navItems.length; i++) {
@@ -89,9 +88,8 @@
       this.style.display = 'none'
     })
   }
-
   // Toggle class
-  function toggleActive(e) {
+  function toggleActive (e) {
     if (this.getAttribute('data-depth') === '1') {
       var otherNavs = document.querySelectorAll('.nav-item[data-depth="0"]:not(.is-active)')
       console.log(otherNavs)
@@ -102,22 +100,8 @@
     this.classList.toggle('is-active')
   }
 
-  // function addActive (e) {
-  //   removeClasses(e)
-  //   this.classList.add('is-active')
-  //   concealEvent(e)
-  // }
-
   var navItems = document.querySelectorAll('.nav .nav-item')
-
-  // function removeClasses (e) {
-  //   for (var i = 0; i < navItems.length; i++) {
-  //     navItems[i].classList.remove('is-active')
-  //   }
-  //   concealEvent(e)
-  // }
-
-  function revealNav(e) {
+  function revealNav (e) {
     if (nav.classList.contains('is-active')) return hideNav(e)
     document.documentElement.classList.add('is-clipped--nav')
     nav.classList.add('is-active')
@@ -126,7 +110,7 @@
     concealEvent(e) // NOTE don't let event get picked up by window click listener
   }
 
-  function hideNav(e) {
+  function hideNav (e) {
     if (e.which === 3 || e.button === 2) return
     document.documentElement.classList.remove('is-clipped--nav')
     nav.classList.remove('is-active')
@@ -135,11 +119,11 @@
     concealEvent(e) // NOTE don't let event get picked up by window click listener
   }
 
-  function find(selector, from) {
+  function find (selector, from) {
     return [].slice.call((from || document).querySelectorAll(selector))
   }
 
-  function findAncestorWithClass(className, from, scope) {
+  function findAncestorWithClass (className, from, scope) {
     if ((from = from.parentNode) !== scope) {
       if (from.classList.contains(className)) {
         return from
@@ -149,14 +133,14 @@
     }
   }
 
-  function findNextElement(from, el) {
+  function findNextElement (from, el) {
     if ((el = from.nextElementSibling)) return el
     el = from
     while ((el = el.nextSibling) && el.nodeType !== 1);
     return el
   }
 
-  function concealEvent(e) {
+  function concealEvent (e) {
     e.stopPropagation()
   }
 })()

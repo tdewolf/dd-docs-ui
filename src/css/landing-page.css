@@ -57,7 +57,7 @@
   margin-right: 8px;
 }
 
-.doc.landing-page-doc .filter-info{
+.doc.landing-page-doc .filter-info {
   margin-top: 15px;
   margin-bottom: 10px;
   display: inline-block;
@@ -147,7 +147,7 @@
 
 .doc.landing-page-doc ul li {
   list-style: none;
-  margin:0 0 8px;
+  margin: 0 0 8px;
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
   color: var(--color-brand-black);
@@ -188,28 +188,27 @@
   text-align: justify;
 }
 
-.card-row.two-column-row .column:not(.data-filter-column):nth-child(odd){
+.card-row.two-column-row .column:not(.data-filter-column):nth-child(odd) {
   padding-right: 40px;
 }
 
-.card-row.two-column-row .column:not(.data-filter-column):nth-child(even){
+.card-row.two-column-row .column:not(.data-filter-column):nth-child(even) {
   padding-left: 40px;
 }
-
 
 .card-row.two-column-row .column.data-filter-column.even {
   padding-left: 40px;
 }
+
 .card-row.two-column-row .column.data-filter-column.odd {
   padding-right: 40px;
 }
 
-
-
-.card-row.two-column-row .column.data-filter-column.hide{
+.card-row.two-column-row .column.data-filter-column.hide {
   display: none;
 }
-.hide{
+
+.hide {
   display: none;
 }
 
@@ -263,12 +262,12 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-
 }
 
 .nav.tutorials-filter ul li a:hover {
   color: var(--color-brand-blue);
 }
+
 .nav.tutorials-filter ul li a.active .arrow.arrow-right {
   transform: rotate(90deg);
 }

@@ -17,17 +17,15 @@
   var anyFeedbackBtn = document.querySelector('.any-feedback-btn')
   // for config
 
-
-  if(document.querySelector('.is-this-helpful-box')){
-   var  yesBtnData = helpYesBtn.dataset
-   var noBtnData = helpNoBtn.dataset
+  if (document.querySelector('.is-this-helpful-box')) {
+    var yesBtnData = helpYesBtn.dataset
+    var noBtnData = helpNoBtn.dataset
     helpYesBtn.addEventListener('click', function (e) {
       // dialogBox.style.display = 'block'
       this.classList.add('active')
       helpNoBtn.classList.remove('active')
       console.log(yesBtnData, 16)
     })
-
 
     helpNoBtn.addEventListener('click', function (e) {
       // dialogBox.style.display = 'block'
@@ -64,7 +62,4 @@
       feedbackModal.classList.remove('show')
     })
   }
-
-
-
 })()
