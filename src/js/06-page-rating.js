@@ -1,5 +1,5 @@
 ;
-(function () {
+(function ($) {
   'use strict'
   var dialogBox = document.getElementById('dialogBox')
   var helpYesBtn = document.getElementById('yesBtn')
@@ -14,7 +14,7 @@
   var feedbackInfoBtn = document.querySelector('.info-btn')
   var feedbackModal = document.querySelector('.feedback-modal')
   var closeModalPopup = document.querySelector('.close-popup')
-  var anyFeedbackBtn = document.querySelector('.any-feedback-btn')
+  //var anyFeedbackBtn = document.querySelector('.any-feedback-btn')
   // for config
   var yesBtnData = helpYesBtn.dataset
   var noBtnData = helpNoBtn.dataset
@@ -32,12 +32,12 @@
     console.log(noBtnData, 27)
   })
 
-  anyFeedbackBtn.addEventListener('click', function (e) {
-    e.preventDefault()
-    dialogBox.style.display = 'block'
-    feedBackFormBox.style.display = 'block'
-    this.classList.add('active')
-  })
+  // anyFeedbackBtn.addEventListener('click', function (e) {
+  //   e.preventDefault()
+  //   dialogBox.style.display = 'block'
+  //   feedBackFormBox.style.display = 'block'
+  //   this.classList.add('active')
+  // })
 
   skipBtnMsg.addEventListener('click', function (e) {
     dialogBox.style.display = 'none'
@@ -64,4 +64,38 @@
   closeModalPopup.addEventListener('click', function (e) {
     feedbackModal.classList.remove('show')
   })
-})()
+// Requires jQuery!
+
+// $.ajax({
+
+//   url: "https://issues.couchbase.com/s/c388fbe027b748256bfad112765f7a1d-T/-k7v1j/805002/be0e2f3d0946caa44cd62a35c9de2f18/3.1.0/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=en-US&collectorId=709818cb",
+
+//   type: "get",
+
+//   cache: true,
+
+//   dataType: "script"
+
+// });
+
+
+
+  window.ATL_JQ_PAGE_PROPS =  {
+
+    "triggerFunction": function(showCollectorDialog) {
+
+          //Requires that jQuery is available!
+
+          $("#myCustomTrigger").click(function(e) {
+
+                e.preventDefault();
+
+                showCollectorDialog();
+
+          });
+
+    }};
+
+
+
+})(jQuery)
