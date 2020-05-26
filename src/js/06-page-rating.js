@@ -5,7 +5,7 @@
   var helpYesBtn = document.getElementById('yesBtn')
   var helpNoBtn = document.getElementById('noBtn')
   var skipBtnMsg = document.getElementById('skipBtnMsg')
-  var feedBackFormBox = document.getElementById('additionalFeedbackBox')
+  //var feedBackFormBox = document.getElementById('additionalFeedbackBox')
   //  var leaveAddtinalBox = document.getElementById('leaveAddtinalBox')
   // var skipLeaveBtn = document.getElementById('skipLeaveBtn')
   var feedBackMsg = document.querySelector('.feed-back-msg')
@@ -64,38 +64,18 @@
   closeModalPopup.addEventListener('click', function (e) {
     feedbackModal.classList.remove('show')
   })
-// Requires jQuery!
 
-// $.ajax({
+  window.ATL_JQ_PAGE_PROPS = {
+    /*eslint quote-props: ["error", "always"]*/
+    /*eslint-env es6*/
+    'triggerFunction': function (showCollectorDialog) {
+      //Requires that jQuery is available!
+      $('#myCustomTrigger').click(function (e) {
+        e.preventDefault()
+        showCollectorDialog()
+      })
+    },
+  }
 
-//   url: "https://issues.couchbase.com/s/c388fbe027b748256bfad112765f7a1d-T/-k7v1j/805002/be0e2f3d0946caa44cd62a35c9de2f18/3.1.0/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=en-US&collectorId=709818cb",
-
-//   type: "get",
-
-//   cache: true,
-
-//   dataType: "script"
-
-// });
-
-
-
-  window.ATL_JQ_PAGE_PROPS =  {
-
-    "triggerFunction": function(showCollectorDialog) {
-
-          //Requires that jQuery is available!
-
-          $("#myCustomTrigger").click(function(e) {
-
-                e.preventDefault();
-
-                showCollectorDialog();
-
-          });
-
-    }};
-
-
-
+  /*eslint-env jquery*/
 })(jQuery)
