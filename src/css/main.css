@@ -97,6 +97,11 @@ main p {
   min-width: 0;
 }
 
+/* color css  */
+.text-color-brand-blue {
+  color: var(--color-brand-blue);
+}
+
 @media screen and (min-width: 769px) {
   main.article {
     padding-right: var(--width-main-gutter);

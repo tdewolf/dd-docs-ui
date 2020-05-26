@@ -30,7 +30,7 @@
   --color-brand-gray7: #f9f9f9;
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
-  /* --color-brand-blue: #0074e0; */
+  --color-brand-blue-secondary: #0074e0;
   --color-brand-blue-tint: #d9eafb;
   --color-brand-orange: #fc9c0c;
   --color-brand-orange-tint: #fff0da;
@@ -46,12 +46,13 @@
   --color-navbar-text: var(--color-brand-white);
   --color-footer-bg: var(--color-brand-black);
   --color-footer-text: var(--color-brand-white);
-  --height-spacer: 1.3rem;
+
   /* --height-navbar: 4rem; */
+  --height-spacer: 1.3rem;
   --height-navbar: 6.09rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
-  --height-nav: calc(var(--height-min-body) - var(--height-spacer));
+  --height-nav: calc(var(--height-min-body) + var(--height-spacer));
   --labels-font-size: 0.75rem;
   --labels-line-height: 1;
   /* --width-main-gutter: 1.5rem; */
@@ -61,11 +62,13 @@
   --width-container-gutter: 1.25rem;
   --width-nav: 20rem;
   --width-toc: 12rem;
+  /* Font weight */
   --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
+  /* Z-index  */
   --z-index-feedback: 7;
   --z-index-nav-mobile: 6;
   --z-index-navbar-dropdown-link: 5;
