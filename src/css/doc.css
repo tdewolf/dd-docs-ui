@@ -10,24 +10,24 @@
 .doc h6 {
   font-weight: var(--weight-semibold);
   letter-spacing: -0.025rem;
-  line-height: 1.2;
+  line-height: var(--line-height-heading);
   margin: 1.5rem 0 -0.25rem;
 }
 
 .doc h1 {
-  font-size: 2.125rem;
+  font-size: var(--heading-h1);
   font-weight: var(--weight-light);
   letter-spacing: 0;
   margin: 2.5rem 0 0;
 }
 
 .doc h1.page {
-  font-size: 2.375rem;
+  font-size: var(--heading-h1);
   margin-top: 0;
 }
 
 .doc h2 {
-  font-size: 2rem;
+  font-size: var(--heading-h2);
   margin: 2.25rem 0 2.5rem;
   max-width: fit-content;
   /* NOTE used to restrict width of key line */
@@ -43,15 +43,15 @@
 }
 
 .doc h3 {
-  font-size: 1.5rem;
+  font-size: var(--heading-h3);
 }
 
 .doc h4 {
-  font-size: 1.125rem;
+  font-size: var(--heading-h4);
 }
 
 .doc h5 {
-  font-size: 1rem;
+  font-size: var(--heading-h4);
 }
 
 .doc h1 > a.anchor,
@@ -401,12 +401,12 @@
 
 .doc ul {
   margin: 0;
-  padding: 0 0 0 1.75rem;
+  padding: 0 0 0 8px;
 }
 
 .doc ol {
   margin: 0;
-  padding: 0 0 0 2.625rem;
+  padding: 0 0 0 8px;
 }
 
 .doc ul.checklist {

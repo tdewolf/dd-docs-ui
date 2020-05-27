@@ -1,11 +1,13 @@
 :root {
   /* NOTE tint colors are 15% transparent */
   /* primary */
+  --color-brand-primary: #262626;
   --color-brand-black: #000;
   --color-brand-red: #ea2328;
   --color-brand-red-tint: #fcdedf;
   --color-brand-white: #fff;
   /* secondary */
+  --color-brand-secondary: #fff;
   --color-brand-blue: #4287d6;
   --color-blue-rgb: 87, 160, 255;
   --color-brand-light-blue: #00ace0;
@@ -31,14 +33,21 @@
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
   --color-brand-blue-secondary: #0074e0;
+  --color-brand-blue-secondary-light: #2689E5;
+  --color-brand-blue-secondary-extra-light: #73B3EE;
   --color-brand-blue-tint: #d9eafb;
   --color-brand-orange: #fc9c0c;
   --color-brand-orange-tint: #fff0da;
   --color-muted: var(--color-brand-gray);
   --color-text: #333;
-  --color-link: var(--color-brand-light-blue);
   --color-code: var(--color-brand-pink);
   --color-border: var(--color-brand-silver);
+
+  /* Color for URL */
+  --color-link: var(--color-brand-blue-secondary);
+  --color-link-active: var(--color-brand-blue-secondary-light);
+  --color-link-hover: var(--color-brand-blue-secondary-extra-light);
+
   /* --color-border-table: #666; */
   --color-border-table: #dadada;
   --color-shade: #f3f3f3;
@@ -79,4 +88,25 @@
 
   /* Color brand tabsets */
   --color-active-tabset: #57a1ff;
+
+
+  /* New  design font style */
+
+  --font-base: 1rem;     /* ~16px */
+
+  /* Heading fonts */
+  --heading-h1: 2.5rem;  /* ~40px */
+  --heading-h2: 2rem;    /* ~32px */
+  --heading-h3: 1.5rem;  /* ~24px */
+  --heading-h4: 1rem;    /* ~16px */
+
+  /* line height  */
+  --line-height-body: 160%;
+  --line-height-heading: 110%;
+  /* Spacing variables */
+  --column-space: 40px;
+  --base-space : 16px;
+  --base-medium-space: 24px;
+
+
 }

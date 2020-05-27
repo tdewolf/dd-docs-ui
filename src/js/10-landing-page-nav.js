@@ -1,7 +1,9 @@
 (function ($) {
   'use strict'
   // for slide toggle
+  alert(33434)
   $('.nav-link').click(function () {
+    debugger
     $(this).toggleClass('active')
     $(this).next('.sub-menu').slideToggle(10)
   })

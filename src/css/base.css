@@ -18,7 +18,7 @@ body {
   color: var(--color-text);
   font-family: "Source Sans Pro", sans-serif;
   /* font-family: "Gotham", sans-serif; */
-  line-height: 1.5;
+  line-height: var(--line-height-body);
   margin: 0;
 }
 
@@ -31,6 +31,10 @@ a {
 a:focus,
 a:hover {
   text-decoration: underline;
+  color: var(--color-link-hover);
+}
+a:active {
+  color: var(--color-link-active);
 }
 
 button,
@@ -58,7 +62,7 @@ pre {
 
 code {
   color: var(--color-brand-black);
-  font-size: 0.9375em;
+  font-size: var(--font-base);
   word-spacing: -0.125em;
 }
 
