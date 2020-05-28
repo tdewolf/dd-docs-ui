@@ -1,0 +1,264 @@
+= Couchbase Tutorials
+:page-layout: landing-page-tutorials
+:page-role: tiles
+:!sectids:
+
+
+[.column]
+[.data-filter-column]
+====== {empty}
+++++
+<div data-level="advanced" data-category="advanced java swift javascript developer" class="sub-heading two-column-heading">
+<h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+<div class="filter-info">
+<h5 >
+<img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
+Advanced</h5>
+<span data-role="advanced">Developer</span>
+</div>
+</div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+[.link]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+[.box]
+[.component]
+
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+[.languages]
+
+.Languages
+* Java
+* Swift
+* Javascript
+
+++++
+</div>
+++++
+
+
+
+[.column]
+[.data-filter-column]
+====== {empty}
+++++
+    <div data-level="intermediate" data-category="intermediate c# node Python devOps"  class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5 >
+        <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
+        Intermediate</h5>
+        <span>DevOps</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+
+[.box]
+.Component
+* Lorem ipsum
+
+[.box]
+.Languages
+* C#
+* Node
+* Python
+
+++++
+</div>
+++++
+
+[.column]
+[.data-filter-column]
+====== {empty}
+++++
+    <div data-level="intermediate" data-category="intermediate .net developer" class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5 >
+        <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
+        Intermediate</h5>
+        <span>Developer</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* .NET
+
+++++
+</div>
+++++
+
+[.column]
+[.data-filter-column]
+====== {empty}
+++++
+    <div data-level="beginner" data-category="beginner ascidoc java php architect" class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5 >
+        <img src="_/img/landing-page-icon/beginner-icon.svg" alt="" />
+        Beginner</h5>
+        <span>Architect</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* AsciiDoc
+* Java
+* PHP
+
+++++
+</div>
+++++
+
+[.column]
+[.data-filter-column]
+====== {empty}
+++++
+    <div data-level="intermediate" data-category="intermediate react developer" class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5 >
+        <img src="_/img/landing-page-icon/intermediate-icon.svg" alt="" />
+        Intermediate</h5>
+        <span>Developer</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* React
+
+++++
+</div>
+++++
+
+[.column]
+[.data-filter-column]
+====== {empty}
+++++
+    <div data-level="advanced" data-category="advanced angular react vue architect" class="sub-heading two-column-heading">
+        <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
+        <div class="filter-info">
+        <h5 >
+        <img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
+        Advanced</h5>
+        <span>Architect</span>
+        </div>
+    </div>
+++++
+[.content]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+++++
+<div class="other-info-list">
+++++
+
+[.box]
+
+* xref:#[Lorem ipsum]
+
+[.box]
+.Component
+* Lorem ipsum
+* Lorem ipsum
+* Lorem ipsum
+
+[.box]
+.Languages
+* Angular
+* React
+* Vue
+
+++++
+</div>
+++++

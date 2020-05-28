@@ -1,4 +1,4 @@
-;(function () {
+; (function () {
   'use strict'
 
   var nav = document.querySelector('nav.nav')
@@ -64,18 +64,30 @@
   //   var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
   //   navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
   // }
-  var navMenuControl = document.querySelector('.main-nav-parent')
-  // var navWrap = document.querySelector('.currentNav-wrap')
+  // var navMenuControl = document.querySelector('.main-nav-parent')
+  // // var navWrap = document.querySelector('.currentNav-wrap')
 
-  navMenuControl.addEventListener('click', function () {
-    //   navWrap.style.display = 'none'
-    for (var i = 0; i < navItems.length; i++) {
-      navItems[i].classList.remove('is-active')
-      navItems[i].classList.remove('is-inactive')
-    }
-    this.style.display = 'none'
-  })
+  // navMenuControl.addEventListener('click', function () {
+  //   //   navWrap.style.display = 'none'
+  //   for (var i = 0; i < navItems.length; i++) {
+  //     navItems[i].classList.remove('is-active')
+  //     navItems[i].classList.remove('is-inactive')
+  //   }
+  //   this.style.display = 'none'
+  // })
 
+  var navMenuControl
+  if (document.querySelector('.main-nav-parent')) {
+    navMenuControl = document.querySelector('.main-nav-parent')
+    navMenuControl.addEventListener('click', function () {
+      //   navWrap.style.display = 'none'
+      for (var i = 0; i < navItems.length; i++) {
+        navItems[i].classList.remove('is-active')
+        navItems[i].classList.remove('is-inactive')
+      }
+      this.style.display = 'none'
+    })
+  }
   // Toggle class
   function toggleActive (e) {
     if (this.getAttribute('data-depth') === '1') {
@@ -88,21 +100,7 @@
     this.classList.toggle('is-active')
   }
 
-  // function addActive (e) {
-  //   removeClasses(e)
-  //   this.classList.add('is-active')
-  //   concealEvent(e)
-  // }
-
   var navItems = document.querySelectorAll('.nav .nav-item')
-
-  // function removeClasses (e) {
-  //   for (var i = 0; i < navItems.length; i++) {
-  //     navItems[i].classList.remove('is-active')
-  //   }
-  //   concealEvent(e)
-  // }
-
   function revealNav (e) {
     if (nav.classList.contains('is-active')) return hideNav(e)
     document.documentElement.classList.add('is-clipped--nav')
