@@ -40,7 +40,7 @@ table.tableblock th {
 }
 
 table.tableblock th {
-  padding-left:12px;
+  padding-left: var(--base-small-space);
   padding-top: var(--base-space);
   padding-bottom: var(--base-space);
   text-align: left;
@@ -61,7 +61,7 @@ table.tableblock tbody tr {
 table.tableblock > tbody td {
   display: block;
   border-bottom: 1px solid var(--color-brand-gray7);
-  padding-left:12px;
+  padding-left: var(--base-small-space);
   padding-top: var(--base-space);
   padding-bottom: var(--base-space);
 }

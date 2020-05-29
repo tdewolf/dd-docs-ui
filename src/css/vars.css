@@ -16,11 +16,11 @@
   --color-brand-green: #00b9be;
   --color-brand-purple: #b36cdb;
   --color-brand-purple-tint: #f4e9fa;
-  --color-brand-tip: #2CA01C;
-  --color-brand-note: #0074E0;
-  --color-brand-important: #B36CDB;
-  --color-brand-warning: #EA2328;
-  --color-brand-caution: #FF8F00;
+  --color-brand-tip: #2ca01c;
+  --color-brand-note: #0074e0;
+  --color-brand-important: #b36cdb;
+  --color-brand-warning: #ea2328;
+  --color-brand-caution: #ff8f00;
   /* tertiary */
   --color-gray-rgb: 115, 118, 138;
   --color-brand-gray1: #292b36;
@@ -30,13 +30,13 @@
   --color-brand-gray5: #c8cbdf;
   --color-brand-gray6: #eaebf1;
   --color-brand-gray7: #f9f9f9;
-  --color-brand-gray8: #E5E5E5;
-  --color-brand-gray9: #BFBFBF;
+  --color-brand-gray8: #e5e5e5;
+  --color-brand-gray9: #bfbfbf;
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
   --color-brand-blue-secondary: #0074e0;
-  --color-brand-blue-secondary-light: #2689E5;
-  --color-brand-blue-secondary-extra-light: #73B3EE;
+  --color-brand-blue-secondary-light: #2689e5;
+  --color-brand-blue-secondary-extra-light: #73b3ee;
   --color-brand-blue-tint: #d9eafb;
   --color-brand-orange: #fc9c0c;
   --color-brand-orange-tint: #fff0da;
@@ -61,8 +61,8 @@
 
   /* Color for code block  */
   --hljs-attr: #407787;
-  --hljs-string: #295D1E;
-  --hljs-number:#0711BA ;
+  --hljs-string: #295d1e;
+  --hljs-number: #0711ba;
   /* --height-navbar: 4rem; */
   --height-spacer: 1.3rem;
   --height-navbar: 6.09rem;
@@ -94,18 +94,17 @@
   /* Color brand tabsets */
   --color-active-tabset: #57a1ff;
 
-
   /* New  design font style */
 
-  --font-base: 1rem;     /* ~16px */
+  --font-base: 1rem; /* ~16px */
   --labels-font-size: 0.75rem; /* ~12px */
   --labels-line-height: 1;
 
   /* Heading fonts */
-  --heading-h1: 2.5rem;  /* ~40px */
-  --heading-h2: 2rem;    /* ~32px */
-  --heading-h3: 1.5rem;  /* ~24px */
-  --heading-h4: 1rem;    /* ~16px */
+  --heading-h1: 2.5rem; /* ~40px */
+  --heading-h2: 2rem; /* ~32px */
+  --heading-h3: 1.5rem; /* ~24px */
+  --heading-h4: 1rem; /* ~16px */
 
   /* line height  */
   --line-height-body: 160%;
@@ -113,13 +112,11 @@
   --line-height-base: 1.375rem;
 
   /* Spacing variables */
-  --base-space : 1rem;
-  --base-small-space : 0.75rem;
+  --base-space: 1rem;
+  --base-small-space: 0.75rem;
   --base-medium-space: 1.5rem;
   --base-large-space: 2rem;
   --column-space: 2.5rem;
   --admonition-icon-space: 1rem;
   --admonition-content-space: 1rem;
-
-
 }

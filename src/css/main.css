@@ -46,7 +46,7 @@ main p {
   align-items: center;
   /* background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%); */
   background: transparent;
-  border: 1px solid #1174E0;
+  border: 1px solid #1174e0;
   color: var(--color-brand-blue-secondary);
   display: flex;
   line-height: 1;
@@ -65,8 +65,9 @@ main p {
 
 .article-banner p .fab {
   margin-right: 10px;
-  font-size: var(--heading-h3) ;
+  font-size: var(--heading-h3);
 }
+
 .article-banner a.btn {
   color: var(--color-brand-blue-secondary);
   display: block;
@@ -78,10 +79,9 @@ main p {
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   white-space: nowrap;
-  border: 1px solid #1174E0;
+  border: 1px solid #1174e0;
   font-size: var(--font-base);
   font-family: "Open Sans", sans-serif;
-
 }
 
 .article-banner a.btn:focus,

@@ -12,7 +12,8 @@
   z-index: 1;
 }
 
-a.copy-code-button:focus, a.copy-code-button:hover{
+a.copy-code-button:focus,
+a.copy-code-button:hover {
   color: var(--color-brand-gray4);
 }
 
@@ -34,7 +35,7 @@ a.copy-code-button:focus, a.copy-code-button:hover{
   margin: auto;
   padding: 5px;
   text-align: center;
-  box-shadow: 0px 3px 6px #0000001A;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
   background: var(--color-brand-white);
   border: 1px solid var(--color-brand-gray7);
   box-sizing: border-box;

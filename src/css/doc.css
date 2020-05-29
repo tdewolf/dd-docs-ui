@@ -81,8 +81,9 @@
 .doc h4 a.anchor::before,
 .doc h5 a.anchor::before,
 .doc h6 a.anchor::before {
-  content: "\f0c1";
-  font-family: "Font Awesome 5 Free"; font-weight: 900;
+  content: '\f0c1';
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-weight: 900;
 }
 
 .doc h1:hover a.anchor,
@@ -224,7 +225,7 @@
   display: flex;
   border: 1px solid var(--color-brand-gray8);
   border-radius: 3px;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 }
 
 .doc .admonitionblock td.icon {
@@ -265,10 +266,6 @@
   display: table;
 }
 
-.doc .admonitionblock td.content::before {
-  font-weight: var(--weight-bold);
-}
-
 .doc .admonitionblock.caution > table {
   background-color: transparent;
 }
@@ -279,7 +276,6 @@
 
 .doc .admonitionblock.caution td.content::before {
   content: "Caution: ";
-
 }
 
 .doc .admonitionblock.caution tr {
@@ -312,7 +308,6 @@
 
 .doc .admonitionblock.note td.content::before {
   content: "Note: ";
-
 }
 
 .doc .admonitionblock.note tr {
@@ -326,14 +321,15 @@
 .doc .admonitionblock.tip td.icon i::before {
   background-image: url(../img/tip.svg);
 }
-.doc .admonitionblock td.content::before{
+
+.doc .admonitionblock td.content::before {
   color: var(--color-brand-black);
   font-size: var(--font-base);
+  font-weight: var(--weight-bold);
 }
 
 .doc .admonitionblock.tip td.content::before {
   content: "Tip: ";
-
 }
 
 .doc .admonitionblock.tip tr {
@@ -350,7 +346,6 @@
 
 .doc .admonitionblock.warning td.content::before {
   content: "Warning: ";
-
 }
 
 .doc .admonitionblock.warning tr {
@@ -364,10 +359,10 @@
 .doc .imageblock {
   display: flex;
   flex-direction: column;
-  border:1px solid var(--color-brand-gray8);
+  border: 1px solid var(--color-brand-gray8);
   padding: var(--base-space);
   /* padding-left: var(--base-space); */
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   border-radius: 5px;
 }
 
@@ -493,7 +488,6 @@
   padding-right: var(--base-small-space);
   padding-top: var(--base-large-space);
   padding-bottom: var(--base-large-space);
-
   white-space: pre-wrap;
   /* NOTE enable these styles if side-to-side scrolling is preferred */
   /*
@@ -501,7 +495,7 @@
   word-wrap: normal;
   overflow-x: auto;
   */
-  background: #0074E00E;
+  background: #0074e00e;
   border: 1px solid var(--color-brand-gray8);
   border-radius: 3px;
   position: relative;
@@ -525,13 +519,15 @@
   position: relative;
 }
 
-.doc pre.highlight .hljs-attr{
-    color: var(--hljs-attr);
+.doc pre.highlight .hljs-attr {
+  color: var(--hljs-attr);
 }
-.doc pre.highlight .hljs-string{
+
+.doc pre.highlight .hljs-string {
   color: var(--hljs-string);
 }
-.doc pre.highlight .hljs-number{
+
+.doc pre.highlight .hljs-number {
   color: var(--hljs-number);
 }
 
@@ -580,9 +576,18 @@
 }
 
 .doc .listingblock pre .fade-shadow {
-  content: '';
+  content: "";
   display: inline-block;
-  background: transparent linear-gradient(180deg, #F1F7FE0D 0%, #F1F7FE40 18%, #F1F7FE 68%, #F1F7FE 100%) 0% 0% no-repeat padding-box;
+  background:
+    transparent
+    linear-gradient(
+      180deg,
+      #f1f7fe0d 0%,
+      #f1f7fe40 18%,
+      #f1f7fe 68%,
+      #f1f7fe 100%
+    )
+    0% 0% no-repeat padding-box;
   width: 65px;
   height: 80%;
   position: absolute;
@@ -590,7 +595,7 @@
   top: 0;
 }
 
-code.language-console.hljs.shell{
+code.language-console.hljs.shell {
   white-space: nowrap;
   overflow-x: auto;
 }
@@ -771,7 +776,7 @@ code.language-console.hljs.shell{
 }
 
 .doc .tabset {
-  box-shadow: 0px 3px 10px #0000000F;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   padding: var(--base-space);
   border-radius: 8px;
   border: 1px solid var(--color-brand-gray8);
@@ -800,7 +805,6 @@ code.language-console.hljs.shell{
   font-weight: var(--weight-semibold);
   height: 2.5rem;
   line-height: 1;
-  /* margin-right: 0.25rem; */
   padding: 0;
   position: relative;
   margin-right: var(--base-space);
@@ -809,7 +813,8 @@ code.language-console.hljs.shell{
 .doc .tabs li + li {
   margin-top: 0;
 }
-.doc .tabs li:last-child{
+
+.doc .tabs li:last-child {
   margin-right: 0;
 }
 

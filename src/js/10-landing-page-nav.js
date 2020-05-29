@@ -3,7 +3,6 @@
   'use strict'
   // for slide toggle
   $('.nav-link').click(function () {
-    debugger
     $(this).toggleClass('active')
     $(this).next('.sub-menu').slideToggle(10)
   })

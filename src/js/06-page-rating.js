@@ -16,7 +16,7 @@
   var closeModalPopup = document.querySelector('.close-popup')
   //var anyFeedbackBtn = document.querySelector('.any-feedback-btn')
   // for config
-  if(helpYesBtn || helpNoBtn){
+  if (helpYesBtn || helpNoBtn) {
     var yesBtnData = helpYesBtn.dataset
     var noBtnData = helpNoBtn.dataset
     helpYesBtn.addEventListener('click', function (e) {
@@ -53,10 +53,6 @@
       feedbackModal.classList.remove('show')
     })
   }
-
-
-
-
   // anyFeedbackBtn.addEventListener('click', function (e) {
   //   e.preventDefault()
   //   dialogBox.style.display = 'block'
@@ -64,13 +60,10 @@
   //   this.classList.add('active')
   // })
 
-
   // skipLeaveBtn.addEventListener('click', function (e) {
   //   leaveAddtinalBox.style.display = 'none'
   //   feedBackFormBox.style.display = 'block'
   // })
-
-
 
   window.ATL_JQ_PAGE_PROPS = {
     /*eslint quote-props: ["error", "always"]*/

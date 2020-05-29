@@ -34,6 +34,7 @@ a:hover {
   text-decoration: underline;
   color: var(--color-link-hover);
 }
+
 a:active {
   color: var(--color-link-active);
 }
@@ -60,7 +61,6 @@ kbd,
 pre {
   /* font-family: "Roboto Mono", monospace; */
   font-family: "Source Sans Pro", sans-serif;
-
 }
 
 code {
@@ -94,19 +94,18 @@ small {
   margin: 0 auto;
 } */
 
-
 /* checkbox css  */
 
 /* Base for label styling */
 
- [type="checkbox"]:not(:checked),
- [type="checkbox"]:checked {
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
- [type="checkbox"]:not(:checked) + label,
- [type="checkbox"]:checked + label {
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
   position: relative;
   padding-left: 2rem;
   cursor: pointer;
@@ -114,8 +113,8 @@ small {
 }
 
 /* checkbox aspect */
- [type="checkbox"]:not(:checked) + label::before,
- [type="checkbox"]:checked + label::before {
+[type="checkbox"]:not(:checked) + label::before,
+[type="checkbox"]:checked + label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -123,13 +122,13 @@ small {
   width: 25px;
   height: 25px;
   border: 1px solid var(--checkbox-border-color);
-  background: #F9F9F9;
+  background: #f9f9f9;
   border-radius: 3px;
   display: inline-block;
 }
 /* checked mark aspect */
- [type="checkbox"]:not(:checked) + label::after,
- [type="checkbox"]:checked + label::after {
+[type="checkbox"]:not(:checked) + label::after,
+[type="checkbox"]:checked + label::after {
   content: "\2713\0020";
   position: absolute;
   top: 0;
@@ -147,46 +146,45 @@ small {
   border-radius: 3px;
 }
 /* checked mark aspect changes */
- [type="checkbox"]:not(:checked) + label::after {
+[type="checkbox"]:not(:checked) + label::after {
   opacity: 0;
   transform: scale(0);
 }
 
- [type="checkbox"]:checked + label::after,
- .active[type="checkbox"] + label::after {
+[type="checkbox"]:checked + label::after,
+.active[type="checkbox"] + label::after {
   opacity: 1;
   transform: scale(1);
 }
 /* disabled checkbox */
- [type="checkbox"]:disabled:not(:checked) + label::before,
- [type="checkbox"]:disabled:checked + label::before {
+[type="checkbox"]:disabled:not(:checked) + label::before,
+[type="checkbox"]:disabled:checked + label::before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 
- [type="checkbox"]:disabled:checked + label::after {
+[type="checkbox"]:disabled:checked + label::after {
   color: #999;
 }
 
- [type="checkbox"]:disabled + label {
+[type="checkbox"]:disabled + label {
   color: #aaa;
 }
 
- label:hover::before {
+label:hover::before {
   border: 2px solid var(--color-brand-blue);
   outline: none;
 }
 
- label,
- label:focus,
- label:active,
- label::before,
- label::after {
+label,
+label:focus,
+label:active,
+label::before,
+label::after {
   outline: none;
   outline-width: 0;
 }
-
 
 /* Responsive css */
 @media screen and (min-width: 1024px) {
