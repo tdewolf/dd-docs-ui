@@ -9,6 +9,7 @@
   cursor: pointer;
   font-family: "Source Sans Pro", sans-serif;
   color: var(--color-brand-gray4);
+  z-index: 1;
 }
 
 a.copy-code-button:focus, a.copy-code-button:hover{

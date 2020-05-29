@@ -60,18 +60,19 @@
 .doc h4 > a.anchor,
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
-  color: var(--color-brand-red);
-  background-image: linear-gradient(-45deg, var(--color-brand-purple), var(--color-brand-red) 75%);
+  color: var(--color-brand-blue-secondary);
+  /* background-image: linear-gradient(-45deg, var(--color-brand-purple), var(--color-brand-red) 75%);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   font-weight: var(--weight-normal);
   position: absolute;
   text-decoration: none;
   width: 2ex;
-  margin-left: -1.75ex;
+  margin-left: -2ex;
   visibility: hidden;
-  transform: scale(0.9);
+  transform: scale(0.75);
   text-align: center;
+  font-size: 30px;
 }
 
 .doc h1 a.anchor::before,
@@ -80,7 +81,8 @@
 .doc h4 a.anchor::before,
 .doc h5 a.anchor::before,
 .doc h6 a.anchor::before {
-  content: "\00a7";
+  content: "\f0c1";
+  font-family: "Font Awesome 5 Free"; font-weight: 900;
 }
 
 .doc h1:hover a.anchor,
@@ -507,7 +509,7 @@
 
 /* NOTE assume pre.highlight contains code[data-lang] */
 
-.doc pre.highlight code::after,
+/* .doc pre.highlight code::after,
 .doc pre:not(.highlight)::after{
   content: '';
   display: inline-block;
@@ -517,7 +519,7 @@
   position: absolute;
   right: 0;
   top: 0;
-}
+} */
 
 .doc pre.highlight {
   position: relative;
@@ -533,9 +535,9 @@
   color: var(--hljs-number);
 }
 
-.doc .listingblock code[data-lang]::before {
+/* .doc .listingblock code[data-lang]::before {
   content: attr(data-lang);
-  color: var("--color-brand-gray1") /*#f8f8f2*/;
+  color: var("--color-brand-gray1");
   display: none;
   font-size: 0.75rem;
   font-weight: var(--weight-normal);
@@ -552,6 +554,45 @@
 
 .doc .listingblock:hover code[data-lang]::before {
   display: block;
+}
+
+*/
+
+.doc .listingblock code[data-lang] + .data-source {
+  content: attr(data-lang);
+  color: var("--color-brand-gray1");
+  display: none;
+  font-size: 0.75rem;
+  font-weight: var(--weight-normal);
+  letter-spacing: 1px;
+  line-height: 18px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0.375rem;
+  right: 2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  padding-right: 6px;
+  border-right: 1px solid var(--color-brand-gray9);
+}
+
+.doc .listingblock:hover code[data-lang] + .data-source {
+  display: block;
+}
+
+.doc .listingblock pre .fade-shadow {
+  content: '';
+  display: inline-block;
+  background: transparent linear-gradient(180deg, #F1F7FE0D 0%, #F1F7FE40 18%, #F1F7FE 68%, #F1F7FE 100%) 0% 0% no-repeat padding-box;
+  width: 65px;
+  height: 80%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+code.language-console.hljs.shell{
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .doc .dlist {

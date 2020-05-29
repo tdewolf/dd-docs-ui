@@ -1,17 +1,27 @@
+.sidebar-box .tools {
+  margin-left: 0.75rem;
+}
+.tools ul { padding-left: 0; }
+
 .tools .edit {
-  width: 1.5em;
-  height: 1.5em;
+  /* width: 1.5em;
+  height: 1.5em; */
+  display: inline-block;
+  width: 100%;
+  list-style: none;
 }
 
 .tools .edit a {
   display: inline-block;
-  width: 100%;
+  /* width: 100%;
   height: 100%;
-  text-indent: 100%;
+  text-indent: 100%; */
   white-space: nowrap;
   overflow: hidden;
-  background: url(../img/edit.svg) no-repeat center;
-  background-size: 75%;
+  background: url(../img/edit.svg) no-repeat center left;
+  background-size: 15px;
   vertical-align: top;
-  color: transparent;
+  color: #999999;
+  padding-left: 25px;
+  font-family: "Source Sans Pro", sans-serif;
 }

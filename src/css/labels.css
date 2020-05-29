@@ -22,6 +22,7 @@
   font-size: var(--labels-font-size);
   font-weight: var(--weight-bold);
   line-height: var(--labels-line-height);
+  font-family: "Source Sans Pro", sans-serif;
 }
 .doc .labels li:first-child::before {
   content: "";
@@ -51,6 +52,7 @@
   padding: 6px;
   text-transform: uppercase;
   margin-right: var(--base-small-space);
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .doc .labels li a,
@@ -58,6 +60,7 @@
 .doc span.status a,
 .doc span.community a {
   text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .doc span.edition *,

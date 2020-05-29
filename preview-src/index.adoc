@@ -57,9 +57,6 @@ Installation will vary based on your operation system.
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset1_demo"></a> Code Block</p>
-</li>
-<li>
 <p><a id="tabset1_ubuntu"></a>Ubuntu</p>
 </li>
 <li>
@@ -71,28 +68,7 @@ Installation will vary based on your operation system.
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane is-active" aria-labelledby="tabset1_demo">
-<div class="paragraph">
-++++
-[source,json]
-----
-{
-   "_id": "_design/myddoc",
-   "views": {
-      "view1": {
-          "map": "function(doc, meta) { if (doc.value) { emit(doc.value, meta.id);} }"
-      }
-   },
-   "options": {
-       "updateMinChanges": 1000,
-       "replicaUpdateMinChanges": 20000
-   }
-}
-----
-++++
-</div>
-</div>
-<div class="tab-pane" aria-labelledby="tabset1_ubuntu">
+<div class="tab-pane is-active" aria-labelledby="tabset1_ubuntu">
 <div class="paragraph">
 <p>Content for Ubuntu tab.</p>
 </div>
@@ -171,7 +147,7 @@ You could also use it to mark new features, but _only within the version in whic
 == Labels for a Section
 
 [.labels]
-[.edition]##{enterprise}##[.status]##{developer-preview}##
+[.edition]##{enterprise}##
 
 To create an edition label, use a span with the role `edition`.
 To create a status label, use a span with the role `status`.

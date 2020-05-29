@@ -4,7 +4,7 @@
     {{#if page.componentVersion.prerelease}}
     <p>You are viewing the documentation for a prerelease version.</p>
     {{else}}
-    <p>A newer version of this documentation is available.</p>
+    <p> <i class="fab fa-asymmetrik"></i> A newer version of this documentation is available.</p>
     {{/if}}
     <a class="btn" href="{{ifelse (eq env.SUPPORTS_CURRENT_URL 'true') (relativize (current-url page.url)) (relativize page.latest.url)}}">View Latest</a>
   </div>
@@ -12,7 +12,7 @@
   <div class="article-header">
 {{> nav-control}}
 {{> crumbs}}
-{{> toolbar}}
+{{!-- {{> toolbar}} --}}
   </div>
 {{> article}}
 </main>

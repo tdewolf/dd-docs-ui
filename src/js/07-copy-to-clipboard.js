@@ -6,6 +6,13 @@
     //button.type = 'button'
     button.dataset.title = 'Copy'
 
+    var dataSource = document.createElement('span')
+    dataSource.className = 'data-source'
+    dataSource.innerHTML += codeBlock.dataset.lang
+
+    var fadeShadow = document.createElement('span')
+    fadeShadow.className = 'fade-shadow'
+
     button.addEventListener('click', function (e) {
       if (e.target && e.target.matches('a.copy-code-button')) {
         navigator.clipboard.writeText(codeBlock.innerText).then(
@@ -27,6 +34,8 @@
       }
     })
     var pre = codeBlock.parentNode
+    pre.appendChild(dataSource)
     pre.appendChild(button)
+    pre.appendChild(fadeShadow)
   })
 })()

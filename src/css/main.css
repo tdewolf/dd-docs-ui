@@ -63,6 +63,10 @@ main p {
   color: var(--color-brand-blue-secondary);
 }
 
+.article-banner p .fab {
+  margin-right: 10px;
+  font-size: var(--heading-h3) ;
+}
 .article-banner a.btn {
   color: var(--color-brand-blue-secondary);
   display: block;
