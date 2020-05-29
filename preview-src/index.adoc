@@ -57,6 +57,9 @@ Installation will vary based on your operation system.
 <div class="ulist tabs">
 <ul>
 <li>
+<p><a id="tabset1_demo"></a> Code Block</p>
+</li>
+<li>
 <p><a id="tabset1_ubuntu"></a>Ubuntu</p>
 </li>
 <li>
@@ -68,7 +71,28 @@ Installation will vary based on your operation system.
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane is-active" aria-labelledby="tabset1_ubuntu">
+<div class="tab-pane is-active" aria-labelledby="tabset1_demo">
+<div class="paragraph">
+++++
+[source,json]
+----
+{
+   "_id": "_design/myddoc",
+   "views": {
+      "view1": {
+          "map": "function(doc, meta) { if (doc.value) { emit(doc.value, meta.id);} }"
+      }
+   },
+   "options": {
+       "updateMinChanges": 1000,
+       "replicaUpdateMinChanges": 20000
+   }
+}
+----
+++++
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_ubuntu">
 <div class="paragraph">
 <p>Content for Ubuntu tab.</p>
 </div>
@@ -192,7 +216,7 @@ This section does not have any edition or status labels at the start.
 
 * This is the first item in a list.
 
-* [.edition]#{community}# This is the second item in a list.
+* [.community]#{community}# This is the second item in a list.
 This item is only applicable to community edition.
 
 * This is the third item in the list.

@@ -220,32 +220,37 @@
 
 .doc .admonitionblock > table > tbody > tr {
   display: flex;
-  border: 1px solid var(--color-brand-gray6);
-  border-radius: 4px;
+  border: 1px solid var(--color-brand-gray8);
+  border-radius: 3px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.06);
 }
 
 .doc .admonitionblock td.icon {
-  padding: 0.5rem 0.375rem 0 0.75rem;
+  padding-top: var(--admonition-icon-space);
+  padding-left: var(--admonition-icon-space);
+  padding-right: var(--admonition-icon-space);
+  padding-bottom: 0;
 }
 
 .doc .admonitionblock td.icon i::before {
   background: no-repeat 0 / cover;
   content: "";
   display: block;
-  height: 1.875rem;
-  width: 1.875rem;
+  height: 1.35rem;
+  width: 1.35rem;
 }
 
 .doc .admonitionblock td.content {
-  /* border-bottom: 1px solid var(--color-brand-silver);
-  border-right: 1px solid var(--color-brand-silver);
-  border-top: 1px solid var(--color-brand-silver); */
+  font-family: "Open Sans", sans-serif;
   flex: 1;
   font-size: 0.9375rem;
   hyphens: auto;
   line-height: 1.6;
   min-width: 0;
-  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  padding-top: var(--admonition-content-space);
+  padding-bottom: var(--base-space);
+  padding-left: 0;
+  padding-right: var(--base-space);
 }
 
 .doc .admonitionblock td.content > .title {
@@ -272,7 +277,7 @@
 
 .doc .admonitionblock.caution td.content::before {
   content: "Caution: ";
-  color: var(--color-brand-gray1);
+
 }
 
 .doc .admonitionblock.caution tr {
@@ -289,7 +294,6 @@
 
 .doc .admonitionblock.important td.content::before {
   content: "Important: ";
-  color: var(--color-brand-gray1);
 }
 
 .doc .admonitionblock.important tr {
@@ -306,7 +310,7 @@
 
 .doc .admonitionblock.note td.content::before {
   content: "Note: ";
-  color: var(--color-brand-gray1);
+
 }
 
 .doc .admonitionblock.note tr {
@@ -320,10 +324,14 @@
 .doc .admonitionblock.tip td.icon i::before {
   background-image: url(../img/tip.svg);
 }
+.doc .admonitionblock td.content::before{
+  color: var(--color-brand-black);
+  font-size: var(--font-base);
+}
 
 .doc .admonitionblock.tip td.content::before {
   content: "Tip: ";
-  color: var(--color-brand-gray1);
+
 }
 
 .doc .admonitionblock.tip tr {
@@ -340,7 +348,7 @@
 
 .doc .admonitionblock.warning td.content::before {
   content: "Warning: ";
-  color: var(--color-brand-gray1);
+
 }
 
 .doc .admonitionblock.warning tr {
@@ -354,6 +362,11 @@
 .doc .imageblock {
   display: flex;
   flex-direction: column;
+  border:1px solid var(--color-brand-gray8);
+  padding: var(--base-space);
+  /* padding-left: var(--base-space); */
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.06);
+  border-radius: 5px;
 }
 
 .doc .imageblock img {
@@ -474,7 +487,11 @@
   /* background-color: #151514; */
   color: var(--color-brand-gray1);
   font-weight: var(--weight-normal); /* needed to override third-party styles */
-  padding: 0.625rem;
+  padding-left: var(--base-small-space);
+  padding-right: var(--base-small-space);
+  padding-top: var(--base-large-space);
+  padding-bottom: var(--base-large-space);
+
   white-space: pre-wrap;
   /* NOTE enable these styles if side-to-side scrolling is preferred */
   /*
@@ -482,29 +499,55 @@
   word-wrap: normal;
   overflow-x: auto;
   */
-  background: rgba(87, 160, 255, 0.0555);
-  border: 1px solid #eaebf1;
+  background: #0074E00E;
+  border: 1px solid var(--color-brand-gray8);
   border-radius: 3px;
+  position: relative;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
+
+.doc pre.highlight code::after,
+.doc pre:not(.highlight)::after{
+  content: '';
+  display: inline-block;
+  background: transparent linear-gradient(180deg, #F1F7FE0D 0%, #F1F7FE40 18%, #F1F7FE 68%, #F1F7FE 100%) 0% 0% no-repeat padding-box;
+  width: 65px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
 .doc pre.highlight {
   position: relative;
 }
 
+.doc pre.highlight .hljs-attr{
+    color: var(--hljs-attr);
+}
+.doc pre.highlight .hljs-string{
+  color: var(--hljs-string);
+}
+.doc pre.highlight .hljs-number{
+  color: var(--hljs-number);
+}
+
 .doc .listingblock code[data-lang]::before {
   content: attr(data-lang);
-  color: var("--color-brand-gray4") /*#f8f8f2*/;
+  color: var("--color-brand-gray1") /*#f8f8f2*/;
   display: none;
-  font-size: 0.75em;
-  font-weight: var(--weight-light);
+  font-size: 0.75rem;
+  font-weight: var(--weight-normal);
   letter-spacing: 1px;
-  line-height: 1;
+  line-height: 18px;
   text-transform: uppercase;
   position: absolute;
   top: 0.375rem;
-  right: 1.5rem;
+  right: 2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  padding-right: 6px;
+  border-right: 1px solid var(--color-brand-gray9);
 }
 
 .doc .listingblock:hover code[data-lang]::before {
@@ -565,10 +608,10 @@
 }
 
 .doc .conum[data-value] {
-  border: 1px solid currentColor;
+  border: 1px solid var(--color-brand-blue-secondary);
   border-radius: 100%;
   display: inline-flex;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   font-size: 0.75rem;
   font-style: normal;
   width: 1rem;
@@ -576,6 +619,7 @@
   justify-content: center;
   align-items: center;
   vertical-align: text-bottom;
+  color: var(--color-brand-blue-secondary);
 }
 
 .doc .conum[data-value]::after {
@@ -587,9 +631,9 @@
 }
 
 .doc pre .conum[data-value] {
-  background-color: #f8f8f2;
-  border-color: #f8f8f2;
-  color: #151514;
+  background-color: var(--color-brand-blue-secondary);
+  border-color: var(--color-brand-blue-secondary);
+  color: var(--color-brand-white);
 }
 
 .doc .colist {
@@ -685,6 +729,18 @@
   margin-top: 1.25rem;
 }
 
+.doc .tabset {
+  box-shadow: 0px 3px 10px #0000000F;
+  padding: var(--base-space);
+  border-radius: 8px;
+  border: 1px solid var(--color-brand-gray8);
+  margin-top: var(--base-space);
+}
+
+.doc .tabs.ulist {
+  margin-top: 0;
+}
+
 .doc .tabs ul {
   display: flex;
   flex-wrap: wrap;
@@ -704,26 +760,26 @@
   height: 2.5rem;
   line-height: 1;
   /* margin-right: 0.25rem; */
-  padding: 0 1rem;
+  padding: 0;
   position: relative;
+  margin-right: var(--base-space);
 }
 
 .doc .tabs li + li {
   margin-top: 0;
 }
-
-.doc .tabset.is-loading .tabs li:not(:first-child),
-.doc .tabset:not(.is-loading) .tabs li:not(.is-active) {
-  background-color: var(--color-brand-white);
-  color: var(--color-brand-gray4);
+.doc .tabs li:last-child{
+  margin-right: 0;
 }
 
-.doc .tabs li.is-active {
+/*
+
+/* .doc .tabs li.is-active {
   color: var(--color-active-tabset);
   border-radius: 3px 3px 0 0;
   border-color: var(--color-brand-gray6);
   border-top: 3px solid var(--color-active-tabset);
-}
+} */
 
 .doc .tabset.is-loading .tabs li:first-child::after,
 .doc .tabs li.is-active::after {
@@ -738,7 +794,8 @@
   right: 0;
 }
 
-.doc .tabs li.is-active::before {
+.doc .tabs li.is-active::before,
+.doc .tabs li:hover::before {
   background-color: var(--color-active-tabset);
   content: "";
   display: block;
@@ -747,15 +804,15 @@
   bottom: -2px;
   left: 0;
   right: 0;
-  width: 40px;
+  width: 100%;
   z-index: 1;
   margin: auto;
 }
 
 .doc .tabset > .content {
-  border: 1px solid var(--color-brand-gray6);
-  padding: 1.25rem;
-  border-radius: 3px;
+  /* border: 1px solid var(--color-brand-gray6); */
+  padding-top: 0.75rem;
+  /* border-radius: 3px; */
 }
 
 .doc .tabset.is-loading .tab-pane:not(:first-child),
@@ -876,7 +933,7 @@
   .doc .tabs li {
     width: 100%;
     flex-wrap: wrap;
-    margin-right: 0;
+    margin-right: var(--base-space);
     border-top: 0;
     border-bottom: 1px solid var(--color-border);
   }

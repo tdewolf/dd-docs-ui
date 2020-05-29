@@ -40,9 +40,11 @@ table.tableblock th {
 }
 
 table.tableblock th {
-  padding: 15px 12px 8px;
+  padding-left:12px;
+  padding-top: var(--base-space);
+  padding-bottom: var(--base-space);
   text-align: left;
-  border-bottom: 2px solid var(--color-brand-blue);
+  border-bottom: 2px solid var(--color-brand-blue-secondary);
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: var(--weight-bold);
@@ -58,8 +60,10 @@ table.tableblock tbody tr {
 
 table.tableblock > tbody td {
   display: block;
-  border-bottom: 1px solid var(--color-brand-gray6);
-  padding: 15px 12px 15px;
+  border-bottom: 1px solid var(--color-brand-gray7);
+  padding-left:12px;
+  padding-top: var(--base-space);
+  padding-bottom: var(--base-space);
 }
 
 table.tableblock tbody td p {

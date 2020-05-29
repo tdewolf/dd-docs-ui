@@ -16,11 +16,11 @@
   --color-brand-green: #00b9be;
   --color-brand-purple: #b36cdb;
   --color-brand-purple-tint: #f4e9fa;
-  --color-brand-tip: #00d770;
-  --color-brand-note: #4e90e6;
-  --color-brand-important: #9e70b1;
-  --color-brand-warning: #ed2226;
-  --color-brand-caution: #f57f17;
+  --color-brand-tip: #2CA01C;
+  --color-brand-note: #0074E0;
+  --color-brand-important: #B36CDB;
+  --color-brand-warning: #EA2328;
+  --color-brand-caution: #FF8F00;
   /* tertiary */
   --color-gray-rgb: 115, 118, 138;
   --color-brand-gray1: #292b36;
@@ -30,6 +30,8 @@
   --color-brand-gray5: #c8cbdf;
   --color-brand-gray6: #eaebf1;
   --color-brand-gray7: #f9f9f9;
+  --color-brand-gray8: #E5E5E5;
+  --color-brand-gray9: #BFBFBF;
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
   --color-brand-blue-secondary: #0074e0;
@@ -42,6 +44,7 @@
   --color-text: #333;
   --color-code: var(--color-brand-pink);
   --color-border: var(--color-brand-silver);
+  --checkbox-border-color: var(--color-brand-gray9);
 
   /* Color for URL */
   --color-link: var(--color-brand-blue-secondary);
@@ -56,14 +59,16 @@
   --color-footer-bg: var(--color-brand-black);
   --color-footer-text: var(--color-brand-white);
 
+  /* Color for code block  */
+  --hljs-attr: #407787;
+  --hljs-string: #295D1E;
+  --hljs-number:#0711BA ;
   /* --height-navbar: 4rem; */
   --height-spacer: 1.3rem;
   --height-navbar: 6.09rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
   --height-nav: calc(var(--height-min-body) + var(--height-spacer));
-  --labels-font-size: 0.75rem;
-  --labels-line-height: 1;
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
   --width-container: 90rem;
@@ -93,6 +98,8 @@
   /* New  design font style */
 
   --font-base: 1rem;     /* ~16px */
+  --labels-font-size: 0.75rem; /* ~12px */
+  --labels-line-height: 1;
 
   /* Heading fonts */
   --heading-h1: 2.5rem;  /* ~40px */
@@ -103,10 +110,16 @@
   /* line height  */
   --line-height-body: 160%;
   --line-height-heading: 110%;
+  --line-height-base: 1.375rem;
+
   /* Spacing variables */
-  --column-space: 40px;
-  --base-space : 16px;
-  --base-medium-space: 24px;
+  --base-space : 1rem;
+  --base-small-space : 0.75rem;
+  --base-medium-space: 1.5rem;
+  --base-large-space: 2rem;
+  --column-space: 2.5rem;
+  --admonition-icon-space: 1rem;
+  --admonition-content-space: 1rem;
 
 
 }

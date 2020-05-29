@@ -14,7 +14,7 @@
                 leaving the button in a focused state. */
             button.blur()
 
-            button.dataset.title = 'Copied!'
+            button.dataset.title = 'Copied ✓'
 
             setTimeout(function () {
               button.dataset.title = 'Copy'
