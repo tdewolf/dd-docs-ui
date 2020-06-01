@@ -15,9 +15,9 @@
   position: relative;
 }
 
-.doc span.edition,
-.doc span.status,
-.doc span.community {
+.doc .labels .edition,
+.doc .labels .status,
+.doc .labels .community {
   max-width: fit-content;
   font-size: var(--labels-font-size);
   font-weight: var(--weight-bold);
@@ -44,10 +44,10 @@
   top: -1rem;
 } */
 
-.doc .labels li > *,
-.doc span.edition,
-.doc span.status,
-.doc span.community {
+.doc .labels li,
+.doc .labels .edition,
+.doc .labels .status,
+.doc .labels .community {
   color: #fff;
   display: inline-block;
   padding: 6px;
@@ -57,62 +57,63 @@
 }
 
 .doc .labels li a,
-.doc span.edition a,
-.doc span.status a,
-.doc span.community a {
+.doc .labels .edition a,
+.doc .labels .status a,
+.doc .labels .community a {
   text-decoration: none;
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.doc span.edition *,
-.doc span.status * {
+.doc .labels .edition *,
+.doc .labels .status * {
   color: inherit;
 }
 
-.doc .labels li.edition {
+/* .doc .labels li.edition {
   background-color: var(--color-brand-light-blue);
-}
+} */
 
-.doc span.edition {
+.doc .labels .edition {
   color: var(--color-brand-blue-secondary);
   border: 1px solid var(--color-brand-blue-secondary);
   border-radius: 3px;
   opacity: 0.6;
 }
 
-.doc span.status {
+.doc .labels .status {
   color: var(--color-brand-caution);
   border: 1px solid var(--color-brand-caution);
   border-radius: 3px;
   opacity: 0.6;
 }
 
-.doc span.community {
+.doc .labels .community {
   color: #999;
   border: 1px solid #999;
   border-radius: 3px;
   opacity: 0.6;
 }
 
-.doc span.edition a {
+.doc .labels .edition a {
   color: var(--color-brand-blue-secondary);
 }
 
-.doc span.status a {
+.doc .labels .status a {
   color: var(--color-brand-caution);
 }
 
-.doc span.community a {
+.doc .labels .community a {
   color: #999;
 }
 
-.doc span.edition:hover,
-.doc span.status:hover,
-.doc span.community:hover {
+.doc .labels .edition:hover,
+.doc .labels .status:hover,
+.doc .labels .community:hover {
   opacity: 1;
 }
 
-.doc .labels span:first-child {
+.doc .labels span:first-child,
+.doc .labels li:first-child {
   opacity: 1;
 }
 
@@ -125,9 +126,9 @@
   border-bottom-color: var(--color-brand-light-blue);
 } */
 
-.doc .labels li.status {
+/* .doc .labels li.status {
   background-color: var(--color-brand-orange);
-}
+} */
 
 /* .doc .labels li.status:first-child::before,
 .doc .labels span.status:first-child::before {

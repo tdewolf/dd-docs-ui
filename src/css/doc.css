@@ -28,8 +28,10 @@
 
 .doc h2 {
   font-size: var(--heading-h2);
-  margin: 2.25rem 0 2.5rem;
+  margin: 1.5rem 0 1.5rem;
   max-width: fit-content;
+  display: inline-block;
+  width: 100%;
   /* NOTE used to restrict width of key line */
 }
 
@@ -142,7 +144,7 @@
   font-weight: var(--weight-semibold);
   letter-spacing: -0.025em;
   line-height: 1.2;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
   color: var(--color-brand-gray3);
 }
 
@@ -630,7 +632,7 @@ code.language-console.hljs.shell {
 
 .doc .sidebarblock > .content {
   border: 1px solid var(--color-border);
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .doc .sidebarblock > .content > .title {

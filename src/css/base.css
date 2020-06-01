@@ -75,7 +75,7 @@ html code {
 
 b,
 strong {
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
 }
 
 small {
