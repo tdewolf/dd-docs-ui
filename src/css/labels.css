@@ -45,9 +45,9 @@
 } */
 
 .doc .labels li,
-.doc  .edition,
-.doc  .status,
-.doc  .community {
+.doc .edition,
+.doc .status,
+.doc .community {
   color: #fff;
   display: inline-block;
   padding: 6px;
