@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   margin: 15px 0 0;
   visibility: hidden;
+  display: none;
 }
 
 .contributor-list-box.show {

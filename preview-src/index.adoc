@@ -191,7 +191,7 @@ This section does not have any edition or status labels at the start.
 
 * This is the first item in a list.
 
-* [.community]#{community}# This is the second item in a list.
+* [.edition]#{community}# This is the second item in a list.
 This item is only applicable to community edition.
 
 * This is the third item in the list.
@@ -245,7 +245,7 @@ return thisAirline; // <2>
 
 [#vbucket-stats]
 == Monitoring `vBucket` Resources
-
+[.table-ui]
 [cols="1,3"]
 |===
 | Statistic | Description

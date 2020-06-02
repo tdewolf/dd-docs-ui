@@ -17,7 +17,7 @@
 
 .doc .edition,
 .doc .status,
-.doc .community {
+.doc .edition.page-edition {
   max-width: fit-content;
   font-size: var(--labels-font-size);
   font-weight: var(--weight-bold);
@@ -47,7 +47,7 @@
 .doc .labels li,
 .doc .edition,
 .doc .status,
-.doc .community {
+.doc .edition.page-edition {
   color: #fff;
   display: inline-block;
   padding: 6px;
@@ -59,7 +59,7 @@
 .doc .labels li a,
 .doc .edition a,
 .doc .status a,
-.doc .community a {
+.doc .edition.page-edition a {
   text-decoration: none;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -87,7 +87,7 @@
   opacity: 0.6;
 }
 
-.doc .community {
+.doc .edition.page-edition {
   color: #999;
   border: 1px solid #999;
   border-radius: 3px;
@@ -102,13 +102,13 @@
   color: var(--color-brand-caution);
 }
 
-.doc .community a {
+.doc .edition.page-edition a {
   color: #999;
 }
 
 .doc .edition:hover,
 .doc .status:hover,
-.doc .community:hover {
+.doc .edition.page-edition:hover {
   opacity: 1;
 }
 
