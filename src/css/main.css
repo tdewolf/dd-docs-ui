@@ -44,24 +44,34 @@ main p {
 
 .article-banner {
   align-items: center;
-  background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%);
-  color: #fff;
+  /* background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%); */
+  background: transparent;
+  border: 1px solid #1174e0;
+  color: var(--color-brand-blue-secondary);
   display: flex;
-  line-height: 1.2;
+  line-height: 1;
   margin: calc(-1 * var(--height-spacer)) calc(-1 * var(--width-container-gutter)) var(--height-spacer);
-  padding: 1rem 1.25rem;
+  padding: var(--base-space);
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: var(--weight-normal);
 }
 
 .article-banner p {
-  font-size: 1.125rem;
+  font-size: var(--font-base);
   margin: 0 1rem 0 0;
+  color: var(--color-brand-blue-secondary);
+}
+
+.article-banner p .fab {
+  margin-right: 10px;
+  font-size: var(--heading-h3);
 }
 
 .article-banner a.btn {
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--color-brand-blue-secondary);
   display: block;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
   letter-spacing: -0.025em;
   line-height: 1;
   margin-left: auto;
@@ -69,12 +79,15 @@ main p {
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   white-space: nowrap;
+  border: 1px solid #1174e0;
+  font-size: var(--font-base);
+  font-family: "Open Sans", sans-serif;
 }
 
 .article-banner a.btn:focus,
 .article-banner a.btn:hover {
   background-color: #fff;
-  color: var(--color-brand-purple);
+  color: var(--color-link-active);
 }
 
 .article-header {
@@ -114,7 +127,8 @@ main p {
   }
 
   .article-banner {
-    margin: 0 calc(-1 * var(--width-main-gutter)) 1rem;
+    /* margin: 0 calc(-1 * var(--width-main-gutter)) 1rem; */
+    margin: var(--base-small-space) 0 var(--base-space);
   }
 
   .article-header {

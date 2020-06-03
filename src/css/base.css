@@ -18,7 +18,7 @@ body {
   color: var(--color-text);
   font-family: "Source Sans Pro", sans-serif;
   /* font-family: "Gotham", sans-serif; */
-  line-height: 1.5;
+  line-height: var(--line-height-body);
   margin: 0;
 }
 
@@ -26,11 +26,17 @@ a {
   color: var(--color-link);
   outline: none;
   text-decoration: none;
+  font-family: "Open Sans", sans-serif;
 }
 
 a:focus,
 a:hover {
   text-decoration: underline;
+  color: var(--color-link-hover);
+}
+
+a:active {
+  color: var(--color-link-active);
 }
 
 button,
@@ -53,12 +59,13 @@ button::-moz-focus-inner {
 code,
 kbd,
 pre {
-  font-family: "Roboto Mono", monospace;
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 code {
   color: var(--color-brand-black);
-  font-size: 0.9375em;
+  font-size: var(--font-base);
   word-spacing: -0.125em;
 }
 
@@ -68,7 +75,7 @@ html code {
 
 b,
 strong {
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
 }
 
 small {
@@ -87,6 +94,99 @@ small {
   margin: 0 auto;
 } */
 
+/* checkbox css  */
+
+/* Base for label styling */
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label::before,
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--checkbox-border-color);
+  background: #f9f9f9;
+  border-radius: 3px;
+  display: inline-block;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label::after,
+[type="checkbox"]:checked + label::after {
+  content: "\2713\0020";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.875rem;
+  line-height: 0.8;
+  color: var(--color-brand-white);
+  transition: all 0.2s;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-blue-secondary);
+  border-radius: 3px;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label::after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label::after,
+.active[type="checkbox"] + label::after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label::before,
+[type="checkbox"]:disabled:checked + label::before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+[type="checkbox"]:disabled:checked + label::after {
+  color: #999;
+}
+
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+label:hover::before {
+  border: 2px solid var(--color-brand-blue);
+  outline: none;
+}
+
+label,
+label:focus,
+label:active,
+label::before,
+label::after {
+  outline: none;
+  outline-width: 0;
+}
+
+/* Responsive css */
 @media screen and (min-width: 1024px) {
   .container-fluid {
     max-width: var(--width-container-fluid);

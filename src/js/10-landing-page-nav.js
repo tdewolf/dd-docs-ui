@@ -1,3 +1,4 @@
+;
 (function ($) {
   'use strict'
   // for slide toggle

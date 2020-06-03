@@ -1,7 +1,6 @@
 = Monitoring Statistics
 :doctype: book
 :page-edition: enterprise
-:page-status: beta
 // The following should be global document attributes
 :url-edition: https://www.couchbase.com/products/editions
 :enterprise: {url-edition}[ENTERPRISE EDITION]
@@ -147,7 +146,7 @@ You could also use it to mark new features, but _only within the version in whic
 == Labels for a Section
 
 [.labels]
-[.edition]##{enterprise}##[.status]##{developer-preview}##
+[.edition]##{enterprise}##
 
 To create an edition label, use a span with the role `edition`.
 To create a status label, use a span with the role `status`.
@@ -246,7 +245,7 @@ return thisAirline; // <2>
 
 [#vbucket-stats]
 == Monitoring `vBucket` Resources
-
+[.table-ui]
 [cols="1,3"]
 |===
 | Statistic | Description

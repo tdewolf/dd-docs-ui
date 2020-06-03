@@ -1,11 +1,13 @@
 :root {
   /* NOTE tint colors are 15% transparent */
   /* primary */
+  --color-brand-primary: #262626;
   --color-brand-black: #000;
   --color-brand-red: #ea2328;
   --color-brand-red-tint: #fcdedf;
   --color-brand-white: #fff;
   /* secondary */
+  --color-brand-secondary: #fff;
   --color-brand-blue: #4287d6;
   --color-blue-rgb: 87, 160, 255;
   --color-brand-light-blue: #00ace0;
@@ -14,11 +16,11 @@
   --color-brand-green: #00b9be;
   --color-brand-purple: #b36cdb;
   --color-brand-purple-tint: #f4e9fa;
-  --color-brand-tip: #00d770;
-  --color-brand-note: #4e90e6;
-  --color-brand-important: #9e70b1;
-  --color-brand-warning: #ed2226;
-  --color-brand-caution: #f57f17;
+  --color-brand-tip: #2ca01c;
+  --color-brand-note: #0074e0;
+  --color-brand-important: #b36cdb;
+  --color-brand-warning: #ea2328;
+  --color-brand-caution: #ff8f00;
   /* tertiary */
   --color-gray-rgb: 115, 118, 138;
   --color-brand-gray1: #292b36;
@@ -28,17 +30,27 @@
   --color-brand-gray5: #c8cbdf;
   --color-brand-gray6: #eaebf1;
   --color-brand-gray7: #f9f9f9;
+  --color-brand-gray8: #e5e5e5;
+  --color-brand-gray9: #bfbfbf;
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
   --color-brand-blue-secondary: #0074e0;
+  --color-brand-blue-secondary-light: #2689e5;
+  --color-brand-blue-secondary-extra-light: #73b3ee;
   --color-brand-blue-tint: #d9eafb;
   --color-brand-orange: #fc9c0c;
   --color-brand-orange-tint: #fff0da;
   --color-muted: var(--color-brand-gray);
   --color-text: #333;
-  --color-link: var(--color-brand-light-blue);
   --color-code: var(--color-brand-pink);
   --color-border: var(--color-brand-silver);
+  --checkbox-border-color: var(--color-brand-gray9);
+
+  /* Color for URL */
+  --color-link: var(--color-brand-blue-secondary);
+  --color-link-active: var(--color-brand-blue-secondary-light);
+  --color-link-hover: var(--color-brand-blue-secondary-extra-light);
+
   /* --color-border-table: #666; */
   --color-border-table: #dadada;
   --color-shade: #f3f3f3;
@@ -47,14 +59,16 @@
   --color-footer-bg: var(--color-brand-black);
   --color-footer-text: var(--color-brand-white);
 
+  /* Color for code block  */
+  --hljs-attr: #407787;
+  --hljs-string: #295d1e;
+  --hljs-number: #0711ba;
   /* --height-navbar: 4rem; */
   --height-spacer: 1.3rem;
   --height-navbar: 6.09rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
   --height-nav: calc(var(--height-min-body) + var(--height-spacer));
-  --labels-font-size: 0.75rem;
-  --labels-line-height: 1;
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
   --width-container: 90rem;
@@ -79,4 +93,30 @@
 
   /* Color brand tabsets */
   --color-active-tabset: #57a1ff;
+
+  /* New  design font style */
+
+  --font-base: 1rem; /* ~16px */
+  --labels-font-size: 0.75rem; /* ~12px */
+  --labels-line-height: 1;
+
+  /* Heading fonts */
+  --heading-h1: 2.5rem; /* ~40px */
+  --heading-h2: 2rem; /* ~32px */
+  --heading-h3: 1.5rem; /* ~24px */
+  --heading-h4: 1rem; /* ~16px */
+
+  /* line height  */
+  --line-height-body: 160%;
+  --line-height-heading: 110%;
+  --line-height-base: 1.375rem;
+
+  /* Spacing variables */
+  --base-space: 1rem;
+  --base-small-space: 0.75rem;
+  --base-medium-space: 1.5rem;
+  --base-large-space: 2rem;
+  --column-space: 2.5rem;
+  --admonition-icon-space: 1rem;
+  --admonition-content-space: 1rem;
 }
