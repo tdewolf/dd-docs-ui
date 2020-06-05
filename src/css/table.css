@@ -118,12 +118,13 @@ table.table-tutorial tr td:last-child {
     /* margin-top: 2.5rem; */
   }
 
-  table.tableblock .title {
+  table.tableblock caption.title {
     position: absolute;
     left: 0;
     top: -30px;
   }
 
+  div + table.tableblock,
   div.paragraph + table.tableblock,
   div.ulist + table.tableblock,
   table.tableblock + table.tableblock {
