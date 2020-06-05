@@ -78,8 +78,20 @@
   padding: 0;
 }
 
-.nav-menu .nav-list .nav-list .nav-line[data-depth="1"] {
+.nav-menu .nav-list .nav-list .nav-line {
   padding-left: 1.65rem;
+}
+
+.nav-menu .nav-list .nav-list .nav-line[data-depth="2"] {
+  padding-left: 3rem;
+}
+
+.nav-menu .nav-list .nav-list .nav-line[data-depth="3"] {
+  padding-left: 4.2rem;
+}
+
+.nav-menu .nav-list .nav-list .nav-line[data-depth="4"] {
+  padding-left: 5.5rem;
 }
 
 .nav-menu .nav-list li a {
@@ -149,7 +161,7 @@
 
 /* .nav-item.is-active > .nav-line[data-depth="0"], */
 .nav-item.open > .nav-line[data-depth="0"],
-.nav-item.is-current-path.is-active-depth-2:not(.is-active)  > .nav-line,
+.nav-item.is-current-path.is-active-depth-2:not(.is-active) > .nav-line,
 .nav-item.is-current-page > .nav-line {
   background: #4287d60f;
   margin-bottom: 0.625rem;
@@ -168,6 +180,15 @@
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
   color: var(--color-text);
   font-weight: var(--weight-medium);
+}
+
+.nav-item.is-current-path.is-active[data-depth='1'] .in-toggle[data-depth='1'],
+.nav-item.is-current-page.is-active[data-depth='1'] .in-toggle[data-depth='1'],
+.nav-item.is-current-path.is-active[data-depth='2'] .in-toggle[data-depth='2'],
+.nav-item.is-current-page.is-active[data-depth='2'] .in-toggle[data-depth='2'],
+.nav-item.is-current-path.is-active[data-depth='3'] .in-toggle[data-depth='3'],
+.nav-item.is-current-page.is-active[data-depth='3'] .in-toggle[data-depth='3'] {
+  transform: rotate(90deg);
 }
 
 .nav-menu .nav-item.is-active[data-depth='2'] > .nav-line .nav-link {
@@ -244,7 +265,7 @@ html.is-clipped--nav {
   cursor: pointer;
 }
 
-.main-nav-parent .back-to-menu .fas{
+.main-nav-parent .back-to-menu .fas {
   margin-right: 8px;
 }
 
@@ -262,7 +283,7 @@ html.is-clipped--nav {
 }
 
 .in-toggle {
-  display: none;
+  /* display: none; */
   cursor: pointer;
   /* margin-right: 10px; */
 }
@@ -271,12 +292,11 @@ html.is-clipped--nav {
   display: none;
 }
 
-.nav-line[data-depth="1"],
-.nav-line[data-depth="2"] {
+.nav-menu .nav-item .nav-line {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   padding: 0.625rem 1.375rem;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
 }
 
 .nav-line[data-depth="1"] .nav-link {
@@ -318,12 +338,30 @@ html.is-clipped--nav {
 }
 
 .nav-item[data-depth='1'] .in-toggle {
-  background: url(../img/back-arrow.png) no-repeat center center;
-  transform: rotate(180deg);
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
+  position: relative;
+  /* left: -5px; */
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--color-brand-gray5);
 }
+
+/* .nav-item[data-depth='1'] .in-toggle::after {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 8px solid red;
+  top: 0;
+  position: absolute;
+  content: '';
+  cursor: pointer;
+  right: -15px;
+  bottom: 0;
+  margin: auto;
+} */
 
 @media screen and (min-width: 769px) {
   .nav-control {
