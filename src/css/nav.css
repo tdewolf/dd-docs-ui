@@ -23,8 +23,8 @@
     margin-bottom: 1.5rem;
     height: var(--height-nav);
     z-index: var(--z-index-nav);
-    border-left: 2px solid var(--color-brand-gray7);
-    border-right: 2px solid var(--color-brand-gray7);
+    border-left: 2px solid #eee;
+    border-right: 2px solid #eee;
   }
 }
 
