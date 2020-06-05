@@ -133,6 +133,7 @@ main p {
 
   .article-header {
     margin-bottom: 0;
+    margin-top: var(--base-space);
     align-items: flex-start;
   }
 }

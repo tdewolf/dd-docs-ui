@@ -97,6 +97,7 @@
         otherNavs[i].classList.add('is-inactive')
       }
     }
+    this.classList.toggle('open')
     this.classList.toggle('is-active')
   }
 
