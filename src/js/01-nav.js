@@ -97,6 +97,7 @@
         otherNavs[i].classList.add('is-inactive')
       }
     }
+    this.classList.toggle('open')
     this.classList.toggle('is-active')
   }
 
@@ -140,6 +141,8 @@
     return el
   }
 
+  // has children in li
+  // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {
     e.stopPropagation()
   }

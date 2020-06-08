@@ -142,10 +142,14 @@
 .doc caption {
   font-size: 1rem;
   font-weight: var(--weight-semibold);
-  letter-spacing: -0.025em;
+  /* letter-spacing: -0.025em; */
   line-height: 1.2;
   margin-bottom: 0.75rem;
   color: var(--color-brand-gray3);
+}
+
+.ulist div.title {
+  margin-left: -10px;
 }
 
 .doc hr {

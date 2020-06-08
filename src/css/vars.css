@@ -64,8 +64,8 @@
   --hljs-string: #295d1e;
   --hljs-number: #0711ba;
   /* --height-navbar: 4rem; */
-  --height-spacer: 1.3rem;
-  --height-navbar: 6.09rem;
+  --height-spacer: 1rem;
+  --height-navbar: 6rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
   --height-nav: calc(var(--height-min-body) + var(--height-spacer));
@@ -97,6 +97,7 @@
   /* New  design font style */
 
   --font-base: 1rem; /* ~16px */
+  --font-small: 0.875rem; /* ~14px */
   --labels-font-size: 0.75rem; /* ~12px */
   --labels-line-height: 1;
 

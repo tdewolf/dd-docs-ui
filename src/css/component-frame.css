@@ -1,9 +1,10 @@
 .component-frame {
   /* rgba(87, 160, 255, 1) */
-  /* background: rgba(var(--color-blue-rgb), 0.07); */
+  background: var(--color-brand-gray6);
   padding: 12px 30px 12px 15px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .frame-body {
@@ -13,7 +14,8 @@
 
 .frame-body .title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   font-weight: var(--weight-semibold);
   color: var(--color-brand-gray1);
 }
