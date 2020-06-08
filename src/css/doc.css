@@ -417,12 +417,12 @@
 
 .doc ul {
   margin: 0;
-  padding: 0 0 0 8px;
+  padding: 0 0 0 1rem;
 }
 
 .doc ol {
   margin: 0;
-  padding: 0 0 0 8px;
+  padding: 0 0 0 1rem;
 }
 
 .doc ul.checklist {
@@ -913,7 +913,7 @@ code.language-console.hljs.shell {
     font-weight: var(--weight-bold);
     min-height: 2.5rem;
     line-height: 1;
-    margin-right: 0.25rem;
+    /* margin-right: 0.25rem; */
     padding: 0 1.5rem 5px;
     position: relative;
     text-decoration: none;
@@ -942,6 +942,8 @@ code.language-console.hljs.shell {
     display: flex;
     align-items: center;
     color: #333;
+    border-bottom: 1px solid var(--color-border);
+    padding-left: 0.5rem;
   }
 
   .doc .tabs .dropddown-btn .fas {
@@ -997,4 +999,46 @@ code.language-console.hljs.shell {
   .doc .tabs ul.show {
     display: block;
   }
+}
+
+@media screen and (max-width: 767px) {
+
+  .doc h1 {
+    font-size: var(--heading-h1-sm);
+  }
+
+  .doc h1.page {
+    font-size: var(--heading-h1-sm);
+    margin-bottom: 10px;
+  }
+
+  .doc h2 {
+    font-size: var(--heading-h2-sm);
+    margin: 1rem 0 1rem;
+  }
+
+  .doc h3 {
+    font-size: var(--heading-h3-sm);
+  }
+
+  .doc h4 {
+    font-size: var(--heading-h4-sm);
+  }
+
+  .doc h5 {
+    font-size: var(--heading-h4-sm);
+  }
+
+  .doc .admonitionblock td.content {
+    padding-left: 1rem;
+  }
+
+  .doc .sidebarblock > .content {
+    padding: 1.5rem;
+  }
+
+  .doc h1 > a.anchor, .doc h2 > a.anchor, .doc h3 > a.anchor, .doc h4 > a.anchor, .doc h5 > a.anchor, .doc h6 > a.anchor {
+    font-size: 18px;
+  }
+
 }
