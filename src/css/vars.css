@@ -121,10 +121,9 @@
   --admonition-icon-space: 1rem;
   --admonition-content-space: 1rem;
 
-   /* Heading fonts for responsive */
-   --heading-h1-sm: 2.25rem; /* ~36px */
-   --heading-h2-sm: 1.75rem; /* ~28px */
-   --heading-h3-sm: 1.25rem; /* ~20px */
-   --heading-h4-sm: 0.875rem; /* ~14px */
-
+  /* Heading fonts for responsive */
+  --heading-h1-sm: 2.25rem; /* ~36px */
+  --heading-h2-sm: 1.75rem; /* ~28px */
+  --heading-h3-sm: 1.25rem; /* ~20px */
+  --heading-h4-sm: 0.875rem; /* ~14px */
 }

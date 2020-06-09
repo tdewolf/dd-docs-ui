@@ -83,8 +83,8 @@
 .doc h4 a.anchor::before,
 .doc h5 a.anchor::before,
 .doc h6 a.anchor::before {
-  content: '\f0c1';
-  font-family: 'Font Awesome 5 Free', sans-serif;
+  content: "\f0c1";
+  font-family: "Font Awesome 5 Free", sans-serif;
   font-weight: 900;
 }
 
@@ -489,7 +489,8 @@
 .doc pre.highlight code {
   /* background-color: #151514; */
   color: var(--color-brand-gray1);
-  font-weight: var(--weight-normal); /* needed to override third-party styles */
+  font-weight: var(--weight-normal);
+  /* needed to override third-party styles */
   padding-left: var(--base-small-space);
   padding-right: var(--base-small-space);
   padding-top: var(--base-large-space);
@@ -585,8 +586,7 @@
   content: "";
   display: inline-block;
   background:
-    transparent
-    linear-gradient(
+    transparent linear-gradient(
       180deg,
       #f1f7fe0d 0%,
       #f1f7fe40 18%,
@@ -875,6 +875,7 @@ code.language-console.hljs.shell {
 .doc .tab-pane > :first-child {
   margin-top: 0;
 }
+
 /* Media css  */
 
 @media screen and (min-width: 840px) {
@@ -1002,7 +1003,6 @@ code.language-console.hljs.shell {
 }
 
 @media screen and (max-width: 767px) {
-
   .doc h1 {
     font-size: var(--heading-h1-sm);
   }
@@ -1037,8 +1037,12 @@ code.language-console.hljs.shell {
     padding: 1.5rem;
   }
 
-  .doc h1 > a.anchor, .doc h2 > a.anchor, .doc h3 > a.anchor, .doc h4 > a.anchor, .doc h5 > a.anchor, .doc h6 > a.anchor {
+  .doc h1 > a.anchor,
+  .doc h2 > a.anchor,
+  .doc h3 > a.anchor,
+  .doc h4 > a.anchor,
+  .doc h5 > a.anchor,
+  .doc h6 > a.anchor {
     font-size: 18px;
   }
-
 }
