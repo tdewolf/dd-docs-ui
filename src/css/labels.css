@@ -87,10 +87,6 @@
   opacity: 0.6;
 }
 
-.doc .status a {
-  color: var(--color-brand-caution);
- }
-
 .doc .edition.page-edition {
   color: #999;
   border: 1px solid #999;

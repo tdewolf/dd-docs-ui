@@ -1,3 +1,7 @@
+.doc {
+  padding: var(--base-space) 0;
+}
+
 .doc p {
   margin: 0;
 }
