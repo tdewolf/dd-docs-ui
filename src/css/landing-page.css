@@ -7,6 +7,11 @@
   margin-bottom: 15px;
 }
 
+.doc.landing-page-doc h1.sect0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .doc.landing-page-doc .text-color-brand-blue {
   color: var(--color-brand-blue);
 }
@@ -78,7 +83,19 @@
 }
 
 .card-row.three-column-row .column {
-  flex-basis: 25%;
+  flex-basis: 33%;
+  padding-right: var(--column-space);
+  padding-left: var(--column-space);
+}
+
+.card-row.three-column-row .column:first-child,
+.card-row.three-column-row .column:nth-child(3n+1) {
+  padding-left: 0;
+}
+
+.card-row.three-column-row .column:last-child,
+.card-row.three-column-row .column:nth-child(3n) {
+  padding-right: 0;
 }
 
 .card-row .three-column-row + .column {
@@ -89,11 +106,13 @@
   border-left: 1px solid var(--color-brand-gray5);
 }
 
-.doc.landing-page-doc h3 {
+.doc.landing-page-doc h3,
+.landing-page-doc .column .title {
   font-size: 1.5rem;
   line-height: 130%;
   color: var(--color-brand-black);
-  margin: 0;
+  margin: 0 0 8px;
+  letter-spacing: -0.025rem;
 }
 
 .doc.landing-page-doc .text-color-brand-blue-secondary {
@@ -128,11 +147,16 @@
 
 .doc.landing-page-doc .media-left {
   margin-left: 40px;
-  width: 100px;
+  width: 115px;
   margin-top: 0;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
 }
 
-.doc.landing-page-doc .paragraph {
+.doc.landing-page-doc .column .paragraph,
+.doc.landing-page-doc .column .videoblock ,
+.doc.landing-page-doc .column .imageblock {
   margin-top: 0;
 }
 
@@ -219,6 +243,7 @@
 .doc.landing-page-doc iframe {
   width: 100%;
   height: 315px;
+  margin-top: 8px;
 }
 
 /* CSS for nav filter */
