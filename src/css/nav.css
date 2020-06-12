@@ -45,9 +45,10 @@
   display: flex;
   word-break: break-all;
   align-items: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 28px;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Source Sans Pro", sans-serif;
   color: var(--color-brand-gray1);
   font-weight: var(--weight-semibold);
 }
@@ -97,6 +98,7 @@
 .nav-menu .nav-list li a {
   font-size: 0.875rem;
   font-weight: var(--weight-normal);
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .nav-menu > .nav-list {
@@ -179,9 +181,10 @@
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
   color: var(--color-text);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
 }
 
+.nav-item.open.is-active[data-depth="1"] .in-toggle[data-depth='1'],
 .nav-item.is-current-path.is-active[data-depth='1'] .in-toggle[data-depth='1'],
 .nav-item.is-current-page.is-active[data-depth='1'] .in-toggle[data-depth='1'],
 .nav-item.is-current-path.is-active[data-depth='2'] .in-toggle[data-depth='2'],
@@ -299,7 +302,8 @@ html.is-clipped--nav {
   /* flex-direction: row-reverse; */
 }
 
-.nav-line[data-depth="1"] .nav-link {
+.nav-line[data-depth="1"] .nav-link,
+.nav-line[data-depth="1"] .nav-text {
   /* color: var(--color-brand-gray4); */
   color: var(--color-brand-black);
   font-size: var(--font-base);
