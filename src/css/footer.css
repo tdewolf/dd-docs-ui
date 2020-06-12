@@ -79,7 +79,7 @@
   margin: 1rem 0;
   display: inline-block;
   /* FIXME this should be max-height 52px */
-  padding: 1rem 3.5rem;
+  padding: 0.75rem 2.5rem;
   border: 2px solid var(--color-footer-text);
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
@@ -190,6 +190,10 @@
 }
 
 @media screen and (min-width: 769px) {
+  .footer-links a.white-btn {
+    padding: 1rem 3.5rem;
+  }
+
   .footer-links .col {
     flex-basis: 22%;
   }
