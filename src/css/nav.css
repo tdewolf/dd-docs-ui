@@ -45,12 +45,12 @@
   display: flex;
   word-break: break-all;
   align-items: center;
-  font-size: 1.25rem;
-  line-height: 28px;
+  font-size: var(--font-small);
+  line-height: 22px;
   /* font-family: "Open Sans", sans-serif; */
   font-family: "Source Sans Pro", sans-serif;
-  color: var(--color-brand-gray1);
-  font-weight: var(--weight-semibold);
+  color: var(--color-brand-black);
+  font-weight: var(--weight-normal);
 }
 
 .nav-line .fas {
@@ -64,7 +64,7 @@
 }
 
 .nav-menu a.nav-link {
-  color: var(--color-brand-gray3);
+  color: var(--color-brand-black);
   text-decoration: none;
 }
 
@@ -97,7 +97,7 @@
 
 .nav-menu .nav-list li a {
   font-size: 0.875rem;
-  font-weight: var(--weight-normal);
+  /* font-weight: var(--weight-normal); */
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -152,26 +152,26 @@
 
 .nav-line[data-depth="0"] {
   padding: 0.625rem 1.25rem;
-  color: var(--brand-color-gray2);
+  color: var(--brand-color-gray1);
 }
 
-/* .nav-item.is-active .nav-line[data-depth="0"] {
-  background: #4287D60F;
-  margin-bottom: 0.625rem;
-  border-right: 4px solid rgba(66, 135, 214, 0.44);
-} */
+.nav-item .nav-line[data-depth="0"] > .nav-text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: var(--weight-semibold);
+  color: var(--color-brand-gray1);
+}
 
-/* .nav-item.is-active > .nav-line[data-depth="0"], */
-.nav-item.open > .nav-line[data-depth="0"],
+.nav-item.open > .nav-line,
 .nav-item.is-current-path.is-active-depth-2:not(.is-active) > .nav-line,
 .nav-item.is-current-page > .nav-line {
   background: #4287d60f;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0;
   border-right: 4px solid rgba(66, 135, 214, 0.44);
+  font-weight: var(--weight-semibold);
 }
 
 .nav-item.is-active .nav-line[data-depth="0"] .nav-text {
-  /* color: var(--color-brand-blue); */
   font-weight: var(--weight-semibold);
 }
 
@@ -179,12 +179,15 @@
   color: var(--color-brand-blue);
 }
 
-.nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
+/* .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
   color: var(--color-text);
   font-weight: var(--weight-semibold);
-}
+} */
 
-.nav-item.open.is-active[data-depth="1"] .in-toggle[data-depth='1'],
+/* .nav-item.open.is-active[data-depth="1"] .in-toggle[data-depth='1'],
+.nav-item.open.is-active[data-depth="2"] .in-toggle[data-depth='2'],
+.nav-item.open.is-active[data-depth="3"] .in-toggle[data-depth='3'], */
+.nav-item.open.is-active > .nav-line .in-toggle,
 .nav-item.is-current-path.is-active[data-depth='1'] .in-toggle[data-depth='1'],
 .nav-item.is-current-page.is-active[data-depth='1'] .in-toggle[data-depth='1'],
 .nav-item.is-current-path.is-active[data-depth='2'] .in-toggle[data-depth='2'],
@@ -194,10 +197,15 @@
   transform: rotate(90deg);
 }
 
-.nav-menu .nav-item.is-active[data-depth='2'] > .nav-line .nav-link {
-  /* color: var(--color-brand-blue); */
+/* .nav-menu .nav-item.is-active[data-depth='2'] > .nav-line .nav-link {
+  color: var(--color-brand-black);
   font-weight: var(--weight-semibold);
-}
+} */
+
+/* .nav-menu .nav-item.is-active.open .nav-line .nav-text,
+.nav-menu .nav-item.is-active.open .nav-line .nav-link {
+  font-weight: var(--weight-semibold);
+} */
 
 .nav-menu .nav-toggle {
   background: none;
@@ -312,11 +320,7 @@ html.is-clipped--nav {
 }
 
 .is-active[data-depth='0'] .is-active > .nav-line[data-depth="1"] {
-  /* padding-left: 0; */
-  /* justify-content: start; */
-  /* flex-direction: unset; */
   font-size: 1.125rem;
-  font-weight: 300;
   color: var(--color-brand-gray1);
 }
 
@@ -328,14 +332,13 @@ html.is-clipped--nav {
   margin-left: 1.5rem;
 } */
 
-.nav-menu .nav-item[data-depth='2'] {
-  /* margin: 0px 0px 8px 0px; */
+/* .nav-menu .nav-item[data-depth='2'] {
   margin-bottom: 8px;
-}
+} */
 
-.nav-menu .nav-item.is-active[data-depth='1'] > .nav-line .nav-link {
+/* .nav-menu .nav-item.is-active[data-depth='1'] > .nav-line .nav-link {
   color: var(--color-brand-blue);
-}
+} */
 
 .nav-menu .nav-item.is-active.is-active-depth-2[data-depth='1'] > .nav-line .nav-link {
   color: var(--color-brand-gray1);
