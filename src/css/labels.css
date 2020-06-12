@@ -48,7 +48,7 @@
 .doc .edition,
 .doc .status,
 .doc .edition.page-edition {
-  color: #fff;
+  /* color: #fff; */
   display: inline-block;
   padding: 6px;
   text-transform: uppercase;
