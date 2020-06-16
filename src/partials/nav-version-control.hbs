@@ -4,7 +4,7 @@
             {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
                 <div class="component-frame has-dropdown">
                     <div class="frame-icon">
-                        <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                        <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
                     </div>
                     <div class="frame-body">
                         <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
@@ -30,7 +30,7 @@
             {{else}}
               <div class="component-frame">
                 <div class="frame-icon">
-                  <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                  <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
                 </div>
                 <div class="frame-body">
                   <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>

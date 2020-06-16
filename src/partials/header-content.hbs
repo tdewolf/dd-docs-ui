@@ -1,7 +1,7 @@
 <header class="header fixed-top">
   <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
     <a class="navbar-brand" href="{{#with (and site.url site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{siteRootPath}}{{/with}}">
-      <img src="{{uiRootPath}}/img/logo.png" alt="Couchbase" />
+      <img src="{{{uiRootPath}}}/img/logo.png" alt="Couchbase" />
     </a>
     {{! <ul class="nav navbar-nav mr-auto"></ul> }}
     <button class="navbar-burger" data-target="topbar-menu">
