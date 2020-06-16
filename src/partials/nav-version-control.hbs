@@ -13,11 +13,7 @@
                           <div class="frame-dropdown versions">
                               <ul class="frame-dropdown-list">
                               {{#each page.versions}}
-                                  {{#unless (eq ./version @root.page.version)}}
-                                      <li><a class="frame-item" href="{{relativize ./url}}">
-                                      {{!-- {{{@root.page.component.title}}} --}}
-                                      Version {{./displayVersion}}</a></li>
-                                  {{/unless}}
+                                  <li{{#if (eq ./version @root.page.version)}} class="current"{{/if}}><a class="frame-item" href="{{relativize ./url}}">Version {{./displayVersion}}</a></li>
                               {{/each}}
                               </ul>
                               {{#if (ends-with page.component.name '-sdk')}}

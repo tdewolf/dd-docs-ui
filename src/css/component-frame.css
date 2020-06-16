@@ -90,3 +90,13 @@ ul.frame-dropdown-list li:last-child {
 .frame-item:visited {
   text-decoration: none;
 }
+
+.frame-dropdown li.current {
+  font-weight: var(--weight-semibold);
+}
+
+.frame-dropdown li.current a.frame-item::before {
+  content: "\2023";
+  position: absolute;
+  margin-left: -0.75em;
+}
