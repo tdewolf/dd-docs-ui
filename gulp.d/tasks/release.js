@@ -53,7 +53,7 @@ function versionBundle (bundleFile, tagName) {
   )
 }
 
-module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (done) => {
+module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async () => {
   const octokit = new Octokit({ auth: `token ${token}` })
   let branchName = process.env.GIT_BRANCH || 'master'
   if (branchName.startsWith('origin/')) branchName = branchName.substr(7)
@@ -94,7 +94,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (
     .then((result) => result.data.upload_url)
   await octokit.repos.uploadReleaseAsset({
     url: uploadUrl,
-    file: fs.createReadStream(bundleFile),
+    data: fs.createReadStream(bundleFile),
     name: bundleFileBasename,
     headers: {
       'content-length': (await fs.stat(bundleFile)).size,
