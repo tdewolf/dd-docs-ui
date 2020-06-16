@@ -100,3 +100,7 @@ ul.frame-dropdown-list li:last-child {
   position: absolute;
   margin-left: -0.75em;
 }
+
+.component-frame .version::before {
+  content: "Version ";
+}
