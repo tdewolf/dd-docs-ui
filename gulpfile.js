@@ -6,6 +6,7 @@ const [owner, repo] = new URL(pkg.repository.url).pathname.slice(1).split('/')
 const { parallel, series, watch } = require('gulp')
 const createTask = require('./gulp.d/lib/create-task')
 const exportTasks = require('./gulp.d/lib/export-tasks')
+const log = require('fancy-log')
 
 const bundleName = 'ui'
 const buildDir = ['deploy-preview', 'branch-deploy'].includes(process.env.CONTEXT) ? 'public/dist' : 'build'
@@ -74,7 +75,8 @@ const bundlePackTask = createTask({
   call: task.pack(
     destDir,
     buildDir,
-    bundleName
+    bundleName,
+    (bundlePath) => !process.env.CI && log(`Antora option: --ui-bundle-url=${bundlePath}`)
   ),
 })
 
