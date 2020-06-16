@@ -56,7 +56,11 @@ const formatTask = createTask({
 const buildTask = createTask({
   name: 'build',
   desc: 'Build and stage the UI assets for bundling',
-  call: task.build(srcDir, destDir, process.argv.slice(2).some((name) => name.startsWith('preview'))),
+  call: task.build(
+    srcDir,
+    destDir,
+    process.argv.slice(2).some((name) => name.startsWith('preview'))
+  ),
 })
 
 const bundleBuildTask = createTask({
@@ -67,7 +71,11 @@ const bundleBuildTask = createTask({
 const bundlePackTask = createTask({
   name: 'bundle:pack',
   desc: 'Create a bundle of the staged UI assets for publishing',
-  call: task.pack(destDir, buildDir, bundleName),
+  call: task.pack(
+    destDir,
+    buildDir,
+    bundleName
+  ),
 })
 
 const bundleTask = createTask({
@@ -83,7 +91,6 @@ const packTask = createTask({
 })
 
 const releasePublishTask = createTask({
-  desc: 'Publish the release to GitHub by attaching it to a new tag',
   name: 'release:publish',
   call: task.release(buildDir, bundleName, owner, repo, process.env.GITHUB_API_TOKEN, true),
 })
