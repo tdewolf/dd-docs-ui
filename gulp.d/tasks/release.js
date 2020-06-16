@@ -40,10 +40,13 @@ function versionBundle (bundleFile, tagName) {
       .src(bundleFile)
       .pipe(zip.src().on('error', reject))
       .pipe(
-        map((file, enc, next) => next(null, file), function (done) {
-          this.push(new File({ path: 'ui.yml', contents: Buffer.from(`version: ${tagName}\n`) }))
-          done()
-        })
+        map(
+          (file, enc, next) => next(null, file),
+          function (done) {
+            this.push(new File({ path: 'ui.yml', contents: Buffer.from(`version: ${tagName}\n`) }))
+            done()
+          }
+        )
       )
       .pipe(zip.dest(bundleFile))
       .on('finish', () => resolve(bundleFile))
