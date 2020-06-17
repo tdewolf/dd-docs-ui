@@ -1,22 +1,20 @@
 #!/bin/env groovy
 
 def githubApiTokenCredentialsId = 'docs-robot-api-key'
-
 def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsId, variable: 'GITHUB_API_TOKEN')
 
 // Jenkins job configuration
 // -------------------------
 // Category: Multibranch Pipeline
-// Pipeline name: release-docs-ui-bundle
+// Pipeline name: docs-ui-sandbox
 // Branch Sources: Single repository & branch
-// Name: master
+// Name: cloud
 // Source Code Management: Git
-// Repository URL: https://github.com/couchbase/docs-ui
+// Repository URL: https://github.com/couchbase/docs-ui-sandbox
 // Credentials: - none -
-// Refspec: +refs/heads/master:refs/remotes/origin/master
-// Branch specifier: refs/heads/master
-// Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone (depth: 3)
-// Polling ignores commits with certain messages: (?s)(?:Release v\d+|.*\[skip .+?\]).*
+// Branch specifier: refs/heads/cloud
+// Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone, Shallow clone depth: 5
+// Polling ignores commits with certain messages: (?s)(?:Release |.*\[skip .+?\]).*
 // Build Configuration:
 // Mode: by Jenkinsfile
 // Script Path: Jenkinsfile
