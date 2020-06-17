@@ -52,9 +52,7 @@
   top: 60px;
   border-radius: 4px;
   z-index: 1;
-  border-radius: 4px;
-  z-index: 1;
-  box-shadow: 0px 3px 10px -4px var(--color-brand-gray8);
+  box-shadow: 0 3px 10px -4px var(--color-brand-gray8);
 }
 
 .frame-dropdown .frame-dropdown-list {
@@ -89,4 +87,18 @@ ul.frame-dropdown-list li:last-child {
 .frame-link:visited,
 .frame-item:visited {
   text-decoration: none;
+}
+
+.frame-dropdown li.current {
+  font-weight: var(--weight-semibold);
+}
+
+.frame-dropdown li.current a.frame-item::before {
+  content: "\2023";
+  position: absolute;
+  margin-left: -0.75em;
+}
+
+.component-frame .version::before {
+  content: "Version ";
 }

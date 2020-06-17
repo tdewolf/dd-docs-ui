@@ -4,20 +4,16 @@
             {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
                 <div class="component-frame has-dropdown">
                     <div class="frame-icon">
-                        <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                        <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
                     </div>
                     <div class="frame-body">
                         <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
                         <div class="frame-link-dropdowns">
-                          <a class="frame-link component" href="{{relativize page.componentVersion.url}}"> <span class="version">Version {{page.componentVersion.displayVersion}}</span></a>
+                          <a class="frame-link component" href="{{relativize page.componentVersion.url}}"><span class="version">{{page.componentVersion.displayVersion}}</span></a>
                           <div class="frame-dropdown versions">
                               <ul class="frame-dropdown-list">
                               {{#each page.versions}}
-                                  {{#unless (eq ./version @root.page.version)}}
-                                      <li><a class="frame-item" href="{{relativize ./url}}">
-                                      {{!-- {{{@root.page.component.title}}} --}}
-                                      Version {{./displayVersion}}</a></li>
-                                  {{/unless}}
+                                  <li{{#if (eq ./version @root.page.version)}} class="current"{{/if}}><a class="frame-item" href="{{relativize ./url}}">Version {{./displayVersion}}</a></li>
                               {{/each}}
                               </ul>
                               {{#if (ends-with page.component.name '-sdk')}}
@@ -34,7 +30,7 @@
             {{else}}
               <div class="component-frame">
                 <div class="frame-icon">
-                  <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                  <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
                 </div>
                 <div class="frame-body">
                   <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
