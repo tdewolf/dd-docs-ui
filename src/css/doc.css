@@ -495,7 +495,7 @@
   color: var(--color-brand-gray1);
   font-weight: var(--weight-normal);
   /* needed to override third-party styles */
-  padding-left: var(--base-small-space);
+  padding-left: var(--base-space);
   padding-right: var(--base-small-space);
   padding-top: var(--base-large-space);
   padding-bottom: var(--base-large-space);
@@ -575,10 +575,10 @@
   line-height: 18px;
   text-transform: uppercase;
   position: absolute;
-  top: 0.375rem;
-  right: 2rem;
+  top: 12px;
+  right: 2.4rem;
   font-family: "Source Sans Pro", sans-serif;
-  padding-right: 6px;
+  padding-right: 0.5rem;
   border-right: 1px solid var(--color-brand-gray9);
 }
 
