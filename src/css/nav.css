@@ -95,6 +95,10 @@
   padding-left: 5.5rem;
 }
 
+.nav-menu .nav-list .nav-list .nav-line[data-depth="5"] {
+  padding-left: 6.75rem;
+}
+
 .nav-menu .nav-list li a {
   font-size: 0.875rem;
   /* font-weight: var(--weight-normal); */
