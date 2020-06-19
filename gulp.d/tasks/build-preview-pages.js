@@ -3,6 +3,20 @@
 const asciidoctor = require('asciidoctor.js')()
 const fs = require('fs-extra')
 const handlebars = require('handlebars')
+const iconPacks = {
+  fas: (() => {
+    try {
+      return require('@fortawesome/pro-solid-svg-icons')
+    } catch (e) {}
+  })(),
+  far: (() => {
+    try {
+      return require('@fortawesome/pro-regular-svg-icons')
+    } catch (e) {}
+  })(),
+  fab: require('@fortawesome/free-brands-svg-icons'),
+}
+iconPacks.fa = iconPacks.fas
 const { obj: map } = require('through2')
 const merge = require('merge-stream')
 const ospath = require('path')
@@ -83,7 +97,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             file.extname = '.html'
             try {
               file.contents = Buffer.from(layouts.get(uiModel.page.layout)(uiModel))
-              next(null, file)
+              next(null, injectIconDefs(file))
             } catch (e) {
               next(transformHandlebarsError(e, uiModel.page.layout))
             }
@@ -181,6 +195,30 @@ function findNavPath (currentUrl, node = [], current_path = [], root = true) {
     }
   }
   if (root) return []
+}
+
+function injectIconDefs (file) {
+  const contents = file.contents
+  if (!contents.includes('<i class="fa')) return file
+  const contentsString = contents.toString()
+  const iconNames = contentsString.match(new RegExp('<i class="fa[brs]? fa-[^" ]+', 'g')).map((it) => {
+    let [iconPrefix, iconName, ] = it.substr(10).split(' fa-')
+    iconName = iconName.replace(/(?:^|-)(.)/g, function (_, l) { return l.toUpperCase() })
+    return iconPrefix + '|' + iconName
+  })
+  if (!iconNames.length) return file
+  const iconDefs = [...new Set(iconNames)].reduce((accum, it) => {
+    const [iconPrefix, iconName, ] = it.split('|')
+    const iconDef = iconPacks[iconPrefix] && iconPacks[iconPrefix]['fa' + iconName]
+    return iconDef ? accum.concat({ ...iconDef, prefix: iconPrefix }) : accum
+  }, [])
+  const iconData = `<script>\nwindow.FontAwesomeIconDefs = ${JSON.stringify(iconDefs)}\n</script>`
+  file.contents = Buffer.from(
+    contentsString.replace(new RegExp('<script async src="[^"]*_/js/vendor/fontawesome.js"></script>'), function (m) {
+      return [iconData, m].join('\n')
+    })
+  )
+  return file
 }
 
 function relativize (url) {
