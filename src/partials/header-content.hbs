@@ -16,28 +16,28 @@
     <div class="navbar-collapse collapse" id="navbar2">
       <ul class="navbar-nav w-100 justify-content-start">
         <li class="nav-item active">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:server.adoc')}}">
             Server
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize (resolvePageURL 'sync-gateway::cbmintro.adoc')}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:mobile.adoc')}}">
             Mobile
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize (resolvePageURL 'server:cloud:couchbase-cloud-deployment.adoc')}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:cloud.adoc')}}">
             Cloud
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:integrations.adoc')}}">
             Integration
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize (resolvePageURL 'server:getting-started:start-here.adoc')}}">
-            Get Started
+          <a class="nav-link" href="{{relativize site.components.tutorials.url}}">
+            Tutorials
             <span class="arrow">
               ->
             </span>
