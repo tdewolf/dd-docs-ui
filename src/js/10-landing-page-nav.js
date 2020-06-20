@@ -1,5 +1,4 @@
-;
-(function ($) {
+;(function ($) {
   'use strict'
   // for slide toggle
   $('.nav-link').click(function () {
@@ -10,7 +9,7 @@
   var $allData = $('.data-filter-column')
   for (var i = 0; i < $allData.length; i++) {
     console.log(i, 445, $allData[i])
-    if ((i % 2) === 1) {
+    if (i % 2 === 1) {
       $allData[i].classList.add('even')
     } else {
       $allData[i].classList.add('odd')
@@ -56,7 +55,7 @@
     // add class for data-filter-column
     for (var i = 0; i < $filteredResultsData.length; i++) {
       console.log(i, 445, $filteredResultsData[i])
-      if ((i % 2) === 1) {
+      if (i % 2 === 1) {
         $filteredResultsData[i].classList.add('even')
       } else {
         $filteredResultsData[i].classList.add('odd')
@@ -74,7 +73,7 @@
         console.log(i, 445, $allData[i])
         // $allData[i].classList.remove('even')
         // $allData[i].classList.remove('odd')
-        if ((i % 2) === 1) {
+        if (i % 2 === 1) {
           $allData[i].classList.add('even')
         } else {
           $allData[i].classList.add('odd')

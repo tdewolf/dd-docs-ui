@@ -1,5 +1,4 @@
-;
-(function ($) {
+;(function ($) {
   'use strict'
   var dialogBox = document.getElementById('dialogBox')
   var helpYesBtn = document.getElementById('yesBtn')
