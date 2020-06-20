@@ -374,6 +374,44 @@ html.is-clipped--nav {
   margin: auto;
 } */
 
+.nav-menu ul.version-related-list.nav-list {
+  margin: -1.5rem 0 1.5rem;
+}
+
+.nav-menu ul.version-related-list.nav-list ul {
+  padding: 5px 0 0;
+  list-style: none;
+}
+
+.nav-menu ul.version-related-list.nav-list li a {
+  color: var(--color-brand-gray1);
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.nav-menu ul.version-related-list.nav-list li a:focus,
+.nav-menu ul.version-related-list.nav-list li a:hover {
+  color: var(--color-brand-blue-secondary);
+}
+
+/* .nav-menu ul.version-related-list.nav-list .nav-line {
+  padding-left: 1.65rem;
+} */
+.nav-menu ul.version-related-list.nav-list .nav-line .in-toggle {
+  display: block;
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-right: 10px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--color-brand-gray5);
+}
+
+.nav-menu ul.version-related-list.nav-list .nav-line[data-depth='1'] {
+  padding-left: 1.85rem;
+}
+
 @media screen and (min-width: 769px) {
   .nav-control {
     display: none;

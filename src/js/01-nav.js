@@ -82,8 +82,10 @@
     navMenuControl.addEventListener('click', function () {
       //   navWrap.style.display = 'none'
       for (var i = 0; i < navItems.length; i++) {
+        console.log(navItems[i], 85)
         navItems[i].classList.remove('is-active')
         navItems[i].classList.remove('is-inactive')
+        navItems[i].classList.remove('open')
       }
       this.style.display = 'none'
     })
