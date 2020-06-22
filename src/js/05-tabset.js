@@ -4,12 +4,15 @@ find('.doc .tabset').forEach(function (tabset) {
   var active
   var queueData = []
   var checkActiveClass
+  var tabOnLargeScreen = 3 // Display tab on desktop
+  var tabOnSmallScreen = 1 // display tab on mobile view bewlow 768px screen
+  var smallBreak = 768
   var tabs = tabset.querySelector('.tabs')
   if (tabs) {
     var first
     find('li', tabs).forEach(function (tab, idx) {
       var id = (tab.querySelector('a[id]') || tab).id
-    //  console.log(tab)
+      //  console.log(tab)
       checkActiveClass = setTimeout(function () {
         var activeTabList = tab.classList.contains('is-active')
         if (activeTabList) {
@@ -17,7 +20,7 @@ find('.doc .tabset').forEach(function (tabset) {
             .querySelector('.tabs')
             .insertAdjacentHTML(
               'beforeend',
-              // '<div class="other-tab-box"><a href="#" class="dropddown-btn dropdown-btn-down">More... <i class="fas fa-chevron-circle-down"></i></a> <ul class="other-tablist" id="otherTabList"></ul></div>'
+              /*eslint max-len: ["error", { "code": 180 }]*/
               '<div class="other-tab-box"><a href="#" class="dropddown-btn dropdown-btn-down">More... </a> <ul class="other-tablist" id="otherTabList"></ul></div>'
             )
           var dropdownBtn = document.querySelector('.dropdown-btn-down')
@@ -34,9 +37,16 @@ find('.doc .tabset').forEach(function (tabset) {
           })
         }
       }, 100)
-
-      if(idx > 3) {
-        queueData.push(tab)
+      if (window.innerWidth < smallBreak) {
+        console.log('mobile view')
+        if (idx > (tabOnSmallScreen - 1)) {
+          queueData.push(tab)
+        }
+      } else {
+        if (idx > (tabOnLargeScreen - 1)) {
+          console.log('desktop view')
+          queueData.push(tab)
+        }
       }
 
       if (!id) return
@@ -45,7 +55,6 @@ find('.doc .tabset').forEach(function (tabset) {
       if (!active && hash === '#' + id && (active = true)) {
         tab.classList.add('is-active')
         if (pane) pane.classList.add('is-active')
-
       } else if (!idx) {
         tab.classList.remove('is-active')
         if (pane) pane.classList.remove('is-active')
@@ -56,18 +65,15 @@ find('.doc .tabset').forEach(function (tabset) {
       first.tab.classList.add('is-active')
       if (first.pane) first.pane.classList.add('is-active')
     }
-
   }
 
   setTimeout(function () {
-    var appendMoreTabList =  document.getElementById('otherTabList')
+    var appendMoreTabList = document.getElementById('otherTabList')
 
     queueData.forEach(function (tablist) {
-        appendMoreTabList.appendChild(tablist)
+      appendMoreTabList.appendChild(tablist)
     })
-
   }, 100)
-
   tabset.classList.remove('is-loading')
   clearTimeout(checkActiveClass, 20000)
 })
@@ -77,21 +83,18 @@ function activateTab (e) {
   var tab = this.tab
   var pane = this.pane
   var dropdownMenu = document.querySelector('.tabs ul')
- // var dropdownBtnIcon = document.querySelector('.dropdown-btn-down .fas')
-
+  // var dropdownBtnIcon = document.querySelector('.dropdown-btn-down .fas')
   var nodeTab = document.querySelector('.tabs > ul')
   var nodeDropdownTabNode = document.querySelector('.other-tablist')
-
-  if( tab.parentNode.classList[0] ==  'other-tablist') {
-      nodeDropdownTabNode.appendChild(nodeTab.lastElementChild)
-       nodeTab.appendChild(tab)
+  if (tab.parentNode.classList[0] === 'other-tablist') {
+    nodeDropdownTabNode.appendChild(nodeTab.lastElementChild)
+    nodeTab.appendChild(tab)
   }
-
   var activeTabList = tab.classList.contains('is-active')
   // console.log(activeTabList, 127)
   if (activeTabList) {
-      dropdownMenu.classList.remove('show')
-    }
+    dropdownMenu.classList.remove('show')
+  }
 
   find('.tabs li, .tab-pane', this.tabset).forEach(function (it) {
     it === tab || it === pane ? it.classList.add('is-active') : it.classList.remove('is-active')
@@ -105,7 +108,6 @@ setTimeout(function () {
   document.querySelector(' .dropddown-btn').addEventListener('click', function (e) {
     e.preventDefault()
   })
-
 }, 1000)
 
 function getPane (id, tabset) {
@@ -113,4 +115,3 @@ function getPane (id, tabset) {
     return it.getAttribute('aria-labelledby') === id
   })
 }
-
