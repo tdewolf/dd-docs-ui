@@ -17,6 +17,10 @@ const iconPacks = {
   fab: require('@fortawesome/free-brands-svg-icons'),
 }
 iconPacks.fa = iconPacks.fas
+const iconShims = require('@fortawesome/fontawesome-free/js/v4-shims').reduce((accum, it) => {
+  accum[it[0]] = [it[1] || 'fas', it[2] || it[0]]
+  return accum
+}, {})
 const { obj: map } = require('through2')
 const merge = require('merge-stream')
 const ospath = require('path')
@@ -200,21 +204,27 @@ function findNavPath (currentUrl, node = [], current_path = [], root = true) {
 function injectIconDefs (file) {
   const contents = file.contents
   if (!contents.includes('<i class="fa')) return file
-  const contentsString = contents.toString()
-  const iconNames = contentsString.match(new RegExp('<i class="fa[brs]? fa-[^" ]+', 'g')).map((it) => {
-    let [iconPrefix, iconName, ] = it.substr(10).split(' fa-')
-    iconName = iconName.replace(/(?:^|-)(.)/g, function (_, l) { return l.toUpperCase() })
-    return iconPrefix + '|' + iconName
+  const stringContents = contents.toString()
+  const iconNames = stringContents.match(new RegExp('<i class="fa[brs]? fa-[^" ]+', 'g')).map((it) => {
+    return it.substr(10).replace(' fa-', ' ')
   })
   if (!iconNames.length) return file
   const iconDefs = [...new Set(iconNames)].reduce((accum, it) => {
-    const [iconPrefix, iconName, ] = it.split('|')
-    const iconDef = iconPacks[iconPrefix] && iconPacks[iconPrefix]['fa' + iconName]
-    return iconDef ? accum.concat({ ...iconDef, prefix: iconPrefix }) : accum
+    const [iconPrefix, iconName] = it.split(' ').slice(0, 2)
+    let iconDef = (iconPacks[iconPrefix] || {})['fa' + camelCase(iconName)]
+    if (iconDef) {
+      return accum.concat({ ...iconDef, prefix: iconPrefix })
+    } else if (iconPrefix === 'fa') {
+      const [realIconPrefix, realIconName] = iconShims[iconName] || []
+      if (realIconName && (iconDef = (iconPacks[realIconPrefix] || {})['fa' + camelCase(realIconName)])) {
+        return accum.concat({ ...iconDef, prefix: realIconPrefix })
+      }
+    }
+    return accum
   }, [])
   const iconData = `<script>\nwindow.FontAwesomeIconDefs = ${JSON.stringify(iconDefs)}\n</script>`
   file.contents = Buffer.from(
-    contentsString.replace(new RegExp('<script async src="[^"]*_/js/vendor/fontawesome.js"></script>'), function (m) {
+    stringContents.replace(new RegExp('<script async src="[^"]*_/js/vendor/fontawesome.js"></script>'), function (m) {
       return [iconData, m].join('\n')
     })
   )
@@ -248,4 +258,8 @@ function toPromise (stream) {
       .on('data', (chunk) => chunk.constructor === Object && Object.assign(data, chunk))
       .on('finish', () => resolve(data))
   )
+}
+
+function camelCase (str) {
+  return str.replace(/(?:^|-)(.)/g, function (_, l) { return l.toUpperCase() })
 }
