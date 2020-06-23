@@ -2,6 +2,8 @@
 {{#with page.attributes.content-scripts}}
 {{{this}}}
 {{/with}}
+<script async src="{{#unless preview}}{{{uiRootPath}}}/js/vendor/{{/unless}}fontawesome-icon-defs.js"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/fontawesome.js"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 {{#if env.ALGOLIA_API_KEY}}
 <script async id="search-script" src="{{{uiRootPath}}}/js/vendor/docsearch.js"
@@ -15,6 +17,4 @@
 {{!-- <script async id="feedback-script" src="{{{uiRootPath}}}/js/vendor/feedback.js?v=1" data-collector-id="de2e9313"></script> --}}
 <script async id="feedback-script" src="{{{uiRootPath}}}/js/vendor/feedback.js?v=1" data-collector-id="709818cb"></script>
 {{/if}}
-
 <script async id="feedback-script" src="{{{uiRootPath}}}/js/vendor/feedback.js?v=1" data-collector-id="709818cb"></script>
-<script async src="{{{uiRootPath}}}/js/vendor/fontawesome.js"></script>
