@@ -3,7 +3,7 @@ var queueData = []
 var checkActiveClass
 var tabOnLargeScreen = 3 // Display tab on desktop
 var tabOnSmallScreen = 1 // display tab on mobile view bewlow 768px screen
-var smallBreak = 768     // Your small screen breakpoint in pixels
+var smallBreak = 768 // Your small screen breakpoint in pixels
 find('.doc .tabset').forEach(function (tabset) {
   var active
   var tabs = tabset.querySelector('.tabs')
