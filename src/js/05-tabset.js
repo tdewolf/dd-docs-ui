@@ -1,18 +1,16 @@
 var hash = window.location.hash
-// var smallBreak = 768 // Your small screen breakpoint in pixels
+var queueData = []
+var checkActiveClass
+var tabOnLargeScreen = 3 // Display tab on desktop
+var tabOnSmallScreen = 1 // display tab on mobile view bewlow 768px screen
+var smallBreak = 768     // Your small screen breakpoint in pixels
 find('.doc .tabset').forEach(function (tabset) {
   var active
-  var queueData = []
-  var checkActiveClass
-  var tabOnLargeScreen = 3 // Display tab on desktop
-  var tabOnSmallScreen = 1 // display tab on mobile view bewlow 768px screen
-  var smallBreak = 768
   var tabs = tabset.querySelector('.tabs')
   if (tabs) {
     var first
     find('li', tabs).forEach(function (tab, idx) {
       var id = (tab.querySelector('a[id]') || tab).id
-      //  console.log(tab)
       checkActiveClass = setTimeout(function () {
         var activeTabList = tab.classList.contains('is-active')
         if (activeTabList) {
@@ -38,13 +36,11 @@ find('.doc .tabset').forEach(function (tabset) {
         }
       }, 100)
       if (window.innerWidth < smallBreak) {
-        console.log('mobile view')
         if (idx > (tabOnSmallScreen - 1)) {
           queueData.push(tab)
         }
       } else {
         if (idx > (tabOnLargeScreen - 1)) {
-          console.log('desktop view')
           queueData.push(tab)
         }
       }
@@ -82,18 +78,17 @@ function activateTab (e) {
   e.preventDefault()
   var tab = this.tab
   var pane = this.pane
-  var dropdownMenu = document.querySelector('.tabs ul')
-  // var dropdownBtnIcon = document.querySelector('.dropdown-btn-down .fas')
+  var tabMenu= document.querySelector('.tabs ul')
   var nodeTab = document.querySelector('.tabs > ul')
   var nodeDropdownTabNode = document.querySelector('.other-tablist')
   if (tab.parentNode.classList[0] === 'other-tablist') {
     nodeDropdownTabNode.appendChild(nodeTab.lastElementChild)
     nodeTab.appendChild(tab)
+    nodeDropdownTabNode.classList.remove('show')
   }
   var activeTabList = tab.classList.contains('is-active')
-  // console.log(activeTabList, 127)
   if (activeTabList) {
-    dropdownMenu.classList.remove('show')
+    tabMenu.classList.remove('show')
   }
 
   find('.tabs li, .tab-pane', this.tabset).forEach(function (it) {
