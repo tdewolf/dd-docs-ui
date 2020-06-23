@@ -2,3 +2,123 @@
 :page-layout: landing-page-core-concept
 :page-role: tiles
 :!sectids:
+
+= Core Concept
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+Couchbase Server is an open source, distributed, NoSQL document-oriented engagement database. It exposes a fast key-value store with managed cache for sub-millisecond data operations, purpose-built indexers for fast queries and a powerful query engine for executing SQL-like queries
+
+[.column]
+====== {empty}
+[.media-left]
+image::database-icon.svg[]
+
+++++
+</div>
+++++
+
+
+
+== Install and Deploy
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Before You Begin
+* xref:#[System Requirements]
+* xref:#[ Production Checklist]
+
+[.column]
+.Installation
+[.content]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+
+[.column]
+.Deployment
+* xref:#[ Sizing a Cluster ]
+* xref:#[ Create a Cluster ]
+
+
+++++
+</div>
+++++
+
+== Learn
+++++
+<div class="card-row three-column-row">
+++++
+
+[.column]
+.Data
+* xref:#[Introduction to Couchbase Server]
+* xref:#[Buckets and Collections]
+* xref:#[ Data Model ]
+
+
+[.column]
+.Buckets and Storage
+[.content]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+
+
+[.column]
+.Security
+[.content]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+
+++++
+</div>
+++++
+
+== Lorem ipsum
+++++
+<div class="card-row two-column-row">
+++++
+
+[.column]
+====== {empty}
+.Lorem ipsum
+
+[.content]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+[]
+xref:#[Lorem ipsum]
+
+[.column]
+====== {empty}
+
+.Lorem ipsum
+[.content]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+[]
+xref:#[Lorem ipsum]
+
+[.column]
+====== {empty}
+.Lorem ipsum
+
+[.content]
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+
+[]
+xref:#[Lorem ipsum]
+
+[.column]
+====== {empty}
+.Lorem ipsum
+
+video::n1e6kV_kPKo[youtube]
+
+Lorem ipsum dolor sit amet, consetetur
+xref:#[sadipscing elitr]
+
+
+++++
+</div>
+++++

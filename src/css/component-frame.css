@@ -1,7 +1,7 @@
 .component-frame {
   /* rgba(87, 160, 255, 1) */
   background: var(--color-brand-gray6);
-  padding: 12px 30px 12px 15px;
+  padding: 12px 15px 12px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,35 +46,55 @@
 .frame-dropdown {
   position: absolute;
   display: none;
-  background: var(--color-brand-white);
-  padding: 5px 15px;
-  left: -15px;
-  top: 60px;
-  border-radius: 4px;
+  left: 0;
+  top: 45px;
   z-index: 1;
-  box-shadow: 0 3px 10px -4px var(--color-brand-gray8);
+  padding: 17px 0 0;
 }
 
-.frame-dropdown .frame-dropdown-list {
+.frame-dropdown .frame-dropdown-list,
+.frame-dropdown .related {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-ul.frame-dropdown-list li {
-  border-bottom: 1px solid var(--color-brand-gray8);
-  padding-bottom: 5px;
-  margin-bottom: 5px;
+.frame-dropdown ul {
+  background: var(--color-brand-white);
+  min-width: 125px;
+  border-radius: 0;
+  /* box-shadow: 0 3px 10px -4px var(--color-brand-gray8); */
+  margin: 0;
 }
 
-ul.frame-dropdown-list li:last-child {
+.frame-dropdown ul li a,
+.frame-dropdown .related li a {
+  padding: 8px 0.625rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.frame-dropdown .related {
+  border-left: 3px solid var(--color-brand-gray8);
+}
+
+.frame-dropdown ul.frame-dropdown-list li,
+.frame-dropdown ul.related li {
+  border-bottom: 1px solid var(--color-brand-gray8);
+  /* padding-bottom: 5px; */
+  /* margin-bottom: 5px; */
+}
+
+ul.frame-dropdown-list li:last-child,
+.frame-dropdown ul.related li:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .frame-link,
-.frame-item {
+.frame-item,
+.navbar-item {
   font-size: var(--font-small);
   color: var(--color-brand-gray4);
   text-decoration: none;
@@ -85,6 +105,17 @@ ul.frame-dropdown-list li:last-child {
 .frame-link:active,
 .frame-item:active,
 .frame-link:visited,
-.frame-item:visited {
+.frame-item:visited,
+.navbar-item:hover {
   text-decoration: none;
+}
+
+.version-control-box {
+  position: relative;
+  z-index: 9;
+}
+
+.frame-dropdown .column {
+  display: flex;
+  box-shadow: 0 3px 10px 0 #e5e5e5;
 }

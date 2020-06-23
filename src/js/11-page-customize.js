@@ -1,4 +1,4 @@
-; (function ($) {
+;(function ($) {
   'use strict'
   // for label edition/statuses
   var $labels = $('.edition').find('a')

@@ -21,7 +21,7 @@
   height: 1px;
   background-color: var(--color-footer-text);
   transform: scale3d(0, 0.9999, 0.9999);
-  transition: transform 0.3s;
+  transition: transform 0.1s;
 }
 
 .footer a.icon::after,
@@ -32,6 +32,7 @@
 .footer a:focus::after,
 .footer a:hover::after {
   transform: scale3d(1, 0.9999, 0.9999);
+  transition-duration: 0.05s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -79,7 +80,7 @@
   margin: 1rem 0;
   display: inline-block;
   /* FIXME this should be max-height 52px */
-  padding: 0.75rem 2.5rem;
+  padding: 1rem 3.5rem;
   border: 2px solid var(--color-footer-text);
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
@@ -190,10 +191,6 @@
 }
 
 @media screen and (min-width: 769px) {
-  .footer-links a.white-btn {
-    padding: 1rem 3.5rem;
-  }
-
   .footer-links .col {
     flex-basis: 22%;
   }
@@ -207,7 +204,7 @@
   }
 
   .footer-links li {
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .footer-terms span {
@@ -223,7 +220,7 @@
 
 @media screen and (min-width: 1024px) {
   footer.footer {
-    padding: 3.75rem 0 3.125rem;
+    padding: 1rem 0 1rem;
   }
 
   .footer-links {

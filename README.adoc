@@ -1,6 +1,6 @@
 = Couchbase Documentation UI
 // Variables:
-:current-release: cloud-3
+:current-release: cloud-11
 // Settings:
 :!example-caption:
 :experimental:
@@ -198,7 +198,7 @@ If you need to package the UI so you can use it to generate the documentation si
 If any errors are reported by lint, you'll need to fix them.
 
 When the command completes successfully, the UI bundle will be available at [.path]_build/ui-bundle.zip_.
-You can point Antora at this bundle using the `--ui-bundle-url` command-line option (e.g., `--ui-bundle-url=../docs-ui/build/ui-bundle.zip`).
+You can point Antora at this bundle using the `--ui-bundle-url` command-line option (e.g., `--ui-bundle-url=../docs-ui-sandbox/build/ui-bundle.zip`).
 
 == Control the Visual Appearance of Pages
 
@@ -360,6 +360,61 @@ You can test the feedback widget directly from the preview site by setting the `
 
 The configuration for the widget is currently hardcoded into the partial template.
 
+== View Latest and Canonical URL
+
+This section documents the logic used to compute the URL for the View Latest button and the canonical URL.
+
+=== View Latest
+
+If the version of the current page does not match the latest version of the component (i.e., product), a banner is displayed to the visitor.
+If the version is a prerelease, the banner states that you're viewing a prerelease version.
+If the version is an older stable release, the banner states that a newer version is available.
+On the banner offers a button named "View Latest" that directs the visitor to the latest version.
+
+The "View Latest" button tries to preserve the current page when switching versions.
+If the page is no longer available, then the button directs the user to the start page for the component.
+
+The URL for the "View Latest" button is computed by the latest-page-url helper.
+Here's the logic that the helper uses:
+
+* If the current page is found in the latest version, the latest page URL resolves to the URL of that page.
+For example, the latest page URL for https://docs.couchbase.com/server/6.0/introduction/intro.html resolves to https://docs.couchbase.com/server/6.5/introduction/intro.html (assuming 6.5 is the latest version)
+ ** If the SUPPORTS_CURRENT_URL=true environment variable is set, the version segment in the URL is replaced with the word "current".
+For example, the latest page URL for https://docs.couchbase.com/server/6.0/introduction/intro.html resolves to https://docs.couchbase.com/server/current/introduction/intro.html
+* If the current page is not found in the latest version, but the page is claimed by an alias, the latest page URL resolves to the URL of the page to which the alias points.
+For example, the latest page URL for https://docs.couchbase.com/server/5.5/admin/ui-intro.html resolves to https://docs.couchbase.com/server/6.5/manage/management-overview.html (assuming 6.5 is the latest version)
+ ** If the SUPPORTS_CURRENT_URL=true environment variable is set, the version segment in the URL is replaced with the word "current".
+For example, the latest page URL for https://docs.couchbase.com/server/5.5/admin/ui-intro.html resolves to https://docs.couchbase.com/server/current/manage/management-overview.html
+* If neither the current page or an alias is found in the latest version, the latest page URL resolves to the component start page.
+ ** If the SUPPORTS_CURRENT_URL=true environment variable is set, the version segment in the URL is replaced with the word "current".
+
+If the current page is in the archive site and the latest version is in the production site, then the latest page URL will point to the production site.
+In this case, the version segment will only be replaced with "current" if the PRIMARY_SITE_SUPPORTS_CURRENT_URL=true environment variable is set.
+
+=== Canonical URL
+
+The canonical URL differs slightly from the URL for the "View Latest" button in that if the page cannot be found in the latest version, it instead resolves to the newest version of the page.
+The canonical URL can resolve to the current URL (if the current URL is the canonical URL).
+
+The canonical URL is computed by the canonical-url helper.
+Here's the logic that the helper uses:
+
+* If the site.url is not set to an absolute path, no value is returned.
+* If the current page is found in the latest version, the canonical URL resolves to the URL of that page.
+For example, the canonical URL for https://docs.couchbase.com/server/6.0/introduction/intro.html resolves to https://docs.couchbase.com/server/6.5/introduction/intro.html (assuming 6.5 is the latest version)
+ ** If the SUPPORTS_CURRENT_URL=true environment variable is set, the version segment in the URL is replaced with the word "current".
+For example, the canonical URL for https://docs.couchbase.com/server/6.0/introduction/intro.html resolves to https://docs.couchbase.com/server/current/introduction/intro.html
+* If the current page is not found in the latest version, but the page is claimed by an alias, the canonical URL resolves to the URL of the page to which the alias points.
+For example, the canonical URL for https://docs.couchbase.com/server/5.5/admin/ui-intro.html resolves to https://docs.couchbase.com/server/6.5/manage/management-overview.html (assuming 6.5 is the latest version)
+ ** If the SUPPORTS_CURRENT_URL=true environment variable is set, the version segment in the URL is replaced with the word "current".
+For example, the canonical URL for https://docs.couchbase.com/server/5.5/admin/ui-intro.html resolves to https://docs.couchbase.com/server/current/manage/management-overview.html
+* If neither the current page or an alias is found in the latest version, the current URL resolves to the newest version of the page (which could be the current page).
+For example, the canonical URL for https://docs.couchbase.com/server/4.0/architecture/cluster-ram-quotas.html resolves to https://docs.couchbase.com/server/4.1/architecture/cluster-ram-quotas.html
+ ** If the SUPPORTS_CURRENT_URL=true environment variable is set, it has no affect on this case.
+
+If the current page is in the archive site and the latest version is in the production site, then the canonical URL will point to the production site.
+In this case, the version segment will only be replaced with "current" if the PRIMARY_SITE_SUPPORTS_CURRENT_URL=true environment variable is set and the newest version of the page is the latest version of the component.
+
 == Release the UI Bundle
 
 Once you're satisfied with the changes you've made to the UI and would like to make those changes available to Antora, you'll need to publish the UI as a bundle by making a release.
@@ -382,12 +437,12 @@ Releasing the UI bundle consists of the following tasks:
 Fortunately, you don't have to do any of these steps yourself.
 These steps are fully automated by the `gulp release` task.
 In fact, you don't even have to run the `gulp release` task manually.
-When a commit is pushed to the master branch of the repository, it triggers the CI job named *release-docs-ui-bundle*, which executes the `gulp release` task using pre-configured credentials.
+When a commit is pushed to the master branch of the repository, it triggers the CI job named *docs-ui-sandbox*, which executes the `gulp release` task using pre-configured credentials.
 
 IMPORTANT: A release will only be made if the project validates.
 To validate the project, run `gulp pack` before pushing your changes to GitHub.
 
-The release-docs-ui-bundle CI job is already configured, so there's nothing you need to do to make automated release work.
+The docs-ui-sandbox CI job is already configured, so there's nothing you need to do to make automated release work.
 All you have to do is commit your changes and push those commits to the master branch of the git repository.
 A few seconds later, a new bundle will be available for use with Antora.
 Run `git pull` to retrieve the updated README that includes the new URL.
@@ -420,7 +475,7 @@ In the CI job configuration, covered in the next section, you'll learn how this 
 === CI Job Configuration
 
 Jenkins is used to execute the CI job that publishes the UI bundle.
-The job is named *release-docs-ui-bundle* and can be found under the *Antora* folder in the Jenkins server managed by the Couchbase docs team.
+The job is named *docs-ui-sandbox* and can be found under the *Antora* folder in the Jenkins server managed by the Couchbase docs team.
 This section describes in detail how that job has been configured in case it must be recreated.
 
 The release is performed by the cb-docs-robot GitHub account, which interacts with GitHub entirely using the GitHub API.
@@ -429,10 +484,10 @@ The release script authenticates with the GitHub API as the cb-docs-robot user u
 Create a new CI job from the Pipeline project template.
 On the configuration screen, select or populate the following settings:
 
-.Configuration details for the Antora/release-docs-ui-bundle CI job
+.Configuration details for the Antora/docs-ui-sandbox CI job
 ====
 General::
-* _Project name:_ `release-docs-ui-bundle`
+* _Project name:_ `docs-ui-sandbox`
 * _Description:_ Packs, tags, and releases the UI bundle whenever a non-ignored commit is pushed to the master branch of this repository.
 * [x] GitHub project
  ** _Project url:_ `pass:a[{url-project}]`

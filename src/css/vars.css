@@ -66,9 +66,11 @@
   /* --height-navbar: 4rem; */
   --height-spacer: 1rem;
   --height-navbar: 6rem;
+  --height-version-control: 4.5rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
-  --height-nav: calc(var(--height-min-body) + var(--height-spacer));
+  --height-nav: calc(var(--height-min-body) + var(--height-spacer) + var(--height-version-control));
+  --nav-menu-top-space: calc(var(--height-to-body) + var(--height-version-control));
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
   --width-container: 90rem;
@@ -113,13 +115,13 @@
   --line-height-base: 1.375rem;
 
   /* Spacing variables */
-  --base-space: 1rem;
-  --base-small-space: 0.75rem;
-  --base-medium-space: 1.5rem;
-  --base-large-space: 2rem;
-  --column-space: 2.5rem;
-  --admonition-icon-space: 1rem;
-  --admonition-content-space: 1rem;
+  --base-space: 1rem; /* ~ 16px */
+  --base-small-space: 0.75rem; /* ~ 12px */
+  --base-medium-space: 1.5rem; /* ~ 24px */
+  --base-large-space: 2rem; /* ~ 32px */
+  --column-space: 2.5rem; /* ~ 40px */
+  --admonition-icon-space: 1rem; /* ~ 16px */
+  --admonition-content-space: 1rem; /* ~ 16px */
 
   /* Heading fonts for responsive */
   --heading-h1-sm: 2.25rem; /* ~36px */
