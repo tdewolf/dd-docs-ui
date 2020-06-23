@@ -1,14 +1,19 @@
-.nav-menu {
+.left-sidebar-menu {
   background-color: var(--color-brand-gray7);
   position: fixed;
   width: inherit;
-  overflow-y: auto;
   font-size: 1rem;
   line-height: 24px;
 }
 
+.nav-menu {
+  overflow-y: auto;
+  background-color: var(--color-brand-gray7);
+  height: var(--height-nav);
+}
+
 @media screen and (max-width: 768px) {
-  .nav-menu {
+  .left-sidebar-menu {
     top: 0;
     bottom: 0;
     left: 0;
@@ -18,10 +23,11 @@
 }
 
 @media screen and (min-width: 769px) {
-  .nav-menu {
+  .left-sidebar-menu {
     top: var(--height-to-body);
     margin-bottom: 1.5rem;
-    height: var(--height-nav);
+    height: 100%;
+    /* height: var(--height-nav); */
     z-index: var(--z-index-nav);
     border-left: 2px solid #eee;
     border-right: 2px solid #eee;
@@ -374,7 +380,7 @@ html.is-clipped--nav {
   margin: auto;
 } */
 
-.nav-menu ul.version-related-list.nav-list {
+/* .nav-menu ul.version-related-list.nav-list {
   margin: -1.5rem 0 1.5rem;
 }
 
@@ -394,9 +400,6 @@ html.is-clipped--nav {
   color: var(--color-brand-blue-secondary);
 }
 
-/* .nav-menu ul.version-related-list.nav-list .nav-line {
-  padding-left: 1.65rem;
-} */
 .nav-menu ul.version-related-list.nav-list .nav-line .in-toggle {
   display: block;
   position: relative;
@@ -411,6 +414,8 @@ html.is-clipped--nav {
 .nav-menu ul.version-related-list.nav-list .nav-line[data-depth='1'] {
   padding-left: 1.85rem;
 }
+
+ */
 
 @media screen and (min-width: 769px) {
   .nav-control {

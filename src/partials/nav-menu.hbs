@@ -1,29 +1,8 @@
-<div class="nav-menu">
-    {{> nav-version-control}}
-    {{> nav-tree navigation=page.navigation level=0 crumbLevel=0 crumbAtLevel=(lookup page.breadcrumbs 0)}}
-    {{!-- append version info for SDK --}}
-    {{#if (ends-with page.component.name '-sdk')}}
-      <ul class="version-related-list nav-list">
-          <li class="nav-item open is-active" data-depth="0">
-
-             <span class="nav-line " data-depth="0">
-                <span class="in-toggle" data-depth="0"></span>
-                <span class="nav-text ">SDK</span>
-             </span>
-
-              <ul class="related nav-list">
-                {{#each (related-sdk-pages 'c,dotnet,go,java,nodejs,php,python,scala')}}
-                    <li data-depth="1">
-                           <span class="nav-line " data-depth="1">
-                                {{!-- <span class="in-toggle" data-depth="1"></span> --}}
-                                 <a class="navbar-item nav-link" data-depth="1" href="{{relativize ./url}}">{{{./title}}}</a>
-                            </span>
-                       </li>
-                {{/each}}
-            </ul>
-          </li>
-
-      </ul>
-
-    {{/if}}
+<div class="left-sidebar-menu">
+  <div class="version-control-box">
+      {{> nav-version-control}}
+  </div>
+  <div class="nav-menu">
+      {{> nav-tree navigation=page.navigation level=0 crumbLevel=0 crumbAtLevel=(lookup page.breadcrumbs 0)}}
+  </div>
 </div>
