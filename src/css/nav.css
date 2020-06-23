@@ -4,6 +4,16 @@
   width: inherit;
   font-size: 1rem;
   line-height: 24px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.nav-menu::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
 }
 
 .nav-menu {
@@ -32,14 +42,6 @@
     border-left: 2px solid #eee;
     border-right: 2px solid #eee;
   }
-}
-
-.nav-menu::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-.nav-menu::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
 }
 
 .nav-menu .nav-link,

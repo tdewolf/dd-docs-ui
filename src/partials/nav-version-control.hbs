@@ -4,12 +4,12 @@
             {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
                 <div class="component-frame has-dropdown">
                     <div class="frame-icon">
-                        <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                        <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
                     </div>
                     <div class="frame-body">
                         <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
                         <div class="frame-link-dropdowns">
-                          <a class="frame-link component" href="{{relativize page.componentVersion.url}}"> <span class="version">Version {{page.componentVersion.displayVersion}}</span></a>
+                          <a class="frame-link component" href="{{relativize page.componentVersion.url}}"><span class="version">{{page.componentVersion.displayVersion}}</span></a>
                           <div class="frame-dropdown versions">
                               <div class="column">
                                     <ul class="frame-dropdown-list">
@@ -36,7 +36,7 @@
             {{else}}
               <div class="component-frame">
                 <div class="frame-icon">
-                  <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                  <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
                 </div>
                 <div class="frame-body">
                   <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>

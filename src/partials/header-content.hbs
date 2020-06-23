@@ -1,7 +1,7 @@
 <header class="header fixed-top">
   <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
-    <a class="navbar-brand" href="https://www.couchbase.com">
-      <img src="{{uiRootPath}}/img/logo.png" alt="Couchbase" />
+    <a class="navbar-brand" href="{{#with (and site.url site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{siteRootPath}}{{/with}}">
+      <img src="{{{uiRootPath}}}/img/logo.png" alt="Couchbase" />
     </a>
     {{! <ul class="nav navbar-nav mr-auto"></ul> }}
     <button class="navbar-burger" data-target="topbar-menu">
@@ -16,28 +16,28 @@
     <div class="navbar-collapse collapse" id="navbar2">
       <ul class="navbar-nav w-100 justify-content-start">
         <li class="nav-item active">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:server.adoc')}}">
             Server
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:mobile.adoc')}}">
             Mobile
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:cloud.adoc')}}">
             Cloud
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
+          <a class="nav-link" href="{{relativize (resolvePageURL 'home:integrations.adoc')}}">
             Integration
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
-            Get Started
+          <a class="nav-link" href="{{relativize site.components.tutorials.url}}">
+            Tutorials
             <span class="arrow">
               ->
             </span>
