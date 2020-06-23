@@ -18,6 +18,8 @@
     "@fortawesome/fontawesome-free": "~5.13",
     "@fortawesome/fontawesome-svg-core": "~1.2",
     "@fortawesome/free-brands-svg-icons": "~5.13",
+    "@fortawesome/free-solid-svg-icons": "~5.13",
+    "@fortawesome/free-regular-svg-icons": "~5.13",
     "asciidoctor.js": "1.5.9",
     "autoprefixer": "~9.8",
     "browser-pack-flat": "~3.4",

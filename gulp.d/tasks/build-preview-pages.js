@@ -7,12 +7,16 @@ const iconPacks = {
   fas: (() => {
     try {
       return require('@fortawesome/pro-solid-svg-icons')
-    } catch (e) {}
+    } catch (e) {
+      return require('@fortawesome/free-solid-svg-icons')
+    }
   })(),
   far: (() => {
     try {
       return require('@fortawesome/pro-regular-svg-icons')
-    } catch (e) {}
+    } catch (e) {
+      return require('@fortawesome/free-regular-svg-icons')
+    }
   })(),
   fab: require('@fortawesome/free-brands-svg-icons'),
 }
