@@ -11,7 +11,7 @@
 
 [abstract]
 From the *Data Bucket* menu, information and statistics about buckets and nodes is displayed for the entire Couchbase Server cluster.
-The information is aggregated from all the server nodes within the configured cluster for the selected bucket.
+The information is aggregated from all the icon:server[] nodes within the configured cluster for the selected bucket.
 
 From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] link for each bucket.
 
