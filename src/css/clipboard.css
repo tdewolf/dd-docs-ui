@@ -1,9 +1,23 @@
+.view-source-button {
+  position: absolute;
+  right: 1rem;
+  top: 12px;
+  display: none;
+  color: var(--color-brand-gray4);
+  font-family: "Source Sans Pro", sans-serif;
+  z-index: 1;
+}
+
+.doc .listingblock:hover .view-source-button {
+  display: block;
+}
+
 .copy-code-button {
   position: absolute;
   background: url(../img/copy.png) no-repeat center right/contain;
   width: 24px;
   height: 14px;
-  right: 1rem;
+  right: 3.2rem;
   top: 12px;
   display: none;
   cursor: pointer;

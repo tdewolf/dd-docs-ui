@@ -1,10 +1,21 @@
 ;(function () {
   'use strict'
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
-    var button = document.createElement('a')
-    button.className = 'copy-code-button'
-    //button.type = 'button'
-    button.dataset.title = 'Copy'
+    var viewSourceLink
+    var sourceUrl = codeBlock.dataset.sourceUrl
+    if (sourceUrl) {
+      viewSourceLink = document.createElement('a')
+      viewSourceLink.href = codeBlock.dataset.sourceUrl
+      viewSourceLink.className = 'view-source-button'
+      viewSourceLink.target = '_blank'
+      viewSourceLink.dataset.title = 'View Source'
+      viewSourceLink.appendChild(document.createTextNode('View'))
+    }
+
+    var copyButton = document.createElement('a')
+    copyButton.className = 'copy-code-button'
+    //copyButton.type = 'button'
+    copyButton.dataset.title = 'Copy'
 
     var dataSource = document.createElement('span')
     dataSource.className = 'data-source'
@@ -13,29 +24,30 @@
     var fadeShadow = document.createElement('span')
     fadeShadow.className = 'fade-shadow'
 
-    button.addEventListener('click', function (e) {
+    copyButton.addEventListener('click', function (e) {
       if (e.target && e.target.matches('a.copy-code-button')) {
         navigator.clipboard.writeText(codeBlock.innerText).then(
           function () {
             /* Chrome doesn't seem to blur automatically,
                 leaving the button in a focused state. */
-            button.blur()
+            copyButton.blur()
 
-            button.dataset.title = 'Copied ✓'
+            copyButton.dataset.title = 'Copied ✓'
 
             setTimeout(function () {
-              button.dataset.title = 'Copy'
+              copyButton.dataset.title = 'Copy'
             }, 2000)
           },
           function () {
-            button.dataset.title = 'Error'
+            copyButton.dataset.title = 'Error'
           }
         )
       }
     })
     var pre = codeBlock.parentNode
     pre.appendChild(dataSource)
-    pre.appendChild(button)
+    if (viewSourceLink) pre.appendChild(viewSourceLink)
+    pre.appendChild(copyButton)
     pre.appendChild(fadeShadow)
   })
 })()
