@@ -5,7 +5,7 @@
   var navMenu = {}
   if (!(navMenu.element = nav && nav.querySelector('.nav-menu'))) return
   var navControl
-  //var currentPageItem = navMenu.element.querySelector('.is-current-page')
+  var currentPageItem = navMenu.element.querySelector('.is-current-page')
 
   // NOTE prevent text from being selected by double click
   navMenu.element.addEventListener('mousedown', function (e) {
@@ -29,11 +29,42 @@
     }
   })
 
-  // fitNavMenuInit({})
-  // window.addEventListener('load', fitNavMenuInit)
-  // window.addEventListener('resize', fitNavMenuInit)
+  fitNavMenuInit({})
+  window.addEventListener('load', fitNavMenuInit)
+  window.addEventListener('resize', fitNavMenuInit)
 
   if ((navControl = document.querySelector('main .nav-control'))) navControl.addEventListener('click', revealNav)
+
+  function scrollItemToMiddle (el, parentEl) {
+    var adjustment = (el.getBoundingClientRect().height - parentEl.getBoundingClientRect().height) * 0.5 + el.offsetTop
+    if (adjustment > 0) parentEl.scrollTop = adjustment
+  }
+
+  function fitNavMenuInit (e) {
+    window.removeEventListener('scroll', fitNavMenuOnScroll)
+    navMenu.element.style.height = ''
+    if ((navMenu.preferredHeight = navMenu.element.getBoundingClientRect().height) > 0) {
+      // QUESTION should we check if x value > 0 instead?
+      if (window.getComputedStyle(nav).visibility === 'visible') {
+        if (!navMenu.encroachingElement) navMenu.encroachingElement = document.querySelector('footer.footer')
+        fitNavMenu(navMenu.preferredHeight, (navMenu.viewHeight = window.innerHeight), navMenu.encroachingElement)
+        window.addEventListener('scroll', fitNavMenuOnScroll)
+      }
+      if (currentPageItem && e.type !== 'resize') {
+        scrollItemToMiddle(currentPageItem.querySelector('.nav-link'), navMenu.element)
+      }
+    }
+  }
+
+  function fitNavMenuOnScroll () {
+    fitNavMenu(navMenu.preferredHeight, navMenu.viewHeight, navMenu.encroachingElement)
+  }
+
+  function fitNavMenu (preferredHeight, availableHeight, encroachingElement) {
+    var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
+    navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
+  }
+
   var navMenuControl
   if (document.querySelector('.main-nav-parent')) {
     navMenuControl = document.querySelector('.main-nav-parent')
