@@ -3,7 +3,7 @@ var queueData = []
 var checkActiveClass
 var tabOnLargeScreen = 3 // Display tab on desktop
 var tabOnSmallScreen = 1 // display tab on mobile view bewlow 768px screen
-var smallBreak = 768     // Your small screen breakpoint in pixels
+var smallBreak = 768 // Your small screen breakpoint in pixels
 find('.doc .tabset').forEach(function (tabset) {
   var active
   var tabs = tabset.querySelector('.tabs')
@@ -78,7 +78,7 @@ function activateTab (e) {
   e.preventDefault()
   var tab = this.tab
   var pane = this.pane
-  var tabMenu= document.querySelector('.tabs ul')
+  var tabMenu = document.querySelector('.tabs ul')
   var nodeTab = document.querySelector('.tabs > ul')
   var nodeDropdownTabNode = document.querySelector('.other-tablist')
   if (tab.parentNode.classList[0] === 'other-tablist') {

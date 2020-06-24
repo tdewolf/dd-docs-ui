@@ -81,8 +81,7 @@
 .frame-dropdown ul.frame-dropdown-list li,
 .frame-dropdown ul.related li {
   border-bottom: 1px solid var(--color-brand-gray8);
-  /* padding-bottom: 5px; */
-  /* margin-bottom: 5px; */
+
 }
 
 ul.frame-dropdown-list li:last-child,
