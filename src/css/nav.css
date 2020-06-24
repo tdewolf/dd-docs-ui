@@ -47,6 +47,7 @@
 .nav-menu .nav-link,
 .nav-menu .nav-text {
   display: block;
+  word-break: break-word;
 }
 
 .nav-menu .nav-line {
