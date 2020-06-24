@@ -130,6 +130,7 @@ function loadSampleUiModel (src) {
   return fs.readFile(ospath.join(src, 'ui-model.yml'), 'utf8').then((contents) => {
     const uiModel = yaml.safeLoad(contents)
     uiModel.env = process.env
+    if (process.env.DEPLOY_PRIME_URL) uiModel.site.url = process.env.DEPLOY_PRIME_URL
     Object.entries(uiModel.site.components).forEach(([name, component]) => {
       component.name = name
       if (!component.versions) component.versions = [(component.latest = { url: '#' })]
