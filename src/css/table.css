@@ -9,7 +9,6 @@ table.tableblock * {
 table.tableblock {
   display: block;
   width: 100%;
-  margin: 1em 0;
   border-spacing: 0;
 }
 
@@ -41,8 +40,8 @@ table.tableblock th {
 
 table.tableblock th {
   padding-left: var(--base-small-space);
-  padding-top: var(--base-space);
-  padding-bottom: var(--base-space);
+  padding-top: 8px;
+  padding-bottom: 8px;
   text-align: left;
   border-bottom: 2px solid var(--color-brand-blue-secondary);
   font-size: 1rem;
@@ -115,7 +114,6 @@ table.table-tutorial tr td:last-child {
   table.tableblock {
     display: table;
     position: relative;
-    /* margin-top: 2.5rem; */
   }
 
   table.tableblock caption.title {
@@ -124,8 +122,7 @@ table.table-tutorial tr td:last-child {
     top: -30px;
   }
 
-  div + table.tableblock,
-  div.paragraph + table.tableblock,
+  div + table.tableblock.caption-table,
   div.ulist + table.tableblock,
   table.tableblock + table.tableblock {
     margin-top: 2.5rem;
