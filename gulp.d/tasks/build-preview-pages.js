@@ -3,6 +3,28 @@
 const asciidoctor = require('asciidoctor.js')()
 const fs = require('fs-extra')
 const handlebars = require('handlebars')
+const iconPacks = {
+  fas: (() => {
+    try {
+      return require('@fortawesome/pro-solid-svg-icons')
+    } catch (e) {
+      return require('@fortawesome/free-solid-svg-icons')
+    }
+  })(),
+  far: (() => {
+    try {
+      return require('@fortawesome/pro-regular-svg-icons')
+    } catch (e) {
+      return require('@fortawesome/free-regular-svg-icons')
+    }
+  })(),
+  fab: require('@fortawesome/free-brands-svg-icons'),
+}
+iconPacks.fa = iconPacks.fas
+const iconShims = require('@fortawesome/fontawesome-free/js/v4-shims').reduce((accum, it) => {
+  accum[it[0]] = [it[1] || 'fas', it[2] || it[0]]
+  return accum
+}, {})
 const { obj: map } = require('through2')
 const merge = require('merge-stream')
 const ospath = require('path')
@@ -21,73 +43,83 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
     ),
   ])
     .then(([baseUiModel, { layouts }]) => [{ ...baseUiModel, env: process.env }, layouts])
-    .then(([baseUiModel, layouts]) =>
+    .then(([baseUiModel, layouts, iconDefs = new Map()]) =>
       vfs
         .src('**/*.adoc', { base: previewSrc, cwd: previewSrc })
         .pipe(
-          map((file, enc, next) => {
-            const siteRootPath = path.relative(ospath.dirname(file.path), ospath.resolve(previewSrc))
-            const uiModel = { ...baseUiModel }
-            uiModel.siteRootPath = siteRootPath
-            uiModel.siteRootUrl = path.join(siteRootPath, 'index.html')
-            uiModel.uiRootPath = path.join(siteRootPath, '_')
-            if (file.stem === '404') {
-              uiModel.page = { layout: '404', title: 'Page Not Found' }
-            } else {
-              const pageModel = (uiModel.page = { ...uiModel.page })
-              const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
-              const attributes = doc.getAttributes()
-              pageModel.layout = doc.getAttribute('page-layout', 'default')
-              pageModel.title = doc.getDocumentTitle()
-              pageModel.url = '/' + file.relative.slice(0, -5) + '.html'
-              if (file.stem === 'home') pageModel.home = true
-              const componentName = doc.getAttribute('page-component-name', pageModel.src.component)
-              const versionString = doc.getAttribute(
-                'page-version',
-                doc.hasAttribute('page-component-name') ? undefined : pageModel.src.version
-              )
-              let component
-              let componentVersion
-              if (componentName) {
-                component = pageModel.component = uiModel.site.components[componentName]
-                componentVersion = pageModel.componentVersion = versionString
-                  ? component.versions.find(({ version }) => version === versionString)
-                  : component.latest
+          map(
+            (file, enc, next) => {
+              const siteRootPath = path.relative(ospath.dirname(file.path), ospath.resolve(previewSrc))
+              const uiModel = {
+                ...baseUiModel,
+                preview: true,
+                siteRootPath,
+                siteRootUrl: path.join(siteRootPath, 'index.html'),
+                uiRootPath: path.join(siteRootPath, '_'),
+              }
+              if (file.stem === '404') {
+                uiModel.page = { layout: '404', title: 'Page Not Found' }
               } else {
-                component = pageModel.component = Object.values(uiModel.site.components)[0]
-                componentVersion = pageModel.componentVersion = component.latest
+                const pageModel = (uiModel.page = { ...uiModel.page })
+                const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+                const attributes = doc.getAttributes()
+                pageModel.layout = doc.getAttribute('page-layout', 'default')
+                pageModel.title = doc.getDocumentTitle()
+                pageModel.url = '/' + file.relative.slice(0, -5) + '.html'
+                if (file.stem === 'home') pageModel.home = true
+                const componentName = doc.getAttribute('page-component-name', pageModel.src.component)
+                const versionString = doc.getAttribute(
+                  'page-version',
+                  doc.hasAttribute('page-component-name') ? undefined : pageModel.src.version
+                )
+                let component
+                let componentVersion
+                if (componentName) {
+                  component = pageModel.component = uiModel.site.components[componentName]
+                  componentVersion = pageModel.componentVersion = versionString
+                    ? component.versions.find(({ version }) => version === versionString)
+                    : component.latest
+                } else {
+                  component = pageModel.component = Object.values(uiModel.site.components)[0]
+                  componentVersion = pageModel.componentVersion = component.latest
+                }
+                pageModel.module = 'ROOT'
+                pageModel.relativeSrcPath = file.relative
+                pageModel.version = componentVersion.version
+                pageModel.displayVersion = componentVersion.displayVersion
+                pageModel.editUrl = pageModel.origin.editUrlPattern.replace('%s', file.relative)
+                pageModel.navigation = componentVersion.navigation || []
+                pageModel.breadcrumbs = findNavPath(pageModel.url, pageModel.navigation)
+                if (pageModel.component.versions.length > 1) {
+                  pageModel.versions = pageModel.component.versions.map(
+                    ({ version, displayVersion, url }, idx, arr) => {
+                      const pageVersion = { version, displayVersion: displayVersion || version, url }
+                      if (version === component.latest.version) pageVersion.latest = true
+                      if (idx === arr.length - 1) {
+                        delete pageVersion.url
+                        pageVersion.missing = true
+                      }
+                      return pageVersion
+                    }
+                  )
+                }
+                pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
+                  .filter(([name, val]) => name.startsWith('page-'))
+                  .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
+                pageModel.contents = Buffer.from(doc.convert())
               }
-              pageModel.module = 'ROOT'
-              pageModel.relativeSrcPath = file.relative
-              pageModel.version = componentVersion.version
-              pageModel.displayVersion = componentVersion.displayVersion
-              pageModel.editUrl = pageModel.origin.editUrlPattern.replace('%s', file.relative)
-              pageModel.navigation = componentVersion.navigation || []
-              pageModel.breadcrumbs = findNavPath(pageModel.url, pageModel.navigation)
-              if (pageModel.component.versions.length > 1) {
-                pageModel.versions = pageModel.component.versions.map(({ version, displayVersion, url }, idx, arr) => {
-                  const pageVersion = { version, displayVersion: displayVersion || version, url }
-                  if (version === component.latest.version) pageVersion.latest = true
-                  if (idx === arr.length - 1) {
-                    delete pageVersion.url
-                    pageVersion.missing = true
-                  }
-                  return pageVersion
-                })
+              file.extname = '.html'
+              try {
+                file.contents = Buffer.from(layouts.get(uiModel.page.layout)(uiModel))
+                registerIconDefs(iconDefs, file)
+                next(null, file)
+              } catch (e) {
+                next(transformHandlebarsError(e, uiModel.page.layout))
               }
-              pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
-                .filter(([name, val]) => name.startsWith('page-'))
-                .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
-              pageModel.contents = Buffer.from(doc.convert())
-            }
-            file.extname = '.html'
-            try {
-              file.contents = Buffer.from(layouts.get(uiModel.page.layout)(uiModel))
-              next(null, file)
-            } catch (e) {
-              next(transformHandlebarsError(e, uiModel.page.layout))
-            }
-          })
+            },
+            // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
+            () => writeIconDefs(iconDefs, ospath.join(previewDest, 'fontawesome-icon-defs.js'))
+          )
         )
         .pipe(vfs.dest(previewDest))
         .on('error', (e) => done)
@@ -98,6 +130,7 @@ function loadSampleUiModel (src) {
   return fs.readFile(ospath.join(src, 'ui-model.yml'), 'utf8').then((contents) => {
     const uiModel = yaml.safeLoad(contents)
     uiModel.env = process.env
+    if (process.env.DEPLOY_PRIME_URL) uiModel.site.url = process.env.DEPLOY_PRIME_URL
     Object.entries(uiModel.site.components).forEach(([name, component]) => {
       component.name = name
       if (!component.versions) component.versions = [(component.latest = { url: '#' })]
@@ -183,6 +216,37 @@ function findNavPath (currentUrl, node = [], current_path = [], root = true) {
   if (root) return []
 }
 
+function registerIconDefs (iconDefs, file) {
+  const contents = file.contents
+  if (!contents.includes('<i class="fa')) return
+  const stringContents = contents.toString()
+  const iconNames = stringContents.match(/<i class="fa[brs]? fa-[^" ]+/g).map((it) => it.substr(10).replace('fa-', ''))
+  if (!iconNames.length) return
+  ;[...new Set(iconNames)].reduce((accum, iconKey) => {
+    if (!accum.has(iconKey)) {
+      const [iconPrefix, iconName] = iconKey.split(' ').slice(0, 2)
+      let iconDef = (iconPacks[iconPrefix] || {})['fa' + camelCase(iconName)]
+      if (iconDef) {
+        return accum.set(iconKey, { ...iconDef, prefix: iconPrefix })
+      } else if (iconPrefix === 'fa') {
+        const [realIconPrefix, realIconName] = iconShims[iconName] || []
+        if (
+          !accum.has((iconKey = `${realIconPrefix} ${realIconName}`)) &&
+          realIconName &&
+          (iconDef = (iconPacks[realIconPrefix] || {})['fa' + camelCase(realIconName)])
+        ) {
+          return accum.set(iconKey, { ...iconDef, prefix: realIconPrefix })
+        }
+      }
+    }
+    return accum
+  }, iconDefs)
+}
+
+async function writeIconDefs (iconDefs, to) {
+  return fs.writeFile(to, `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`, 'utf8')
+}
+
 function relativize (url) {
   return url ? (url.charAt() === '#' ? url : url.slice(1)) : '#'
 }
@@ -210,4 +274,10 @@ function toPromise (stream) {
       .on('data', (chunk) => chunk.constructor === Object && Object.assign(data, chunk))
       .on('finish', () => resolve(data))
   )
+}
+
+function camelCase (str) {
+  return str.replace(/(?:^|-)(.)/g, function (_, l) {
+    return l.toUpperCase()
+  })
 }

@@ -1,6 +1,6 @@
 = Couchbase Documentation UI
 // Variables:
-:current-release: cloud-11
+:current-release: cloud-18
 // Settings:
 :!example-caption:
 :experimental:
@@ -21,7 +21,8 @@ endif::[]
 :url-project: https://github.com/{project-repo-name}
 :url-site: https://docs.couchbase.com
 :url-repo: git@github.com:{project-repo-name}.git
-:url-preview: https://cb-docs-ui.netlify.com
+//:url-preview: https://cb-docs-ui.netlify.com
+:url-preview: https://cloud--brave-saha-095114.netlify.app
 // External URIs:
 :url-antora: https://antora.org
 :url-git: https://git-scm.com
@@ -142,6 +143,22 @@ In your terminal, execute the following command:
 
 This command installs the dependencies listed in [.path]_package.json_ into the [.path]_node_modules/_ folder inside the project.
 This folder does not get included in the UI bundle and should _not_ be committed to the source control repository.
+
+In order for the pro Font Awesome icons work, you must first add the following file to the root folder of the UI project:
+
+..npmrc
+----
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}
+----
+
+Then pass the token to npm when running the `npm install` command:
+
+FONTAWESOME_NPM_AUTH_TOKEN=xxxx npm install
+
+If you don't supply this token when installing packages, the pro icons will not be installed, but the UI preview will still work.
+Any icon available in the free collection will still be found, but the pro icons will be missing.
+When an icon is missing, a missing icon is shown instead.
 
 === Preview the UI
 

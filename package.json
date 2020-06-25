@@ -15,6 +15,11 @@
   ],
   "devDependencies": {
     "@octokit/rest": "~18.0",
+    "@fortawesome/fontawesome-free": "~5.13",
+    "@fortawesome/fontawesome-svg-core": "~1.2",
+    "@fortawesome/free-brands-svg-icons": "~5.13",
+    "@fortawesome/free-solid-svg-icons": "~5.13",
+    "@fortawesome/free-regular-svg-icons": "~5.13",
     "asciidoctor.js": "1.5.9",
     "autoprefixer": "~9.8",
     "browser-pack-flat": "~3.4",
@@ -59,5 +64,9 @@
     "typeface-roboto-mono": "0.0.75",
     "vinyl-buffer": "~1.0",
     "vinyl-fs": "~3.0"
+  },
+  "optionalDependencies": {
+    "@fortawesome/pro-solid-svg-icons": "~5.13",
+    "@fortawesome/pro-regular-svg-icons": "~5.13"
   }
 }
