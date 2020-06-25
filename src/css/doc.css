@@ -15,7 +15,7 @@
   font-weight: var(--weight-semibold);
   letter-spacing: -0.025rem;
   line-height: var(--line-height-heading);
-  margin: 1.5rem 0 -0.25rem;
+  margin: 1.5rem 0 1rem;
 }
 
 .doc h1 {
@@ -39,14 +39,14 @@
   /* NOTE used to restrict width of key line */
 }
 
-.doc h2::after {
+/* .doc h2::after {
   content: "";
   display: block;
   max-width: 5.75rem;
   height: 0;
   outline: 0.5px solid currentColor;
   margin-top: 1.0625rem;
-}
+} */
 
 .doc h3 {
   font-size: var(--heading-h3);

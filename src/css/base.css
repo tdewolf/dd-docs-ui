@@ -58,12 +58,11 @@ button::-moz-focus-inner {
 code,
 kbd,
 pre {
-
   font-family: 'Source Code Pro', monospace;
 }
 
 code {
-  background-color: #0074e00E;
+  background-color: #0074e00e;
   font-size: var(--font-small);
   word-spacing: -0.125em;
   color: var(--color-brand-gray1);
@@ -84,9 +83,9 @@ small {
 
 em,
 i {
-    font-style: italic;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
 
 .container,
