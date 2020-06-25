@@ -63,7 +63,6 @@ a.copy-code-button:hover {
   color: var(--color-brand-gray4);
 }
 
-
 .copy-code-button:hover::after {
   content: attr(data-title);
   color: var("--color-brand-gray4");
@@ -100,7 +99,6 @@ a.copy-code-button:hover {
   right: auto;
   left: auto;
 }
-
 
 .doc .listingblock code[data-lang] + .source-type-box {
   position: absolute;
