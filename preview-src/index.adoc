@@ -275,14 +275,17 @@ The *Server Resources* statistics section displays the resource information on t
 .A query using the fluent API (lines are forced to wrap)
 [source,java]
 ----
-Observable<AsyncN1qlQueryResult> theAirline = bucket.async() // <1>
-    .query(
-        N1qlQuery.simple(select("name").from("travel_sample").as("Airline").where(x("id").eq(5209)))
-    );
-return thisAirline; // <2>
+[data-source-url=https://github.com/couchbase/docs-sdk-java/blob/20c44c9e7ca86ea475b7aa33c58d5670aa7c4495/modules/ROOT/pages/n1ql-queries-with-sdk.adoc#L53-L58]
+Statement statement = select("fname", "lname", "age").from(i("default")).where(x("age").gt(x("$age"))); // <1>
+JsonObject placeholderValues = JsonObject.create().put("age", 22);
+q = N1qlQuery.parameterized(statement, placeholderValues); // <2>
+for (N1qlQueryRow row : bkt.query(q)) { // <3>
+    System.out.println(row);
+}
 ----
-<1> Sets up an async query.
-<2> Returns the result of the query.
+<1> Defines the query.
+<2> Inserts placeholder values into the query.
+<3> Runs the query.
 
 [#vbucket-stats]
 == Monitoring `vBucket` Resources

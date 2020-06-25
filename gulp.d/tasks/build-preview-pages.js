@@ -106,7 +106,15 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
                 pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
                   .filter(([name, val]) => name.startsWith('page-'))
                   .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
-                pageModel.contents = Buffer.from(doc.convert())
+                pageModel.contents = Buffer.from(
+                  doc
+                    .convert()
+                    // NOTE emulates the behavior of the view source url extension
+                    .replace(
+                      /<pre([^>]*)(><code[^>]*)?>\[data-source-url=(.+?)\]\n/g,
+                      '<pre$1$2 data-source-url="$3">'
+                    )
+                )
               }
               file.extname = '.html'
               try {
