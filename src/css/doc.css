@@ -611,13 +611,17 @@
   width: 65px;
   height: 80%;
   position: absolute;
-  right: 0;
+  right: 2px;
   top: 0;
 }
 
 code.language-console.hljs.shell {
   white-space: nowrap;
   overflow-x: auto;
+}
+
+table.tableblock code.language-console.hljs.shell {
+  white-space: normal;
 }
 
 .doc .dlist {

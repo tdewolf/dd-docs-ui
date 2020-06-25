@@ -61,7 +61,6 @@
 
 .frame-dropdown ul {
   background: var(--color-brand-white);
-  min-width: 125px;
   border-radius: 0;
   /* box-shadow: 0 3px 10px -4px var(--color-brand-gray8); */
   margin: 0;
@@ -76,6 +75,7 @@
 
 .frame-dropdown .related {
   border-left: 3px solid var(--color-brand-gray8);
+  min-width: 125px;
 }
 
 /* .frame-dropdown ul.frame-dropdown-list li,
