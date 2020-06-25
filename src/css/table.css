@@ -2,7 +2,12 @@
    Responsive Table CSS
    ========================================================================== */
 
-table.tableblock * {
+table.tableblock,
+table.tableblock thead,
+table.tableblock tbody,
+table.tableblock tfoot,
+table.tableblock td,
+table.tableblock th {
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -29,19 +34,10 @@ table.tableblock tbody {
   overflow-x: auto;
 }
 
-table.tableblock td,
-table.tableblock th {
-  line-height: 1.5em;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
-  color: var(--color-brand-gray1);
-}
-
-table.tableblock th {
+table.tableblock thead th {
   padding-left: var(--base-small-space);
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: var(--base-space);
+  padding-bottom: var(--base-space);
   text-align: left;
   border-bottom: 2px solid var(--color-brand-blue-secondary);
   font-size: 1rem;
@@ -57,7 +53,8 @@ table.tableblock tbody tr {
     background: var(--color-brand-gray7);
   } */
 
-table.tableblock > tbody td {
+table.tableblock > tbody td,
+table.tableblock > tbody th {
   display: block;
   border-bottom: 1px solid var(--color-brand-gray8);
   padding-left: var(--base-small-space);
@@ -147,7 +144,8 @@ table.table-tutorial tr td:last-child {
   }
 
   table.tableblock th,
-  table.tableblock tbody td {
+  table.tableblock tbody td,
+  table.tableblock > tbody th {
     display: table-cell;
   }
 
@@ -168,6 +166,15 @@ table.table-tutorial tr td:last-child {
 }
 
 @media screen and (max-width: 767px) {
+  table.tableblock td,
+  table.tableblock th {
+    line-height: 1.5em;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--color-brand-gray1);
+  }
+
   table.tableblock td {
     min-width: 14.5rem;
     word-break: break-word;
