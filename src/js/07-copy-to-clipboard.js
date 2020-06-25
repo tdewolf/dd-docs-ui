@@ -8,10 +8,12 @@
       viewSourceLink.href = codeBlock.dataset.sourceUrl
       viewSourceLink.className = 'view-source-button'
       viewSourceLink.target = '_blank'
-      viewSourceLink.dataset.title = 'View Source'
+      viewSourceLink.dataset.title = 'View On Github'
       viewSourceLink.appendChild(document.createTextNode('View'))
     }
-
+    // console.log(codeBlock)
+    var sourceTypeBox = document.createElement('div')
+    sourceTypeBox.className = 'source-type-box'
     var copyButton = document.createElement('a')
     copyButton.className = 'copy-code-button'
     //copyButton.type = 'button'
@@ -45,9 +47,10 @@
       }
     })
     var pre = codeBlock.parentNode
-    pre.appendChild(dataSource)
-    if (viewSourceLink) pre.appendChild(viewSourceLink)
-    pre.appendChild(copyButton)
+    pre.appendChild(sourceTypeBox)
+    sourceTypeBox.appendChild(dataSource)
+    if (viewSourceLink) sourceTypeBox.appendChild(viewSourceLink)
+    sourceTypeBox.appendChild(copyButton)
     pre.appendChild(fadeShadow)
   })
 })()
