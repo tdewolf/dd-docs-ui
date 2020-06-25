@@ -17,7 +17,6 @@ body {
 body {
   color: var(--color-text);
   font-family: "Source Sans Pro", sans-serif;
-  /* font-family: "Gotham", sans-serif; */
   line-height: var(--line-height-body);
   margin: 0;
 }
@@ -81,6 +80,13 @@ strong {
 
 small {
   font-size: 0.8em;
+}
+
+em,
+i {
+    font-style: italic;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
 }
 
 .container,
