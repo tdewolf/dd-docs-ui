@@ -18,29 +18,30 @@ Other CSS rules for styling code blocks:
 
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #66d9ef;
+  color: var(--hljs-attr);
   font-weight: var(--weight-medium);
 }
 
 .hljs-subst {
-  color: #66d9ef;
+  color: var(--hljs-attr);
 }
 
 .hljs-number,
 .hljs-literal,
 .hljs-variable,
 .hljs-tag .hljs-attr {
-  color: #ae81ff;
+  color: var(--hljs-number);
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #a6e22e;
+  color: var(--hljs-string);
 }
 
 .hljs-tag,
-.hljs-attribute {
-  color: #f92672;
+.hljs-attribute,
+.hljs-attr {
+  color: var(--hljs-attr);
 }
 
 .hljs-built_in,

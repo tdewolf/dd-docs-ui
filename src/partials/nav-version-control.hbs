@@ -17,7 +17,7 @@
                                         {{#unless (eq ./version @root.page.version)}}
                                             <li><a class="frame-item" href="{{relativize ./url}}">
                                             {{!-- {{{@root.page.component.title}}} --}}
-                                            Version {{./displayVersion}}</a></li>
+                                             {{./displayVersion}}</a></li>
                                         {{/unless}}
                                     {{/each}}
                                     </ul>

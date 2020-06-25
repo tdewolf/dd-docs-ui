@@ -16,8 +16,7 @@ body {
 
 body {
   color: var(--color-text);
-  font-family: "Open Sans", sans-serif;
-  /* font-family: "Gotham", sans-serif; */
+  font-family: "Source Sans Pro", sans-serif;
   line-height: var(--line-height-body);
   margin: 0;
 }
@@ -59,14 +58,14 @@ button::-moz-focus-inner {
 code,
 kbd,
 pre {
-  /* font-family: "Roboto Mono", monospace; */
-  font-family: "Source Code Pro", sans-serif;
+  font-family: 'Source Code Pro', monospace;
 }
 
 code {
-  color: var(--color-brand-black);
-  font-size: var(--font-base);
+  background-color: #0074e00e;
+  font-size: var(--font-small);
   word-spacing: -0.125em;
+  color: var(--color-brand-gray1);
 }
 
 html code {
@@ -80,6 +79,13 @@ strong {
 
 small {
   font-size: 0.8em;
+}
+
+em,
+i {
+  font-style: italic;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
 
 .container,
