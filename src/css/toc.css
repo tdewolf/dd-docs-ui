@@ -11,10 +11,11 @@
   width: inherit; /* for position: fixed */
   position: sticky; /* stylelint-disable-line declaration-block-no-duplicate-properties */
   top: var(--height-to-body);
-  max-height: var(--height-nav);
+  max-height: var(--height-toc-sidebar);
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  padding-right: var(--base-space);
 }
 
 .sidebar-box::-webkit-scrollbar {
