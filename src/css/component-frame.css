@@ -57,6 +57,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  min-width: 125px;
 }
 
 .frame-dropdown ul {
@@ -75,7 +76,6 @@
 
 .frame-dropdown .related {
   border-left: 3px solid var(--color-brand-gray8);
-  min-width: 125px;
 }
 
 /* .frame-dropdown ul.frame-dropdown-list li,

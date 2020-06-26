@@ -28,22 +28,42 @@
 
     copyButton.addEventListener('click', function (e) {
       if (e.target && e.target.matches('a.copy-code-button')) {
-        navigator.clipboard.writeText(codeBlock.innerText).then(
-          function () {
-            /* Chrome doesn't seem to blur automatically,
-                leaving the button in a focused state. */
-            copyButton.blur()
+        // for console text
+        if (codeBlock.dataset.lang === 'console') {
+          var bashText = codeBlock.innerText
+          // remove $ from text
+          navigator.clipboard.writeText(bashText.slice(2)).then(
+            function () {
+              /* Chrome doesn't seem to blur automatically,
+                  leaving the button in a focused state. */
+              copyButton.blur()
+              copyButton.dataset.title = 'Copied ✓'
+              setTimeout(function () {
+                copyButton.dataset.title = 'Copy'
+              }, 2000)
+            },
+            function () {
+              copyButton.dataset.title = 'Error'
+            }
+          )
+        } else {
+          navigator.clipboard.writeText(codeBlock.innerText).then(
+            function () {
+              /* Chrome doesn't seem to blur automatically,
+                  leaving the button in a focused state. */
+              copyButton.blur()
 
-            copyButton.dataset.title = 'Copied ✓'
+              copyButton.dataset.title = 'Copied ✓'
 
-            setTimeout(function () {
-              copyButton.dataset.title = 'Copy'
-            }, 2000)
-          },
-          function () {
-            copyButton.dataset.title = 'Error'
-          }
-        )
+              setTimeout(function () {
+                copyButton.dataset.title = 'Copy'
+              }, 2000)
+            },
+            function () {
+              copyButton.dataset.title = 'Error'
+            }
+          )
+        }
       }
     })
     var pre = codeBlock.parentNode
