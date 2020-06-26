@@ -110,10 +110,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
                   doc
                     .convert()
                     // NOTE emulates the behavior of the view source url extension
-                    .replace(
-                      /<pre([^>]*)(><code[^>]*)?>\[data-source-url=(.+?)\]\n/g,
-                      '<pre$1$2 data-source-url="$3">'
-                    )
+                    .replace(/<pre([^>]*)(><code[^>]*)?>\[data-source-url=(.+?)\]\n/g, '<pre$1$2 data-source-url="$3">')
                 )
               }
               file.extname = '.html'

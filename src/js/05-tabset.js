@@ -14,13 +14,11 @@ find('.doc .tabset').forEach(function (tabset) {
       checkActiveClass = setTimeout(function () {
         var activeTabList = tab.classList.contains('is-active')
         if (activeTabList) {
-          document
-            .querySelector('.tabs')
-            .insertAdjacentHTML(
-              'beforeend',
-              /*eslint max-len: ["error", { "code": 180 }]*/
-              '<div class="other-tab-box"><a href="#" class="dropddown-btn dropdown-btn-down">More... </a> <ul class="other-tablist" id="otherTabList"></ul></div>'
-            )
+          document.querySelector('.tabs').insertAdjacentHTML(
+            'beforeend',
+            /*eslint max-len: ["error", { "code": 180 }]*/
+            '<div class="other-tab-box"><a href="#" class="dropddown-btn dropdown-btn-down">More... </a> <ul class="other-tablist" id="otherTabList"></ul></div>'
+          )
           var dropdownBtn = document.querySelector('.dropdown-btn-down')
           var dropdownMenu = document.querySelector('.tabs .other-tablist')
           dropdownBtn.addEventListener('click', function (e) {
@@ -36,11 +34,11 @@ find('.doc .tabset').forEach(function (tabset) {
         }
       }, 100)
       if (window.innerWidth < smallBreak) {
-        if (idx > (tabOnSmallScreen - 1)) {
+        if (idx > tabOnSmallScreen - 1) {
           queueData.push(tab)
         }
       } else {
-        if (idx > (tabOnLargeScreen - 1)) {
+        if (idx > tabOnLargeScreen - 1) {
           queueData.push(tab)
         }
       }
