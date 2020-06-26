@@ -134,8 +134,10 @@
   setTimeout(function () {
     if (nav.innerText === '') {
       nav.classList.add('hide-nav')
+    } else {
+      nav.classList.add('show-nav')
     }
-  }, 100)
+  }, 2000)
   // has children in li
   // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {
