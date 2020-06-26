@@ -48,6 +48,7 @@
 .nav-menu .nav-text {
   display: block;
   word-break: break-word;
+  margin-left: 1.25rem;
 }
 
 .nav-menu .nav-line {
@@ -67,10 +68,9 @@
   display: none;
 }
 
-.nav-menu .nav-text {
-  /* margin-left: 0.75rem; */
+/* .nav-menu .nav-text {
   margin-left: 0;
-}
+} */
 
 .nav-menu a.nav-link {
   color: var(--color-brand-black);
@@ -97,15 +97,15 @@
 }
 
 .nav-menu .nav-list .nav-list .nav-line[data-depth="3"] {
-  padding-left: 4.2rem;
+  padding-left: 3.7rem;
 }
 
 .nav-menu .nav-list .nav-list .nav-line[data-depth="4"] {
-  padding-left: 5.5rem;
+  padding-left: 5rem;
 }
 
 .nav-menu .nav-list .nav-list .nav-line[data-depth="5"] {
-  padding-left: 6.75rem;
+  padding-left: 6.25rem;
 }
 
 .nav-menu .nav-list li a {
@@ -173,14 +173,20 @@
   line-height: 1.75rem;
   font-weight: var(--weight-semibold);
   color: var(--color-brand-gray1);
+  margin-left: 0;
 }
 
-.nav-item.open > .nav-line,
 .nav-item.is-current-path.is-active-depth-2:not(.is-active) > .nav-line,
 .nav-item.is-current-page > .nav-line {
   background: #4287d60f;
   margin-bottom: 0;
   border-right: 4px solid rgba(66, 135, 214, 0.44);
+  font-weight: var(--weight-semibold);
+}
+
+.nav-item.open > .nav-line {
+  background: #4287d60f;
+  margin-bottom: 0;
   font-weight: var(--weight-semibold);
 }
 
@@ -318,9 +324,8 @@ html.is-clipped--nav {
 
 .nav-menu .nav-item .nav-line {
   display: flex;
-  /* justify-content: flex-end; */
   padding: 0.625rem 1.375rem;
-  /* flex-direction: row-reverse; */
+  position: relative;
 }
 
 .nav-line[data-depth="1"] .nav-link,
@@ -358,7 +363,7 @@ html.is-clipped--nav {
 }
 
 .nav-item[data-depth='1'] .in-toggle {
-  position: relative;
+  position: absolute;
   /* left: -5px; */
   width: 0;
   height: 0;
