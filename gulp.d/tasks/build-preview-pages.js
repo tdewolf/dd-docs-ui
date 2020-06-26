@@ -22,7 +22,7 @@ const iconPacks = {
 }
 iconPacks.fa = iconPacks.fas
 const iconShims = require('@fortawesome/fontawesome-free/js/v4-shims').reduce((accum, it) => {
-  accum[it[0]] = [it[1] || 'fas', it[2] || it[0]]
+  accum['fa-' + it[0]] = [it[1] || 'fas', 'fa-' + (it[2] || it[0])]
   return accum
 }, {})
 const { obj: map } = require('through2')
@@ -228,20 +228,20 @@ function registerIconDefs (iconDefs, file) {
   const contents = file.contents
   if (!contents.includes('<i class="fa')) return
   const stringContents = contents.toString()
-  const iconNames = stringContents.match(/<i class="fa[brs]? fa-[^" ]+/g).map((it) => it.substr(10).replace('fa-', ''))
+  const iconNames = stringContents.match(/<i class="fa[brs]? fa-[^" ]+/g).map((it) => it.substr(10))
   if (!iconNames.length) return
   ;[...new Set(iconNames)].reduce((accum, iconKey) => {
     if (!accum.has(iconKey)) {
       const [iconPrefix, iconName] = iconKey.split(' ').slice(0, 2)
-      let iconDef = (iconPacks[iconPrefix] || {})['fa' + camelCase(iconName)]
+      let iconDef = (iconPacks[iconPrefix] || {})[camelCase(iconName)]
       if (iconDef) {
         return accum.set(iconKey, { ...iconDef, prefix: iconPrefix })
       } else if (iconPrefix === 'fa') {
         const [realIconPrefix, realIconName] = iconShims[iconName] || []
         if (
-          !accum.has((iconKey = `${realIconPrefix} ${realIconName}`)) &&
           realIconName &&
-          (iconDef = (iconPacks[realIconPrefix] || {})['fa' + camelCase(realIconName)])
+          !accum.has((iconKey = `${realIconPrefix} ${realIconName}`)) &&
+          (iconDef = (iconPacks[realIconPrefix] || {})[camelCase(realIconName)])
         ) {
           return accum.set(iconKey, { ...iconDef, prefix: realIconPrefix })
         }
@@ -251,7 +251,7 @@ function registerIconDefs (iconDefs, file) {
   }, iconDefs)
 }
 
-async function writeIconDefs (iconDefs, to) {
+function writeIconDefs (iconDefs, to) {
   return fs.writeFile(to, `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`, 'utf8')
 }
 
@@ -285,7 +285,5 @@ function toPromise (stream) {
 }
 
 function camelCase (str) {
-  return str.replace(/(?:^|-)(.)/g, function (_, l) {
-    return l.toUpperCase()
-  })
+  return str.replace(/-(.)/g, (_, l) => l.toUpperCase())
 }
