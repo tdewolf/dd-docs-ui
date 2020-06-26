@@ -32,10 +32,10 @@
 }
 
 .doc h1.page + .labels {
-    display: inline-block;
-    position: relative;
-    top: -5px;
-    margin-left: var(--base-space);
+  display: inline-block;
+  position: relative;
+  top: -5px;
+  margin-left: var(--base-space);
 }
 
 .doc h2 {
