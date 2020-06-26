@@ -8,11 +8,11 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 // Category: Multibranch Pipeline
 // Pipeline name: docs-ui-sandbox
 // Branch Sources: Single repository & branch
-// Name: cloud
+// Name: master
 // Source Code Management: Git
 // Repository URL: https://github.com/couchbase/docs-ui-sandbox
 // Credentials: - none -
-// Branch specifier: refs/heads/cloud
+// Branch specifier: refs/heads/master
 // Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone, Shallow clone depth: 5
 // Polling ignores commits with certain messages: (?s)(?:Release |.*\[skip .+?\]).*
 // Build Configuration:
