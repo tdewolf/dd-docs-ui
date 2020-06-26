@@ -1,38 +1,27 @@
-.copy-code-button {
-  position: absolute;
-  background: url(../img/copy.png) no-repeat center right/contain;
-  width: 24px;
-  height: 14px;
-  right: 1rem;
-  top: 12px;
-  display: none;
-  cursor: pointer;
-  font-family: "Source Sans Pro", sans-serif;
+.view-source-button {
   color: var(--color-brand-gray4);
-  z-index: 1;
+  font-family: "Source Code Pro", sans-serif;
+  background: url(../img/awesome-github.svg) no-repeat center center;
+  background-size: cover;
+  display: inline-block;
+  width: 16px;
+  height: 15.5px;
+  font-size: 0;
+  margin-left: 0.5rem;
 }
 
-a.copy-code-button:focus,
-a.copy-code-button:hover {
-  color: var(--color-brand-gray4);
-}
-
-.doc .listingblock:hover .copy-code-button {
-  display: block;
-}
-
-.copy-code-button:hover::after {
+.view-source-button:hover::after {
   content: attr(data-title);
-  color: var("--color-brand-gray4");
-  font-size: 14px;
+  color: var(--color-brand-gray4);
+  font-size: var(--font-base);
   font-weight: var(--weight-light);
   line-height: 1;
   text-transform: capitalize;
   position: absolute;
   bottom: -53px;
-  right: -100%;
-  left: -100%;
-  margin: auto;
+  right: -30%;
+  left: auto;
+  margin: 0;
   padding: 5px;
   text-align: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
@@ -40,7 +29,60 @@ a.copy-code-button:hover {
   border: 1px solid var(--color-brand-gray7);
   box-sizing: border-box;
   border-radius: 3px;
-  /* min-width: 90px; */
+  min-width: 90px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.view-source-button:hover::before {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid var(--color-brand-white);
+  position: absolute;
+  content: "";
+  box-shadow: inset 0 0 1px #bec0c1;
+  bottom: -27px;
+  right: auto;
+  left: auto;
+}
+
+.copy-code-button {
+  background: url(../img/copy.png) no-repeat center right/contain;
+  width: 13px;
+  height: 16px;
+  cursor: pointer;
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--color-brand-gray4);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+a.copy-code-button:focus,
+a.copy-code-button:hover {
+  color: var(--color-brand-gray4);
+}
+
+.copy-code-button:hover::after {
+  content: attr(data-title);
+  color: var("--color-brand-gray4");
+  font-size: var(--font-base);
+  font-weight: var(--weight-light);
+  line-height: 1;
+  text-transform: capitalize;
+  position: absolute;
+  bottom: -53px;
+  right: -30%;
+  left: auto;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  background: var(--color-brand-white);
+  border: 1px solid var(--color-brand-gray7);
+  box-sizing: border-box;
+  border-radius: 3px;
+  min-width: 80px;
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -54,5 +96,62 @@ a.copy-code-button:hover {
   content: "";
   box-shadow: inset 0 0 1px #bec0c1;
   bottom: -27px;
+  right: auto;
+  left: auto;
+}
+
+.doc .listingblock code[data-lang] + .source-type-box {
+  position: absolute;
+  top: 0;
   right: 0;
+  display: none;
+  align-items: center;
+  z-index: 1;
+  padding-top: 12px;
+}
+
+.doc .listingblock code[data-lang] + .source-type-box .data-source {
+  content: attr(data-lang);
+  color: var("--color-brand-gray1");
+  font-size: 0.75rem;
+  font-weight: var(--weight-normal);
+  letter-spacing: 1px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-family: "Source Code Pro", sans-serif;
+  padding-right: 0.5rem;
+  border-right: 1px solid var(--color-brand-gray9);
+}
+
+/* .doc .listingblock:hover code[data-lang] + .source-type-box .data-source {
+  display: block;
+} */
+
+.doc .listingblock:hover code[data-lang] + .source-type-box {
+  display: flex;
+}
+
+.doc .listingblock pre .fade-shadow {
+  content: "";
+  display: inline-block;
+  background:
+    transparent
+    linear-gradient(
+      180deg,
+      #f1f7fe0d 0%,
+      #f1f7fe40 18%,
+      #f1f7fe 68%,
+      #f1f7fe 100%
+    )
+    0% 0% no-repeat padding-box;
+  width: 65px;
+  height: 80%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+code.language-console.hljs.shell {
+  white-space: nowrap;
+  overflow-x: auto;
 }
