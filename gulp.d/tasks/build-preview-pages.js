@@ -123,7 +123,11 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
               }
             },
             // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
-            () => writeIconDefs(iconDefs, ospath.join(previewDest, 'fontawesome-icon-defs.js'))
+            () =>
+              fs
+                .readFile(ospath.join(src, 'js/vendor/fontawesome-icon-defs.js'), 'utf8')
+                .then((contents) => registerIconDefs(iconDefs, { contents }))
+                .then(() => writeIconDefs(iconDefs, ospath.join(previewDest, 'fontawesome-icon-defs.js')))
           )
         )
         .pipe(vfs.dest(previewDest))
@@ -223,9 +227,14 @@ function findNavPath (currentUrl, node = [], current_path = [], root = true) {
 
 function registerIconDefs (iconDefs, file) {
   const contents = file.contents
-  if (!contents.includes('<i class="fa')) return
-  const stringContents = contents.toString()
-  const iconNames = stringContents.match(/<i class="fa[brs]? fa-[^" ]+/g).map((it) => it.substr(10))
+  let iconNames = []
+  if (!file.path) {
+    try {
+      iconNames = JSON.parse(contents.match(/\biconNames: *(\[.*?\])/)[1].replace(/'/g, '"'))
+    } catch (e) {}
+  } else if (contents.includes('<i class="fa')) {
+    iconNames = contents.toString().match(/<i class="fa[brs]? fa-[^" ]+/g).map((it) => it.substr(10))
+  }
   if (!iconNames.length) return
   ;[...new Set(iconNames)].reduce((accum, iconKey) => {
     if (!accum.has(iconKey)) {
