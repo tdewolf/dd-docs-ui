@@ -55,7 +55,7 @@ module.exports = (src, dest, preview) => () => {
   return merge(
     vfs
       .src('js/+([0-9])-*.js', { ...opts, sourcemaps })
-      .pipe(uglify())
+      .pipe(uglify({ output: { comments: /^!/ } }))
       // NOTE concat already uses stat from newest combined file
       .pipe(concat('js/site.js')),
     vfs
@@ -89,7 +89,7 @@ module.exports = (src, dest, preview) => () => {
         })
       )
       .pipe(buffer())
-      .pipe(uglify()),
+      .pipe(uglify({ output: { comments: /^!/ } })),
     vfs.src(require.resolve('jquery/dist/jquery.min.js'), opts).pipe(concat('js/vendor/jquery.js')),
     vfs
       .src(['css/site.css', 'css/vendor/docsearch.css'], { ...opts, sourcemaps })
