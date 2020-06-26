@@ -151,13 +151,13 @@ a.copy-code-button:hover {
   top: 0;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   /* Safari and Chrome */
   .doc .listingblock pre .fade-shadow {
     height: calc(100% - 8px);
   }
-
 }
+
 code.language-console.hljs.shell {
   white-space: nowrap;
   overflow-x: auto;
