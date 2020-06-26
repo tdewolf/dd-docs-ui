@@ -1,12 +1,6 @@
 .view-source-button {
   color: var(--color-brand-gray4);
-  font-family: "Source Code Pro", sans-serif;
-  background: url(../img/awesome-github.svg) no-repeat center center;
-  background-size: cover;
   display: inline-block;
-  width: 16px;
-  height: 15.5px;
-  font-size: 0;
   margin-left: 0.5rem;
 }
 
@@ -34,8 +28,6 @@
 }
 
 .view-source-button:hover::before {
-  width: 0;
-  height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-bottom: 10px solid var(--color-brand-white);
@@ -48,16 +40,15 @@
 }
 
 .copy-code-button {
-  background: url(../img/copy.png) no-repeat center right/contain;
-  width: 13px;
-  height: 16px;
-  cursor: pointer;
-  font-family: "Source Sans Pro", sans-serif;
   color: var(--color-brand-gray4);
+  cursor: pointer;
+  display: inline-block;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
+a.view-source-button:focus,
+a.view-source-button:hover,
 a.copy-code-button:focus,
 a.copy-code-button:hover {
   color: var(--color-brand-gray4);
@@ -87,8 +78,6 @@ a.copy-code-button:hover {
 }
 
 .copy-code-button:hover::before {
-  width: 0;
-  height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-bottom: 10px solid var(--color-brand-white);
