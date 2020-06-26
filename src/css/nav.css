@@ -168,8 +168,8 @@
   color: var(--brand-color-gray1);
 }
 
-.nav-item .nav-line[data-depth="0"] > .nav-text ,
-.nav-item .nav-line[data-depth="0"] > .nav-link  {
+.nav-item .nav-line[data-depth="0"] > .nav-text,
+.nav-item .nav-line[data-depth="0"] > .nav-link {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: var(--weight-semibold);
