@@ -416,6 +416,8 @@
   font-size: 0.9375rem;
   margin: 1rem 0 1.5625rem 0;
   font-weight: var(--weight-light);
+  border-left: 2px solid var(--color-brand-gray5);
+  padding-left: 1.125rem;
 }
 
 .doc .abstract blockquote * {

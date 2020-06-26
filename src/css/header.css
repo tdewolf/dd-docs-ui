@@ -43,7 +43,7 @@
 }
 
 .navbar.navbar-new-bottom {
-  background: var(--color-brand-blue);
+  background: var(--color-brand-blue-secondary);
   display: none;
 }
 
@@ -52,9 +52,9 @@
 }
 
 .navbar-nav .nav-link {
-  color: var(--color-brand-white);
+  color: #ffffffbf;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 1;
   font-size: 1.125rem;
   line-height: 23px;
   font-family: "Source Sans Pro", sans-serif;
@@ -64,11 +64,13 @@
   font-weight: var(--weight-semibold);
   text-decoration: none;
   opacity: 1;
+  color: #fff;
 }
 
 .nav-link:focus,
 .nav-link:hover {
   text-decoration: none;
+  color: #fff;
 }
 
 .primary-action {

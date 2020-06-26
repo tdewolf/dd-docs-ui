@@ -29,9 +29,9 @@
     copyButton.addEventListener('click', function (e) {
       if (e.target && e.target.matches('a.copy-code-button')) {
         // for console text
-        if (codeBlock.dataset.lang == 'console') {
+        if (codeBlock.dataset.lang === 'console') {
           var bashText = codeBlock.innerText
-         // remove $ from text
+          // remove $ from text
           navigator.clipboard.writeText(bashText.slice(2)).then(
             function () {
               /* Chrome doesn't seem to blur automatically,

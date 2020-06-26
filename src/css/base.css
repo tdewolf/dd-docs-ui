@@ -94,6 +94,11 @@ i {
   max-width: var(--width-container);
   padding: 0 var(--width-container-gutter);
 }
+
+.hide,
+.hide-nav {
+  display: none;
+}
 /* .container-fluid {
   max-width: var(--width-container-fluid);
   padding: 0;
