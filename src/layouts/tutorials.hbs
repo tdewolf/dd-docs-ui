@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 {{> head-first}}
-    <title>Tutorials{{#with site.title}} | {{this}}{{/with}}</title>
-    {{#with (canonical-url)}}
-    <link rel="canonical" href="{{this}}">
-    {{/with}}
+<title>Tutorials{{#with site.title}} | {{this}}{{/with}}</title>
+{{#with (canonical-url)}}
+<link rel="canonical" href="{{this}}">
+{{/with}}
 {{> head-last}}
-  </head>
-  <body class="tutorials body tiles">
+</head>
+<body class="tutorials body tiles">
 {{> header}}
 {{> body-tutorials}}
 {{> footer}}
-  </body>
+</body>
 </html>
