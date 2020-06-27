@@ -22,6 +22,10 @@
   height: var(--height-nav);
 }
 
+.version-control-box + .nav-menu {
+  height: var(--height-nav-with-version);
+}
+
 @media screen and (max-width: 768px) {
   .left-sidebar-menu {
     top: 0;
