@@ -151,7 +151,7 @@
       }
 
     })
-  }, 2000)
+  }, 500)
   // has children in li
   // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {
