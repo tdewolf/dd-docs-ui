@@ -119,7 +119,7 @@ table.table-tutorial tr td:last-child {
     top: -30px;
   }
 
-  div + table.tableblock.caption-table,
+  table.tableblock.caption-table,
   div.ulist + table.tableblock,
   table.tableblock + table.tableblock {
     margin-top: 2.5rem;
