@@ -103,7 +103,6 @@ setTimeout(function () {
       e.preventDefault()
     })
   }
-
 }, 1000)
 
 function getPane (id, tabset) {

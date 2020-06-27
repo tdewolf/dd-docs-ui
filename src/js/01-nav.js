@@ -6,7 +6,7 @@
   var navMenu = {}
   if (!(navMenu.element = nav && nav.querySelector('.nav-menu'))) return
   var navControl
-  var currentPageItem = navMenu.element.querySelector('.is-current-page')
+  // var currentPageItem = navMenu.element.querySelector('.is-current-page')
 
   // NOTE prevent text from being selected by double click
   navMenu.element.addEventListener('mousedown', function (e) {
@@ -63,6 +63,7 @@
 
   // function fitNavMenu (preferredHeight, availableHeight, encroachingElement) {
   //   var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
+  /*eslint max-len: ["error", { "code": 180 }]*/
   //   navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
   // }
 
@@ -139,7 +140,7 @@
       nav.classList.add('show-nav')
     }
 
-    menuExpandToggle.addEventListener('click', function(e) {
+    menuExpandToggle.addEventListener('click', function (e) {
       e.preventDefault()
       // var navBarHeight =  nav.querySelector('.nav-menu')
       // navBarHeight.style.height = '100vh'
@@ -149,9 +150,8 @@
       } else {
         nav.classList.add('collapse-menu')
       }
-
     })
-  }, 500)
+  }, 100)
   // has children in li
   // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {
