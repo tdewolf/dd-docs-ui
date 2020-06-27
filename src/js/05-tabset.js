@@ -98,9 +98,12 @@ function find (selector, from) {
   return Array.prototype.slice.call((from || document).querySelectorAll(selector))
 }
 setTimeout(function () {
-  document.querySelector(' .dropddown-btn').addEventListener('click', function (e) {
-    e.preventDefault()
-  })
+  if (document.querySelector(' .dropddown-btn')) {
+    document.querySelector(' .dropddown-btn').addEventListener('click', function (e) {
+      e.preventDefault()
+    })
+  }
+
 }, 1000)
 
 function getPane (id, tabset) {

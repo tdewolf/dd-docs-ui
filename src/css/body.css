@@ -21,7 +21,6 @@ main {
 nav.nav {
   /* NOTE reserve no space in layout by default */
   flex: 0 0 0%;
-  visibility: hidden;
   /* NOTE width must be set in order for fixed child to inherit */
   width: var(--width-nav);
 }
@@ -59,6 +58,6 @@ aside.toc.sidebar {
 
 @media screen and (max-width: 767px) {
   div.body {
-    margin-top: 5rem;
+    margin-top: 3.9rem;
   }
 }
