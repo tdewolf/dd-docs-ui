@@ -415,12 +415,11 @@
 .doc .abstract blockquote * {
   font-weight: inherit;
 }
-
-.doc .abstract blockquote::before {
+/* .doc .abstract blockquote::before {
   content: "Summary: ";
   color: var(--color-muted);
   font-weight: var(--weight-medium);
-}
+} */
 
 .doc ul {
   margin: 0;

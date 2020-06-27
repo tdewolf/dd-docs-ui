@@ -15,8 +15,6 @@
   function shapeTable () {
     if (window.innerWidth < smallBreak) {
       tables.forEach(function (elem, index) {
-        // console.log(elem.querySelector('tr'))
-
         var columns = elem.querySelectorAll('tbody tr').length
         var rows = elem.querySelectorAll('thead tr th').length
         for (var i = 1; i <= rows; i++) {
@@ -26,12 +24,11 @@
           }
 
           for (var j = 1; j <= columns; j++) {
-            // console.log(i, j, 23)
+
             if (
               elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')') != null &&
               elem.querySelector(' tr:nth-child(' + j + ') td:nth-child(' + i + ')') !== undefined
             ) {
-              // console.log(elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')'), 25)
               if (elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')').offsetHeight > maxHeight) {
                 maxHeight = elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')').offsetHeight
               }

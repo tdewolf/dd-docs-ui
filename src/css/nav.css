@@ -22,7 +22,32 @@
   overflow-y: auto;
   background-color: var(--color-brand-gray7);
   height: var(--height-nav);
-  transition: all 0.3s;
+}
+
+.version-control-box + .nav-menu {
+  height: var(--height-nav-with-version);
+}
+
+@media screen and (max-width: 768px) {
+  .left-sidebar-menu {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: var(--z-index-nav-mobile);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .left-sidebar-menu {
+    top: var(--height-to-body);
+    margin-bottom: 1.5rem;
+    height: 100%;
+    /* height: var(--height-nav); */
+    z-index: var(--z-index-nav);
+    border-left: 2px solid #eee;
+    border-right: 2px solid #eee;
+  }
 }
 
 .nav-menu .nav-link,

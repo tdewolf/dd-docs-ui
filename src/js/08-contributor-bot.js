@@ -1,6 +1,5 @@
 ;(function () {
   'use strict'
-  // console.log('contributor page')
   var showData = false
   var contributors
   var contributorList = document.getElementById('contributorList')

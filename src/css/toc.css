@@ -76,8 +76,7 @@
   transition: all 0.3s;
 }
 
-.toc .toc-menu li a.is-active::before,
-.toc .toc-menu li a:hover::before {
+.toc .toc-menu li a.is-active::before {
   height: 100%;
 }
 

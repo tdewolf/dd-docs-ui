@@ -70,7 +70,8 @@
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
   --height-toc-sidebar: calc(var(--height-min-body));
-  --height-nav: calc(100vh - var(--height-to-body) - var(--height-version-control));
+  --height-nav: calc(var(--height-min-body) + var(--height-spacer));
+  --height-nav-with-version: calc(100vh - var(--height-to-body) - var(--height-version-control));
   --nav-menu-top-space: calc(var(--height-to-body) + var(--height-version-control));
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
