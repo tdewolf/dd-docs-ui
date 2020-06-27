@@ -28,7 +28,7 @@
   height: var(--height-nav-with-version);
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .left-sidebar-menu {
     top: 0;
     bottom: 0;
@@ -36,7 +36,7 @@
     transform: translateX(-100%);
     z-index: var(--z-index-nav-mobile);
   }
-}
+} */
 
 @media screen and (min-width: 769px) {
   .left-sidebar-menu {
