@@ -154,6 +154,11 @@
   padding: 0;
 }
 
+.media-left .icon {
+  font-size: 90px;
+  color: var(--color-brand-blue-secondary);
+}
+
 .doc.landing-page-doc .column .paragraph,
 .doc.landing-page-doc .column .videoblock,
 .doc.landing-page-doc .column .imageblock {

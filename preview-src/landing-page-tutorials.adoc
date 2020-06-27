@@ -4,17 +4,41 @@
 :!sectids:
 
 
+= Couchbase Tutorials
+++++
+<div class="card-row">
+++++
+
+[.column]
+====== {empty}
+[.content]
+The Couchbase SDK allows applications to access a Couchbase cluster. It offers traditional synchronous APIs as well as scalable asynchronous APIs to maximize performance
+
+[.column]
+====== {empty}
+[.media-left]
+icon:book-reader[set= fas]
+
+++++
+</div>
+++++
+
+
+== Tutorials
+++++
+<div class="card-row two-column-row">
+++++
 [.column]
 [.data-filter-column]
 ====== {empty}
 ++++
-<div data-level="advanced" data-category="advanced java swift javascript developer" class="sub-heading two-column-heading">
+<div  data-category="advanced java swift javascript developer" class="sub-heading two-column-heading">
 <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
 <div class="filter-info">
 <h5 >
 <img src="_/img/landing-page-icon/advanced-icon.svg" alt="" />
 Advanced</h5>
-<span data-role="advanced">Developer</span>
+<span>Developer</span>
 </div>
 </div>
 ++++
@@ -59,7 +83,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 [.data-filter-column]
 ====== {empty}
 ++++
-    <div data-level="intermediate" data-category="intermediate c# node Python devOps"  class="sub-heading two-column-heading">
+    <div  data-category="intermediate c# node Python devOps"  class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
         <h5 >
@@ -101,7 +125,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 [.data-filter-column]
 ====== {empty}
 ++++
-    <div data-level="intermediate" data-category="intermediate .net developer" class="sub-heading two-column-heading">
+    <div  data-category="intermediate .net developer" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
         <h5 >
@@ -142,7 +166,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 [.data-filter-column]
 ====== {empty}
 ++++
-    <div data-level="beginner" data-category="beginner ascidoc java php architect" class="sub-heading two-column-heading">
+    <div data-category="beginner ascidoc java php architect" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
         <h5 >
@@ -184,7 +208,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 [.data-filter-column]
 ====== {empty}
 ++++
-    <div data-level="intermediate" data-category="intermediate react developer" class="sub-heading two-column-heading">
+    <div  data-category="intermediate react developer" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
         <h5 >
@@ -225,7 +249,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 [.data-filter-column]
 ====== {empty}
 ++++
-    <div data-level="advanced" data-category="advanced angular react vue architect" class="sub-heading two-column-heading">
+    <div  data-category="advanced angular react vue architect" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
         <h5 >
@@ -258,6 +282,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 * Angular
 * React
 * Vue
+
+++++
+</div>
+++++
 
 ++++
 </div>
