@@ -22,9 +22,7 @@
           if (ele[i] !== undefined) {
             var maxHeight = ele[i].offsetHeight
           }
-
           for (var j = 1; j <= columns; j++) {
-
             if (
               elem.querySelector('tr:nth-child(' + j + ') td:nth-child(' + i + ')') != null &&
               elem.querySelector(' tr:nth-child(' + j + ') td:nth-child(' + i + ')') !== undefined
