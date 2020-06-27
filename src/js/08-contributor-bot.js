@@ -62,7 +62,7 @@
           .reverse()
           .map(function (contributor, index, arrayobj) {
           //show only top 5 contributor
-          if (index <= 4) {
+            if (index <= 4) {
               var contributorAvtar = contributor.author.avatar_url
               // var contributorTotalCommit = contributor.total
               var authorURL = contributor.author.html_url
@@ -77,8 +77,8 @@
               li.appendChild(anchor)
               anchor.appendChild(image)
               contributorList.appendChild(li)
-          }
-        })
+            }
+          })
       })
       .catch(function (err) {
         console.log(err, 13)
