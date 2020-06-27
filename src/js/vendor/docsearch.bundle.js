@@ -16,11 +16,11 @@
       algoliaOptions: { hitsPerPage: 25 },
       debug: false,
     })
-    document.querySelector('button.search').addEventListener('click', function (e) {
-      if (document.querySelector('.navbar-start').classList.toggle('reveal-search-input')) {
-        ds.autocomplete.autocomplete.setVal('')
-        ds.input.focus()
-      }
-    })
+    // document.querySelector('button.search').addEventListener('click', function (e) {
+    //   if (document.querySelector('.navbar-start').classList.toggle('reveal-search-input')) {
+    //     ds.autocomplete.autocomplete.setVal('')
+    //     ds.input.focus()
+    //   }
+    // })
   })
 })()
