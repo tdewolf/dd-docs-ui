@@ -2,6 +2,7 @@
   'use strict'
   var showData = false
   var contributors
+  if (document.getElementById('contributorList')) {
   var contributorList = document.getElementById('contributorList')
   var commitdateTag = document.getElementById('commitdate')
   var otherContributor = document.getElementById('otherContributor')
@@ -82,4 +83,5 @@
     .catch(function (err) {
       console.log(err, 13)
     })
+  }
 })()
