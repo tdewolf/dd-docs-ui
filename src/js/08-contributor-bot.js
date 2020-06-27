@@ -53,35 +53,35 @@
 
         // show html data
         if (showData) {
-            contributorListBox.classList.add('show')
+          contributorListBox.classList.add('show')
         }
         // map function
 
         contributors
-            .slice(0)
-            .reverse()
-            .map(function (contributor, index, arrayobj) {
-            //show only top 5 contributor
-            if (index <= 4) {
-                var contributorAvtar = contributor.author.avatar_url
-                // var contributorTotalCommit = contributor.total
-                var authorURL = contributor.author.html_url
-                // append child in ul
-                var li = document.createElement('li')
-                var anchor = document.createElement('a')
-                var image = document.createElement('img')
-                image.setAttribute('src', contributorAvtar)
-                image.setAttribute('alt', '')
-                anchor.setAttribute('href', authorURL)
-                anchor.setAttribute('target', '_blank')
-                li.appendChild(anchor)
-                anchor.appendChild(image)
-                contributorList.appendChild(li)
-            }
-            })
+          .slice(0)
+          .reverse()
+          .map(function (contributor, index, arrayobj) {
+          //show only top 5 contributor
+          if (index <= 4) {
+              var contributorAvtar = contributor.author.avatar_url
+              // var contributorTotalCommit = contributor.total
+              var authorURL = contributor.author.html_url
+              // append child in ul
+              var li = document.createElement('li')
+              var anchor = document.createElement('a')
+              var image = document.createElement('img')
+              image.setAttribute('src', contributorAvtar)
+              image.setAttribute('alt', '')
+              anchor.setAttribute('href', authorURL)
+              anchor.setAttribute('target', '_blank')
+              li.appendChild(anchor)
+              anchor.appendChild(image)
+              contributorList.appendChild(li)
+          }
         })
-        .catch(function (err) {
+      })
+      .catch(function (err) {
         console.log(err, 13)
-        })
+      })
   }
 })()
