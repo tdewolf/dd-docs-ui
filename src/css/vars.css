@@ -64,7 +64,7 @@
   --hljs-string: #295d1e;
   --hljs-number: #0711ba;
   /* --height-navbar: 4rem; */
-  --height-spacer: 1rem;
+  --height-spacer: 1.2rem;
   --height-navbar: 6rem;
   --height-version-control: 4.5rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
@@ -79,7 +79,7 @@
   --width-container-fluid: 100%;
   --width-container-gutter: 1.25rem;
   --width-nav: 20rem;
-  --width-toc: 12rem;
+  --width-toc: 13rem;
   /* Font weight */
   --weight-light: 300;
   --weight-normal: 400;
@@ -101,6 +101,7 @@
   /* New  design font style */
 
   --font-base: 1rem; /* ~16px */
+  --font-medium: 1.25rem; /* ~20px */
   --font-small: 0.875rem; /* ~14px */
   --labels-font-size: 0.75rem; /* ~12px */
   --labels-line-height: 1;
@@ -119,6 +120,7 @@
   /* Spacing variables */
   --base-space: 1rem; /* ~ 16px */
   --base-small-space: 0.75rem; /* ~ 12px */
+  --base-extra-small-space: 0.5rem; /* ~ 8px */
   --base-medium-space: 1.5rem; /* ~ 24px */
   --base-large-space: 2rem; /* ~ 32px */
   --column-space: 2.5rem; /* ~ 40px */

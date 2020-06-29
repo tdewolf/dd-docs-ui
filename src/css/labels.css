@@ -112,10 +112,10 @@
   opacity: 1;
 }
 
-.doc .labels span:first-child,
+/* .doc .labels span:first-child,
 .doc .labels li:first-child {
   opacity: 1;
-}
+} */
 
 /* .doc .labels span.edition::before{
   color: var(--color-brand-blue-secondary);

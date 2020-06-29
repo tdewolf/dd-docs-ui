@@ -3,7 +3,8 @@
 }
 
 .toc-menu {
-  margin-bottom: 1.5rem;
+  margin-top: var(--base-large-space);
+  line-height: 1;
 }
 
 .sidebar-box {
@@ -16,6 +17,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding-right: var(--base-space);
+  padding-left: var(--base-space);
 }
 
 .sidebar-box::-webkit-scrollbar {
@@ -55,11 +57,10 @@
   line-height: 1.2;
 }
 
-.toc .toc-menu h3,
+/* .toc .toc-menu h3,
 .toc .toc-menu ul {
   margin-left: 0.75rem;
-}
-
+} */
 .toc .toc-menu li {
   margin: 0;
 }

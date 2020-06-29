@@ -1,11 +1,14 @@
-.sidebar-box .tools {
+/* .sidebar-box .tools {
   margin-left: 0.75rem;
+} */
+.tools ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
-.tools ul { padding-left: 0; }
 
 .tools .edit {
-  /* width: 1.5em;
-  height: 1.5em; */
+  line-height: 1;
   display: inline-block;
   width: 100%;
   list-style: none;
@@ -23,5 +26,13 @@
   vertical-align: top;
   color: #999;
   padding-left: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+.sidebar-box .tools {
+  padding-top: 1.25rem;
+  display: inline-block;
+  width: 100%;
 }

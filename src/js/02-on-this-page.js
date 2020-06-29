@@ -33,9 +33,9 @@
     menu.className = 'toc-menu'
   }
 
-  var title = document.createElement('h3')
-  title.textContent = 'On This Page'
-  menu.appendChild(title)
+  // var title = document.createElement('h3')
+  // title.textContent = 'On This Page'
+  // menu.appendChild(title)
   menu.appendChild(list)
 
   if (sidebar) {

@@ -1,5 +1,5 @@
 .doc {
-  padding: var(--base-space) 0;
+  padding-top: 1.25rem;
 }
 
 .doc p {
@@ -147,6 +147,14 @@
   margin-left: -10px;
 }
 
+.ulist {
+  padding-left: var(--base-space);
+}
+
+ul ul ul {
+  list-style: disc;
+}
+
 .doc hr {
   margin: 1rem 0;
   border: 0 solid var(--color-border);
@@ -265,6 +273,7 @@
   padding-bottom: var(--base-space);
   padding-left: 0;
   padding-right: var(--base-space);
+  border-bottom: 0;
 }
 
 .doc .admonitionblock td.content > .title {
@@ -567,7 +576,8 @@
 
 */
 
-table.tableblock code.language-console.hljs.shell {
+table.tableblock code.language-console.hljs.shell,
+table.tableblock pre code.language-bash.hljs {
   white-space: normal;
 }
 
