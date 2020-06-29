@@ -50,7 +50,7 @@ main p {
   color: var(--color-brand-blue-secondary);
   display: flex;
   line-height: 1;
-  margin: var(--base-small-space) 0 var(--base-space);
+  margin: 1.25rem 0 0;
   /* margin: calc(-1 * var(--height-spacer)) calc(-1 * var(--width-container-gutter)) var(--height-spacer); */
   padding: var(--base-space);
   border-radius: 3px;

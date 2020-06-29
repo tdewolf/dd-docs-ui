@@ -64,7 +64,7 @@
   --hljs-string: #295d1e;
   --hljs-number: #0711ba;
   /* --height-navbar: 4rem; */
-  --height-spacer: 1rem;
+  --height-spacer: 1.2rem;
   --height-navbar: 6rem;
   --height-version-control: 4.5rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));

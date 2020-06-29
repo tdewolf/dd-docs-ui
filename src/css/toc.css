@@ -3,7 +3,8 @@
 }
 
 .toc-menu {
-  margin-bottom: 1.5rem;
+  margin-top: var(--column-space);
+  line-height: 1;
 }
 
 .sidebar-box {
@@ -55,11 +56,10 @@
   line-height: 1.2;
 }
 
-.toc .toc-menu h3,
+/* .toc .toc-menu h3,
 .toc .toc-menu ul {
   margin-left: 0.75rem;
-}
-
+} */
 .toc .toc-menu li {
   margin: 0;
 }
