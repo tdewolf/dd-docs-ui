@@ -1,7 +1,10 @@
 /* .sidebar-box .tools {
   margin-left: 0.75rem;
 } */
-.tools ul { margin: 0; padding: 0; }
+.tools ul {
+  margin: 0;
+  padding: 0;
+}
 
 .tools .edit {
   /* width: 1.5em;

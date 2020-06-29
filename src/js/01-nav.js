@@ -134,23 +134,23 @@
 
   // hide left nav on top level landing page
 
-    if (nav.innerText === '') {
-      nav.classList.add('hide-nav')
-    } else {
-      nav.classList.add('show-nav')
-    }
+  if (nav.innerText === '') {
+    nav.classList.add('hide-nav')
+  } else {
+    nav.classList.add('show-nav')
+  }
 
-    menuExpandToggle.addEventListener('click', function (e) {
-      e.preventDefault()
-      // var navBarHeight =  nav.querySelector('.nav-menu')
-      // navBarHeight.style.height = '100vh'
-      // console.log(navBarHeight.style.height)
-      if (nav.classList.contains('collapse-menu')) {
-        nav.classList.remove('collapse-menu')
-      } else {
-        nav.classList.add('collapse-menu')
-      }
-    })
+  menuExpandToggle.addEventListener('click', function (e) {
+    e.preventDefault()
+    // var navBarHeight =  nav.querySelector('.nav-menu')
+    // navBarHeight.style.height = '100vh'
+    // console.log(navBarHeight.style.height)
+    if (nav.classList.contains('collapse-menu')) {
+      nav.classList.remove('collapse-menu')
+    } else {
+      nav.classList.add('collapse-menu')
+    }
+  })
   // has children in li
   // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {

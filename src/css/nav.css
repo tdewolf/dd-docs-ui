@@ -46,7 +46,6 @@
     /* height: var(--height-nav); */
     z-index: var(--z-index-nav);
     border-left: 2px solid #eee;
-    border-right: 2px solid #eee;
   }
 }
 

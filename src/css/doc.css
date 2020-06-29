@@ -147,6 +147,10 @@
   margin-left: -10px;
 }
 
+.ulist {
+  padding-left: var(--base-extra-small-space);
+}
+
 .doc hr {
   margin: 1rem 0;
   border: 0 solid var(--color-border);
