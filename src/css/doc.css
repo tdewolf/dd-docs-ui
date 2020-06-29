@@ -151,6 +151,10 @@
   padding-left: var(--base-space);
 }
 
+ul ul ul {
+  list-style: disc;
+}
+
 .doc hr {
   margin: 1rem 0;
   border: 0 solid var(--color-border);
