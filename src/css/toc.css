@@ -3,7 +3,7 @@
 }
 
 .toc-menu {
-  margin-top: var(--column-space);
+  margin-top: var(--base-large-space);
   line-height: 1;
 }
 
@@ -17,6 +17,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding-right: var(--base-space);
+  padding-left: var(--base-space);
 }
 
 .sidebar-box::-webkit-scrollbar {

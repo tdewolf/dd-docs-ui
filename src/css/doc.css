@@ -273,6 +273,7 @@ ul ul ul {
   padding-bottom: var(--base-space);
   padding-left: 0;
   padding-right: var(--base-space);
+  border-bottom: 0;
 }
 
 .doc .admonitionblock td.content > .title {

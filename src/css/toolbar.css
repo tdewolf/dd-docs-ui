@@ -4,11 +4,11 @@
 .tools ul {
   margin: 0;
   padding: 0;
+  line-height: 1;
 }
 
 .tools .edit {
-  /* width: 1.5em;
-  height: 1.5em; */
+  line-height: 1;
   display: inline-block;
   width: 100%;
   list-style: none;
