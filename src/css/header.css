@@ -62,6 +62,7 @@
 
 .navbar-nav .nav-link .arrow {
   margin-left: 0.5rem;
+  display: inline-block;
 }
 
 .active .nav-link {
