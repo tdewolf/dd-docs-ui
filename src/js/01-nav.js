@@ -133,7 +133,7 @@
   }
 
   // hide left nav on top level landing page
-  setTimeout(function () {
+
     if (nav.innerText === '') {
       nav.classList.add('hide-nav')
     } else {
@@ -151,7 +151,6 @@
         nav.classList.add('collapse-menu')
       }
     })
-  }, 100)
   // has children in li
   // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {
