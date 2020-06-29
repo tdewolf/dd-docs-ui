@@ -148,7 +148,7 @@
 }
 
 .ulist {
-  padding-left: var(--base-extra-small-space);
+  padding-left: var(--base-space);
 }
 
 .doc hr {
@@ -571,7 +571,8 @@
 
 */
 
-table.tableblock code.language-console.hljs.shell {
+table.tableblock code.language-console.hljs.shell,
+table.tableblock pre code.language-bash.hljs {
   white-space: normal;
 }
 

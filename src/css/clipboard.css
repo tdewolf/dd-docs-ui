@@ -121,7 +121,6 @@ a.copy-code-button:hover {
 }
 
 .doc .listingblock pre .fade-shadow {
-  content: "";
   display: inline-block;
   background:
     transparent
@@ -136,27 +135,28 @@ a.copy-code-button:hover {
   width: 65px;
   height: 80%;
   position: absolute;
-  right: 2px;
+  right: 1px;
   top: 0;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
   /* Safari and Chrome */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   .doc .listingblock pre .fade-shadow {
     height: calc(100% - 8px);
   }
 }
 
-code.language-console.hljs.shell {
+code.language-console.hljs.shell,
+pre code.language-bash.hljs{
   white-space: nowrap;
   overflow-x: auto;
 }
 
-code.language-console.hljs.shell::-webkit-scrollbar {
+code::-webkit-scrollbar {
   width: 0.25rem;
   height: 5px;
 }
 
-code.language-console.hljs.shell::-webkit-scrollbar-thumb {
+code::-webkit-scrollbar-thumb {
   background-color: var(--color-border);
 }
