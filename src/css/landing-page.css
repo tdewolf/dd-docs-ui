@@ -154,6 +154,10 @@
   padding: 0;
 }
 
+.doc.landing-page-doc .videoblock.media-left {
+  width: auto;
+}
+
 .media-left .icon {
   font-size: 90px;
   color: var(--color-brand-blue-secondary);
