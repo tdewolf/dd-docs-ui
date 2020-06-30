@@ -124,6 +124,11 @@
   flex-wrap: wrap;
 }
 
+.doc.landing-page-doc .other-info-list .box.ulist,
+.doc.landing-page-doc .other-info-list .box.olist {
+  padding-left: 0;
+}
+
 .doc.landing-page-doc .other-info-list .box {
   padding-right: 40px;
 }

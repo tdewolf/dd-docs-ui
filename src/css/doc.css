@@ -769,6 +769,7 @@ table.tableblock pre code.language-bash.hljs {
 
 .doc .tabs.ulist {
   margin-top: 0;
+  padding-left: 0;
 }
 
 .doc .tabs ul {
@@ -999,6 +1000,10 @@ table.tableblock pre code.language-bash.hljs {
   display: block;
 }
 
+.other-tab-box.desktop-hide {
+  display: none;
+}
+
 /* Media css  */
 
 @media screen and (max-width: 767px) {
@@ -1027,6 +1032,10 @@ table.tableblock pre code.language-bash.hljs {
 
   .doc h5 {
     font-size: var(--heading-h4-sm);
+  }
+
+  .other-tab-box.desktop-hide {
+    display: block;
   }
 
   .doc .admonitionblock td.content {
