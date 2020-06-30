@@ -48,7 +48,7 @@
     /* border-left: 2px solid #eee; */
   }
 
-  .left-sidebar-menu:before {
+  .left-sidebar-menu::before {
     position: absolute;
     content: '';
     display: inline-block;
