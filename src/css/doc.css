@@ -385,6 +385,8 @@ ul ul ul {
   /* padding-left: var(--base-space); */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   border-radius: 5px;
+  align-items: center;
+  max-width: var(--image-block-container);
 }
 
 .doc .imageblock img {
