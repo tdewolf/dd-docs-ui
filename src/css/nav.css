@@ -58,21 +58,7 @@
     top: 0;
     z-index: 1;
     left: -1000%;
-}
-/* open this if you need version dropdown with continuous background */
-
-/* .version-control-box:before {
-  position: absolute;
-  content: '';
-  display: inline-block;
-  width: 1000%;
-  height: 100%;
-  background: var(--color-brand-gray6);
-  top: 0;
-  z-index: 11;
-  left: -1000%;
-} */
-
+  }
 }
 
 .nav-menu .nav-link,
