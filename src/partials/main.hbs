@@ -3,9 +3,9 @@
 {{#with (latest-page-url)}}
 <div class="article-banner">
 {{#if (and @root.page.componentVersion.prerelease (not @root.page.latest.prerelease))}}
-<p>You are viewing the documentation for a prerelease version.</p>
+<p> <i class="fas fa-file-alt"></i> You are viewing the documentation for a prerelease version.</p>
 {{else}}
-<p><i class="fab fa-asymmetrik"></i> A newer version of this documentation is available.</p>
+<p><i class="fas fa-file-alt"></i> A newer version of this documentation is available.</p>
 {{/if}}
 <a class="btn" href="{{relativize this}}">View Latest</a>
 </div>

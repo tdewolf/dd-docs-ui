@@ -147,7 +147,8 @@
   margin-left: -10px;
 }
 
-.ulist {
+.ulist,
+.olist {
   padding-left: var(--base-space);
 }
 

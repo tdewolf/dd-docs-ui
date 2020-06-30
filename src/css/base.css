@@ -16,7 +16,7 @@ body {
 
 body {
   color: var(--color-text);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: var(--line-height-body);
   margin: 0;
 }
