@@ -45,8 +45,34 @@
     height: 100%;
     /* height: var(--height-nav); */
     z-index: var(--z-index-nav);
-    border-left: 2px solid #eee;
+    /* border-left: 2px solid #eee; */
   }
+
+  .left-sidebar-menu:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: 1000%;
+    height: 100%;
+    background: var(--color-brand-gray7);
+    top: 0;
+    z-index: 1;
+    left: -1000%;
+}
+/* open this if you need version dropdown with continuous background */
+
+/* .version-control-box:before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 1000%;
+  height: 100%;
+  background: var(--color-brand-gray6);
+  top: 0;
+  z-index: 11;
+  left: -1000%;
+} */
+
 }
 
 .nav-menu .nav-link,
@@ -481,8 +507,6 @@ a.menu-expand-toggle {
     top: var(--height-to-body);
     margin-bottom: 1.5rem;
     /* height: var(--height-nav); */
-    border-left: 2px solid #eee;
-    border-right: 2px solid #eee;
   }
 
   .nav-control {
