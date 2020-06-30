@@ -132,14 +132,6 @@
     return el
   }
 
-  // hide left nav on top level landing page
-
-  if (nav.innerText === '') {
-    nav.classList.add('hide-nav')
-  } else {
-    nav.classList.add('show-nav')
-  }
-
   menuExpandToggle.addEventListener('click', function (e) {
     e.preventDefault()
     // var navBarHeight =  nav.querySelector('.nav-menu')
