@@ -14,8 +14,8 @@
 
 .btn-primary {
   padding: 5px 15px;
-  border: 1px solid var(--color-brand-blue);
-  background: var(--color-brand-blue);
+  border: 1px solid var(--color-brand-blue-secondary);
+  background: var(--color-brand-blue-secondary);
   color: var(--color-brand-white);
 }
 

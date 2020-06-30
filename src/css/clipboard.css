@@ -121,7 +121,7 @@ a.copy-code-button:hover {
 }
 
 .doc .listingblock pre .fade-shadow {
-  display: inline-block;
+  display: none;
   background:
     transparent
     linear-gradient(
