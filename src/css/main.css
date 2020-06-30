@@ -64,7 +64,7 @@ main p {
   color: var(--color-brand-blue-secondary);
 }
 
-.article-banner p .fab {
+.article-banner p svg {
   margin-right: 10px;
   font-size: var(--heading-h3);
 }
