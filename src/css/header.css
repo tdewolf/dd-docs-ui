@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem var(--width-container-gutter);
+  padding: 0.5rem 0;
 }
 
 .navbar-toggler {
@@ -43,6 +43,10 @@
 }
 
 .navbar.navbar-new-bottom {
+  background: var(--color-brand-blue-secondary);
+}
+
+.header-bottom-row {
   background: var(--color-brand-blue-secondary);
   display: none;
 }
@@ -204,7 +208,7 @@
 
   .primary-action {
     position: absolute;
-    right: 1.25rem;
+    right: 0;
     top: -137%;
   }
 
@@ -212,6 +216,10 @@
   .navbar-nav {
     display: flex;
     line-height: 1;
+  }
+
+  .header-bottom-row {
+    display: block;
   }
 
   .navbar-new-bottom .nav-item:first-child {
@@ -230,7 +238,7 @@
   }
 
   .navbar.navbar-new-top {
-    padding: 1.25rem;
+    padding: 1.25rem 0;
     line-height: 1;
   }
 }
