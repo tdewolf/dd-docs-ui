@@ -1,7 +1,7 @@
 .component-frame {
   /* rgba(87, 160, 255, 1) */
   background: var(--color-brand-gray6);
-  /* padding: 12px 15px 12px 15px; */
+  padding: 0 15px 0 15px;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -9,7 +9,13 @@
 }
 
 .frame-icon {
-  padding: 12px 0 12px 15px;
+  padding: 12px 0 12px 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+.frame-icon img {
+  width: 34px;
 }
 
 .frame-body {
@@ -17,7 +23,7 @@
   position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
-  padding-right: 15px;
+  padding-right: 0;
   line-height: 2;
   display: flex;
   align-items: center;
@@ -25,21 +31,33 @@
 }
 
 .frame-body .title {
-  margin: 0 4px 0 0;
+  margin: 0 0 0 0;
   font-size: var(--font-medium);
   line-height: 1.5rem;
   font-weight: var(--weight-semibold);
   color: var(--color-brand-gray1);
   display: inline-block;
+  word-break: break-word;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.frame-body .title span {
+  display: inline;
 }
 
 .component-frame .frame-link-dropdowns {
   display: inline-block;
   line-height: 1;
+  /* position: relative;
+  padding-bottom: 20px;
+  margin-bottom: -20px; */
 }
 
 .frame-body .frame-link {
   position: relative;
+  color: var(--color-brand-gray1);
+  font-size: 18px;
+  margin-left: 4px;
 }
 
 .frame-dropdown {
@@ -59,10 +77,13 @@
 .frame-link-dropdowns .frame-link {
   color: var(--color-brand-gray1);
   font-weight: var(--weight-semibold);
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .frame-link-dropdowns .frame-link svg {
   color: var(--color-brand-black);
+  font-size: var(--font-base);
 }
 
 .frame-dropdown .frame-dropdown-list,

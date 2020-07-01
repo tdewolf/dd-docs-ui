@@ -8,7 +8,10 @@
 <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
 </div>
 <div class="frame-body">
-<h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
+<h4 class="title">
+<span class="">
+{{{page.component.title}}}
+</span>
 <div class="frame-link-dropdowns">
 <a class="frame-link component" href="{{relativize page.componentVersion.url}}"><span class="version">{{page.componentVersion.displayVersion}}</span> <i class="fas fa-chevron-down"></i></a>
 <div class="frame-dropdown versions">
@@ -32,6 +35,8 @@
 </div>
 </div>
 </div>
+</h4>
+
 </div>
 </div>
 {{else}}
@@ -40,7 +45,7 @@
 <img src="{{{uiRootPath}}}/img/server-icon.png" alt="">
 </div>
 <div class="frame-body">
-<h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
+<h4 class="title"><span class="">{{{page.component.title}}}</span></h4>
 <a class="navbar-item component" href="{{relativize page.componentVersion.url}}">{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
 </div>
 </div>
