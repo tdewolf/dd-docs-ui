@@ -110,7 +110,8 @@
   --heading-h1: 2.5rem; /* ~40px */
   --heading-h2: 2rem; /* ~32px */
   --heading-h3: 1.5rem; /* ~24px */
-  --heading-h4: 1rem; /* ~16px */
+  --heading-h4: 1.25rem; /* ~20px */
+  --heading-h5: var(--font-base);  /* ~16px */
 
   /* line height  */
   --line-height-body: 160%;

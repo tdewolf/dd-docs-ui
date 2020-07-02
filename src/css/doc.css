@@ -25,17 +25,22 @@
   margin: 2.5rem 0 0;
 }
 
+.page-heading-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .doc h1.page {
   font-size: var(--heading-h1);
+  line-height: 50px;
   margin-top: 0;
+  margin-right: var(--base-space);
   display: inline-block;
 }
 
 .doc h1.page + .labels {
   display: inline-block;
-  position: relative;
-  top: -5px;
-  margin-left: var(--base-space);
 }
 
 .doc h2 {
@@ -64,7 +69,7 @@
 }
 
 .doc h5 {
-  font-size: var(--heading-h4);
+  font-size: var(--heading-h5);
 }
 
 .doc h1 > a.anchor,
@@ -77,10 +82,20 @@
   position: absolute;
   text-decoration: none;
   width: 3ex;
-  margin-left: -2.5ex;
+  margin-left: -2.75ex;
   visibility: hidden;
   text-align: center;
+  transform: scale(0.85);
+}
+
+.doc h1 > a.anchor {
+  transform: scale(0.65);
+  margin-left: -2.25ex;
+}
+
+.doc h2 > a.anchor {
   transform: scale(0.75);
+  margin-left: -2.5ex;
 }
 
 .doc h1:hover a.anchor,
@@ -1015,6 +1030,7 @@ table.tableblock pre code.language-bash.hljs {
     font-size: var(--heading-h1-sm);
     margin-bottom: 10px;
     display: block;
+    line-height: 46px;
   }
 
   .doc h2 {

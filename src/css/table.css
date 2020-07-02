@@ -58,7 +58,7 @@ table.tableblock > tbody th {
   display: block;
   border-bottom: 1px solid var(--color-brand-gray8);
   padding-left: var(--base-small-space);
-  padding-top: var(--base-space);
+  /* padding-top: var(--base-space); */
   padding-bottom: var(--base-space);
 }
 
@@ -69,10 +69,14 @@ table.tableblock tbody td p {
   font-weight: var(--weight-medium);
 }
 
-table.tableblock .content .paragraph,
+table.tableblock tbody td.tableblock p.tableblock {
+  margin-top: 1rem;
+}
+
+/* table.tableblock .content .paragraph,
 table.tableblock .content .ulist {
   margin-top: 0;
-}
+} */
 
 /* table.tableblock tr:nth-child(odd) {
     background: rgba(0, 0, 0, 0.07);g29
@@ -103,6 +107,12 @@ table.tableblock .title {
 table.table-tutorial tr th:last-child,
 table.table-tutorial tr td:last-child {
   background-color: var(--color-brand-gray7);
+}
+
+.tableblock thead a,
+.tableblock tbody a,
+.tableblock p {
+  font-family: inherit;
 }
 
 /* Responsive css  */
@@ -147,6 +157,7 @@ table.table-tutorial tr td:last-child {
   table.tableblock tbody td,
   table.tableblock > tbody th {
     display: table-cell;
+    min-width: 5rem;
   }
 
   table.tableblock td,
