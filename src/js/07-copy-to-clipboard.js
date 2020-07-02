@@ -28,11 +28,12 @@
     copyButton.addEventListener('click', function (e) {
       // NOTE: ignore event on pseudo-element
       if (e.currentTarget === e.target) return
-      // for console text
-      if (codeBlock.dataset.lang === 'console') {
-        var bashText = codeBlock.innerText
-        // remove $ from text
-        navigator.clipboard.writeText(bashText.slice(2)).then(
+      var bashText = codeBlock.innerText
+      // bashText.slice(2)
+      // remove '$' from copy to code functionality in code block console
+      var spliceData = bashText.split('$').join('')
+      if (codeBlock.dataset.lang === 'console' || bashText.includes('$')) {
+        navigator.clipboard.writeText(spliceData).then(
           function () {
             /* Chrome doesn't seem to blur automatically,
                 leaving the button in a focused state. */
