@@ -56,6 +56,7 @@ main p {
   border-radius: 3px;
   font-family: "Open Sans", sans-serif;
   font-weight: var(--weight-normal);
+  flex-wrap: wrap;
 }
 
 .article-banner p {
@@ -64,8 +65,9 @@ main p {
   color: var(--color-brand-blue-secondary);
 }
 
-.article-banner p svg {
+.article-banner svg {
   margin-right: 10px;
+  margin-bottom: 10px;
   font-size: var(--heading-h3);
 }
 
