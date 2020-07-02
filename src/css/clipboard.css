@@ -146,11 +146,11 @@ a.copy-code-button:hover {
   }
 }
 
-code.language-console.hljs.shell,
+/* code.language-console.hljs.shell,
 pre code.language-bash.hljs {
   white-space: nowrap;
   overflow-x: auto;
-}
+} */
 
 code::-webkit-scrollbar {
   width: 0.25rem;
