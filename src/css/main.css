@@ -6,8 +6,8 @@ main {
 main [id]::before {
   content: "";
   display: inherit;
-  height: var(--height-to-body);
-  margin-top: calc(-1 * var(--height-to-body));
+  height: var(--h2-heading-top-space);
+  margin-top: calc(-1 * var(--h2-heading-top-space));
   visibility: hidden;
   width: 0;
 }

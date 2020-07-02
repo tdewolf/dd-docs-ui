@@ -46,7 +46,6 @@
 .doc h2 {
   font-size: var(--heading-h2);
   max-width: fit-content;
-  display: inline-block;
   width: 100%;
   /* NOTE used to restrict width of key line */
 }
