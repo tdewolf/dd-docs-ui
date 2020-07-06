@@ -9,6 +9,7 @@
       navbarToggle.classList.toggle('is-active')
       document.getElementById(navbarToggle.dataset.target).classList.toggle('is-active')
       document.documentElement.classList.toggle('is-clipped--navbar')
+      document.querySelector('nav.collapse-menu').classList.remove('collapse-menu')
     })
   })
 })()

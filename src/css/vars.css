@@ -125,6 +125,7 @@
   --base-extra-small-space: 0.5rem; /* ~ 8px */
   --base-medium-space: 1.5rem; /* ~ 24px */
   --base-large-space: 2rem; /* ~ 32px */
+  --base-extra-large-space: 2.5rem; /* ~ 40px */
   --column-space: 2.5rem; /* ~ 40px */
   --admonition-icon-space: 1rem; /* ~ 16px */
   --admonition-content-space: 1rem; /* ~ 16px */

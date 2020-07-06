@@ -8,6 +8,7 @@
   scrollbar-color: var(--color-border) transparent;
   height: 100%;
   z-index: var(--z-index-nav);
+  transition: all 0.1s;
 }
 
 .nav-menu::-webkit-scrollbar {
@@ -560,7 +561,7 @@ a.collapse-menu span {
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 767px) {
   nav.nav a.menu-expand-toggle {
     right: -3.8rem;
     top: 60px;
