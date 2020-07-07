@@ -636,6 +636,10 @@ table.tableblock pre code.language-bash.hljs {
   margin-top: 1.5rem;
 }
 
+.doc .dlist dt + dt {
+  margin-top: var(--base-extra-small-space);
+}
+
 .doc .dlist dd {
   margin-left: 1.5rem;
 }
