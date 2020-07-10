@@ -176,6 +176,18 @@ ul ul ul {
   border-top-width: 1px;
 }
 
+.ulist li .paragraph:first-child,
+.olist li .paragraph:first-child,
+.dlist li .paragraph:first-child {
+  margin-top: var(--base-extra-small-space);
+}
+
+.ulist li .imageblock,
+.olist li .imageblock,
+.dlist li .imageblock {
+  margin-bottom: var(--base-extra-small-space);
+}
+
 /* .doc table.tableblock,
 .doc th.tableblock,
 .doc td.tableblock {
@@ -515,6 +527,10 @@ ul ul ul {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: 0;
+}
+
+.hdlist table .hdlist1 + .hdlist2 p {
+  margin-left: var(--base-space);
 }
 
 .doc pre:not(.highlight),
