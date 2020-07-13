@@ -143,14 +143,14 @@
   function concealEvent (e) {
     e.stopPropagation()
   }
-
   // scroll left menu to current active page
-
-  var currentPageMenu = document.querySelector('.is-current-page')
-  var topPositon = currentPageMenu.offsetTop
-  var leftMenu = document.querySelector('.left-sidebar-menu .nav-menu')
   setTimeout(function () {
-    leftMenu.scrollTop = topPositon
+    if (document.querySelector('.is-current-page')) {
+      var currentPageMenu = document.querySelector('.is-current-page')
+      var topPositon = currentPageMenu.offsetTop
+      var leftMenu = document.querySelector('.left-sidebar-menu .nav-menu')
+      leftMenu.scrollTop = topPositon
+    }
   }, 200)
 
   // clearTimeout(scrollCurrentPageMenu, 20000)

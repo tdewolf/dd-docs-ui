@@ -416,7 +416,7 @@ ul ul ul {
 }
 
 .doc .imageblock img {
-  display: block;
+  display: inline-block;
 }
 
 .doc .imageblock .title {
@@ -442,7 +442,7 @@ ul ul ul {
   width: auto;
 }
 
-.doc .abstract blockquote {
+.doc blockquote {
   font-size: 0.9375rem;
   margin: 1rem 0 1.5625rem 0;
   font-weight: var(--weight-light);
@@ -450,7 +450,7 @@ ul ul ul {
   padding-left: 1.125rem;
 }
 
-.doc .abstract blockquote * {
+.doc blockquote * {
   font-weight: inherit;
 }
 /* .doc .abstract blockquote::before {
@@ -1084,5 +1084,18 @@ table.tableblock pre code.language-bash.hljs {
   .doc h5 > a.anchor,
   .doc h6 > a.anchor {
     font-size: 18px;
+  }
+
+  .card-row .column .content .imageblock {
+    text-align: center;
+  }
+
+  .doc.landing-page-doc .media-left {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  main {
+    padding-bottom: 2rem;
   }
 }
