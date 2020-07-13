@@ -15,7 +15,7 @@
   font-weight: var(--weight-semibold);
   letter-spacing: -0.025rem;
   line-height: var(--line-height-heading);
-  margin: 1.5rem 0 1rem;
+  margin-bottom: 0;
 }
 
 .doc h1 {
@@ -45,8 +45,9 @@
 
 .doc h2 {
   font-size: var(--heading-h2);
-  max-width: fit-content;
+  /* max-width: fit-content; */
   width: 100%;
+  margin-top: var(--base-extra-large-space);
   /* NOTE used to restrict width of key line */
 }
 
@@ -61,14 +62,17 @@
 
 .doc h3 {
   font-size: var(--heading-h3);
+  margin-top: var(--base-extra-large-space);
 }
 
 .doc h4 {
   font-size: var(--heading-h4);
+  margin-top: var(--base-extra-large-space);
 }
 
 .doc h5 {
   font-size: var(--heading-h5);
+  margin-top: var(--base-extra-large-space);
 }
 
 .doc h1 > a.anchor,
@@ -126,10 +130,20 @@
   word-spacing: inherit;
 }
 
-.doc .paragraph,
+.doc .paragraph {
+  margin-top: var(--base-space);
+}
+
+.doc .paragraph + .paragraph {
+  margin-top: var(--base-medium-space);
+}
+
+.doc .admonitionblock {
+  margin-top: var(--base-large-space);
+}
+
 .doc .olist,
 .doc .ulist,
-.doc .admonitionblock,
 .doc .exampleblock,
 .doc .imageblock,
 .doc .listingblock,
@@ -138,7 +152,7 @@
 .doc .swagger-container,
 .doc .verseblock,
 .doc .videoblock {
-  margin-top: 1rem;
+  margin-top: var(--base-medium-space);
 }
 
 .doc .paragraph .title,
@@ -149,11 +163,11 @@
 .doc .literalblock .title,
 .doc .openblock .title,
 .doc caption {
-  font-size: 1rem;
+  font-size: var(--font-base);
   font-weight: var(--weight-semibold);
   /* letter-spacing: -0.025em; */
   line-height: 1.2;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--base-space);
   color: var(--color-brand-gray3);
 }
 
@@ -430,12 +444,20 @@ ul ul ul {
   width: auto;
 }
 
+.doc .quoteblock {
+  margin-top: var(--base-medium-space);
+}
+
 .doc .abstract blockquote {
   font-size: 0.9375rem;
-  margin: 1rem 0 1.5625rem 0;
+  margin: 0;
   font-weight: var(--weight-light);
   border-left: 2px solid var(--color-brand-gray5);
   padding-left: 1.125rem;
+}
+
+.doc .quoteblock + .paragraph {
+  margin-top: var(--base-extra-large-space);
 }
 
 .doc .abstract blockquote * {
@@ -599,7 +621,7 @@ table.tableblock pre code.language-bash.hljs {
 }
 
 .doc .dlist {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 0;
 }
 
 .doc .dlist dl {
@@ -607,11 +629,15 @@ table.tableblock pre code.language-bash.hljs {
 }
 
 .doc .dlist dt {
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
 }
 
 .doc .dlist dd + dt {
   margin-top: 1.5rem;
+}
+
+.doc .dlist dt + dt {
+  margin-top: var(--base-extra-small-space);
 }
 
 .doc .dlist dd {
@@ -619,12 +645,12 @@ table.tableblock pre code.language-bash.hljs {
 }
 
 .doc .dlist dt + dd {
-  margin-top: 0.125rem;
+  margin-top: var(--base-small-space);
 }
 
-.doc .dlist dd > .openblock > .content > :first-child {
+/* .doc .dlist dd > .openblock > .content > :first-child {
   margin-top: 0;
-}
+} */
 
 .doc .sidebarblock > .content {
   border: 1px solid var(--color-border);
@@ -778,7 +804,7 @@ table.tableblock pre code.language-bash.hljs {
   padding: var(--base-space);
   border-radius: 8px;
   border: 1px solid var(--color-brand-gray8);
-  margin-top: var(--base-space);
+  margin-top: var(--base-extra-large-space);
 }
 
 .doc .tabs.ulist {
