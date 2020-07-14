@@ -49,6 +49,7 @@
 .header-bottom-row {
   background: var(--color-brand-blue-secondary);
   display: none;
+  transition: all 0.3s;
 }
 
 .navbar-new-bottom .nav-item {
@@ -243,6 +244,16 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .primary-action {
+    top: -100%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .header {
     border-bottom: 1px solid var(--color-brand-blue);
@@ -290,7 +301,7 @@
     color: var(--color-brand-blue);
   }
 
-  .navbar-new-bottom.is-active {
+  .header-bottom-row.is-active {
     display: block;
     position: absolute;
     width: 100%;

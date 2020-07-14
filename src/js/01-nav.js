@@ -71,7 +71,6 @@
   if (document.querySelector('.main-nav-parent')) {
     navMenuControl = document.querySelector('.main-nav-parent')
     navMenuControl.addEventListener('click', function () {
-      //   navWrap.style.display = 'none'
       for (var i = 0; i < navItems.length; i++) {
         navItems[i].classList.remove('is-active')
         navItems[i].classList.remove('is-inactive')
@@ -134,9 +133,6 @@
 
   menuExpandToggle.addEventListener('click', function (e) {
     e.preventDefault()
-    // var navBarHeight =  nav.querySelector('.nav-menu')
-    // navBarHeight.style.height = '100vh'
-    // console.log(navBarHeight.style.height)
     if (nav.classList.contains('collapse-menu')) {
       nav.classList.remove('collapse-menu')
     } else {
@@ -144,8 +140,18 @@
     }
   })
   // has children in li
-  // $('ul.nav-list li.nav-item ul.nav-list .nav-item').has('ul.nav-list').addClass('has-children')
   function concealEvent (e) {
     e.stopPropagation()
   }
+
+  // scroll left menu to current active page
+
+  var currentPageMenu = document.querySelector('.is-current-page')
+  var topPositon = currentPageMenu.offsetTop
+  var leftMenu = document.querySelector('.left-sidebar-menu .nav-menu')
+  setTimeout(function () {
+    leftMenu.scrollTop = topPositon
+  }, 200)
+
+  // clearTimeout(scrollCurrentPageMenu, 20000)
 })()

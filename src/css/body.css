@@ -33,7 +33,8 @@ aside.toc.sidebar {
   width: var(--width-toc);
 }
 
-@media screen and (min-width: 769px) {
+/* Make layout in full screen */
+@media screen and (min-width: 993px) {
   div.body {
     min-height: var(--height-min-body);
   }
