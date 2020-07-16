@@ -333,6 +333,10 @@
   display: none;
 }
 
+.nav.tutorials-filter .sub-menu.open {
+  display: block;
+}
+
 .nav.tutorials-filter .sub-menu li {
   list-style: none;
 }

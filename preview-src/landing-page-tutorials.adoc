@@ -125,7 +125,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 [.data-filter-column]
 ====== {empty}
 ++++
-    <div  data-category="intermediate .net developer" class="sub-heading two-column-heading">
+    <div  data-category="intermediate dotnet developer" class="sub-heading two-column-heading">
         <h3 class="text-color-brand-blue-secondary">Lorem ipsum</h3>
         <div class="filter-info">
         <h5 >
