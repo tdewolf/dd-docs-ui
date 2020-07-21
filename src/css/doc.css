@@ -444,6 +444,12 @@ ul ul ul {
   width: auto;
 }
 
+.doc span.image {
+  line-height: 1;
+  vertical-align: -0.5em;
+  display: inline-flex;
+  padding: 0 0.25ex;
+  
 .doc .quoteblock {
   margin-top: var(--base-medium-space);
 }
