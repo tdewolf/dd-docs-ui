@@ -370,6 +370,8 @@
 
   .doc.landing-page-doc .media-left {
     margin-left: 0;
+    padding-left: 0;
+    text-align: center;
   }
 
   .doc.landing-page-doc figure {
@@ -396,10 +398,5 @@
   .card-row.two-column-row .column:not(.data-filter-column):nth-child(odd) {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  .doc.landing-page-doc .media-left {
-    padding-left: 0;
-    text-align: center;
   }
 }
