@@ -56,8 +56,9 @@
   --color-shade: #f3f3f3;
   --color-navbar-bg: var(--color-brand-black);
   --color-navbar-text: var(--color-brand-white);
-  --color-footer-bg: var(--color-brand-black);
-  --color-footer-text: var(--color-brand-white);
+  --color-footer-bg: var(--color-shade);
+  --color-footer-bg-gray: var(--color-brand-black);
+  --color-footer-text: var(--color-text);
 
   /* Color for code block  */
   --hljs-attr: #407787;
