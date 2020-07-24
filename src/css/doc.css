@@ -456,6 +456,13 @@ ul ul ul {
   width: auto;
 }
 
+.doc span.image {
+  line-height: 1;
+  vertical-align: -0.5em;
+  display: inline-flex;
+  padding: 0 0.25ex;
+}
+
 .doc .quoteblock {
   margin-top: var(--base-medium-space);
 }
@@ -661,7 +668,7 @@ table.tableblock pre code.language-bash.hljs {
 }
 
 .doc .dlist dt + dd {
-  margin-top: var(--base-small-space);
+  margin-top: var(--base-extra-small-space);
 }
 
 /* .doc .dlist dd > .openblock > .content > :first-child {
