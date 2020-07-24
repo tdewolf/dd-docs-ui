@@ -1,77 +1,122 @@
-;(function ($) {
+;
+(function () {
   'use strict'
   // for slide toggle
-  $('.nav-link').click(function () {
-    $(this).toggleClass('active')
-    $(this).next('.sub-menu').slideToggle(10)
-  })
-  // add class even odd
-  var $allData = $('.data-filter-column')
-  for (var i = 0; i < $allData.length; i++) {
-    if (i % 2 === 1) {
-      $allData[i].classList.add('even')
-    } else {
-      $allData[i].classList.add('odd')
-    }
-  }
+  if (document.querySelector('.tutorials-filter')) {
+    // all variables declare here
+    // var tutorialsFilter = document.querySelector('.tutorials-filter')
+    var navLink = document.querySelectorAll('.nav-menu.filter li a')
+    var allData = document.querySelectorAll('.data-filter-column')
 
-  // for filter menu
-  var $filterMenuCheckboxes = $('input[type="checkbox"]')
-  $filterMenuCheckboxes.on('change', function () {
-    var selectedFiltersData = {}
-    $filterMenuCheckboxes.filter(':checked').each(function () {
-      if (!Object.prototype.hasOwnProperty.call(selectedFiltersData, this.name)) {
-        selectedFiltersData[this.name] = []
-      }
-      selectedFiltersData[this.name].push(this.value.toLowerCase())
-    })
-    // create a collection containing all of the filterable elements
-    var $filteredResultsData = $('.data-filter-column')
-    // loop over the selected filter name -> (array) values pairs
-    $filteredResultsData.removeClass('even')
-    $filteredResultsData.removeClass('odd')
-    $.each(selectedFiltersData, function (name, filterValues) {
-      // filter each .data-filter-column element
-      $filteredResultsData = $filteredResultsData.filter(function () {
-        var matched = false
-        var currentFilterValues = $(this).find('.sub-heading').data('category').toLowerCase().split(' ')
-
-        $.each(currentFilterValues, function (_, currentFilterValue) {
-          if ($.inArray(currentFilterValue, filterValues) !== -1) {
-            matched = true
-            return false
-          }
-        })
-        // if matched is true the current .data-filter-column element is returned
-        return matched
+    // looping through the all chekbox link
+    navLink.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault()
+        this.classList.toggle('active')
+        this.nextElementSibling.classList.toggle('open')
       })
     })
-
-    $('.data-filter-column').addClass('hide').filter($filteredResultsData).addClass('show').removeClass('hide')
-    // add class for data-filter-column
-    for (var i = 0; i < $filteredResultsData.length; i++) {
-      if (i % 2 === 1) {
-        $filteredResultsData[i].classList.add('even')
+    //   // add class even odd
+    allData.forEach(function (column, index) {
+      if (index % 2 === 1) {
+        allData[index].classList.add('even')
       } else {
-        $filteredResultsData[i].classList.add('odd')
-      }
-    }
-    // reset all check mark
-    $('#clearALLBtn').click(function (event) {
-      selectedFiltersData = []
-      $('.data-filter-column').removeClass('hide').removeClass('show').removeClass('odd').removeClass('even')
-      var inputs = $('.check-mark')
-      for (var j = 0; j < inputs.length; j++) {
-        inputs[j].checked = false
-      }
-      for (var i = 0; i < $allData.length; i++) {
-        if (i % 2 === 1) {
-          $allData[i].classList.add('even')
-        } else {
-          $allData[i].classList.add('odd')
-        }
+        allData[index].classList.add('odd')
       }
     })
-  })
+    //   // for filter menus
+    var filterMenuCheckboxes = document.querySelectorAll('input[type="checkbox"]')
+    var selectedFiltersData = {}
+    filterMenuCheckboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function (event) {
+        event.preventDefault()
+        var self = this
+        /*eslint no-unused-vars: "error"*/
+        // var checkedData = [].filter.call(filterMenuCheckboxes, function (el) {
+        //   return el.checked
+        // })
+        if (checkbox.checked === true) {
+          if (!Object.prototype.hasOwnProperty.call(selectedFiltersData, self.name)) {
+            selectedFiltersData[self.name] = []
+          }
+          selectedFiltersData[self.name].push(self.value.toLowerCase())
+        }
+        if (checkbox.checked === false) {
+          var index = selectedFiltersData[self.name].indexOf(self.value)
+          if (selectedFiltersData[self.name].length === 1) {
+            delete selectedFiltersData[self.name]
+          } else {
+            selectedFiltersData[self.name].splice(index, 1)
+          }
+        }
+        // remove odd even class while clicking on checkbox
+        allData.forEach(function (column) {
+          column.classList.remove('odd')
+          column.classList.remove('even')
+        })
+        var filteredResultsData = Array.from(document.querySelectorAll('.data-filter-column'))
+        // for each function with object keys
+        Object.keys(selectedFiltersData).forEach(function (value) {
+          //     // set value from filter
+          var filterValues = selectedFiltersData[value]
+          filteredResultsData = filteredResultsData.filter(function (filterableData) {
+            var matched = false
+            var currentFilterData = Array.from(filterableData.querySelectorAll('.sub-heading'))
+            var currentFilterValuesData
+            currentFilterData.forEach(function (currentFilterDataItem) {
+              var filterSplitValue = currentFilterDataItem.dataset.category.toLowerCase().split(' ')
+              currentFilterValuesData = filterSplitValue
+            })
+            var currentFilterValues = currentFilterValuesData
+            Array.prototype.forEach.call(currentFilterValues, function (currentFilterValue) {
+              if (filterValues.indexOf(currentFilterValue) !== -1) {
+                // console.log('true', currentFilterValue, filterValues)
+                matched = true
+                return false
+              }
+            })
+            // if matched is true the current .data-filter-column element is returned
+            return matched
+          }) // filter loop end
+        })
+        // First hide all data column
+        allData.forEach(function (dataColumn) {
+          dataColumn.classList.add('hide')
+        })
+        // display filter result data column
+        filteredResultsData.forEach(function (result, idn) {
+          result.classList.add('show')
+          result.classList.remove('hide')
+          if (idn % 2 === 1) {
+            result.classList.add('even')
+          } else {
+            result.classList.add('odd')
+          }
+        })
+        var clearALLBtn = document.getElementById('clearALLBtn')
+        clearALLBtn.addEventListener('click', function (event) {
+          event.preventDefault()
+          selectedFiltersData = []
+          // remove all classes
+          allData.forEach(function (dataColumn, idx) {
+            dataColumn.classList.remove('hide')
+            dataColumn.classList.remove('show')
+            dataColumn.classList.remove('odd')
+            dataColumn.classList.remove('even')
+            if (idx % 2 === 1) {
+              dataColumn.classList.add('even')
+            } else {
+              dataColumn.classList.add('odd')
+            }
+          })
+
+          var inputs = document.querySelectorAll('.check-mark')
+          for (var j = 0; j < inputs.length; j++) {
+            inputs[j].checked = false
+          }
+        })
+      }) // checkbox click event end
+    }) // filterMenuCheckboxes end
+  } // if condition end
   /*eslint-env jquery*/
-})(jQuery)
+})()
