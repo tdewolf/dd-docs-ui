@@ -64,7 +64,6 @@ pre {
 
 code {
   background-color: #0074e00e;
-  font-size: var(--font-small);
   word-spacing: -0.125em;
   color: var(--color-brand-gray1);
 }

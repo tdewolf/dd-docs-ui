@@ -7,7 +7,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
   height: 100%;
-  z-index: var(--z-index-nav);
+  z-index: 5;
   transition: all 0.1s;
 }
 

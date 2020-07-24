@@ -1,5 +1,11 @@
-.navbar-new-top {
+.header-top-row {
   background: var(--color-brand-white);
+  padding: 0 var(--width-container-gutter);
+}
+
+.header-top-row .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .navbar-brand img {
@@ -305,5 +311,6 @@
     display: block;
     position: absolute;
     width: 100%;
+    left: 0;
   }
 }
