@@ -29,10 +29,11 @@
       // NOTE: ignore event on pseudo-element
       if (e.currentTarget === e.target) return
       var bashText = codeBlock.innerText
-      // bashText.slice(2)
       // remove '$' from copy to code functionality in code block console
-      var spliceData = bashText.split('$').join('')
-      if (codeBlock.dataset.lang === 'console' || bashText.includes('$')) {
+      // var spliceData = bashText.split('$').join('')
+      var check = bashText.charAt(0)
+      if (check === '$') {
+        var spliceData = bashText.substring(2)
         navigator.clipboard.writeText(spliceData).then(
           function () {
             /* Chrome doesn't seem to blur automatically,
