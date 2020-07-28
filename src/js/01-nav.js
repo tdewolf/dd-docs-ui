@@ -150,8 +150,20 @@
       var topPositon = currentPageMenu.offsetTop
       var leftMenu = document.querySelector('.left-sidebar-menu .nav-menu')
       leftMenu.scrollTop = topPositon
-    }
-  }, 200)
 
+      // show depth 0 child element
+
+      var otherNavs = document.querySelectorAll('.nav-list > .nav-item[data-depth="0"]')
+      otherNavs.forEach(function (nav) {
+        var navSubMenu = Array.from(nav.querySelector('ul.nav-list').children)
+        navSubMenu.forEach(function (item) {
+          item.classList.remove('is-inactive')
+        })
+      })
+      // if(otherNavs) {
+
+      // }
+    }
+  }, 100)
   // clearTimeout(scrollCurrentPageMenu, 20000)
 })()

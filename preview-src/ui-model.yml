@@ -17,6 +17,8 @@ site:
         url: /index.html
         navigation:
         - content: Introduction
+          url: /index.html
+          urlType: fragment
           items:
           - content: Why Couchbase?
             url: '#'
