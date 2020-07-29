@@ -165,7 +165,6 @@
 
         if (nav.className.includes('is-current-page')) {
           navMenuControl.style.display = 'none'
-          console.log(navMenuControl)
         }
 
         // hide in second level menu
