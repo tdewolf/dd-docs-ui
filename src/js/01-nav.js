@@ -156,9 +156,26 @@
       var otherNavs = document.querySelectorAll('.nav-list > .nav-item[data-depth="0"]')
       otherNavs.forEach(function (nav) {
         var navSubMenu = Array.from(nav.querySelector('ul.nav-list').children)
+        // var navDataDepth = Array.from(nav.querySelector('ul.nav-list'))
         navSubMenu.forEach(function (item) {
           item.classList.remove('is-inactive')
         })
+
+        // hide main menu for top level navigation -
+
+        if (nav.className.includes('is-current-page')) {
+          navMenuControl.style.display = 'none'
+          console.log(navMenuControl)
+        }
+
+        // hide in second level menu
+        if (nav.className.includes('is-current-path')) {
+          otherNavs.forEach(function (navItem) {
+            if (!navItem.className.includes('is-current-path')) {
+              navItem.classList.add('is-inactive')
+            }
+          })
+        }
       })
       // if(otherNavs) {
 
