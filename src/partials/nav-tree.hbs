@@ -1,8 +1,8 @@
 {{#if navigation}}
 {{#each navigation}}
 {{#if (eq ../crumbAtLevel this)}}
-{{#if ( eq ../crumbLevel 0 or eq ../crumbLevel 1 or eq ../crumbLevel 2)}}
-<div class="main-nav-parent new">
+{{#if ( eq ../crumbLevel 0 or eq ../crumbLevel 1 or eq ../crumbLevel 2 or eq ../crumbLevel 3)}}
+<div class="main-nav-parent new " data-depth="{{../level}}">
 <span class="back-to-menu"><i class="fas fa-chevron-left"></i> Main Menu </span>
 {{!-- <span class="nav-text">{{{./content}}}</span> --}}
 </div>
@@ -14,7 +14,7 @@
 {{#each navigation}}
 <li class="nav-item{{#if (eq ../crumbAtLevel this)}}
 {{~#if (eq this (last @root.page.breadcrumbs))}} is-current-page{{~else}} is-current-path{{/if}} is-active
-{{~else if (eq ../level 0)}} {{!--is-active--}} is-inactive{{/if}}{{#if (eq ../crumbAtLevel this (and eq ../level 2))}} is-active-depth-2 {{/if}} " data-depth="{{../level}}">
+{{~else if (eq ../level 1)}} {{!--is-active--}} is-inactive{{/if}}{{#if (eq ../crumbAtLevel this (and eq ../level 2))}} is-active-depth-2 {{/if}} " data-depth="{{../level}}">
 
 {{#if ./content}}
 <span class="nav-line "  data-depth="{{../level}}">
