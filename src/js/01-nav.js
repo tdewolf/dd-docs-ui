@@ -14,6 +14,7 @@
   })
 
   find(/*'.nav-toggle',*/ '.in-toggle', navMenu.element).forEach(function (toggleBtn) {
+    console.log(toggleBtn, 17)
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
     toggleBtn.addEventListener('click', toggleActive.bind(navItem))
     // var dataDepth = toggleBtn.getAttribute('data-depth')
@@ -150,36 +151,35 @@
       var topPositon = currentPageMenu.offsetTop
       var leftMenu = document.querySelector('.left-sidebar-menu .nav-menu')
       leftMenu.scrollTop = topPositon
-
-      // show depth 0 child element
-
-      var otherNavs = document.querySelectorAll('.nav-list > .nav-item[data-depth="0"]')
-      otherNavs.forEach(function (nav) {
-        var navSubMenu = Array.from(nav.querySelector('ul.nav-list').children)
-        // var navDataDepth = Array.from(nav.querySelector('ul.nav-list'))
-        navSubMenu.forEach(function (item) {
-          item.classList.remove('is-inactive')
-        })
-
-        // hide main menu for top level navigation -
-
-        if (nav.className.includes('is-current-page')) {
-          navMenuControl.style.display = 'none'
-        }
-
-        // hide in second level menu
-        if (nav.className.includes('is-current-path')) {
-          otherNavs.forEach(function (navItem) {
-            if (!navItem.className.includes('is-current-path')) {
-              navItem.classList.add('is-inactive')
-            }
-          })
-        }
-      })
-      // if(otherNavs) {
-
-      // }
     }
-  }, 100)
+  }, 100) //setTime Out end
+
+  // show depth 0 child element
+  if (document.querySelector('.is-current-page')) {
+    var otherNavs = document.querySelectorAll('.nav-list > .nav-item[data-depth="0"]')
+    otherNavs.forEach(function (nav) {
+      var navSubMenu = Array.from(nav.querySelector('ul.nav-list').children)
+      // var navDataDepth = Array.from(nav.querySelector('ul.nav-list'))
+      navSubMenu.forEach(function (item) {
+        item.classList.remove('is-inactive')
+      })
+
+      // hide main menu for top level navigation -
+
+      if (nav.className.includes('is-current-page')) {
+        navMenuControl.style.display = 'none'
+      }
+
+      // hide in second level menu
+      if (nav.className.includes('is-current-path')) {
+        otherNavs.forEach(function (navItem) {
+          if (!navItem.className.includes('is-current-path')) {
+            navItem.classList.add('is-inactive')
+          }
+        })
+      }
+    })
+  } // if condition end
+
   // clearTimeout(scrollCurrentPageMenu, 20000)
 })()
