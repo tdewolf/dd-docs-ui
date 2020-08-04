@@ -82,12 +82,12 @@
   }
   // Toggle class
   function toggleActive (e) {
-    if (this.getAttribute('data-depth') === '1') {
-      var otherNavs = document.querySelectorAll('.nav-item[data-depth="0"]:not(.is-active)')
-      for (var i = 0; i < otherNavs.length; i++) {
-        otherNavs[i].classList.add('is-inactive')
-      }
-    }
+    // if (this.getAttribute('data-depth') === '1') {
+    //   var otherNavs = document.querySelectorAll('.nav-item[data-depth="0"]:not(.is-active)')
+    //   for (var i = 0; i < otherNavs.length; i++) {
+    //     otherNavs[i].classList.add('is-inactive')
+    //   }
+    // }
     this.classList.toggle('open')
     this.classList.toggle('is-active')
   }
