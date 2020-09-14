@@ -2,7 +2,6 @@
   'use strict'
 
   var sidebar = document.querySelector('aside.toc.sidebar')
-  console.log(sidebar)
   if (!sidebar) return
   var doc
   var headings
