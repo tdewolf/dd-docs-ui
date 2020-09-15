@@ -14,7 +14,7 @@
   })
 
   find(/*'.nav-toggle',*/ '.in-toggle', navMenu.element).forEach(function (toggleBtn) {
-    console.log(toggleBtn, 17)
+    // console.log(toggleBtn, 17)
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
     toggleBtn.addEventListener('click', toggleActive.bind(navItem))
     // var dataDepth = toggleBtn.getAttribute('data-depth')
@@ -68,18 +68,18 @@
   //   navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
   // }
 
-  var navMenuControl
-  if (document.querySelector('.main-nav-parent')) {
-    navMenuControl = document.querySelector('.main-nav-parent')
-    navMenuControl.addEventListener('click', function () {
-      for (var i = 0; i < navItems.length; i++) {
-        navItems[i].classList.remove('is-active')
-        navItems[i].classList.remove('is-inactive')
-        navItems[i].classList.remove('open')
-      }
-      this.style.display = 'none'
-    })
-  }
+  // var navMenuControl
+  // if (document.querySelector('.main-nav-parent')) {
+  //   navMenuControl = document.querySelector('.main-nav-parent')
+  //   navMenuControl.addEventListener('click', function () {
+  //     for (var i = 0; i < navItems.length; i++) {
+  //       navItems[i].classList.remove('is-active')
+  //       navItems[i].classList.remove('is-inactive')
+  //       navItems[i].classList.remove('open')
+  //     }
+  //     this.style.display = 'none'
+  //   })
+  // }
   // Toggle class
   function toggleActive (e) {
     // if (this.getAttribute('data-depth') === '1') {
@@ -92,7 +92,7 @@
     this.classList.toggle('is-active')
   }
 
-  var navItems = document.querySelectorAll('.nav .nav-item')
+  // var navItems = document.querySelectorAll('.nav .nav-item')
   function revealNav (e) {
     if (nav.classList.contains('is-active')) return hideNav(e)
     document.documentElement.classList.add('is-clipped--nav')
@@ -148,7 +148,7 @@
   setTimeout(function () {
     if (document.querySelector('.is-current-page')) {
       var currentPageMenu = document.querySelector('.is-current-page')
-      var topPositon = currentPageMenu.offsetTop
+      var topPositon = currentPageMenu.offsetTop - 100
       var leftMenu = document.querySelector('.left-sidebar-menu .nav-menu')
       leftMenu.scrollTop = topPositon
     }
@@ -166,9 +166,9 @@
 
       // hide main menu for top level navigation -
 
-      if (nav.className.includes('is-current-page')) {
-        navMenuControl.style.display = 'none'
-      }
+      // if (nav.className.includes('is-current-page')) {
+      //   navMenuControl.style.display = 'none'
+      // }
 
       // hide in second level menu
       if (nav.className.includes('is-current-path')) {

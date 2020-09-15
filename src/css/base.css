@@ -99,6 +99,12 @@ i {
 .hide-nav {
   display: none;
 }
+
+@media screen and (min-width: 992px) {
+  .body.container {
+    padding-left: 0;
+  }
+}
 /* .container-fluid {
   max-width: var(--width-container-fluid);
   padding: 0;
