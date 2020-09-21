@@ -22,13 +22,13 @@
       // dialogBox.style.display = 'block'
       this.classList.add('active')
       helpNoBtn.classList.remove('active')
-      // console.log(yesBtnData, 16)
+      console.log(yesBtnData, 16)
     })
     helpNoBtn.addEventListener('click', function (e) {
       // dialogBox.style.display = 'block'
       this.classList.add('active')
       helpYesBtn.classList.remove('active')
-      // console.log(noBtnData, 27)
+      console.log(noBtnData, 27)
     })
     skipBtnMsg.addEventListener('click', function (e) {
       dialogBox.style.display = 'none'
