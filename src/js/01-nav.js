@@ -14,7 +14,7 @@
   })
 
   find(/*'.nav-toggle',*/ '.in-toggle', navMenu.element).forEach(function (toggleBtn) {
-    console.log(toggleBtn, 17)
+    // console.log(toggleBtn, 17)
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
     toggleBtn.addEventListener('click', toggleActive.bind(navItem))
     // var dataDepth = toggleBtn.getAttribute('data-depth')
