@@ -31,68 +31,14 @@
     }
   })
 
-  // fitNavMenuInit({})
-  // window.addEventListener('load', fitNavMenuInit)
-  // window.addEventListener('resize', fitNavMenuInit)
-
   if ((navControl = document.querySelector('main .nav-control'))) navControl.addEventListener('click', revealNav)
 
-  // function scrollItemToMiddle (el, parentEl) {
-  //   var adjustment = (el.getBoundingClientRect().height - parentEl.getBoundingClientRect().height) * 0.5 + el.offsetTop
-  //   if (adjustment > 0) parentEl.scrollTop = adjustment
-  // }
-
-  // function fitNavMenuInit (e) {
-  //   window.removeEventListener('scroll', fitNavMenuOnScroll)
-  //   navMenu.element.style.height = ''
-  //   if ((navMenu.preferredHeight = navMenu.element.getBoundingClientRect().height) > 0) {
-  //     // QUESTION should we check if x value > 0 instead?
-  //     if (window.getComputedStyle(nav).visibility === 'visible') {
-  //       if (!navMenu.encroachingElement) navMenu.encroachingElement = document.querySelector('footer.footer')
-  //       fitNavMenu(navMenu.preferredHeight, (navMenu.viewHeight = window.innerHeight), navMenu.encroachingElement)
-  //       window.addEventListener('scroll', fitNavMenuOnScroll)
-  //     }
-  //     if (currentPageItem && e.type !== 'resize') {
-  //       scrollItemToMiddle(currentPageItem.querySelector('.nav-link'), navMenu.element)
-  //     }
-  //   }
-  // }
-
-  // function fitNavMenuOnScroll () {
-  //   fitNavMenu(navMenu.preferredHeight, navMenu.viewHeight, navMenu.encroachingElement)
-  // }
-
-  // function fitNavMenu (preferredHeight, availableHeight, encroachingElement) {
-  //   var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
-  /*eslint max-len: ["error", { "code": 180 }]*/
-  //   navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
-  // }
-
-  // var navMenuControl
-  // if (document.querySelector('.main-nav-parent')) {
-  //   navMenuControl = document.querySelector('.main-nav-parent')
-  //   navMenuControl.addEventListener('click', function () {
-  //     for (var i = 0; i < navItems.length; i++) {
-  //       navItems[i].classList.remove('is-active')
-  //       navItems[i].classList.remove('is-inactive')
-  //       navItems[i].classList.remove('open')
-  //     }
-  //     this.style.display = 'none'
-  //   })
-  // }
   // Toggle class
   function toggleActive (e) {
-    // if (this.getAttribute('data-depth') === '1') {
-    //   var otherNavs = document.querySelectorAll('.nav-item[data-depth="0"]:not(.is-active)')
-    //   for (var i = 0; i < otherNavs.length; i++) {
-    //     otherNavs[i].classList.add('is-inactive')
-    //   }
-    // }
-    this.classList.toggle('open')
+    // this.classList.toggle('open')
     this.classList.toggle('is-active')
   }
 
-  // var navItems = document.querySelectorAll('.nav .nav-item')
   function revealNav (e) {
     if (nav.classList.contains('is-active')) return hideNav(e)
     document.documentElement.classList.add('is-clipped--nav')
