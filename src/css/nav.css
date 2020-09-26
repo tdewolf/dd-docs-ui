@@ -251,9 +251,9 @@ html.is-clipped--nav {
   background-size: 75%;
 }
 
-.is-inactive {
+/* .is-inactive {
   display: none;
-}
+} */
 
 .main-nav-parent {
   font-size: var(--font-small);
@@ -316,7 +316,7 @@ html.is-clipped--nav {
   color: var(--color-brand-black);
   font-size: var(--font-base);
   line-height: var(--line-height-base);
-  font-weight: var(--weight-semibold);
+  /* font-weight: var(--weight-semibold); */
 }
 
 .is-active[data-depth='0'] .is-active > .nav-line[data-depth="1"] {
