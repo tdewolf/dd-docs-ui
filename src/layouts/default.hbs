@@ -3,7 +3,7 @@
 <head>
 {{> head-first}}
 <title>{{{detag (or page.title 'Untitled')}}}{{#with site.title}} | {{this}}{{/with}}</title>
-{{#with (canonical-url)}}
+{{#with page.canonicalUrl}}
 <link rel="canonical" href="{{this}}">
 {{/with}}
 {{> head-last}}
