@@ -16,6 +16,8 @@
   letter-spacing: -0.025rem;
   line-height: var(--line-height-heading);
   margin-bottom: 0;
+  margin-left: -2.5rem;
+  padding-left: 2.5rem;
 }
 
 .doc h1 {
@@ -23,6 +25,7 @@
   font-weight: var(--weight-light);
   letter-spacing: 0;
   margin: 2.5rem 0 0;
+  margin-left: -2.5rem;
 }
 
 .page-heading-title {
@@ -1091,7 +1094,7 @@ table.tableblock pre code.language-bash.hljs {
 
   .doc h2 {
     font-size: var(--heading-h2-sm);
-    margin: 1rem 0 1rem;
+    margin: 1rem 0 1rem -2.5rem;
   }
 
   .doc h3 {

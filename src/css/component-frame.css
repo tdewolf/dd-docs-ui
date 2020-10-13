@@ -20,7 +20,7 @@
 
 .frame-body {
   margin-left: var(--base-extra-small-space);
-  position: relative;
+  /* position: relative; */
   padding-top: 12px;
   padding-bottom: 12px;
   padding-right: 0;
@@ -32,7 +32,7 @@
 
 .frame-body .title {
   margin: 0 0 0 0;
-  font-size: var(--font-medium);
+  font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: var(--weight-semibold);
   color: var(--color-brand-gray1);
@@ -56,8 +56,12 @@
 .frame-body .frame-link {
   position: relative;
   color: var(--color-brand-gray1);
-  font-size: 18px;
-  margin-left: 4px;
+  font-size: 1.125rem;
+  font-weight: var(--weight-semibold);
+}
+
+.frame-body .frame-link .version {
+  margin: 0 8px 0 4px;
 }
 
 .frame-dropdown {
@@ -67,6 +71,7 @@
   top: 100%;
   z-index: 1;
   padding: 0;
+  right: 4px;
 }
 
 .component-frame .frame-dropdown.show,
@@ -76,8 +81,6 @@
 
 .frame-link-dropdowns .frame-link {
   color: var(--color-brand-gray1);
-  font-weight: var(--weight-semibold);
-  margin: 0;
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -89,7 +92,7 @@
 .frame-dropdown .frame-dropdown-list,
 .frame-dropdown .related {
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0;
   list-style: none;
   min-width: 125px;
 }
@@ -103,7 +106,7 @@
 
 .frame-dropdown ul li a,
 .frame-dropdown .related li a {
-  padding: 8px 0.625rem;
+  padding: 0.5rem 1rem;
   display: inline-block;
   width: 100%;
   color: var(--color-brand-primary);
@@ -140,7 +143,7 @@ ul.frame-dropdown-list li:last-child,
 .frame-link,
 .frame-item,
 .navbar-item {
-  font-size: var(--font-small);
+  font-size: var(--font-base);
   color: var(--color-brand-gray4);
   text-decoration: none;
 }
