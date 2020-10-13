@@ -3,7 +3,7 @@
       <div class="container">
           <nav class="navbar navbar-expand-md flex-nowrap justify-content-between navbar-new-top">
 
-              <a class="navbar-brand" href="{{#with (and site.url site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{siteRootPath}}{{/with}}">
+              <a class="navbar-brand" href="https://www.couchbase.com">
                 <img src="{{{uiRootPath}}}/img/couchbase-documentation-logo.svg" alt="Couchbase" />
               </a>
               {{! <ul class="nav navbar-nav mr-auto"></ul> }}
@@ -24,6 +24,11 @@
 
               <div class="navbar-collapse collapse" id="navbar2">
                 <ul class="navbar-nav w-100 justify-content-start">
+                  <li class="nav-item">
+                    <a href="{{#with (and site.url site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{siteRootPath}}{{/with}}" class="nav-link">
+                      <i class="fas fa-home"></i>
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{relativize (resolvePageURL 'home::server.adoc')}}">
                       Server
@@ -61,13 +66,13 @@
                     <i class="fas fa-search"></i>
                   </button>
                 </form>
-                <div class="parent-site">
+                {{!-- <div class="parent-site">
                   <a href="https://www.couchbase.com">
                     Couchbase.com
                   </a>
-                </div>
+                </div> --}}
                 <a class="btn btn-primary try-btn" href="https://www.couchbase.com/downloads">
-                  Try Free
+                  Downloads
                 </a>
               </div>
 
