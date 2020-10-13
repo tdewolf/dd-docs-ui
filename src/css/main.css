@@ -65,15 +65,15 @@ main p {
   color: var(--color-brand-blue-secondary);
 }
 
-.article-banner span {
+/* .article-banner span {
   font-size: var(--font-small);
   margin: 0.5rem 1rem 0 0;
   color: var(--color-brand-gray4);
-}
+} */
 
 .article-banner svg {
   margin-right: 10px;
-  /* margin-bottom: 10px; */
+  margin-bottom: 10px;
   font-size: var(--heading-h3);
 }
 
