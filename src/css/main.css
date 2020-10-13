@@ -152,7 +152,6 @@ main p {
   .article-banner a.btn {
     padding: 0.675rem 1rem;
     font-size: var(--font-small);
-    margin: auto;
   }
 
   .article-banner p {
@@ -161,13 +160,5 @@ main p {
 
   .article-banner p .fab {
     font-size: 1.2rem;
-  }
-
-  .article-banner {
-    justify-content: center;
-  }
-
-  .banner-text {
-    margin: 0.5rem 0;
   }
 }
