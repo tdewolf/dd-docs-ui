@@ -434,11 +434,11 @@ ul ul ul {
   max-width: var(--image-block-container);
 }
 
-.doc .imageblock.align-left {
+.doc .imageblock.text-left {
   align-items: flex-start;
 }
 
-.doc .imageblock.align-right {
+.doc .imageblock.text-right {
   align-items: flex-end;
 }
 

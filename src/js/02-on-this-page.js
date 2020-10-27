@@ -42,7 +42,7 @@
   if (sidebar) {
     window.addEventListener('load', function () {
       onScroll()
-      hashScroll()
+      // hashScroll()
       window.addEventListener('scroll', onScroll)
     })
   }
@@ -94,11 +94,11 @@
     return [].slice.call(collection)
   }
 
-  function hashScroll () {
-    // element which needs to be scrolled to
-    var hasValue = window.location.hash
-    var elementTillScroll = document.querySelector(hasValue)
-    // scroll to element
-    elementTillScroll.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  // function hashScroll () {
+  //   // element which needs to be scrolled to
+  //   var hasValue = window.location.hash
+  //   var elementTillScroll = document.querySelector(hasValue)
+  //   // scroll to element
+  //   elementTillScroll.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  // }
 })()
