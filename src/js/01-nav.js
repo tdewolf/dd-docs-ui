@@ -37,7 +37,7 @@
 
   // Toggle class
   function toggleActive (e) {
-    // this.classList.toggle('open')
+    this.classList.toggle('open')
     this.classList.toggle('is-active')
   }
 
