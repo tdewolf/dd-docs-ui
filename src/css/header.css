@@ -8,6 +8,17 @@
   padding-right: 0;
 }
 
+.navbar-brand-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand-list .brand-logo{
+  margin-right: 10px;
+}
+
 .navbar-brand img {
   height: 32px;
   transition: height 0.5s ease;
