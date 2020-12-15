@@ -24,6 +24,18 @@
   transition: height 0.5s ease;
 }
 
+.cb-documentation:hover .cb-docs{
+  display: none;
+}
+
+.cb-documentation {
+  display: block;
+}
+
+.cb-documentation:hover .cb-hover-docs{
+  display: block;
+}
+
 .navbar {
   position: relative;
   display: flex;
