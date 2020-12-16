@@ -15,7 +15,7 @@
   padding: 0;
 }
 
-.navbar-brand-list .brand-logo{
+.navbar-brand-list .brand-logo {
   margin-right: 10px;
 }
 
@@ -24,7 +24,7 @@
   transition: height 0.5s ease;
 }
 
-.cb-documentation:hover .cb-docs{
+.cb-documentation:hover .cb-docs {
   display: none;
 }
 
@@ -32,7 +32,7 @@
   display: block;
 }
 
-.cb-documentation:hover .cb-hover-docs{
+.cb-documentation:hover .cb-hover-docs {
   display: block;
 }
 
