@@ -34,7 +34,7 @@ endif::[]
 :url-couchbase: https://couchbase.com
 
 ifdef::badges[]
-image:https://img.shields.io/github/release/{project-repo-name}.svg[Latest Release,link={url-project}/releases/download/{current-release}/ui-bundle.zip]
+image:https://img.shields.io/static/v1?label=release&amp;message={current-release}&amp;color=blue[Latest Release,link={url-project}/releases/download/{current-release}/ui-bundle.zip,format=svg]
 endif::[]
 
 toc::[]
