@@ -128,12 +128,23 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
                 next(transformHandlebarsError(e, uiModel.page.layout))
               }
             },
-            // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
-            () =>
-              fs
-                .readFile(ospath.join(src, 'js/vendor/fontawesome-icon-defs.js'), 'utf8')
-                .then((contents) => registerIconDefs(iconDefs, { contents }))
-                .then(() => writeIconDefs(iconDefs, ospath.join(previewDest, 'fontawesome-icon-defs.js')))
+            function (done) {
+              vfs
+                .src('js/vendor/fontawesome-icon-defs.js', { base: src, cwd: src })
+                .pipe(
+                  map((file, enc, next) => {
+                    registerIconDefs(iconDefs, file)
+                    file.contents = Buffer.from(
+                      `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`
+                    )
+                    // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
+                    file.dirname = file.base
+                    this.push(file)
+                    next()
+                  })
+                )
+                .on('finish', done)
+            }
           )
         )
         .pipe(vfs.dest(previewDest))
@@ -264,10 +275,6 @@ function registerIconDefs (iconDefs, file) {
     }
     return accum
   }, iconDefs)
-}
-
-function writeIconDefs (iconDefs, to) {
-  return fs.writeFile(to, `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`, 'utf8')
 }
 
 function relativize (url) {
