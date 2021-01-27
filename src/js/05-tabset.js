@@ -29,7 +29,7 @@ find('.doc .tabset').forEach(function (tabset) {
 
             if (activeTabList) {
               if (queueData.length > 0) {
-                if (window.innerWidth > smallBreak && (tab.parentNode.childElementCount > tabOnLargeScreen - 1)) {
+                if (window.innerWidth > smallBreak && tab.parentNode.childElementCount > tabOnLargeScreen - 1) {
                   tab.parentNode.parentNode.insertAdjacentHTML(
                     'beforeend',
                     /*eslint max-len: ["error", { "code": 180 }]*/

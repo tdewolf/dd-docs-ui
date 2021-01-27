@@ -1,5 +1,4 @@
-;
-(function () {
+;(function () {
   'use strict'
   // for slide toggle
   if (document.querySelector('.tutorials-filter')) {

@@ -61,7 +61,7 @@
           .slice(0)
           .reverse()
           .map(function (contributor, index, arrayobj) {
-          //show only top 5 contributor
+            //show only top 5 contributor
             if (index <= 4) {
               var contributorAvtar = contributor.author.avatar_url
               // var contributorTotalCommit = contributor.total
