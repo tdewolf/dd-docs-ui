@@ -131,7 +131,7 @@ Clone the UI project using git:
 
 [subs=attributes+]
  $ git clone {url-project} &&
-   cd "$(basename "$_" .git)"
+   cd "`basename $_`"
 
 The example above clones the Couchbase docs UI project and then switches to the project folder on your filesystem.
 Stay in this project folder when executing all subsequent commands.
