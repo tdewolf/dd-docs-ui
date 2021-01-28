@@ -22,7 +22,7 @@ endif::[]
 :url-site: https://docs.couchbase.com
 :url-repo: git@github.com:{project-repo-name}.git
 //:url-preview: https://cb-docs-ui.netlify.com
-:url-preview: https://brave-saha-095114.netlify.app
+:url-preview: https://cb-docs-ui-sandbox.netlify.app
 // External URIs:
 :url-antora: https://antora.org
 :url-git: https://git-scm.com
