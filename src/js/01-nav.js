@@ -3,6 +3,8 @@
 
   var nav = document.querySelector('nav.nav')
   var menuExpandToggle = document.querySelector('.menu-expand-toggle')
+  var versionToggle = document.querySelector('.clickable')
+  var versionDropdownList = document.querySelector('.frame-dropdown')
   var navMenu = {}
   if (!(navMenu.element = nav && nav.querySelector('.nav-menu'))) return
   var navControl
@@ -35,7 +37,7 @@
 
   // Toggle class
   function toggleActive (e) {
-    // this.classList.toggle('open')
+    this.classList.toggle('open')
     this.classList.toggle('is-active')
   }
 
@@ -86,6 +88,23 @@
       nav.classList.add('collapse-menu')
     }
   })
+
+  if (versionToggle) {
+    versionToggle.addEventListener('click', function (e) {
+      e.preventDefault()
+      if (versionDropdownList.classList.contains('show')) {
+        versionDropdownList.classList.remove('show')
+      } else {
+        versionDropdownList.classList.add('show')
+      }
+      concealEvent(e)
+    })
+  }
+
+  window.addEventListener('click', function (e) {
+    versionDropdownList.classList.remove('show')
+  })
+
   // has children in li
   function concealEvent (e) {
     e.stopPropagation()

@@ -74,8 +74,7 @@
   right: 4px;
 }
 
-.component-frame .frame-dropdown.show,
-.component-frame .frame-body:hover .frame-dropdown {
+.component-frame .frame-dropdown.show {
   display: block;
 }
 

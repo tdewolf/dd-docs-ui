@@ -95,6 +95,20 @@ i {
   padding: 0 var(--width-container-gutter);
 }
 
+@media all and (max-width: 992px) {
+  .container,
+  .container-fluid {
+    padding: 0 2rem;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .container,
+  .container-fluid {
+    padding: 0 1.75rem;
+  }
+}
+
 .hide,
 .hide-nav {
   display: none;

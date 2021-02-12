@@ -517,14 +517,14 @@ a.collapse-menu span {
 
   nav.nav a.menu-expand-toggle {
     transform: rotate(90deg);
-    right: -4.8rem;
+    right: -4.3rem;
     opacity: 1;
     color: #fff;
     background-color: var(--color-brand-blue-secondary);
     border-radius: 0;
     top: 60px;
     font-size: 18px;
-    padding: 6px 14px;
+    padding: 2px 8px;
     text-decoration: none;
   }
 
@@ -549,9 +549,9 @@ a.collapse-menu span {
 
 @media screen and (max-width: 767px) {
   nav.nav a.menu-expand-toggle {
-    right: -3.8rem;
+    right: -3.4rem;
     top: 60px;
     font-size: 14px;
-    padding: 4px 10px;
+    padding: 2px 5px;
   }
 }
