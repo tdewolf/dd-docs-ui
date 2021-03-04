@@ -7,6 +7,8 @@
     appendStylesheet(config.stylesheet)
     var algoliaOptions = {
       hitsPerPage: parseInt(config.maxResults) || 25,
+      advancedSyntax: true,
+      advancedSyntaxFeatures: ['exactPhrase'],
     }
     var searchForm = document.querySelector('form.search')
     var controller = docsearch({
