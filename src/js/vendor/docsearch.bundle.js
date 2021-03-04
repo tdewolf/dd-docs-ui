@@ -1,27 +1,47 @@
 ;(function () {
   'use strict'
 
-  var docsearch = require('docsearch.js/dist/cdn/docsearch.js')
-  window.addEventListener('load', function () {
-    var config = document.getElementById('search-script').dataset
-    var link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = config.stylesheet
-    document.head.appendChild(link)
-    var ds = docsearch({
+  activateSearch(require('docsearch.js/dist/cdn/docsearch.js'), document.getElementById('search-script').dataset)
+
+  function activateSearch (docsearch, config) {
+    appendStylesheet(config.stylesheet)
+    var algoliaOptions = {
+      hitsPerPage: parseInt(config.maxResults) || 25,
+    }
+    var searchForm = document.querySelector('form.search')
+    var controller = docsearch({
       appId: config.appId,
       apiKey: config.apiKey,
       indexName: config.indexName,
       inputSelector: '#search-query',
-      algoliaOptions: { hitsPerPage: 25 },
-      debug: false,
+      autocompleteOptions: { autoselect: true, debug: true, hint: false, keyboardShortcuts: ['s'], minLength: 2 },
+      algoliaOptions: algoliaOptions,
     })
-    ds.input.focus()
-    // document.querySelector('button.search').addEventListener('click', function (e) {
-    //   if (document.querySelector('.navbar-start').classList.toggle('reveal-search-input')) {
-    //     ds.autocomplete.autocomplete.setVal('')
-    //     ds.input.focus()
-    //   }
-    // })
-  })
+    var eventEmitter = controller.autocomplete
+    var autocomplete = eventEmitter.autocomplete
+    autocomplete.setVal()
+    eventEmitter.on('autocomplete:selected', disableClose)
+    searchForm.addEventListener('click', confineEvent)
+    document.documentElement.addEventListener('click', resetSearch.bind(autocomplete))
+    if (controller.input.attr('autofocus') != null) controller.input.focus()
+  }
+
+  function appendStylesheet (href) {
+    document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'stylesheet', href: href }))
+  }
+
+  function confineEvent (e) {
+    e.stopPropagation()
+  }
+
+  function disableClose (e) {
+    e.isDefaultPrevented = function () {
+      return true
+    }
+  }
+
+  function resetSearch () {
+    this.close()
+    this.setVal()
+  }
 })()
