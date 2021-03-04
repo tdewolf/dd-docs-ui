@@ -20,14 +20,14 @@
       algoliaOptions: algoliaOptions,
       transformData: transformData,
     })
-    var eventEmitter = controller.autocomplete
-    var autocomplete = eventEmitter.autocomplete
+    var input = controller.input
+    var autocomplete = input.autocomplete
     autocomplete.setVal()
-    eventEmitter.on('autocomplete:selected', disableClose)
-    controller.input.data('aaAutocomplete').dropdown._ensureVisible = ensureVisible
+    input.on('autocomplete:selected', disableClose)
+    input.data('aaAutocomplete').dropdown._ensureVisible = ensureVisible
     searchForm.addEventListener('click', confineEvent)
     document.documentElement.addEventListener('click', resetSearch.bind(autocomplete))
-    if (controller.input.attr('autofocus') != null) controller.input.focus()
+    if (input.attr('autofocus') != null) input.focus()
   }
 
   function appendStylesheet (href) {
