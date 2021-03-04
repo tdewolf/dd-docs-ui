@@ -18,6 +18,7 @@
       inputSelector: '#search-query',
       autocompleteOptions: { autoselect: true, debug: true, hint: false, keyboardShortcuts: ['s'], minLength: 2 },
       algoliaOptions: algoliaOptions,
+      transformData: transformData,
     })
     var eventEmitter = controller.autocomplete
     var autocomplete = eventEmitter.autocomplete
@@ -62,5 +63,19 @@
   function resetSearch () {
     this.close()
     this.setVal()
+  }
+
+  // qualify separate occurrences of the same lvl0 title so that the order of results is preserved
+  function transformData (hits) {
+    var prevLvl0Title
+    var qualifiers = {}
+    return hits.map(function (hit) {
+      var lvl0Title = hit.hierarchy.lvl0
+      var qualifier = qualifiers[lvl0Title]
+      if (lvl0Title !== prevLvl0Title) qualifiers[lvl0Title] = qualifier == null ? '' : (qualifier += ' ')
+      if (qualifier) hit.hierarchy.lvl0 = lvl0Title + qualifier
+      prevLvl0Title = lvl0Title
+      return hit
+    })
   }
 })()
