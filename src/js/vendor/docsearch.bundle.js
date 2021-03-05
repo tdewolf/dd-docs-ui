@@ -3,6 +3,9 @@
 
   activateSearch(require('docsearch.js/dist/cdn/docsearch.js'), document.getElementById('search-script').dataset)
 
+  var F_KEY = 70
+  var S_KEY = 83
+
   function activateSearch (docsearch, config) {
     appendStylesheet(config.stylesheet)
     var algoliaOptions = {
@@ -16,7 +19,7 @@
       apiKey: config.apiKey,
       indexName: config.indexName,
       inputSelector: '#search-query',
-      autocompleteOptions: { autoselect: true, debug: true, hint: false, keyboardShortcuts: ['s'], minLength: 2 },
+      autocompleteOptions: { autoselect: true, debug: true, hint: false, keyboardShortcuts: [], minLength: 2 },
       algoliaOptions: algoliaOptions,
       transformData: transformData,
     })
@@ -27,6 +30,7 @@
     input.data('aaAutocomplete').dropdown._ensureVisible = ensureVisible
     searchForm.addEventListener('click', confineEvent)
     document.documentElement.addEventListener('click', resetSearch.bind(autocomplete))
+    document.documentElement.addEventListener('keydown', handleShortcuts.bind(input))
     if (input.attr('autofocus') != null) input.focus()
   }
 
@@ -57,6 +61,15 @@
     }
     if ((delta = item.offsetTop - container.scrollTop) < 0) {
       container.scrollTop += delta
+    }
+  }
+
+  function handleShortcuts (e) {
+    if (e.altKey || e.metaKey || e.ctrlKey || e.shiftKey) return
+    var keyCode = e.keyCode
+    if (keyCode === F_KEY || keyCode === S_KEY) {
+      this.focus()
+      e.preventDefault()
     }
   }
 
