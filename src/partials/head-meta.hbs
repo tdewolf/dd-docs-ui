@@ -11,14 +11,14 @@
 <meta name="docsearch:component_title" content="{{page.component.title}}">
 {{#if (eq page.version 'master')}}
 <meta name="docsearch:component_version" content='["{{{./page.component.name}}}","{{{./page.component.name}}}"]'>
-<meta name="docsearch:version_rank" content="0">
+<meta name="docsearch:version_rank" content="1">
 {{else}}
 {{#with page.componentVersion}}
 <meta name="docsearch:component_version" content='["{{{./name}}}@{{{./version}}}"{{#if (eq this @root.page.component.latest)}},"{{{./name}}}"{{/if}}]'>
 <meta name="docsearch:version" content="{{{./version}}}">
 <meta name="docsearch:display_version" content='"{{./displayVersion}}"'>
 {{/with}}
-<meta name="docsearch:version_rank" content="{{{index page.component.versions page.componentVersion}}}">
+<meta name="docsearch:version_rank" content="{{{add (index page.component.versions page.componentVersion) 1}}}">
 {{/if}}
 {{/if}}
 <meta name="generator" content="Antora {{antoraVersion}}">
