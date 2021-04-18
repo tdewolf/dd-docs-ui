@@ -211,7 +211,7 @@
     var menu = this.$menu
     menu
       .find('.ds-pagination--curr')
-      .html(result.pages ? '[ Page ' + (page + 1) + ' of ' + result.pages + ' ]': 'No results')
+      .html(result.pages ? '[ Page ' + (page + 1) + ' of ' + result.pages + ' ]' : 'No results')
       .data('page', page)
     menu.find('.ds-pagination--prev').toggleClass('inactive', page < 1)
     menu.find('.ds-pagination--next').toggleClass('inactive', page + 1 >= result.pages)
