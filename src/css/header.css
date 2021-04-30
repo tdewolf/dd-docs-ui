@@ -138,6 +138,7 @@
   font-weight: 600;
   color: var(--color-brand-blue-secondary);
   text-decoration: none;
+  margin-left: 35px;
 }
 
 .free-trial-link:hover {
