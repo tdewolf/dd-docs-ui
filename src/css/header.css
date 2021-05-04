@@ -313,6 +313,7 @@
     text-align: center;
   }
 
+  .search input,
   .search .query {
     height: 35px;
     padding: 7px;
