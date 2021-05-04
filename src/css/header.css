@@ -309,13 +309,24 @@
 
   .search {
     margin: 10px 0;
+    width: 100%;
+    text-align: center;
   }
 
   .search .query {
-    border: 1px solid var(--color-brand-gray5);
-    padding: 10px 20px;
+    height: 35px;
+    padding: 7px;
+    font-size: 15px;
+    line-height: 21px;
+    border: 1px solid #FFFFFFBF;
+    border-radius: 4px;
+    margin-right: 5px;
   }
 
+  .search .fa-search {
+    font-size: 18px;
+    color: #FFFFFFBF;
+  }
   /* .parent-site {
     border-left: none;
   }
@@ -328,6 +339,9 @@
     background: var(--color-brand-white);
     color: var(--color-brand-blue);
     margin: 0;
+  }
+  .free-trial-link {
+    color: var(--color-brand-white);
   }
 
   .header-bottom-row.is-active {
