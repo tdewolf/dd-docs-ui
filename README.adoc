@@ -17,12 +17,12 @@ ifdef::env-github[]
 :badges:
 endif::[]
 // Project URIs:
-:project-repo-name: couchbase/docs-ui-sandbox
+:project-repo-name: couchbase/docs-ui
 :url-project: https://github.com/{project-repo-name}
 :url-site: https://docs.couchbase.com
 :url-repo: git@github.com:{project-repo-name}.git
 //:url-preview: https://cb-docs-ui.netlify.com
-:url-preview: https://cb-docs-ui-sandbox.netlify.app
+:url-preview: https://cb-docs-ui.netlify.app
 // External URIs:
 :url-antora: https://antora.org
 :url-git: https://git-scm.com
@@ -215,7 +215,7 @@ If you need to package the UI so you can use it to generate the documentation si
 If any errors are reported by lint, you'll need to fix them.
 
 When the command completes successfully, the UI bundle will be available at [.path]_build/ui-bundle.zip_.
-You can point Antora at this bundle using the `--ui-bundle-url` command-line option (e.g., `--ui-bundle-url=../docs-ui-sandbox/build/ui-bundle.zip`).
+You can point Antora at this bundle using the `--ui-bundle-url` command-line option (e.g., `--ui-bundle-url=../docs-ui/build/ui-bundle.zip`).
 
 == Control the Visual Appearance of Pages
 
@@ -454,12 +454,12 @@ Releasing the UI bundle consists of the following tasks:
 Fortunately, you don't have to do any of these steps yourself.
 These steps are fully automated by the `gulp release` task.
 In fact, you don't even have to run the `gulp release` task manually.
-When a commit is pushed to the master branch of the repository, it triggers the CI job named *docs-ui-sandbox*, which executes the `gulp release` task using pre-configured credentials.
+When a commit is pushed to the master branch of the repository, it triggers the CI job named *docs-ui*, which executes the `gulp release` task using pre-configured credentials.
 
 IMPORTANT: A release will only be made if the project validates.
 To validate the project, run `gulp pack` before pushing your changes to GitHub.
 
-The docs-ui-sandbox CI job is already configured, so there's nothing you need to do to make automated release work.
+The docs-ui CI job is already configured, so there's nothing you need to do to make automated release work.
 All you have to do is commit your changes and push those commits to the master branch of the git repository.
 A few seconds later, a new bundle will be available for use with Antora.
 Run `git pull` to retrieve the updated README that includes the new URL.
@@ -492,7 +492,7 @@ In the CI job configuration, covered in the next section, you'll learn how this 
 === CI Job Configuration
 
 Jenkins is used to execute the CI job that publishes the UI bundle.
-The job is named *docs-ui-sandbox* and can be found under the *Antora* folder in the Jenkins server managed by the Couchbase docs team.
+The job is named *docs-ui* and can be found under the *Antora* folder in the Jenkins server managed by the Couchbase docs team.
 This section describes in detail how that job has been configured in case it must be recreated.
 
 The release is performed by the cb-docs-robot GitHub account, which interacts with GitHub entirely using the GitHub API.
@@ -501,10 +501,10 @@ The release script authenticates with the GitHub API as the cb-docs-robot user u
 Create a new CI job from the Pipeline project template.
 On the configuration screen, select or populate the following settings:
 
-.Configuration details for the Antora/docs-ui-sandbox CI job
+.Configuration details for the Antora/docs-ui CI job
 ====
 General::
-* _Project name:_ `docs-ui-sandbox`
+* _Project name:_ `docs-ui`
 * _Description:_ Packs, tags, and releases the UI bundle whenever a non-ignored commit is pushed to the master branch of this repository.
 * [x] GitHub project
  ** _Project url:_ `pass:a[{url-project}]`

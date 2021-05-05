@@ -6,11 +6,11 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 // Jenkins job configuration
 // -------------------------
 // Category: Multibranch Pipeline
-// Pipeline name: docs-ui-sandbox
+// Pipeline name: docs-ui
 // Branch Sources: Single repository & branch
 // Name: master
 // Source Code Management: Git
-// Repository URL: https://github.com/couchbase/docs-ui-sandbox
+// Repository URL: https://github.com/couchbase/docs-ui
 // Credentials: - none -
 // Branch specifier: refs/heads/master
 // Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone, Shallow clone depth: 5
