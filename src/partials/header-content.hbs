@@ -71,10 +71,14 @@
               <div class="primary-action">
                 {{#if env.ALGOLIA_API_KEY}}
                 <form class="navbar-item search" id="search">
-                  <input class="query" type="text" placeholder="Search Docs"{{#if page.home}} autofocus{{/if}}><i class="fas fa-search"></i>
+                  <input class="dataLayer query" type="text" placeholder="Search Docs"{{#if page.home}} autofocus{{/if}}><i class="fas fa-search"></i>
                 </form>
                 {{/if}}
-                <a class="btn btn-primary try-btn" href="https://www.couchbase.com/downloads">
+                <a href="https://cloud.couchbase.com/sign-up" class="free-trial-link" onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Free Trial'});" >
+                  <i class="fas fa-cloud"></i>
+                  Free Trial
+                </a>
+                <a class="btn btn-primary try-btn"  onclick="(window.dataLayer=window.dataLayer||[]).push({'event':'customEvent', 'category':'CTA', 'action':'Button Click',  'label':'Download'});" href="https://www.couchbase.com/downloads">
                   Downloads
                 </a>
               </div>
