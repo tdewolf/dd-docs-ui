@@ -1,4 +1,14 @@
 <div class="body container">
+{{#if (eq (nav-mode) 'client')}}
+{{#with (nav-group-for-page (nav-groups))}}
+{{#if ./components.length}}
+<aside class="left-sidebar">
+  <div class="nav-container">
+  </div>
+</aside>
+{{/if}}
+{{/with}}
+{{/if}}
 <main class="article" data-ceiling="topbar">
 <article class="doc landing-page-doc">
 {{{page.contents}}}

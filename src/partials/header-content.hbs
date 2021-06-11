@@ -38,34 +38,20 @@
                       <i class="fas fa-home"></i>
                     </a>
                   </li>
+                  {{#each (nav-groups)}}
+                  {{#if ./url}}
                   <li class="nav-item">
-                    <a class="nav-link" href="{{relativize (resolvePageURL 'home::server.adoc')}}">
-                      Server
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{relativize (resolvePageURL 'home::mobile.adoc')}}">
-                      Mobile
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{relativize (resolvePageURL 'home::cloud.adoc')}}">
-                      Cloud
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{relativize (resolvePageURL 'home::sdk.adoc')}}">
-                      SDKs
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{relativize site.components.tutorials.url}}">
-                      Tutorials
+                    <a class="nav-link" href="{{relativize ./url}}">
+                      {{{./title}}}
+                      {{#if (eq ./title 'Tutorials')}}
                       <span class="arrow">
                         <i class="fas fa-arrow-right"></i>
                       </span>
+                      {{/if}}
                     </a>
                   </li>
+                  {{/if}}
+                  {{/each}}
                 </ul>
               </div>
               <div class="primary-action">

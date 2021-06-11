@@ -1,3 +1,12 @@
+{{#if (and page.component (eq (nav-mode) 'client'))}}
+{{#with (nav-group-for-page (nav-groups))}}
+{{!-- could instead pass this path to site.js and have it load the navigation data itself --}}
+<script src="{{siteRootPath}}/site-navigation-data.js"></script>
+<script>
+window.pageNavigationGroup = {{{stringify this}}}
+</script>
+{{/with}}
+{{/if}}
 <script src="{{{uiRootPath}}}/js/site.js"></script>
 {{#with page.attributes.content-scripts}}
 {{{this}}}
