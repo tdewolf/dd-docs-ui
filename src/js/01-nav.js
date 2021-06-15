@@ -1,9 +1,9 @@
 ;(function () {
   'use strict'
 
-  var menuExpandToggle = document.querySelector('.menu-expand-toggle')
-  var nav = document.querySelector('nav.nav')
-  if (nav && menuExpandToggle) {
+  var nav = document.querySelector('.nav')
+  var menuExpandToggle = nav && nav.querySelector('.menu-expand-toggle')
+  if (menuExpandToggle) {
     menuExpandToggle.addEventListener('click', function (e) {
       e.preventDefault()
       nav.classList.toggle('collapse-menu')

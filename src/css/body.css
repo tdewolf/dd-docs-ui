@@ -18,7 +18,7 @@ main {
   min-width: 0;
 }
 
-nav.nav {
+.nav {
   /* NOTE reserve no space in layout by default */
   flex: 0 0 0%;
   /* NOTE width must be set in order for fixed child to inherit */
@@ -39,7 +39,7 @@ aside.toc.sidebar {
     min-height: var(--height-min-body);
   }
 
-  nav.nav {
+  .nav {
     visibility: visible;
     /* NOTE reserve space for nav in flex layout */
     /* NOTE lock flex width to width of container */

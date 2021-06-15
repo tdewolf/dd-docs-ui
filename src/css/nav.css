@@ -139,17 +139,21 @@ a.menu_link.is-current-page {
   color: var(--color-link);
 }
 
+.nav .nav-container,
 .tutorials-filter .left-sidebar-menu {
   background-color: var(--color-brand-gray7);
   position: fixed;
-  width: inherit;
   font-size: 1rem;
   line-height: 24px;
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) transparent;
   height: 100%;
   z-index: 5;
-  transition: all 0.1s;
+  transition: transform 0.1s;
+}
+
+.tutorials-filter .left-sidebar-menu {
+  width: inherit;
 }
 
 .tutorials-filter .nav-menu {
@@ -178,7 +182,7 @@ a.menu_link.is-current-page {
   margin: 1.5rem 0;
 }
 
-.tutorials-filter a.menu-expand-toggle {
+.nav a.menu-expand-toggle {
   display: inline-block;
   position: absolute;
   top: 15px;
@@ -190,39 +194,43 @@ a.menu_link.is-current-page {
   border-radius: 50%;
 }
 
-.tutorials-filter a.menu-expand-toggle span,
-.tutorials-filter a.menu-expand-toggle .fa-times-circle,
-.tutorials-filter a.collapse-menu span {
+.nav a.menu-expand-toggle span,
+.nav a.menu-expand-toggle .fa-times-circle,
+.nav a.collapse-menu span {
   display: none;
 }
 
 @media screen and (min-width: 993px) {
-  .tutorials-filter.collapse-menu {
+  .nav.collapse-menu {
     width: 0;
   }
 
-  .tutorials-filter.collapse-menu .nav-menu {
+  .nav.collapse-menu .nav-container {
+    transform: translateX(-100%);
+  }
+
+  .nav.collapse-menu .nav-menu {
     font-size: 0;
     display: none;
   }
 
-  .tutorials-filter.collapse-menu .left-sidebar-menu {
+  .nav.collapse-menu .left-sidebar-menu {
     border: 0;
     background-color: transparent;
   }
 
-  .tutorials-filter.collapse-menu a.menu-expand-toggle {
+  .nav.collapse-menu a.menu-expand-toggle {
     transform: rotate(180deg);
     right: -1.35rem;
     opacity: 1;
     color: var(--color-brand-blue-secondary);
   }
 
-  .tutorials-filter a.menu-expand-toggle {
+  .nav a.menu-expand-toggle {
     opacity: 0;
   }
 
-  .tutorials-filter:hover a.menu-expand-toggle {
+  .nav:hover a.menu-expand-toggle {
     opacity: 1;
   }
 
@@ -247,14 +255,16 @@ a.menu_link.is-current-page {
 }
 
 @media screen and (max-width: 992px) {
+  .nav .nav-container,
   .tutorials-filter .left-sidebar-menu {
+    position: fixed;
     left: 0;
     top: auto;
     z-index: 9;
     transform: translate(-100%, 0);
   }
 
-  .tutorials-filter.collapse-menu a.menu-expand-toggle {
+  .nav.collapse-menu a.menu-expand-toggle {
     right: -0.8rem;
     opacity: 1;
     background-color: transparent;
@@ -262,7 +272,8 @@ a.menu_link.is-current-page {
     top: -3px;
   }
 
-  .tutorials-filter.collapse-menu .left-sidebar-menu {
+  .nav.collapse-menu .nav-container,
+  .nav.collapse-menu .left-sidebar-menu {
     transform: translate(0, 0);
   }
 
@@ -270,7 +281,7 @@ a.menu_link.is-current-page {
     height: calc(100vh - 8.5rem) !important;
   }
 
-  .tutorials-filter a.menu-expand-toggle {
+  .nav a.menu-expand-toggle {
     transform: rotate(90deg);
     right: -4.3rem;
     opacity: 1;
@@ -283,27 +294,27 @@ a.menu_link.is-current-page {
     text-decoration: none;
   }
 
-  .tutorials-filter a.menu-expand-toggle .fa-chevron-circle-left {
+  .nav a.menu-expand-toggle .fa-chevron-circle-left {
     display: none;
   }
 
-  .tutorials-filter a.menu-expand-toggle span {
+  .nav a.menu-expand-toggle span {
     display: inline-block;
   }
 
-  .tutorials-filter.collapse-menu a.menu-expand-toggle .fa-times-circle {
+  .nav.collapse-menu a.menu-expand-toggle .fa-times-circle {
     display: inline-block;
     font-size: 26px;
     color: #ea2328;
   }
 
-  .tutorials-filter.collapse-menu a.menu-expand-toggle span {
+  .nav.collapse-menu a.menu-expand-toggle span {
     display: none;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .tutorials-filter a.menu-expand-toggle {
+  .nav a.menu-expand-toggle {
     right: -3.4rem;
     top: 60px;
     font-size: 14px;
