@@ -1,9 +1,13 @@
 {{#if navigation.length}}
 <ul class="menu_row{{#if ./level}} hide{{/if}}">
   {{#each navigation}}
-  <li class="menu_list{{#if (eq ./url @root.page.url)}} is-current-page{{/if}}{{#if ./items.length}} is-parent{{/if}}" data-depth="{{../level}}">
+  <li class="menu_list{{#if (eq ./url @root.page.url)}} is-current-page{{/if}}
+  {{#if ./items.length}} is-parent{{/if}}" data-depth="{{../level}}">
     <span class="menu_line">
       {{#if ./url}}
+      {{#if ./items}}
+      <span class="in-toggle" data-depth="{{../level}}"></span>
+      {{/if}}
       <a class="menu_title menu_link{{#if (eq ./url @root.page.url)}} is-current-page{{/if}}" href="{{relativize ./url}}">{{{./content}}}</a>
       {{else}}
       <span class="menu_title menu_text">{{{./content}}}</span>
