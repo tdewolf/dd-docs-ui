@@ -89,7 +89,8 @@
   --weight-semibold: 600;
   --weight-bold: 700;
   /* Z-index  */
-  --z-index-feedback: 7;
+  --z-index-feedback: 8;
+  --z-index-nav-toggle: 7;
   --z-index-nav-mobile: 6;
   --z-index-navbar-dropdown-link: 5;
   --z-index-navbar-dropdown: 4;
