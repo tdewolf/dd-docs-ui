@@ -88,25 +88,18 @@
   function buildNavTree (items, parent, page, currentPath) {
     if (!(items || []).length) return
     var navListEl = createElement('ul', 'menu_row')
-    // FIXME we could pass some sort of forceOpen flag so hide is automatically removed
-    if (currentPath.length) navListEl.classList.add('hide')
     currentPath = currentPath.concat(navListEl)
     items.forEach(function (item) {
       var navItemEl = createElement('li', 'menu_list')
       navItemEl.dataset.depth = currentPath.length - 1
       var navLineEl = createElement('span', 'menu_line')
       var navTextEl
-      var isCurrentPage
       if (item.url) {
         navTextEl = createElement('a', 'menu_title menu_link')
         navTextEl.href = relativize(page.url, item.url)
         if (page.url === item.url) {
-          isCurrentPage = true
           navItemEl.classList.add('is-current-page')
           navTextEl.classList.add('is-current-page')
-          currentPath.forEach(function (ancestorEl) {
-            ancestorEl.classList.remove('hide')
-          })
         }
       } else {
         navTextEl = createElement('span', 'menu_title menu_text')
@@ -114,11 +107,13 @@
       navTextEl.innerHTML = item.content
       navLineEl.appendChild(navTextEl)
       navItemEl.appendChild(navLineEl)
-      // FIXME we could pass some sort of forceOpen flag so hide is automatically removed
       var childNavListEl = buildNavTree(item.items, navItemEl, page, currentPath)
       if (childNavListEl) {
-        if (isCurrentPage) childNavListEl.classList.remove('hide')
+        if (currentPath.length > 1) {
+          navLineEl.insertBefore(Object.assign(document.createElement('span'), { className: 'in-toggle' }), navTextEl)
+        }
         navItemEl.classList.add('is-parent')
+        if (!navItemEl.querySelector('a.is-current-page')) navItemEl.classList.add('closed')
       }
       navListEl.appendChild(navItemEl)
     })
@@ -180,6 +175,11 @@
     return [].slice.call((from || document).querySelectorAll(selector))
   }
 
+  function findAncestorWithClass (className, from, scope) {
+    if ((from = from.parentNode) === scope) return
+    return from.classList.contains(className) ? from : findAncestorWithClass(className, from, scope)
+  }
+
   // FIXME integrate into nav builder
   function activateNav (container) {
     // NOTE prevent text from being selected by double click
@@ -193,10 +193,12 @@
 
     if (!components.classList.contains('is-revealed')) {
       find('a.is-current-page', container).forEach(function (currentPage) {
-        var childNavList = currentPage.parentNode.nextElementSibling
-        if (childNavList) childNavList.classList.remove('hide')
+        var menuList = findAncestorWithClass('menu_list', currentPage, container)
+        if (menuList.classList.contains('is-parent')) menuList.classList.remove('closed')
         var ancestor = currentPage
-        while ((ancestor = ancestor.parentNode) && ancestor !== container) ancestor.classList.remove('hide')
+        while ((ancestor = ancestor.parentNode) && ancestor !== container) {
+          ancestor.classList.remove(ancestor.classList.contains('hide') ? 'hide' : 'closed')
+        }
       })
       components.classList.add('is-revealed')
     }
@@ -224,10 +226,11 @@
     })
 
     find('.menu_title', container).forEach(function (menuTitleEl) {
-      if (!menuTitleEl.parentNode.nextElementSibling) return
-      if (!menuTitleEl.href) menuTitleEl.style.cursor = 'pointer'
+      var menuList = findAncestorWithClass('menu_list', menuTitleEl, container)
+      if (!menuList.classList.contains('is-parent') || menuTitleEl.href) return
+      menuTitleEl.style.cursor = 'pointer'
       menuTitleEl.addEventListener('click', function (e) {
-        if (!menuTitleEl.href) menuTitleEl.parentNode.nextElementSibling.classList.toggle('hide')
+        menuList.classList.toggle('closed')
       })
     })
 
@@ -240,6 +243,13 @@
           '.version_items[data-version="' + versionListEl.value + '"]'
         )
         if (activateVersionEl) activateVersionEl.classList.remove('hide')
+      })
+    })
+
+    find('.in-toggle', container).forEach(function (btn) {
+      var navItem = findAncestorWithClass('is-parent', btn, container)
+      btn.addEventListener('click', function () {
+        navItem.classList.toggle('closed')
       })
     })
   }
