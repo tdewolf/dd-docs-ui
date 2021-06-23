@@ -88,10 +88,6 @@
   list-style: none;
 }
 
-.menu_row.hide {
-  display: none;
-}
-
 .menu_list {
   padding: 0.5rem 0;
 }
@@ -330,10 +326,6 @@ a.menu_link.is-current-page {
   cursor: pointer;
 }
 
-.menu_list[data-depth="0"] .in-toggle {
-  display: none;
-}
-
 .menu_list[data-depth="1"] .in-toggle {
   position: absolute;
   width: 0;
@@ -348,69 +340,10 @@ a.menu_link.is-current-page {
   margin: auto;
 }
 
-.nav-item.is-current-page[data-depth="1"] .in-toggle[data-depth="1"],
-.nav-item.is-current-page[data-depth="2"] .in-toggle[data-depth="2"],
-.nav-item.is-current-page[data-depth="3"] .in-toggle[data-depth="3"],
-.nav-item.is-current-path[data-depth="1"] .in-toggle[data-depth="1"],
-.nav-item.is-current-path[data-depth="2"] .in-toggle[data-depth="2"],
-.nav-item.is-current-path[data-depth="3"] .in-toggle[data-depth="3"],
-.nav-item.open.is-active > .nav-line .in-toggle {
-  -webkit-transform: rotate(90deg);
+.menu_list.is-parent.closed > .menu_row {
+  display: none;
+}
+
+.menu_list.is-parent:not(.closed) > .menu_line > .in-toggle {
   transform: rotate(90deg);
 }
-
-/* the container must be positioned relative: */
-/* .component_list-version {
-  position: relative;
-  font-family: Arial;
-}
-
-.component_list-version select {
-  display: none;
-}
-
-.select-selected {
-  background-color: DodgerBlue;
-}
-
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-} */
