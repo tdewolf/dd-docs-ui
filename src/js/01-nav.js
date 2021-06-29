@@ -75,7 +75,7 @@
           componentVersionNavEl.classList.add('hide')
         }
         var items = componentVersion.sets
-        if (items.length === 1 && !items.content) items = items[0].items
+        if (items.length === 1 && !items[0].content) items = items[0].items
         if (buildNavTree(items, componentVersionNavEl, page, [])) hasNavTrees = true
         componentsListItemsEl.appendChild(componentVersionNavEl)
       })
