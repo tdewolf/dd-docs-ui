@@ -90,6 +90,7 @@
     var navListEl = createElement('ul', 'menu_row')
     currentPath = currentPath.concat(navListEl)
     items.forEach(function (item) {
+      if (item.content == null && item.items.length === 1) item = item.items[0]
       var navItemEl = createElement('li', 'menu_list')
       navItemEl.dataset.depth = currentPath.length - 1
       var navLineEl = createElement('span', 'menu_line')
