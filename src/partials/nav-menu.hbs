@@ -21,7 +21,15 @@
       </div>
       {{#each ./versions}}
       <div class="version_items{{#unless (and (eq @root.page.component.name ../componentName) (eq @root.page.version ./version))}} hide{{/unless}}" data-version="{{./version}}">
+{{#if ./navigation.length}}
+<ul class="menu_row">
+{{#if (and (eq ./navigation.length 1) (eq ./navigation.0.content undefined))}}
+{{> nav-tree navigation=./navigation.0.items level=0}}
+{{else}}
 {{> nav-tree navigation=./navigation level=0}}
+{{/if}}
+</ul>
+{{/if}}
       </div>
       {{/each}}
     </li>
