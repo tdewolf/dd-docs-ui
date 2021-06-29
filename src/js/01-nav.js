@@ -104,7 +104,7 @@
       } else {
         navTextEl = createElement('span', 'menu_title menu_text')
       }
-      navTextEl.innerHTML = item.content
+      navTextEl.innerHTML = item.content || ''
       navLineEl.appendChild(navTextEl)
       navItemEl.appendChild(navLineEl)
       var childNavListEl = buildNavTree(item.items, navItemEl, page, currentPath)
