@@ -13,10 +13,13 @@
   var navContainer = document.querySelector('.nav-container')
   if (!navContainer) return
   if (!navContainer.querySelector('.components')) {
+    if (!window.siteNavigationData) return
     var siteNavigationData = window.siteNavigationData.reduce(function (accum, entry) {
       return (accum[entry.name] = entry) && accum
     }, {})
-    buildNav(navContainer, getPage(), window.pageNavigationGroup, siteNavigationData)
+    var pageNavigationGroup = document.getElementById('page-navigation-group')
+    if (!pageNavigationGroup) return
+    buildNav(navContainer, getPage(), JSON.parse(pageNavigationGroup.innerText), siteNavigationData)
   }
   activateNav(navContainer)
 
