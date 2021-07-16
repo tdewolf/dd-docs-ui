@@ -34,16 +34,22 @@
 
   function buildNav (container, page, group, navData) {
     var groupEl = createElement('div', 'components is-revealed')
-    var groupNameEl = createElement('div', 'components_group-title')
-    if (group.url) {
-      var groupLinkEl = createElement('a')
-      groupLinkEl.href = relativize(page.url, group.url)
-      groupLinkEl.appendChild(document.createTextNode(group.title))
-      groupNameEl.appendChild(groupLinkEl)
+    var singleComponent
+    if ((group.components.length === 1 &&
+        group.title === navData[group.components[0]].title.replace(/^Couchbase | Database$/, ''))) {
+      singleComponent = true
     } else {
-      groupNameEl.appendChild(document.createTextNode(group.title))
+      var groupNameEl = createElement('div', 'components_group-title')
+      if (group.url) {
+        var groupLinkEl = createElement('a')
+        groupLinkEl.href = relativize(page.url, group.url)
+        groupLinkEl.appendChild(document.createTextNode(group.title))
+        groupNameEl.appendChild(groupLinkEl)
+      } else {
+        groupNameEl.appendChild(document.createTextNode(group.title))
+      }
+      groupEl.appendChild(groupNameEl)
     }
-    groupEl.appendChild(groupNameEl)
     var componentsListEl = createElement('ul', 'components_list')
     group.components.forEach(function (componentName) {
       var componentNavData = navData[componentName]
@@ -51,34 +57,38 @@
       var componentsListItemsEl = createElement('li', 'components_list-items')
       // FIXME we would prefer if the navigation data identified the latest version itself
       var selectedVersion = componentName === page.component ? page.version : group.latestVersions[componentName]
-      if (!(componentNavData.title === group.title && group.components.length === 1 &&
-          (!selectedVersion || selectedVersion === 'master'))) {
-        var componentVersionsEl = createElement('div', 'component_list-version')
-        var componentTitleEl = createElement('span', 'component_list_title')
-        componentTitleEl.appendChild(document.createTextNode(componentNavData.title))
-        componentVersionsEl.appendChild(componentTitleEl)
-        if (selectedVersion && selectedVersion !== 'master') {
-          var componentVersionSelectEl = createElement('select', 'version_list')
-          componentNavData.versions.forEach(function (componentVersion) {
-            var optionEl = createElement('option')
-            optionEl.value = componentVersion.version
-            if (componentVersion.version === selectedVersion) optionEl.setAttribute('selected', '')
-            optionEl.appendChild(document.createTextNode(componentVersion.displayVersion || componentVersion.version))
-            componentVersionSelectEl.appendChild(optionEl)
-          })
-          componentVersionsEl.appendChild(componentVersionSelectEl)
-        }
-        componentsListItemsEl.appendChild(componentVersionsEl)
+      var componentVersionsEl = createElement('div', 'component_list-version')
+      var componentTitleEl = createElement('span', 'component_list_title')
+      componentTitleEl.appendChild(document.createTextNode(componentNavData.title))
+      componentVersionsEl.appendChild(componentTitleEl)
+      var versioned
+      if ((versioned = selectedVersion && selectedVersion !== 'master')) {
+        var componentVersionSelectEl = createElement('select', 'version_list')
+        componentNavData.versions.forEach(function (componentVersion) {
+          var optionEl = createElement('option')
+          optionEl.value = componentVersion.version
+          if (componentVersion.version === selectedVersion) optionEl.setAttribute('selected', '')
+          optionEl.appendChild(document.createTextNode(componentVersion.displayVersion || componentVersion.version))
+          componentVersionSelectEl.appendChild(optionEl)
+        })
+        componentVersionsEl.appendChild(componentVersionSelectEl)
       }
-      componentNavData.versions.forEach(function (componentVersion) {
+      componentsListItemsEl.appendChild(componentVersionsEl)
+      componentNavData.versions.forEach(function (componentVersion, idx) {
         var componentVersionNavEl = createElement('div', 'version_items')
         componentVersionNavEl.dataset.version = componentVersion.version
         // TODO only open manually after building nav tree if current page is not found
-        if (page.component !== componentName || page.version !== componentVersion.version) {
-          componentVersionNavEl.classList.add('hide')
+        var startCollapsed = true
+        if ((page.component === componentName && page.version === componentVersion.version) ||
+            (singleComponent && (!versioned || componentVersion.version === selectedVersion))) {
+          startCollapsed = false
         }
+        if (startCollapsed) componentVersionNavEl.classList.add('hide')
         var items = componentVersion.sets
         if (items.length === 1 && !items[0].content) items = items[0].items
+        if (items.length && items[0].content.endsWith(' Home')) {
+          items.splice.apply(items, [0, 1].concat(items[0].items || []))
+        }
         if (buildNavTree(items, componentVersionNavEl, page, [])) hasNavTrees = true
         componentsListItemsEl.appendChild(componentVersionNavEl)
       })
