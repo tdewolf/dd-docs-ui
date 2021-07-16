@@ -63,7 +63,7 @@
 }
 
 .version_list {
-  margin: -1em 0;
+  margin: -1em 0 -1em 0.5em;
   max-width: min-content;
   appearance: none;
   font-size: 0.9em;
