@@ -186,7 +186,7 @@ a.menu_link.is-current-page {
   position: absolute;
   top: 15px;
   right: -1rem;
-  z-index: var(--z-index-toggle);
+  z-index: var(--z-index-nav-toggle);
   font-size: 24px;
   color: var(--color-brand-blue-secondary);
   background-color: var(--color-brand-gray7);
