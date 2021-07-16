@@ -9,7 +9,7 @@
                   </a>
                 </li>
                 <li>
-                  <a class="navbar-brand cb-documentation" href="https://docs.couchbase.com">
+                  <a class="navbar-brand cb-documentation" href="{{#with (and site.url site.homeUrl)}}{{{@root.site.url}}}{{{this}}}{{else}}{{{siteRootPath}}}{{/with}}">
                     <img src="{{{uiRootPath}}}/img/cb-documentation.svg" alt="Couchbase Documentation" class="cb-docs" />
                     <img src="{{{uiRootPath}}}/img/cb-docs-hover.svg" alt="Couchbase Documentation" class="hide cb-hover-docs" />
                   </a>
