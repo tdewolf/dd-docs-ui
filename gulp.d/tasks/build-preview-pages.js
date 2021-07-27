@@ -145,7 +145,7 @@ module.exports =
                         file.contents = Buffer.from(
                         `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`
                         )
-                        // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
+                        // NOTE parallel build overwrites default fontawesome-icon-defs.js; use alternate path
                         file.dirname = file.base
                         this.push(file)
                         next()
