@@ -7,6 +7,9 @@ module.exports = ({
 }) => {
   if (navMode) return navMode
   const siteStartPage = contentCatalog.getSiteStartPage()
-  if (siteStartPage && siteStartPage.asciidoc.attributes['export-site-navigation-data'] != null) return 'client'
-  return 'template'
+  return siteStartPage &&
+    (siteStartPage.asciidoc.attributes['export-site-navigation-data'] != null ||
+      siteStartPage.asciidoc.attributes['site-navigation-data-path'])
+    ? 'client'
+    : 'template'
 }
