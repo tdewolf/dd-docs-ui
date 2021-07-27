@@ -249,7 +249,7 @@ function exportSiteNavigationData (components) {
     contents: Buffer.from(
       'window.siteNavigationData = ' + inspect(navigationData, { depth: null, maxArrayLength: null, breakLength: 250 })
     ),
-    path: 'site-navigation-data.js',
+    path: '_/js/site-navigation-data.js',
   })
 }
 
