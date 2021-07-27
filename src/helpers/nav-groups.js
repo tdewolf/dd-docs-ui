@@ -1,6 +1,10 @@
 'use strict'
 
-module.exports = ({ data: { root: { contentCatalog = { resolvePage: () => undefined }, site } } }) => {
+module.exports = ({
+  data: {
+    root: { contentCatalog = { resolvePage: () => undefined }, site },
+  },
+}) => {
   let navGroups = site.keys.navGroups
   if (!navGroups) return []
   if (navGroups._compiled) return navGroups

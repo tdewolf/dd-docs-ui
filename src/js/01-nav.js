@@ -35,8 +35,10 @@
   function buildNav (container, page, group, navData) {
     var groupEl = createElement('div', 'components is-revealed')
     var singleComponent
-    if ((group.components.length === 1 &&
-        group.title === navData[group.components[0]].title.replace(/^Couchbase | Database$/, ''))) {
+    if (
+      group.components.length === 1 &&
+      group.title === navData[group.components[0]].title.replace(/^Couchbase | Database$/, '')
+    ) {
       singleComponent = true
     } else {
       var groupNameEl = createElement('div', 'components_group-title')
@@ -79,8 +81,10 @@
         componentVersionNavEl.dataset.version = componentVersion.version
         // TODO only open manually after building nav tree if current page is not found
         var startCollapsed = true
-        if ((page.component === componentName && page.version === componentVersion.version) ||
-            (singleComponent && (!versioned || componentVersion.version === selectedVersion))) {
+        if (
+          (page.component === componentName && page.version === componentVersion.version) ||
+          (singleComponent && (!versioned || componentVersion.version === selectedVersion))
+        ) {
           startCollapsed = false
         }
         if (startCollapsed) componentVersionNavEl.classList.add('hide')

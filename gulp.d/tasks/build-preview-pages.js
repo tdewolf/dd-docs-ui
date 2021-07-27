@@ -43,117 +43,122 @@ const yaml = require('js-yaml')
 
 const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
 
-module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
-  Promise.all([
-    loadSampleUiModel(previewSrc),
-    toPromise(
-      merge(compileLayouts(src), registerPartials(src), registerHelpers(src), copyImages(previewSrc, previewDest))
-    ),
-  ])
-    .then(([baseUiModel, { layouts }]) => [{ ...baseUiModel, env: process.env }, layouts])
-    .then(([baseUiModel, layouts, iconDefs = new Map()]) =>
-      vfs
-        .src('**/*.adoc', { base: previewSrc, cwd: previewSrc })
-        .pipe(
-          map(
-            (file, enc, next) => {
-              const siteRootPath = path.relative(ospath.dirname(file.path), ospath.resolve(previewSrc))
-              const uiModel = {
-                ...baseUiModel,
-                preview: true,
-                siteRootPath,
-                siteRootUrl: path.join(siteRootPath, 'index.html'),
-                uiRootPath: path.join(siteRootPath, '_'),
-              }
-              if (file.stem === '404') {
-                uiModel.page = { layout: '404', title: 'Page Not Found' }
-              } else {
-                const pageModel = (uiModel.page = { ...uiModel.page })
-                const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
-                const attributes = doc.getAttributes()
-                pageModel.layout = doc.getAttribute('page-layout', 'default')
-                pageModel.title = doc.getDocumentTitle()
-                pageModel.url = '/' + file.relative.slice(0, -5) + '.html'
-                if (file.stem === 'home') pageModel.home = true
-                const componentName = doc.getAttribute('page-component-name', pageModel.src.component)
-                const versionString = doc.getAttribute(
-                  'page-version',
-                  doc.hasAttribute('page-component-name') ? undefined : pageModel.src.version
-                )
-                let component
-                let componentVersion
-                if (componentName) {
-                  component = pageModel.component = uiModel.site.components[componentName]
-                  componentVersion = pageModel.componentVersion = versionString
-                    ? component.versions.find(({ version }) => version === versionString)
-                    : component.latest
-                } else {
-                  component = pageModel.component = Object.values(uiModel.site.components)[0]
-                  componentVersion = pageModel.componentVersion = component.latest
-                }
-                pageModel.module = 'ROOT'
-                pageModel.relativeSrcPath = file.relative
-                pageModel.version = componentVersion.version
-                pageModel.displayVersion = componentVersion.displayVersion
-                pageModel.editUrl = pageModel.origin.editUrlPattern.replace('%s', file.relative)
-                pageModel.navigation = componentVersion.navigation || []
-                pageModel.breadcrumbs = findNavPath(pageModel.url, pageModel.navigation)
-                if (pageModel.component.versions.length > 1) {
-                  pageModel.versions = pageModel.component.versions.map(
-                    ({ version, displayVersion, url }, idx, arr) => {
-                      const pageVersion = { version, displayVersion: displayVersion || version, url }
-                      if (version === component.latest.version) pageVersion.latest = true
-                      if (idx === arr.length - 1) {
-                        delete pageVersion.url
-                        pageVersion.missing = true
-                      }
-                      return pageVersion
-                    }
-                  )
-                }
-                pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
-                  .filter(([name, val]) => name.startsWith('page-'))
-                  .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
-                pageModel.contents = Buffer.from(
-                  doc
-                    .convert()
-                    // NOTE emulates the behavior of the view source url extension
-                    .replace(/<pre([^>]*)(><code[^>]*)?>\[data-source-url=(.+?)\]\n/g, '<pre$1$2 data-source-url="$3">')
-                )
-              }
-              file.extname = '.html'
-              try {
-                file.contents = Buffer.from(layouts.get(uiModel.page.layout)(uiModel))
-                registerIconDefs(iconDefs, file)
-                next(null, file)
-              } catch (e) {
-                next(transformHandlebarsError(e, uiModel.page.layout))
-              }
-            },
-            function (done) {
-              if (baseUiModel.navMode === 'client') this.push(exportSiteNavigationData(baseUiModel.site.components))
-              vfs
-                .src('js/vendor/fontawesome-icon-defs.js', { base: src, cwd: src })
-                .pipe(
-                  map((file, enc, next) => {
-                    registerIconDefs(iconDefs, file)
-                    file.contents = Buffer.from(
-                      `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`
+module.exports =
+  (src, previewSrc, previewDest, sink = () => map()) =>
+    (done) =>
+      Promise.all([
+        loadSampleUiModel(previewSrc),
+        toPromise(
+          merge(compileLayouts(src), registerPartials(src), registerHelpers(src), copyImages(previewSrc, previewDest))
+        ),
+      ])
+        .then(([baseUiModel, { layouts }]) => [{ ...baseUiModel, env: process.env }, layouts])
+        .then(([baseUiModel, layouts, iconDefs = new Map()]) =>
+          vfs
+            .src('**/*.adoc', { base: previewSrc, cwd: previewSrc })
+            .pipe(
+              map(
+                (file, enc, next) => {
+                  const siteRootPath = path.relative(ospath.dirname(file.path), ospath.resolve(previewSrc))
+                  const uiModel = {
+                    ...baseUiModel,
+                    preview: true,
+                    siteRootPath,
+                    siteRootUrl: path.join(siteRootPath, 'index.html'),
+                    uiRootPath: path.join(siteRootPath, '_'),
+                  }
+                  if (file.stem === '404') {
+                    uiModel.page = { layout: '404', title: 'Page Not Found' }
+                  } else {
+                    const pageModel = (uiModel.page = { ...uiModel.page })
+                    const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+                    const attributes = doc.getAttributes()
+                    pageModel.layout = doc.getAttribute('page-layout', 'default')
+                    pageModel.title = doc.getDocumentTitle()
+                    pageModel.url = '/' + file.relative.slice(0, -5) + '.html'
+                    if (file.stem === 'home') pageModel.home = true
+                    const componentName = doc.getAttribute('page-component-name', pageModel.src.component)
+                    const versionString = doc.getAttribute(
+                      'page-version',
+                      doc.hasAttribute('page-component-name') ? undefined : pageModel.src.version
                     )
-                    // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
-                    file.dirname = file.base
-                    this.push(file)
-                    next()
-                  })
-                )
-                .on('finish', done)
-            }
-          )
+                    let component
+                    let componentVersion
+                    if (componentName) {
+                      component = pageModel.component = uiModel.site.components[componentName]
+                      componentVersion = pageModel.componentVersion = versionString
+                        ? component.versions.find(({ version }) => version === versionString)
+                        : component.latest
+                    } else {
+                      component = pageModel.component = Object.values(uiModel.site.components)[0]
+                      componentVersion = pageModel.componentVersion = component.latest
+                    }
+                    pageModel.module = 'ROOT'
+                    pageModel.relativeSrcPath = file.relative
+                    pageModel.version = componentVersion.version
+                    pageModel.displayVersion = componentVersion.displayVersion
+                    pageModel.editUrl = pageModel.origin.editUrlPattern.replace('%s', file.relative)
+                    pageModel.navigation = componentVersion.navigation || []
+                    pageModel.breadcrumbs = findNavPath(pageModel.url, pageModel.navigation)
+                    if (pageModel.component.versions.length > 1) {
+                      pageModel.versions = pageModel.component.versions.map(
+                        ({ version, displayVersion, url }, idx, arr) => {
+                          const pageVersion = { version, displayVersion: displayVersion || version, url }
+                          if (version === component.latest.version) pageVersion.latest = true
+                          if (idx === arr.length - 1) {
+                            delete pageVersion.url
+                            pageVersion.missing = true
+                          }
+                          return pageVersion
+                        }
+                      )
+                    }
+                    pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
+                      .filter(([name, val]) => name.startsWith('page-'))
+                      .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
+                    pageModel.contents = Buffer.from(
+                      doc
+                        .convert()
+                      // NOTE emulates the behavior of the view source url extension
+                        .replace(
+                          /<pre([^>]*)(><code[^>]*)?>\[data-source-url=(.+?)\]\n/g,
+                          '<pre$1$2 data-source-url="$3">'
+                        )
+                    )
+                  }
+                  file.extname = '.html'
+                  try {
+                    file.contents = Buffer.from(layouts.get(uiModel.page.layout)(uiModel))
+                    registerIconDefs(iconDefs, file)
+                    next(null, file)
+                  } catch (e) {
+                    next(transformHandlebarsError(e, uiModel.page.layout))
+                  }
+                },
+                function (done) {
+                  if (baseUiModel.navMode === 'client') this.push(exportSiteNavigationData(baseUiModel.site.components))
+                  vfs
+                    .src('js/vendor/fontawesome-icon-defs.js', { base: src, cwd: src })
+                    .pipe(
+                      map((file, enc, next) => {
+                        registerIconDefs(iconDefs, file)
+                        file.contents = Buffer.from(
+                        `window.FontAwesomeIconDefs = ${JSON.stringify([...iconDefs.values()])}\n`
+                        )
+                        // NOTE parallel build overwrites default fontawesome-icon-defs.js, so we must use an alternate path
+                        file.dirname = file.base
+                        this.push(file)
+                        next()
+                      })
+                    )
+                    .on('finish', done)
+                }
+              )
+            )
+            .pipe(vfs.dest(previewDest))
+            .on('error', (e) => done)
+            .pipe(sink())
         )
-        .pipe(vfs.dest(previewDest))
-        .on('error', (e) => done)
-        .pipe(sink())
-    )
 
 function loadSampleUiModel (src) {
   return fs.readFile(ospath.join(src, 'ui-model.yml'), 'utf8').then((contents) => {
@@ -242,8 +247,7 @@ function exportSiteNavigationData (components) {
   }))
   return new File({
     contents: Buffer.from(
-      'window.siteNavigationData = ' +
-      inspect(navigationData, { depth: null, maxArrayLength: null, breakLength: 250 })
+      'window.siteNavigationData = ' + inspect(navigationData, { depth: null, maxArrayLength: null, breakLength: 250 })
     ),
     path: 'site-navigation-data.js',
   })
