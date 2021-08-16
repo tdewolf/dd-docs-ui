@@ -267,15 +267,14 @@ function findNavPath (currentUrl, node = [], current_path = [], root = true) {
 }
 
 function registerIconDefs (iconDefs, file) {
-  const contents = file.contents
+  const contents = file.contents.toString()
   let iconNames = []
-  if (!file.path) {
+  if (file.extname === '.js') {
     try {
       iconNames = JSON.parse(contents.match(/\biconNames: *(\[.*?\])/)[1].replace(/'/g, '"'))
     } catch (e) {}
   } else if (contents.includes('<i class="fa')) {
     iconNames = contents
-      .toString()
       .match(/<i class="fa[brs]? fa-[^" ]+/g)
       .map((it) => it.substr(10))
   }
