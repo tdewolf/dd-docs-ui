@@ -204,6 +204,7 @@ code::-webkit-scrollbar-thumb {
 .run-code {
   background: #0074e0;
   color: #fff;
+  cursor: pointer;
 }
 
 .run-code:hover {

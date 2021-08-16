@@ -82,7 +82,6 @@
       }
     })
 
-    // Run Code block
     runCode.addEventListener('click', function (e) {
       e.preventDefault()
       var root = document.getElementsByTagName('html')
