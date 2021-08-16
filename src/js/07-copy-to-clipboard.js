@@ -34,12 +34,12 @@
     var fadeShadow = document.createElement('span')
     fadeShadow.className = 'fade-shadow'
 
-    var runCode = document.createElement('a')
-    runCode.className = 'run-code'
-    runCode.dataset.title = 'Run Code'
-    runCode.appendChild(document.createElement('i')).className = 'fas fa-terminal'
-    var runCodeText = document.createTextNode('Run Code')
-    runCode.appendChild(runCodeText)
+    var runCodeButton = document.createElement('a')
+    runCodeButton.className = 'run-code'
+    runCodeButton.dataset.title = 'Run Code'
+    runCodeButton.appendChild(document.createElement('i')).className = 'fas fa-terminal'
+    var runCodeButtonText = document.createTextNode('Run Code')
+    runCodeButton.appendChild(runCodeButtonText)
 
     copyButton.addEventListener('click', function (e) {
       // NOTE: ignore event on pseudo-element
@@ -82,19 +82,9 @@
       }
     })
 
-    runCode.addEventListener('click', function (e) {
-      e.preventDefault()
-      var root = document.getElementsByTagName('html')
-      if (root[0].classList.contains('terminal-launched')) {
-        return false
-      }
-      root[0].classList.add('terminal-launched')
-
-      var closeShell = document.querySelector('.close-shell')
-      closeShell.addEventListener('click', function (e) {
-        e.preventDefault()
-        root[0].classList.remove('terminal-launched')
-      })
+    createRunCodePanel()
+    runCodeButton.addEventListener('click', function () {
+      document.documentElement.classList.add('terminal-launched')
     })
 
     var pre = codeBlock.parentNode
@@ -104,7 +94,18 @@
     sourceTypeBoxCol2.appendChild(dataSource)
     if (viewSourceLink) sourceTypeBoxCol2.appendChild(viewSourceLink)
     sourceTypeBoxCol2.appendChild(copyButton)
-    sourceTypeBoxCol2.appendChild(runCode)
+    sourceTypeBoxCol2.appendChild(runCodeButton)
     pre.appendChild(fadeShadow)
   })
+
+  function createRunCodePanel () {
+    var runCodePanelTemplate = document.getElementById('run-code-panel')
+    if (!runCodePanelTemplate) return
+    var runCodePanel = document.body.appendChild(runCodePanelTemplate.content.firstElementChild.cloneNode(true))
+    runCodePanel.querySelector('.close-shell').addEventListener('click', function (e) {
+      e.preventDefault()
+      document.documentElement.classList.remove('terminal-launched')
+    })
+    runCodePanelTemplate.parentNode.removeChild(runCodePanelTemplate)
+  }
 })()

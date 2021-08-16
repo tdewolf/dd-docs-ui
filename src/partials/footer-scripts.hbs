@@ -7,6 +7,9 @@
 </script>
 {{/with}}
 {{/if}}
+<template id="run-code-panel">
+{{> terminal}}
+</template>
 <script id="site-script" src="{{{uiRootPath}}}/js/site.js"></script>
 {{#with page.attributes.content-scripts}}
 {{{this}}}
