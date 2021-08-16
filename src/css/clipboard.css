@@ -170,14 +170,14 @@ code::-webkit-scrollbar-thumb {
 /* New style code block */
 .source-type-box {
   padding-left: 12px;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-bottom: none;
   border-radius: 3px 3px 0 0;
   display: flex;
   justify-content: space-between;
   font-size: 14px;
   line-height: 20px;
-  color: #73768A;
+  color: #73768a;
   font-family: 'Source Code Pro', monospace;
 }
 
@@ -185,23 +185,24 @@ code::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-.source-type-box .right-block> * {
-  border-right: 1px solid #E5E5E5;
+.source-type-box .right-block > * {
+  border-right: 1px solid #e5e5e5;
   padding: 4px 10px;
   display: flex;
   align-items: center;
 }
-.source-type-box .right-block> *:last-child {
+
+.source-type-box .right-block > *:last-child {
   border: none;
 }
 
 .copy-code-button .svg-inline--fa,
-.run-code  .svg-inline--fa {
+.run-code .svg-inline--fa {
   margin-right: 5px;
 }
 
 .run-code {
-  background: #0074E0;
+  background: #0074e0;
   color: #fff;
 }
 

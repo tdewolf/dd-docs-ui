@@ -35,9 +35,8 @@
     fadeShadow.className = 'fade-shadow'
 
     var runCode = document.createElement('a')
-    runCode.className= 'run-code'
+    runCode.className = 'run-code'
     runCode.dataset.title = 'Run Code'
-    runCode.href= '#'
     runCode.appendChild(document.createElement('i')).className = 'fas fa-terminal'
     var runCodeText = document.createTextNode('Run Code')
     runCode.appendChild(runCodeText)
@@ -87,15 +86,15 @@
     runCode.addEventListener('click', function (e) {
       e.preventDefault()
       var root = document.getElementsByTagName('html')
-      if(root[0].classList.contains('terminal-launched')){
-        return false;
+      if (root[0].classList.contains('terminal-launched')) {
+        return false
       }
-      root[0].classList.add("terminal-launched")
+      root[0].classList.add('terminal-launched')
 
       var closeShell = document.querySelector('.close-shell')
       closeShell.addEventListener('click', function (e) {
         e.preventDefault()
-        root[0].classList.remove("terminal-launched")
+        root[0].classList.remove('terminal-launched')
       })
     })
 
@@ -109,8 +108,4 @@
     sourceTypeBoxCol2.appendChild(runCode)
     pre.appendChild(fadeShadow)
   })
-
-
-  
-
 })()
