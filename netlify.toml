@@ -11,10 +11,10 @@ OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
 OPTANON_SCRIPT_DATA_DOMAIN_SCRIPT = "748511ff-10bf-44bf-88b8-36382e5b5fd9"
 
 [context.branch-deploy]
-command = "node_modules/.bin/gulp preview:build && node_modules/.bin/gulp --series build bundle:pack"
+command = "node_modules/.bin/gulp preview:build && node_modules/.bin/gulp --series lint build bundle:pack"
 
 [context.deploy-preview]
-command = "node_modules/.bin/gulp preview:build && node_modules/.bin/gulp --series build bundle:pack"
+command = "node_modules/.bin/gulp preview:build && node_modules/.bin/gulp --series lint build bundle:pack"
 
 [[headers]]
 for = "/_/font/*"
