@@ -1,6 +1,8 @@
 ;(function () {
   'use strict'
+  var runCodeLangs = { cpp: 'cc', csharp: 'dotnet', js: 'nodejs', python: 'py', ruby: 'rb' }
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+    var pre = codeBlock.parentNode
     var viewSourceLink
     var sourceUrl = codeBlock.dataset.sourceUrl
     if (sourceUrl) {
@@ -33,13 +35,6 @@
 
     var fadeShadow = document.createElement('span')
     fadeShadow.className = 'fade-shadow'
-
-    var runCodeButton = document.createElement('a')
-    runCodeButton.className = 'run-code'
-    runCodeButton.dataset.title = 'Run Code'
-    runCodeButton.appendChild(document.createElement('i')).className = 'fas fa-terminal'
-    var runCodeButtonText = document.createTextNode('Run Code')
-    runCodeButton.appendChild(runCodeButtonText)
 
     copyButton.addEventListener('click', function (e) {
       // NOTE: ignore event on pseudo-element
@@ -82,30 +77,45 @@
       }
     })
 
-    createRunCodePanel()
-    runCodeButton.addEventListener('click', function () {
-      document.documentElement.classList.add('terminal-launched')
-    })
+    var runCodeButton
+    if (codeBlock.matches('.listingblock.try-it code') || (codeBlock.matches('#full-example .listingblock code'))) {
+      runCodeButton = document.createElement('a')
+      runCodeButton.className = 'run-code'
+      runCodeButton.dataset.title = 'Run Code'
+      runCodeButton.appendChild(document.createElement('i')).className = 'fas fa-terminal'
+      var runCodeButtonText = document.createTextNode('Run Code')
+      runCodeButton.appendChild(runCodeButtonText)
+      var runCodePanel = createRunCodePanel()
+      runCodeButton.addEventListener('click', function () {
+        document.documentElement.classList.add('terminal-launched')
+        const runCodeForm = runCodePanel.querySelector('form')
+        runCodeForm.lang.value = runCodeLangs[codeBlock.dataset.lang] || codeBlock.dataset.lang
+        runCodeForm.code.value = codeBlock.innerText
+        runCodeForm.submit()
+      })
+    }
 
-    var pre = codeBlock.parentNode
     pre.prepend(sourceTypeBox)
     sourceTypeBox.appendChild(headingBox)
     sourceTypeBox.appendChild(sourceTypeBoxCol2)
     sourceTypeBoxCol2.appendChild(dataSource)
     if (viewSourceLink) sourceTypeBoxCol2.appendChild(viewSourceLink)
     sourceTypeBoxCol2.appendChild(copyButton)
-    sourceTypeBoxCol2.appendChild(runCodeButton)
+    if (runCodeButton) sourceTypeBoxCol2.appendChild(runCodeButton)
     pre.appendChild(fadeShadow)
   })
 
   function createRunCodePanel () {
-    var runCodePanelTemplate = document.getElementById('run-code-panel')
-    if (!runCodePanelTemplate) return
-    var runCodePanel = document.body.appendChild(runCodePanelTemplate.content.firstElementChild.cloneNode(true))
-    runCodePanel.querySelector('.close-shell').addEventListener('click', function (e) {
+    var runCodePanel = document.getElementById('run-code-panel')
+    if (runCodePanel.tagName !== 'TEMPLATE') return runCodePanel
+    var template = runCodePanel
+    runCodePanel = document.body.appendChild(template.content.firstElementChild.cloneNode(true))
+    runCodePanel.querySelector('.close').addEventListener('click', function (e) {
       e.preventDefault()
       document.documentElement.classList.remove('terminal-launched')
     })
-    runCodePanelTemplate.parentNode.removeChild(runCodePanelTemplate)
+    template.parentNode.removeChild(template)
+    runCodePanel.id = 'run-code-panel'
+    return runCodePanel
   }
 })()

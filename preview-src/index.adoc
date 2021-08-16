@@ -39,6 +39,29 @@ As the selected interval increases, the amount of statistical data displayed wil
 Click the image:git-branch.svg[,16,role=icon] icon at the bottom of the editor to select a branch.
 Then click the image:arrow-small-down.svg[,16,role=icon]image:arrow-small-up.svg[,16,role=icon] icons to open the pull/push dialog.
 
+== Try It Now
+
+This section demonstrates the interactive, try it now feature of the docs.
+
+[source.try-it,ruby]
+----
+require 'couchbase'
+
+options = Couchbase::Cluster::ClusterOptions.new
+options.authenticate('username', 'password')
+cluster = Couchbase::Cluster.connect('couchbase://127.0.0.1', options)
+
+bucket = cluster.bucket('travel-sample')
+collection = bucket.default_collection
+
+begin
+  get_result = collection.get('airline_10')
+  puts get_result.content
+rescue Couchbase::Error::DocumentNotFound
+  puts 'Document not found!'
+end
+----
+
 == Individual Bucket Monitoring
 
 Bucket monitoring within the Couchbase Web Console has been updated to show additional detailed information.
