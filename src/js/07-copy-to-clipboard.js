@@ -78,7 +78,8 @@
     })
 
     var runCodeButton
-    if (codeBlock.matches('.listingblock.try-it code') || (codeBlock.matches('#full-example .listingblock code'))) {
+    if (codeBlock.matches('.listingblock.try-it code') ||
+        (codeBlock.matches('#full-example + .sectionbody .tab-pane > .listingblock:first-child code'))) {
       runCodeButton = document.createElement('a')
       runCodeButton.className = 'run-code'
       runCodeButton.dataset.title = 'Run Code'
