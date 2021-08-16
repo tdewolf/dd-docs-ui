@@ -41,7 +41,7 @@ html.terminal-launched {
   display: flex;
 }
 
-.control-lable {
+.control-label {
   padding: 4px 10px;
   border-left: 1px solid #e5e5e5;
   font-size: 14px;
@@ -57,7 +57,7 @@ html.terminal-launched {
   margin-right: 10px;
 }
 
-.control-lable:hover {
+.control-label:hover {
   text-decoration: none;
 }
 
