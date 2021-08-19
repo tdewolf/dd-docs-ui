@@ -1,6 +1,7 @@
 ;(function () {
   'use strict'
   var runCodeLangs = { cpp: 'cc', csharp: 'dotnet', js: 'nodejs', python: 'py', ruby: 'rb' }
+  var main = document.querySelector('main.article')
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
     var pre = codeBlock.parentNode
     var viewSourceLink
@@ -78,15 +79,21 @@
     var runCodeButton
     if (codeBlock.matches('.listingblock.try-it code') ||
         (codeBlock.matches('#full-example + .sectionbody .listingblock code'))) {
+      codeBlock.contentEditable = true
+      codeBlock.spellcheck = false
       runCodeButton = document.createElement('a')
       runCodeButton.className = 'run-code'
       runCodeButton.dataset.title = 'Run Code'
       runCodeButton.appendChild(document.createElement('i')).className = 'fas fa-terminal'
       var runCodeButtonText = document.createTextNode('Run Code')
       runCodeButton.appendChild(runCodeButtonText)
-      var runCodePanel = createRunCodePanel()
-      runCodeButton.addEventListener('click', function () {
+      var runCodePanel = createRunCodePanel(main.parentNode)
+      runCodeButton.addEventListener('click', function (e) {
+        var currentY = this.getBoundingClientRect().top
         document.documentElement.classList.add('terminal-launched')
+        var newY = this.getBoundingClientRect().top
+        main.scrollBy(0, newY - currentY)
+        rebuildRunCodeFrame(runCodePanel)
         const runCodeForm = runCodePanel.querySelector('form')
         runCodeForm.lang.value = runCodeLangs[codeBlock.dataset.lang] || codeBlock.dataset.lang
         runCodeForm.code.value = codeBlock.innerText
@@ -104,17 +111,36 @@
     pre.appendChild(fadeShadow)
   })
 
-  function createRunCodePanel () {
+  function createRunCodePanel (scope) {
     var runCodePanel = document.getElementById('run-code-panel')
     if (runCodePanel.tagName !== 'TEMPLATE') return runCodePanel
     var template = runCodePanel
-    runCodePanel = document.body.appendChild(template.content.firstElementChild.cloneNode(true))
-    runCodePanel.querySelector('.close').addEventListener('click', function (e) {
-      e.preventDefault()
+    runCodePanel = scope.appendChild(template.content.firstElementChild.cloneNode(true))
+    runCodePanel.querySelector('.rerun').addEventListener('click', function () {
+      rebuildRunCodeFrame(runCodePanel)
+    })
+    runCodePanel.querySelector('.close').addEventListener('click', function () {
+      var main = scope.querySelector('main')
+      var viewportTop = main.getBoundingClientRect().top
+      var ref = Array.prototype.slice.call(main.querySelectorAll('*')).find(function (it) {
+        return it.getBoundingClientRect().top >= viewportTop
+      })
+      var currentY = ref.getBoundingClientRect().top
       document.documentElement.classList.remove('terminal-launched')
+      var newY = ref.getBoundingClientRect().top
+      document.documentElement.style.scrollBehavior = 'auto'
+      document.documentElement.scrollBy(0, newY - currentY)
+      document.documentElement.style.scrollBehavior = ''
     })
     template.parentNode.removeChild(template)
     runCodePanel.id = 'run-code-panel'
     return runCodePanel
+  }
+
+  function rebuildRunCodeFrame (scope) {
+    var runCodeFrameTemplate = scope.querySelector('iframe')
+    var runCodeFrame = runCodeFrameTemplate.cloneNode()
+    scope.replaceChild(runCodeFrame, runCodeFrameTemplate)
+    runCodeFrame.contentWindow.document.write('<!DOCTYPE html><html><body><pre>Running code...</pre></body></html>')
   }
 })()
