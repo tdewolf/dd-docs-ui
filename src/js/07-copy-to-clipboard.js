@@ -7,7 +7,7 @@
     var sourceUrl = codeBlock.dataset.sourceUrl
     if (sourceUrl) {
       viewSourceLink = document.createElement('a')
-      viewSourceLink.href = codeBlock.dataset.sourceUrl
+      viewSourceLink.href = sourceUrl
       viewSourceLink.className = 'view-source-button'
       viewSourceLink.target = '_blank'
       viewSourceLink.dataset.title = 'View On GitHub'
@@ -37,8 +37,6 @@
     fadeShadow.className = 'fade-shadow'
 
     copyButton.addEventListener('click', function (e) {
-      // NOTE: ignore event on pseudo-element
-      if (e.currentTarget === e.target) return
       var bashText = codeBlock.innerText
       // remove '$' from copy to code functionality in code block console
       // var spliceData = bashText.split('$').join('')
