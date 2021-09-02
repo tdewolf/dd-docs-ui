@@ -94,9 +94,11 @@
         var newY = this.getBoundingClientRect().top
         main.scrollBy(0, newY - currentY)
         rebuildRunCodeFrame(runCodePanel)
-        const runCodeForm = runCodePanel.querySelector('form')
+        var runCodeForm = runCodePanel.querySelector('form')
         runCodeForm.lang.value = runCodeLangs[codeBlock.dataset.lang] || codeBlock.dataset.lang
-        runCodeForm.code.value = codeBlock.innerText
+        var code = codeBlock.innerText
+        if (runCodeForm.lang.value === 'java') code = code.replace(/^(?:public )?class \S+/m, 'class Program')
+        runCodeForm.code.value = code
         runCodeForm.submit()
       })
     }
