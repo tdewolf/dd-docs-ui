@@ -102,7 +102,7 @@
         if (startCollapsed) componentVersionNavEl.classList.add('hide')
         var items = componentVersion.sets
         if (items.length === 1 && !items[0].content) items = items[0].items
-        if (items.length && items[0].content.endsWith(' Home')) {
+        if (items.length && items[0].content && items[0].content.endsWith(' Home')) {
           items.splice.apply(items, [0, 1].concat(items[0].items || []))
         }
         if (buildNavTree(items, componentVersionNavEl, page, [])) hasNavTrees = true
