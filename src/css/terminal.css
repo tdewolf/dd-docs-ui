@@ -1,0 +1,84 @@
+.action-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  background-color: #f1f7fe;
+  flex-direction: column;
+}
+
+.action-panel .run-code-output {
+  border: 0;
+  flex-grow: 1;
+}
+
+.terminal-launched,
+.terminal-launched body {
+  overflow: hidden;
+}
+
+.terminal-launched .action-panel {
+  display: flex;
+}
+
+.terminal-launched .left-sidebar,
+.terminal-launched .toc.sidebar,
+.terminal-launched footer {
+  display: none;
+}
+
+.action-panel .controls {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.action-panel .control-button,
+.action-panel .control-label {
+  padding: 4px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #73768a;
+}
+
+.action-panel .control-button {
+  border: 0;
+  background: transparent;
+}
+
+.action-panel .control-label {
+  flex-grow: 1;
+}
+
+.action-panel .controls > * + * {
+  border-left: 1px solid #e5e5e5;
+}
+
+.action-panel .close {
+  display: flex;
+  align-items: center;
+}
+
+.action-panel .close svg {
+  margin-right: 10px;
+}
+
+@media all and (min-width: 768px) {
+  .terminal-launched .body.container {
+    position: relative;
+  }
+
+  .terminal-launched main.article {
+    width: 50%;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-right: var(--width-main-gutter);
+    padding-left: var(--width-main-gutter);
+  }
+}
