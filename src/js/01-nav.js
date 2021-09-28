@@ -71,7 +71,7 @@
       componentTitleEl.appendChild(document.createTextNode(componentNavData.title))
       componentVersionsEl.appendChild(componentTitleEl)
       var versioned
-      if ((versioned = selectedVersion && selectedVersion !== 'master')) {
+      if ((versioned = pageVersions && selectedVersion && selectedVersion !== 'master')) {
         var componentVersionSelectEl
         if (componentName === page.component) {
           componentVersionSelectEl = pageVersions.content.querySelector('.version_list')
