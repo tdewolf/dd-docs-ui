@@ -5,13 +5,12 @@
   if (!sidebar) return
   var doc
   var headings
-  // comments this to show right sidebar on every page.
   if (
     document.querySelector('.body.-toc') ||
     !(headings = find('h1[id].sect0, .sect1 > h2[id]', (doc = document.querySelector('article.doc')))).length
   ) {
-    // sidebar.parentNode.removeChild(sidebar)
-    // return
+    //sidebar.parentNode.removeChild(sidebar) // sidebar is used for other purposes, so leave it
+    return
   }
   var lastActiveFragment
   var links = {}
