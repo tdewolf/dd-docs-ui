@@ -6,6 +6,14 @@
 {{/with}}
 {{#if page.component}}
 <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
+{{#unless (eq page.attributes.pagination undefined)}}
+    {{#with page.previous}}
+        <link rel="prev" href="{{{relativize ./url}}}">
+    {{/with}}
+    {{#with page.next}}
+        <link rel="next" href="{{{relativize ./url}}}">
+    {{/with}}
+{{/unless}}
 <meta name="dcterms.subject" content="{{page.component.name}}">
 <meta name="dcterms.identifier" content="{{page.version}}">
 <meta name="page-url" content="{{page.url}}">

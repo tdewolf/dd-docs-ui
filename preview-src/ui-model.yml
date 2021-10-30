@@ -165,3 +165,11 @@ page:
   origin:
     url: https://github.com/couchbase/docs-ui
     editUrlPattern: https://github.com/couchbase/docs-ui/edit/archive/preview-site-src/%s
+  previous:
+    content: Quickstart
+    url: '#'
+    urlType: 'internal'
+  next:
+    content: Liber Recusabo
+    url: '#'
+    urlType: 'internal'

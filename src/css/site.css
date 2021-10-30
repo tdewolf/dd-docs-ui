@@ -14,6 +14,7 @@
 @import "toolbar.css";
 @import "labels.css";
 @import "doc.css";
+@import "pagination.css";
 @import "swagger-ui.css";
 @import "home.css";
 @import "header.css";
@@ -28,4 +29,3 @@
 @import "landing-page.css";
 @import "contributor.css";
 @import "terminal.css";
-@import "pagination.css";
