@@ -204,6 +204,11 @@
 }
 
 @media screen and (min-width: 769px) {
+  .algolia-autocomplete-results {
+    right: 0;
+    min-width: 50vw;
+  }
+
   .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column-text::after {
     display: none;
   }
