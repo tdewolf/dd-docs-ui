@@ -575,7 +575,8 @@ ul ul ul {
   margin-left: var(--base-space);
 }
 
-.hdlist1, .hdlist2 {
+.hdlist1,
+.hdlist2 {
   vertical-align: top;
 }
 
