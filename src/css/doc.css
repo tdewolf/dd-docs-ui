@@ -575,6 +575,10 @@ ul ul ul {
   margin-left: var(--base-space);
 }
 
+.hdlist1, .hdlist2 {
+  vertical-align: top;
+}
+
 .doc pre:not(.highlight),
 .doc pre.highlight code {
   /* background-color: #151514; */
