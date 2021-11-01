@@ -73,7 +73,7 @@
       var versioned
       if ((versioned = selectedVersion && selectedVersion !== 'master')) {
         var componentVersionSelectEl
-        if (componentName === page.component) {
+        if (componentName === page.component && pageVersions) {
           componentVersionSelectEl = pageVersions.content.querySelector('.version_list')
         } else {
           componentVersionSelectEl = createElement('select', 'version_list')

@@ -11,6 +11,8 @@
   hljs.registerLanguage('groovy', require('highlight.js/lib/languages/groovy'))
   hljs.registerLanguage('java', require('highlight.js/lib/languages/java'))
   hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+  hljs.registerLanguage('nodejs', require('highlight.js/lib/languages/javascript'))
+  hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'))
   hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
   hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin'))
   hljs.registerLanguage('n1ql', require('highlight.js/lib/languages/sql'))
