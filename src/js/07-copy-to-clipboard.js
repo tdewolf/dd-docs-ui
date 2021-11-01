@@ -77,8 +77,7 @@
     })
 
     var runCodeButton
-    if (codeBlock.matches('.listingblock.try-it code') ||
-        (codeBlock.matches('#full-example + .sectionbody .listingblock code'))) {
+    if (codeBlock.matches('.listingblock.try-it code')) {
       codeBlock.contentEditable = true
       codeBlock.spellcheck = false
       runCodeButton = document.createElement('a')
