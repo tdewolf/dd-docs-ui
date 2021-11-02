@@ -33,7 +33,7 @@
             {{/with}}
 
         {{ else if (eq page.attributes.pagination 'next') }}
-            {{#with page.previous}}
+            {{#with page.next}}
                     <span class="next"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
             {{/with}}
 
