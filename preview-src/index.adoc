@@ -2,7 +2,7 @@
 :doctype: book
 :page-edition: enterprise
 :page-status: beta
-:page-pagination:
+:page-pagination: next
 
 // The following should be global document attributes
 :url-edition: https://www.couchbase.com/products/editions
