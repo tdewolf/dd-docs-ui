@@ -514,3 +514,13 @@ http://packages.couchbase.com/clients/kafka/3.2.3/kafka-connect-couchbase-3.2.3.
 == `spec.volumeClaimTemplates.metadata`
 
 This section demonstrates what happens when the section title does not have any natural wrap opportunities.
+
+== Testing level 3 nav
+
+[.include-in-toc]
+=== This is visible
+
+=== (But this is not)
+
+[.include-in-toc]
+=== And so is this

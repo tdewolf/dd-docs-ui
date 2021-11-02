@@ -112,3 +112,19 @@
   line-height: 1.125;
   color: inherit;
 }
+
+.toc .toc-menu li.toc-H1 {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.toc .toc-menu li.toc-H3 {
+  list-style-type: circle;
+  margin-left: 1em;
+  font-size: 90%;
+}
+
+.toc ul li.toc-H3 a {
+  padding-top: 0;
+}
+

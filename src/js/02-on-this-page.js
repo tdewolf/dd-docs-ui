@@ -7,7 +7,7 @@
   var headings
   if (
     document.querySelector('.body.-toc') ||
-    !(headings = find('h1[id].sect0, .sect1 > h2[id]', (doc = document.querySelector('article.doc')))).length
+    !(headings = find('h1[id].sect0, .sect1 > h2[id], .sect2.include-in-toc > h3[id]', (doc = document.querySelector('article.doc')))).length
   ) {
     //sidebar.parentNode.removeChild(sidebar) // sidebar is used for other purposes, so leave it
     return
@@ -23,6 +23,7 @@
     }, document.createElement('a'))
     links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
+    listItem.className = "toc-" + heading.tagName
     listItem.appendChild(link)
     accum.appendChild(listItem)
     return accum
