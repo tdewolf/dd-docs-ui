@@ -113,18 +113,19 @@
   color: inherit;
 }
 
-.toc .toc-menu li.toc-H1 {
+/* level 0 = shouldn't be selected at all */
+.toc .toc-menu li[data-level="0"] {
   font-weight: bold;
-  font-size: 110%;
 }
 
-.toc .toc-menu li.toc-H3 {
-  list-style-type: circle;
-  margin-left: 1em;
-  font-size: 90%;
+/* level 2 === */
+.toc .toc-menu li[data-level="2"] {
+  list-style-type: '-';
+  margin-left: 0.5em;
+  padding-left: 0.5em;
 }
 
-.toc ul li.toc-H3 a {
-  padding-top: 0;
+.toc ul li[data-level="2"] a {
+  padding-top: 2px;
 }
 

@@ -3,6 +3,7 @@
 :page-edition: enterprise
 :page-status: beta
 :page-pagination:
+:page-toclevels: 2
 
 // The following should be global document attributes
 :url-edition: https://www.couchbase.com/products/editions
@@ -515,12 +516,16 @@ http://packages.couchbase.com/clients/kafka/3.2.3/kafka-connect-couchbase-3.2.3.
 
 This section demonstrates what happens when the section title does not have any natural wrap opportunities.
 
-== Testing level 3 nav
+== Testing level 2 nav
 
-[.include-in-toc]
-=== This is visible
+These changes are made in 02-on-this-page.js, which implements support for `:page-toclevels:`
 
-=== (But this is not)
+=== This is level2 
 
-[.include-in-toc]
-=== And so is this
+If a heading starts with 3 equals signs `===` it is level2.
+
+=== So is this
+
+==== But this is level 3
+
+This last section shouldn't show up in the nav.

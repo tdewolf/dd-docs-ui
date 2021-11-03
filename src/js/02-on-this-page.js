@@ -3,39 +3,63 @@
 
   var sidebar = document.querySelector('aside.toc.sidebar')
   if (!sidebar) return
-  var doc
-  var headings
-  if (
-    document.querySelector('.body.-toc') ||
-    !(headings = find('h1[id].sect0, .sect1 > h2[id], .sect2.include-in-toc > h3[id]', (doc = document.querySelector('article.doc')))).length
-  ) {
-    //sidebar.parentNode.removeChild(sidebar) // sidebar is used for other purposes, so leave it
-    return
+  
+  if (document.querySelector('body.-toc')) {
+    return // sidebar.parentNode.removeChild(sidebar)
+    // sidebar is used for other purposes, so leave it
   }
+  
+  const DEFAULT_LEVEL = 1; // usually 2 in stock Antora, but we don't want === headers by default
+
+  var levels = parseInt(sidebar.dataset.levels || DEFAULT_LEVEL, 10)
+  if (levels < 0) return
+    
+  var articleSelector = 'article.doc'
+  var article = document.querySelector(articleSelector)
+  var headingsSelector = []
+  for (var level = 0; level <= levels; level++) {
+    var headingSelector = [articleSelector]
+    if (level) {
+      for (var l = 1; l <= level; l++) headingSelector.push((l === 2 ? '.sectionbody>' : '') + '.sect' + l)
+      headingSelector.push('h' + (level + 1) + '[id]')
+    } else {
+      headingSelector.push('h1[id].sect0')
+    }
+    headingsSelector.push(headingSelector.join('>'))
+  }
+  
+  console.log(levels, headingsSelector)
+  
+  var headings = find(headingsSelector.join(','), article.parentNode)
+  if (!headings.length) {
+    return // sidebar.parentNode.removeChild(sidebar)
+    // sidebar is used for other purposes, so leave it
+  }
+  
   var lastActiveFragment
   var links = {}
   var menu
-
+  
   var list = headings.reduce(function (accum, heading) {
-    var link = toArray(heading.childNodes).reduce(function (target, child) {
-      if (child.nodeName !== 'A') target.appendChild(child.cloneNode(true))
-      return target
-    }, document.createElement('a'))
+    var link = document.createElement('a')
+    link.textContent = heading.textContent
     links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
-    listItem.className = "toc-" + heading.tagName
+    listItem.dataset.level = parseInt(heading.nodeName.slice(1), 10) - 1
     listItem.appendChild(link)
     accum.appendChild(listItem)
     return accum
   }, document.createElement('ul'))
 
-  if (!(menu = sidebar && sidebar.querySelector('.toc-menu'))) {
+  var menu = sidebar.querySelector('.toc-menu')
+  if (!menu) {
     menu = document.createElement('div')
     menu.className = 'toc-menu'
   }
-
+  
+  // We don't use the title element at the moment
   // var title = document.createElement('h3')
-  // title.textContent = 'On This Page'
+  // title.textContent = sidebar.dataset.title || 'Contents'
   // menu.appendChild(title)
   menu.appendChild(list)
 
@@ -47,13 +71,14 @@
     })
   }
 
-  var startOfContent = doc.querySelector('h1.page ~ :not(.labels)')
+  var startOfContent = !document.getElementById('toc') && article.querySelector('h1.page ~ :not(.is-before-toc)')
   if (startOfContent) {
     var embeddedToc = document.createElement('aside')
     embeddedToc.className = 'toc embedded'
     embeddedToc.appendChild(menu.cloneNode(true))
-    doc.insertBefore(embeddedToc, startOfContent)
+    startOfContent.parentNode.insertBefore(embeddedToc, startOfContent)
   }
+
 
   function onScroll () {
     // NOTE doc.parentNode.offsetTop ~= doc.parentNode.getBoundingClientRect().top + window.pageYOffset
