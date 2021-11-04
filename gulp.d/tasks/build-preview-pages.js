@@ -41,7 +41,12 @@ const requireFromString = require('require-from-string')
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
 
-const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
+const ASCIIDOC_ATTRIBUTES = {
+  experimental: '',
+  icons: 'font',
+  sectanchors: '',
+  'source-highlighter': 'highlight.js',
+}
 
 module.exports =
   (src, previewSrc, previewDest, sink = () => map()) =>
@@ -116,6 +121,7 @@ module.exports =
                     pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
                       .filter(([name, val]) => name.startsWith('page-'))
                       .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
+
                     pageModel.contents = Buffer.from(
                       doc
                         .convert()
