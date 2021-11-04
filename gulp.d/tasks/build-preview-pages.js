@@ -122,8 +122,6 @@ module.exports =
                       .filter(([name, val]) => name.startsWith('page-'))
                       .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
 
-                    // console.log(pageModel.attributes)
-
                     pageModel.contents = Buffer.from(
                       doc
                         .convert()
