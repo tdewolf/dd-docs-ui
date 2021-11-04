@@ -112,3 +112,19 @@
   line-height: 1.125;
   color: inherit;
 }
+
+/* level 0 = shouldn't be selected at all */
+.toc .toc-menu li[data-level="0"] {
+  font-weight: bold;
+}
+
+/* level 2 === */
+.toc .toc-menu li[data-level="2"] {
+  list-style-type: '-';
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+}
+
+.toc ul li[data-level="2"] a {
+  padding-top: 2px;
+}
