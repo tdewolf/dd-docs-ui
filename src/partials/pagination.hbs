@@ -1,12 +1,45 @@
 {{#unless (eq page.attributes.pagination undefined)}}
-{{#if (or page.previous page.next)}}
-<nav class="pagination">
-  {{#with page.previous}}
-  <span class="prev"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
-  {{/with}}
-  {{#with page.next}}
-  <span class="next"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
-  {{/with}}
-</nav>
-{{/if}}
+
+    {{#if (or page.previous page.next)}}
+        <nav class="pagination">
+
+        {{#if (eq page.attributes.pagination 'full') }}
+            {{#with page.previous}}
+                    <span class="prev"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination '') }}
+            {{#with page.previous}}
+                    <span class="prev"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination 'prev') }}
+            {{#with page.previous}}
+                    <span class="prev"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+            {{/with}}
+
+        {{else}}
+                <span>&nbsp;</span>
+        {{/if}}
+
+        {{#if (eq page.attributes.pagination 'full') }}
+            {{#with page.next}}
+                    <span class="next"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination '') }}
+            {{#with page.next}}
+                    <span class="next"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination 'next') }}
+            {{#with page.next}}
+                    <span class="next"><a href="{{{relativize ./url}}}">{{{./content}}}</a></span>
+            {{/with}}
+
+        {{else}}
+                <span>&nbsp;</span>
+            </nav>
+        {{/if}}
+    {{/if}}
 {{/unless}}

@@ -14,6 +14,47 @@
         <link rel="next" href="{{{relativize ./url}}}">
     {{/with}}
 {{/unless}}
+
+{{#unless (eq page.attributes.pagination undefined)}}
+
+    {{#if (or page.previous page.next)}}
+
+        {{#if (eq page.attributes.pagination 'full') }}
+            {{#with page.previous}}
+                    <link rel="prev" href="{{{relativize ./url}}}">
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination '') }}
+            {{#with page.previous}}
+                <link rel="prev" href="{{{relativize ./url}}}">
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination 'prev') }}
+            {{#with page.previous}}
+                    <link rel="prev" href="{{{relativize ./url}}}">
+            {{/with}}
+
+        {{/if}}
+
+        {{#if (eq page.attributes.pagination 'full') }}
+            {{#with page.next}}
+                    <link rel="next" href="{{{relativize ./url}}}">
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination '') }}
+            {{#with page.next}}
+                <link rel="next" href="{{{relativize ./url}}}">
+            {{/with}}
+
+        {{ else if (eq page.attributes.pagination 'next') }}
+            {{#with page.next}}
+                    <link rel="next" href="{{{relativize ./url}}}">
+            {{/with}}
+
+        {{/if}}
+    {{/if}}
+{{/unless}}
+
 <meta name="dcterms.subject" content="{{page.component.name}}">
 <meta name="dcterms.identifier" content="{{page.version}}">
 <meta name="page-url" content="{{page.url}}">
