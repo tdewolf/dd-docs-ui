@@ -4,6 +4,7 @@
 :page-status: beta
 :page-pagination:
 :page-toclevels: 2
+:page-stem:
 
 // The following should be global document attributes
 :url-edition: https://www.couchbase.com/products/editions
@@ -520,7 +521,7 @@ This section demonstrates what happens when the section title does not have any 
 
 These changes are made in 02-on-this-page.js, which implements support for `:page-toclevels:`
 
-=== This is level2 
+=== This is level2
 
 If a heading starts with 3 equals signs `===` it is level2.
 
@@ -529,3 +530,8 @@ If a heading starts with 3 equals signs `===` it is level2.
 ==== But this is level 3
 
 This last section shouldn't show up in the nav.
+
+== Stem Test
+
+stem:[sqrt(4) = 2]
+
