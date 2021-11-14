@@ -17,10 +17,9 @@
 <script defer src="{{#unless preview}}{{{uiRootPath}}}/js/vendor/{{/unless}}fontawesome-icon-defs.js"></script>
 <script defer src="{{{uiRootPath}}}/js/vendor/fontawesome.js"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
-
 {{#with (resolvePage page.relativeSrcPath model=false)}}
-    {{#unless (eq ./asciidoc.attributes.stem undefined)}}
-        <script type="text/x-mathjax-config">
+    {{#unless (eq asciidoc.attributes.stem undefined)}}
+<script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",
   tex2jax: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], ignoreClass: "nostem|nolatexmath" },
@@ -36,7 +35,7 @@ MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
   })
 })
 </script>
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
     {{/unless}}
 {{/with}}
 {{#if env.ALGOLIA_API_KEY}}

@@ -1,5 +1,4 @@
 = Monitoring Statistics
-:stem:
 :doctype: book
 :page-edition: enterprise
 :page-status: beta
