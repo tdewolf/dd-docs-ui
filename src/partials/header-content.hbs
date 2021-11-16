@@ -35,7 +35,7 @@
                 <ul class="navbar-nav w-100 justify-content-start">
                   <li class="nav-item">
                     <a href="{{#with (and site.url site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{siteRootPath}}{{/with}}" class="nav-link">
-                      <i class="fas fa-home"></i>
+                      <i class="fa fa-external-link"></i>
                     </a>
                   </li>
                   {{#each (nav-groups)}}
