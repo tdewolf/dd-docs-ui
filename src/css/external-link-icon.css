@@ -1,9 +1,9 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css");
 
-a[target="_blank"]:after {
-    font-family: 'FontAwesome 4 Free', serif;
-    font-size: inherit;
-    font-weight: 900;
-    content: "\00a0\f08e";
-    color: inherit;
+a[target="_blank"]::after {
+  font-family: 'FontAwesome 4 Free', serif;
+  font-size: inherit;
+  font-weight: 900;
+  content: "\00a0\f08e";
+  color: inherit;
 }
