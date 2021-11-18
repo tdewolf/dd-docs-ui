@@ -532,7 +532,7 @@ This last section shouldn't show up in the nav.
 
 == Test external link
 
-https://amazon.com[Amazon^]
+http://amazon.com[Amazon^]
 
 https://amazon.com[Amazon]
 

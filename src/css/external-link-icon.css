@@ -1,4 +1,4 @@
-.doc a[target=_blank]::after {
+.doc a[href^="https://"]::after {
   font-family: "Font Awesome Solid", serif;
   content: "\f35d";
   font-size: inherit;
@@ -6,18 +6,6 @@
   display: none;
 }
 
-.doc a[target=_blank] > .svg-inline--fa {
-  margin-left: 0.25em;
-}
-
-.doc a[href*="//"]::after {
-  font-family: "Font Awesome Solid", serif;
-  content: "\f35d";
-  font-size: inherit;
-  color: inherit;
-  display: none;
-}
-
-.doc a[href*="//"] > .svg-inline--fa {
+.doc a[href^="https://"] > .svg-inline--fa {
   margin-left: 0.25em;
 }
