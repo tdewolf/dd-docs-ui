@@ -1,5 +1,5 @@
 .doc a[target=_blank]::after {
-  font-family: "Font Awesome Solid";
+  font-family: "Font Awesome Solid", serif;
   content: "\f35d";
   font-size: inherit;
   color: inherit;
@@ -11,7 +11,7 @@
 }
 
 .doc a[href*="//"]::after {
-  font-family: "Font Awesome Solid";
+  font-family: "Font Awesome Solid", serif;
   content: "\f35d";
   font-size: inherit;
   color: inherit;
