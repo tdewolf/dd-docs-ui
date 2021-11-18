@@ -1,9 +1,23 @@
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css");
-
-a[target="_blank"]::after {
-  font-family: 'FontAwesome 4 Free', serif;
+.doc a[target=_blank]::after {
+  font-family: "Font Awesome Solid";
+  content: "\f35d";
   font-size: inherit;
-  font-weight: 900;
-  content: "\00a0\f08e";
   color: inherit;
+  display: none;
+}
+
+.doc a[target=_blank] > .svg-inline--fa {
+  margin-left: 0.25em;
+}
+
+.doc a[href*="//"]::after {
+  font-family: "Font Awesome Solid";
+  content: "\f35d";
+  font-size: inherit;
+  color: inherit;
+  display: none;
+}
+
+.doc a[href*="//"] > .svg-inline--fa {
+  margin-left: 0.25em;
 }
