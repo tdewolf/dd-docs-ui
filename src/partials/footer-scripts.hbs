@@ -15,7 +15,7 @@
 {{{this}}}
 {{/with}}
 <script defer src="{{#unless preview}}{{{uiRootPath}}}/js/vendor/{{/unless}}fontawesome-icon-defs.js"></script>
-<script defer src="{{{uiRootPath}}}/js/vendor/fontawesome.js"></script>
+<script defer src="{{{uiRootPath}}}/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 {{#if env.ALGOLIA_API_KEY}}
 <script async id="search-script" src="{{{uiRootPath}}}/js/vendor/docsearch.js" data-app-id="{{env.ALGOLIA_APP_ID}}" data-api-key="{{env.ALGOLIA_API_KEY}}" data-index-name="{{or env.ALGOLIA_IDX_NAME env.ALGOLIA_INDEX_NAME}}" data-stylesheet="{{{uiRootPath}}}/css/vendor/docsearch.css"></script>
@@ -26,4 +26,3 @@
 {{#if (eq env.SHOW_FEEDBACK_BUTTON 'true')}}
 <script async id="feedback-script" src="{{{uiRootPath}}}/js/vendor/feedback.js?v=1" data-collector-id="709818cb"></script>
 {{/if}}
-<script defer src="{{{uiRootPath}}}/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
