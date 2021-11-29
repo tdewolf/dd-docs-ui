@@ -128,12 +128,12 @@
   display: inline-block;
 }
 
-.try-btn {
+.free-trial-link {
   font-weight: var(--weight-bold);
   margin-left: var(--column-space);
 }
 
-.free-trial-link {
+.try-btn {
   font-size: 16px;
   font-weight: 600;
   color: var(--color-brand-blue-secondary);
@@ -141,7 +141,7 @@
   margin-left: 35px;
 }
 
-.free-trial-link:hover {
+.try-btn:hover {
   text-decoration: none;
 }
 
@@ -336,13 +336,13 @@
     color: var(--color-brand-white);
   } */
 
-  .try-btn {
+  .free-trial-link {
     background: var(--color-brand-white);
     color: var(--color-brand-blue);
     margin: 0;
   }
 
-  .free-trial-link {
+  .try-btn {
     color: var(--color-brand-white);
   }
 
