@@ -1,5 +1,5 @@
 .doc a[href^="https://"]::after {
-  font-family: "Font Awesome Solid", serif;
+  font-family: "Font Awesome Regular", serif;
   content: "\f35d";
   font-size: inherit;
   color: inherit;
