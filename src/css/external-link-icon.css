@@ -1,4 +1,5 @@
-.doc a[href^="https://"]::after {
+.doc a[href^="https://"]::after,
+.doc a[href^="http://"]::after {
   font-family: "Font Awesome Regular", serif;
   content: "\f35d";
   font-size: inherit;
@@ -6,6 +7,7 @@
   display: none;
 }
 
-.doc a[href^="https://"] > .svg-inline--fa {
+.doc a[href^="https://"] > .svg-inline--fa,
+.doc a[href^="http://"] > .svg-inline--fa {
   margin-left: 0.25em;
 }
