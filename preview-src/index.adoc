@@ -464,7 +464,7 @@ POST http://nodename:8091/settings/viewUpdateDaemon
 updateInterval=10000&updateMinChanges=7000
 ----
 
-[source,json]
+[source,json5, role="no-callouts"]
 ----
 {
    "_id": "_design/myddoc",
@@ -474,11 +474,12 @@ updateInterval=10000&updateMinChanges=7000
       }
    },
    "options": {
-       "updateMinChanges": 1000,
+       "updateMinChanges": 1000,  //<.>
        "replicaUpdateMinChanges": 20000
    }
 }
 ----
+<.> Disable callout test (add or remove `role="no-callouts"` from the above listin to test)
 
 You can set this information when creating and updating design documents through the design document REST API.
 To perform this operation using the `curl` tool:
