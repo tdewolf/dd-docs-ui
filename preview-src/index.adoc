@@ -291,6 +291,18 @@ This item is only applicable to community edition.
 
 * This is the last item in the list.
 
+== Glossaries
+
+This is allows you to build a list of terms and their associated meanings:
+
+[horizontal]
+
+*Term1*:: And this is what it means.
+
+*Term2*:: The meaning for Term 2. Also see what it looks like when the explanation of the term is quite long. The term and the explanation should align at the top to make them easier to read.
+
+*Term3*:: The meaning
+
 [#summary-stats]
 == Bucket Monitoring -- Summary Statistics
 
@@ -536,5 +548,4 @@ This last section shouldn't show up in the nav.
 http://amazon.com[Amazon^]
 
 https://amazon.com[Amazon]
-
 
