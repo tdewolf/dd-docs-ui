@@ -543,7 +543,9 @@ If a heading starts with 3 equals signs `===` it is level2.
 
 This last section shouldn't show up in the nav.
 
-== Stem Test
+== Test external link
 
-stem:[sqrt(4) = 2]
+http://amazon.com[Amazon^]
+
+https://amazon.com[Amazon]
 

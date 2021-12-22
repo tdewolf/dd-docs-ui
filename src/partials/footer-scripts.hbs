@@ -15,7 +15,7 @@
 {{{this}}}
 {{/with}}
 <script defer src="{{#unless preview}}{{{uiRootPath}}}/js/vendor/{{/unless}}fontawesome-icon-defs.js"></script>
-<script defer src="{{{uiRootPath}}}/js/vendor/fontawesome.js"></script>
+<script defer src="{{{uiRootPath}}}/js/vendor/fontawesome.js" data-search-pseudo-elements="true"></script>
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
 {{#with (resolvePage page.relativeSrcPath model=false)}}
     {{#unless (eq asciidoc.attributes.stem undefined)}}
