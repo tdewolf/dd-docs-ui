@@ -118,31 +118,21 @@
 }
 
 .primary-action .btn:hover {
-  background-color: var(--color-link-hover);
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-blue);
+  text-decoration: none;
+  border-color: var(--color-brand-blue);
+}
+
+.primary-action .btn-grey-reverse:hover {
+  background-color: var(--color-brand-grey);
   color: var(--color-brand-white);
   text-decoration: none;
-  border-color: var(--color-link-hover);
+  border-color: var(--color-brand-grey);
 }
 
 .primary-action > * {
   display: inline-block;
-}
-
-.free-trial-link {
-  font-weight: var(--weight-bold);
-  margin-left: var(--column-space);
-}
-
-.try-btn {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--color-brand-blue-secondary);
-  text-decoration: none;
-  margin-left: 35px;
-}
-
-.try-btn:hover {
-  text-decoration: none;
 }
 
 .parent-site {
