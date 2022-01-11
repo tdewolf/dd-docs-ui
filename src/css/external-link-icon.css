@@ -1,6 +1,5 @@
-.doc a[href^="https://"]::after,
-.doc a[href^="http://"]::after,
-a[target="_blank"]::after {
+.doc a[href*="//"]:not([href*="couchbase.com"])::after,
+.doc a[target="_blank"]::after {
   font-family: "Font Awesome Light", serif;
   content: "\f35d";
   font-size: inherit;
@@ -8,8 +7,7 @@ a[target="_blank"]::after {
   display: none;
 }
 
-.doc a[href^="https://"] > .svg-inline--fa,
-.doc a[href^="http://"] > .svg-inline--fa,
-a[target="_blank"] > .svg-inline--fa {
+.doc a[href*="//"]:not([href*="couchbase.com"]) > .svg-inline--fa,
+.doc a[target="_blank"] > .svg-inline--fa {
   margin-left: 0.25em;
 }
