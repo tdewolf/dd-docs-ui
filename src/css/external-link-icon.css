@@ -1,5 +1,6 @@
-.doc a[href*="//"]:not([href*="couchbase.com"])::after,
-.doc a[target="_blank"]::after {
+.doc a[href^="https://"]:not([href*=".couchbase.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after,
+.doc a[href^="http://"]:not([href*=".couchbase.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon)::after,
+a.add-ext-icon::after {
   font-family: "Font Awesome Light", serif;
   content: "\f35d";
   font-size: inherit;
@@ -7,7 +8,8 @@
   display: none;
 }
 
-.doc a[href*="//"]:not([href*="couchbase.com"]) > .svg-inline--fa,
-.doc a[target="_blank"] > .svg-inline--fa {
+.doc a[href^="https://"]:not([href*=".couchbase.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon) > .svg-inline--fa,
+.doc a[href^="http://"]:not([href*=".couchbase.com"]):not([href*="localhost"]):not([href*="127.0.0.1"]):not(.remove-ext-icon) > .svg-inline--fa,
+a.add-ext-icon > .svg-inline--fa {
   margin-left: 0.25em;
 }

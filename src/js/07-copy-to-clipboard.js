@@ -9,7 +9,7 @@
     if (sourceUrl) {
       viewSourceLink = document.createElement('a')
       viewSourceLink.href = sourceUrl
-      viewSourceLink.className = 'view-source-button'
+      viewSourceLink.className = 'view-source-button remove-ext-icon'
       viewSourceLink.target = '_blank'
       viewSourceLink.dataset.title = 'View On GitHub'
       viewSourceLink.appendChild(document.createElement('i')).className = 'fab fa-github'
