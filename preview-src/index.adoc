@@ -7,7 +7,7 @@
 
 // The following should be global document attributes
 :url-edition: https://www.couchbase.com/products/editions
-:enterprise: {url-edition}[ENTERPRISE EDITION]
+:enterprise: {url-edition}[ENTERPRISE EDITION, role="add-ext-icon"]
 :community: {url-edition}[COMMUNITY EDITION]
 :developer-preview: Developer Preview
 //:page-status: pass:[&ge; 5.5]
@@ -547,5 +547,7 @@ This last section shouldn't show up in the nav.
 
 http://amazon.com[Amazon^]
 
-https://amazon.com[Amazon]
+https://amazon.com[Amazon, role="remove-ext-icon"]
+
+xref:landing-page.adoc[Test for external link icon, window="_blank", role="add-ext-icon"]
 
