@@ -30,7 +30,7 @@ main strong[id]::before {
   main a[id],
   main code[id],
   main em[id],
-  main span[id],
+  main span:not(.MathJax):not(.math)[id],
   main strong[id] {
     border-top: var(--height-to-body) solid transparent;
     pointer-events: none; /* NOTE don't allow border to cover preceding lines */
