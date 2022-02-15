@@ -26,6 +26,16 @@ SELECT * FROM `travel-sample` WHERE type = "airline" LIMIT 1;
 ----
 ====
 
+.Here is some W3 Extended Backus-Naur Format
+====
+[source,ebnf]
+----
+index-pair ::= '"' 'indexes' '"' ':' ( 'null'
+                                     | '"' index '"'
+                                     | '[' '"' index '"' ( ',' '"' index '"' )* ']' )
+----
+====
+
 [[bucket-selection]]Bucket Selection::
 The [.ui]*Buckets* selection list lets you select which of the buckets configured on your cluster is to be used as the basis for the graph display.
 The statistics shown are aggregated over the whole cluster for the <<bucket-selection,selected bucket>>.

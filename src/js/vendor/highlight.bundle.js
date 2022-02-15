@@ -3,7 +3,7 @@
 
   var hljs = require('highlight.js/lib/highlight')
   hljs.registerLanguage('asciidoc', require('highlight.js/lib/languages/asciidoc'))
-  hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
+  hljs.registerLanguage('ebnf', require('highlight.js/lib/languages/ebnf'))
   hljs.registerLanguage('cpp', require('highlight.js/lib/languages/cpp'))
   hljs.registerLanguage('cs', require('highlight.js/lib/languages/cs'))
   hljs.registerLanguage('dockerfile', require('highlight.js/lib/languages/dockerfile'))
