@@ -147,6 +147,20 @@
   margin-top: var(--base-large-space);
 }
 
+/*
+https://issues.couchbase.com/browse/DOC-9811
+RAO - Closed up the gap for admonition blocks that
+occur inside lists.
+ */
+.doc li > .admonitionblock {
+  margin-top: calc(var(--base-large-space) / 2);
+  margin-bottom: calc(var(--base-large-space) / 2);
+}
+
+.doc .tableblock .admonitionblock {
+  margin-top: calc(var(--base-large-space) / 2);
+}
+
 .doc .olist,
 .doc .ulist,
 .doc .exampleblock,
