@@ -157,6 +157,10 @@ occur inside lists.
   margin-bottom: calc(var(--base-large-space) / 2);
 }
 
+.doc .tableblock .admonitionblock {
+  margin-top: calc(var(--base-large-space) / 2);
+}
+
 .doc .olist,
 .doc .ulist,
 .doc .exampleblock,
