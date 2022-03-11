@@ -147,7 +147,7 @@
   margin-top: var(--base-large-space);
 }
 
-/**
+/*
 https://issues.couchbase.com/browse/DOC-9811
 RAO - Closed up the gap for admonition blocks that
 occur inside lists.
