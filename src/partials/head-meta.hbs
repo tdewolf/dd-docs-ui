@@ -1,3 +1,8 @@
+{{#with page.attributes.meta-robots}}
+    {{#unless (eq this undefined)}}
+    <meta name="robots" content="{{this}}">
+    {{/unless}}
+{{/with}}
 {{#with page.description}}
 <meta name="description" content="{{this}}">
 {{/with}}

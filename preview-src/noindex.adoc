@@ -1,0 +1,4 @@
+= Super Secret Content!
+:page-meta-robots: noindex
+
+This content will not be indexed by search engines.
