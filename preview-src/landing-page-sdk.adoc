@@ -33,7 +33,8 @@ image::sdk-icon.svg[]
 .C SDK
 
 [.content]
-The Couchbase C SDK (libcouchbase) enables C and C++ programs to access a Couchbase Server cluster. The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance.
+* The Couchbase C SDK (libcouchbase) enables C and C++ programs to access a Couchbase Server cluster.
+* The C SDK is also commonly used as a core dependency of SDKs written in other language to provide a common implementation and high performance. +
 []
 xref:#[Start Using the C SDK]
 
@@ -45,6 +46,10 @@ xref:#[Start Using the C SDK]
 The .NET SDK enables you to interact with a Couchbase Server cluster from the .NET Framework using any Common Language Runtime (CLR) language, including C#, F#, and VB.NET. It offers both a traditional synchronous API and an asynchronous API based on the Task-based Asynchronous Pattern (TAP).
 []
 xref:#[Start Using the .NET SDK]
+
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 [.column]
 ====== {empty}
