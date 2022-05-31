@@ -171,6 +171,7 @@ code::-webkit-scrollbar-thumb {
   font-weight: var(--weight-medium);
 }
 
+.view-source-button .svg-inline--fa,
 .copy-code-button .svg-inline--fa,
 .run-code .svg-inline--fa {
   margin-right: 5px;
