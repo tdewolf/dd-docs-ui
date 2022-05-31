@@ -155,13 +155,13 @@ code::-webkit-scrollbar-thumb {
 }
 
 .source-type-box .right-block > * {
-  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
   padding: 4px 10px;
   display: flex;
   align-items: center;
 }
 
-.source-type-box .right-block > *:last-child {
+.source-type-box .right-block > .run-code {
   border: none;
 }
 
