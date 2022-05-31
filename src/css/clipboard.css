@@ -129,7 +129,7 @@ code::-webkit-scrollbar-thumb {
 
 /* New style code block */
 .source-type-box {
-  padding-left: 12px;
+  padding-left: 6px;
   border: 1px solid #e5e5e5;
   border-bottom: none;
   border-radius: 3px 3px 0 0;
@@ -143,8 +143,15 @@ code::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+.source-type-box .left-block,
 .source-type-box .right-block {
   display: flex;
+}
+
+.source-type-box .left-block > * {
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
 }
 
 .source-type-box .right-block > * {
