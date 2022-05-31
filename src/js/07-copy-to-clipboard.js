@@ -107,7 +107,7 @@
     pre.prepend(sourceTypeBox)
     sourceTypeBox.appendChild(headingBox)
     sourceTypeBox.appendChild(sourceTypeBoxCol2)
-    sourceTypeBoxCol2.appendChild(dataSource)
+    headingBox.appendChild(dataSource)
     if (viewSourceLink) sourceTypeBoxCol2.appendChild(viewSourceLink)
     sourceTypeBoxCol2.appendChild(copyButton)
     if (runCodeButton) sourceTypeBoxCol2.appendChild(runCodeButton)
