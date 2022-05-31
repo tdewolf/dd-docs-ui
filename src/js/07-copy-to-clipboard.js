@@ -13,6 +13,8 @@
       viewSourceLink.target = '_blank'
       viewSourceLink.dataset.title = 'View On GitHub'
       viewSourceLink.appendChild(document.createElement('i')).className = 'fab fa-github'
+      var viewText = document.createTextNode('View')
+      viewSourceLink.appendChild(viewText)
     }
     var sourceTypeBox = document.createElement('div')
     sourceTypeBox.className = 'source-type-box'
