@@ -13,6 +13,8 @@
       viewSourceLink.target = '_blank'
       viewSourceLink.dataset.title = 'View On GitHub'
       viewSourceLink.appendChild(document.createElement('i')).className = 'fab fa-github'
+      var viewText = document.createTextNode('View')
+      viewSourceLink.appendChild(viewText)
     }
     var sourceTypeBox = document.createElement('div')
     sourceTypeBox.className = 'source-type-box'
@@ -105,7 +107,7 @@
     pre.prepend(sourceTypeBox)
     sourceTypeBox.appendChild(headingBox)
     sourceTypeBox.appendChild(sourceTypeBoxCol2)
-    sourceTypeBoxCol2.appendChild(dataSource)
+    headingBox.appendChild(dataSource)
     if (viewSourceLink) sourceTypeBoxCol2.appendChild(viewSourceLink)
     sourceTypeBoxCol2.appendChild(copyButton)
     if (runCodeButton) sourceTypeBoxCol2.appendChild(runCodeButton)
