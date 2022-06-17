@@ -1,0 +1,5 @@
+/* Add some spacing between the externally-defined callouts in a source block */
+div.external-callout-block i.conum {
+  margin-left: 10px;
+  margin-right: 10px;
+}
