@@ -119,6 +119,30 @@ table.table-tutorial tr td:last-child {
   font-family: inherit;
 }
 
+/* OpenAPI style tables (to avoid keywords being unpleasantly wrapped/hyphenated) */
+
+/* No maximum width for table cells */
+.openapi table.spread > tbody > tr > *,
+.openapi table.stretch > tbody > tr > * {
+  max-width: none !important;
+}
+
+/* Ignore fixed column widths */
+.openapi table col {
+  width: auto !important;
+}
+
+/* Do not hyphenate words in the table */
+.openapi table td.tableblock p,
+.openapi table p.tableblock {
+  hyphens: manual !important;
+}
+
+/* Vertical alignment */
+.openapi table td.tableblock {
+  vertical-align: top !important;
+}
+
 /* Responsive css  */
 
 @media screen and (min-width: 768px) {
