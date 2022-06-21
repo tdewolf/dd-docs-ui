@@ -589,6 +589,11 @@ ul ul ul {
   margin-left: var(--base-space);
 }
 
+.hdlist table tr .hdlist1,
+.hdlist table tr .hdlist2 {
+  padding: var(--base-small-space) 0;
+}
+
 .hdlist1,
 .hdlist2 {
   vertical-align: top;
