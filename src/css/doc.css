@@ -309,9 +309,9 @@ ul ul ul {
 }
 
 .doc .admonitionblock td.icon {
-  padding-top: var(--admonition-icon-space);
-  padding-left: var(--admonition-icon-space);
-  padding-right: var(--admonition-icon-space);
+  padding-top: var(--admonition-icon-space) !important;
+  padding-left: var(--admonition-icon-space) !important;
+  padding-right: var(--admonition-icon-space) !important;
   padding-bottom: 0;
 }
 
