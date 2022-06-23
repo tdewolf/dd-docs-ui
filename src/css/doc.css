@@ -144,7 +144,8 @@
 }
 
 .doc .admonitionblock {
-  margin-top: var(--base-large-space);
+  margin-top: var(--base-medium-space);
+  margin-bottom: var(--base-medium-space);
 }
 
 /*
@@ -329,10 +330,10 @@ ul ul ul {
   hyphens: auto;
   line-height: 1.6;
   min-width: 0;
-  padding-top: var(--admonition-content-space);
-  padding-bottom: var(--base-space);
-  padding-left: 0;
-  padding-right: var(--base-space);
+  padding-top: var(--admonition-content-space) !important;
+  padding-bottom: var(--base-space) !important;
+  padding-left: 0 !important;
+  padding-right: var(--base-space) !important;
   border-bottom: 0;
 }
 
