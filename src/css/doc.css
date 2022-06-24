@@ -334,7 +334,7 @@ ul ul ul {
   min-width: 0;
   padding-top: var(--admonition-content-space);
   padding-bottom: var(--base-space);
-  padding-left: 0 !important;
+  padding-left: 0;
   padding-right: var(--base-space);
   border-bottom: 0;
 }
