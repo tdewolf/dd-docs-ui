@@ -308,10 +308,11 @@ ul ul ul {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 }
 
-.doc .admonitionblock td.icon {
-  padding-top: var(--admonition-icon-space) !important;
-  padding-left: var(--admonition-icon-space) !important;
-  padding-right: var(--admonition-icon-space) !important;
+.doc .admonitionblock td.icon,
+.doc .colist .admonitionblock td.icon {
+  padding-top: var(--admonition-icon-space);
+  padding-left: var(--admonition-icon-space);
+  padding-right: var(--admonition-icon-space);
   padding-bottom: 0;
 }
 
@@ -323,17 +324,18 @@ ul ul ul {
   width: 1.35rem;
 }
 
-.doc .admonitionblock td.content {
+.doc .admonitionblock td.content,
+.doc .colist .admonitionblock td.content {
   font-family: "Open Sans", sans-serif;
   flex: 1;
   font-size: 0.9375rem;
   hyphens: auto;
   line-height: 1.6;
   min-width: 0;
-  padding-top: var(--admonition-content-space) !important;
-  padding-bottom: var(--base-space) !important;
+  padding-top: var(--admonition-content-space);
+  padding-bottom: var(--base-space);
   padding-left: 0 !important;
-  padding-right: var(--base-space) !important;
+  padding-right: var(--base-space);
   border-bottom: 0;
 }
 
