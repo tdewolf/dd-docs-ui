@@ -696,7 +696,8 @@ table.tableblock pre code.language-bash.hljs {
   margin: 0;
 }
 
-.doc .dlist dt {
+.doc .dlist dt,
+.doc .hdlist table tr .hdlist1 {
   font-weight: var(--weight-semibold);
 }
 
