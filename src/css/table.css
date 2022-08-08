@@ -204,7 +204,7 @@ table.table-tutorial tr td:last-child {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px), print {
   table.tableblock td,
   table.tableblock th {
     line-height: 1.5em;
