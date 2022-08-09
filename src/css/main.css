@@ -162,3 +162,34 @@ main p {
     font-size: 1.2rem;
   }
 }
+
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  .nav,
+  .toc,
+  .footer,
+  .navbar,
+  .run-code,
+  .header-top-row {
+    display: none;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  h2 {
+    break-after: avoid;
+  }
+
+  table,
+  img,
+  code,
+  svg {
+    break-inside: avoid;
+  }
+}
