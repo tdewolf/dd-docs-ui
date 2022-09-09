@@ -18,9 +18,9 @@ The information is aggregated from all the icon:server[] nodes within the config
 
 From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] link for each bucket.
 
-.Here is some N1QL
+.Here is some SQL{pp}
 ====
-[source,N1QL]
+[source,SQL++]
 ----
 SELECT * FROM `travel-sample` WHERE type = "airline" LIMIT 1;
 ----
