@@ -17,6 +17,7 @@
   hljs.registerLanguage('json', require('highlight.js/lib/languages/json'))
   hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin'))
   hljs.registerLanguage('n1ql', require('highlight.js/lib/languages/sql'))
+  hljs.registerLanguage('sql++', require('highlight.js/lib/languages/sql'))
   hljs.registerLanguage('objectivec', require('highlight.js/lib/languages/objectivec'))
   hljs.registerLanguage('perl', require('highlight.js/lib/languages/perl'))
   hljs.registerLanguage('php', require('highlight.js/lib/languages/php'))
