@@ -87,6 +87,34 @@
   opacity: 0.6;
 }
 
+.doc .concept {
+  color: var(--color-yellow);
+  border: 1px solid var(--color-yellow);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .guide {
+  color: var(--color-brand-pink);
+  border: 1px solid var(--color-brand-pink);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .tutorial {
+  color: var(--color-brand-green);
+  border: 1px solid var(--color-brand-green);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .reference {
+  color: var(--color-brand-purple);
+  border: 1px solid var(--color-brand-purple);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
 .doc .edition.page-edition {
   color: #999;
   border: 1px solid #999;
