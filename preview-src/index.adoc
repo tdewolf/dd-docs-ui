@@ -334,6 +334,17 @@ The following statistics are available:
 | Ratio of reads per second to this bucket which required a read from disk rather than RAM.
 |===
 
+.Summary statistics without title, grid or frame
+[cols="1,3",frame=none, grid=none]
+|===
+
+| ops per second
+| The total number of operations per second on this bucket.
+
+| cache miss ratio
+| Ratio of reads per second to this bucket which required a read from disk rather than RAM.
+|===
+
 The `stale=false` view query argument has been enhanced.
 When an application sends a query that has the `stale` parameter set to false, the application receives all recent changes to the documents, including changes that haven't yet been persisted to disk.
 
