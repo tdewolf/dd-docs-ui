@@ -71,7 +71,6 @@ table.tableblock.grid-none > tbody td,
 table.tableblock.grid-none > tbody th {
   border-bottom: 0;
   padding-left: var(--base-small-space);
-  /* padding-top: var(--base-space); */
   padding-bottom: var(--base-space);
 }
 
