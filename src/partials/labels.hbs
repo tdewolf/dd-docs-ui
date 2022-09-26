@@ -17,8 +17,14 @@
 <li class="tutorial"><span><i class="fas fa-book-reader"></i> tutorial</span></li>
 {{else if (eq page.attributes.topic-type 'guide')}}
 <li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
-{{else}}
+{{else if (eq page.attributes.topic-type 'how-to')}}
+<li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
+{{else if (eq page.attributes.topic-type 'howto')}}
+<li class="guide"><span><i class="far fa-check-square"></i> how-to</span></li>
+{{else if (eq page.attributes.topic-type 'reference')}}
 <li class="reference"><span><i class="fas fa-book"></i></i> reference</span></li>
+{{else}}
+<li></li>
 {{/if}}
 </ul>
 </div>
