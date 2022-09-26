@@ -1,15 +1,4 @@
-{{#if (or page.attributes.edition page.attributes.status)}}
-<div class="labels">
-<ul>
-{{#with page.attributes.edition}}
-<li class="edition"><a href="https://www.couchbase.com/products/editions">{{{this}}}</a></li>
-{{/with}}
-{{#with page.attributes.status}}
-<li class="status"><span>{{{this}}}</span></li>
-{{/with}}
-</ul>
-</div>
-{{/if}}
+{{#if (or page.attributes.topic-type)}}
 <div class="labels">
 <ul>{{#if (eq page.attributes.topic-type 'concept')}}
 <li class="concept"><span><i class="far fa-lightbulb"></i> concept</span></li>
@@ -24,8 +13,21 @@
 {{else if (eq page.attributes.topic-type 'reference')}}
 <li class="reference"><span><i class="fas fa-book"></i></i> reference</span></li>
 {{else}}
-<li></li>
 {{/if}}
 </ul>
 </div>
+{{/if}}
+{{#if (or page.attributes.edition page.attributes.status)}}
+<div class="labels">
+<ul>
+{{#with page.attributes.edition}}
+<li class="edition"><a href="https://www.couchbase.com/products/editions">{{{this}}}</a></li>
+{{/with}}
+{{#with page.attributes.status}}
+<li class="status"><span>{{{this}}}</span></li>
+{{/with}}
+</ul>
+</div>
+{{/if}}
+
 
