@@ -67,8 +67,8 @@
     "vinyl-fs": "~3.0"
   },
   "optionalDependencies": {
+    "@fortawesome/pro-light-svg-icons": "~5.13",
     "@fortawesome/pro-regular-svg-icons": "~5.13",
-    "@fortawesome/pro-solid-svg-icons": "~5.13",
-    "@fortawesome/pro-light-svg-icons": "~5.13"
+    "@fortawesome/pro-solid-svg-icons": "~5.13"
   }
 }

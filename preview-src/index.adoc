@@ -21,9 +21,11 @@ From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] l
 
 .Here is some N1QL
 ====
-[source,N1QL]
+[source,sqlpp]
 ----
 SELECT * FROM `travel-sample` WHERE type = "airline" LIMIT 1;
+CREATE PRIMARY INDEX ON `users` WITH {"defer_build": true};
+BUILD INDEX ON `users`(`#primary`, `ix_name`, `ix_email`);
 ----
 ====
 
