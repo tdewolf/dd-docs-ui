@@ -46,6 +46,7 @@
   --color-code: var(--color-brand-pink);
   --color-border: var(--color-brand-silver);
   --checkbox-border-color: var(--color-brand-gray9);
+  --color-yellow: #d2a908;
 
   /* Color for URL */
   --color-link: var(--color-brand-blue-secondary);

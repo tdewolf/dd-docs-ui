@@ -3,7 +3,7 @@
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0.125rem 0 0;
+  padding: 0.75rem 0 0;
 }
 
 .doc .labels li,
@@ -18,7 +18,7 @@
 .doc .edition,
 .doc .status,
 .doc .edition.page-edition {
-  max-width: fit-content;
+  /* max-width: fit-content; */
   font-size: var(--labels-font-size);
   font-weight: var(--weight-bold);
   line-height: var(--labels-line-height);
@@ -83,6 +83,34 @@
 .doc .status {
   color: var(--color-brand-caution);
   border: 1px solid var(--color-brand-caution);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .concept {
+  color: var(--color-yellow);
+  border: 1px solid var(--color-yellow);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .guide {
+  color: var(--color-brand-pink);
+  border: 1px solid var(--color-brand-pink);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .tutorial {
+  color: var(--color-brand-green);
+  border: 1px solid var(--color-brand-green);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.doc .reference {
+  color: var(--color-brand-purple);
+  border: 1px solid var(--color-brand-purple);
   border-radius: 3px;
   opacity: 0.6;
 }

@@ -2,6 +2,7 @@
 :doctype: book
 :page-edition: enterprise
 :page-status: beta
+:page-topic-type: guide
 :page-pagination:
 :page-toclevels: 2
 
@@ -18,11 +19,13 @@ The information is aggregated from all the icon:server[] nodes within the config
 
 From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] link for each bucket.
 
-.Here is some SQL{pp}
+.Here is some N1QL
 ====
-[source,SQL++]
+[source,sqlpp]
 ----
 SELECT * FROM `travel-sample` WHERE type = "airline" LIMIT 1;
+CREATE PRIMARY INDEX ON `users` WITH {"defer_build": true};
+BUILD INDEX ON `users`(`#primary`, `ix_name`, `ix_email`);
 ----
 ====
 
@@ -326,6 +329,17 @@ The following statistics are available:
 [cols="1,3"]
 |===
 | Statistic | Description
+
+| ops per second
+| The total number of operations per second on this bucket.
+
+| cache miss ratio
+| Ratio of reads per second to this bucket which required a read from disk rather than RAM.
+|===
+
+.Summary statistics without title, grid or frame
+[cols="1,3",frame=none, grid=none]
+|===
 
 | ops per second
 | The total number of operations per second on this bucket.
