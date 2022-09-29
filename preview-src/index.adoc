@@ -11,6 +11,7 @@
 :enterprise: {url-edition}[ENTERPRISE EDITION, role="add-ext-icon"]
 :community: {url-edition}[COMMUNITY EDITION]
 :developer-preview: Developer Preview
+:sqlpp: SQL++
 //:page-status: pass:[&ge; 5.5]
 
 [abstract]
@@ -19,7 +20,7 @@ The information is aggregated from all the icon:server[] nodes within the config
 
 From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] link for each bucket.
 
-.Here is some N1QL
+.Here is some {sqlpp}
 ====
 [source,sqlpp]
 ----
