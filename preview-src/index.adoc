@@ -1,7 +1,7 @@
 = Monitoring Statistics
 :doctype: book
-:page-edition: enterprise
-:page-status: beta
+:page-edition: Enterprise Edition
+:page-status: Developer Preview
 :page-topic-type: guide
 :page-pagination:
 :page-toclevels: 2
