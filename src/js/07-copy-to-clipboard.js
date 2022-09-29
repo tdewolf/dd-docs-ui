@@ -1,6 +1,7 @@
 ;(function () {
   'use strict'
   var runCodeLangs = { cpp: 'cc', csharp: 'dotnet', js: 'nodejs', python: 'py', ruby: 'rb' }
+  var displayLangs = { sqlpp: 'sql++', n1ql: 'sql++' }
   var main = document.querySelector('main.article')
   document.querySelectorAll('pre > code').forEach(function (codeBlock) {
     var pre = codeBlock.parentNode
@@ -34,7 +35,7 @@
 
     var dataSource = document.createElement('span')
     dataSource.className = 'data-source'
-    dataSource.innerHTML += codeBlock.dataset.lang
+    dataSource.innerHTML += displayLangs[codeBlock.dataset.lang] || codeBlock.dataset.lang
 
     var fadeShadow = document.createElement('span')
     fadeShadow.className = 'fade-shadow'
