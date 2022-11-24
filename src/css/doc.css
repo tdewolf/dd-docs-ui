@@ -590,7 +590,7 @@ ul ul ul {
 
 .hdlist table tr .hdlist1,
 .hdlist table tr .hdlist2 {
-  padding: var(--base-small-space) 0;
+  padding: var(--base-small-space) var(--base-small-space) var(--base-small-space) 0;
 }
 
 .hdlist1,
