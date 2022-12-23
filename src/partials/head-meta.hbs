@@ -1,7 +1,5 @@
 {{#with page.attributes.meta-robots}}
-    {{#unless (eq this undefined)}}
-    <meta name="robots" content="{{this}}">
-    {{/unless}}
+<meta name="robots" content="{{this}}">
 {{/with}}
 {{#with page.description}}
 <meta name="description" content="{{this}}">
@@ -63,6 +61,9 @@
 <meta name="dcterms.subject" content="{{page.component.name}}">
 <meta name="dcterms.identifier" content="{{page.version}}">
 <meta name="page-url" content="{{page.url}}">
+{{#with page.attributes.meta-zd-site-verification}}
+<meta name="zd-site-verification" content="{{this}}">
+{{/with}}
 {{/if}}
 <meta name="generator" content="Antora {{antoraVersion}}">
 <link rel="icon" href="{{{uiRootPath}}}/img/favicon.ico" type="image/x-icon">
