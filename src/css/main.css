@@ -128,13 +128,19 @@ main p {
   main.article {
     padding-right: var(--width-main-gutter);
     padding-left: var(--width-main-gutter);
+    margin: 0 auto;
+    max-width: 55em;
   }
 
   main.home {
     padding-right: var(--width-container-gutter);
     padding-left: var(--width-container-gutter);
+    margin: 0 auto;
   }
 
+  .toc {
+    margin: 0 auto 0 0;
+  }
   /* .article-banner {
     margin: var(--base-small-space) 0 var(--base-space);
   } */
