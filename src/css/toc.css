@@ -26,6 +26,7 @@
 
 .toc.embedded .toc-menu {
   margin-top: 1rem;
+  display: none;
 }
 
 .toc .toc-menu h3 {
