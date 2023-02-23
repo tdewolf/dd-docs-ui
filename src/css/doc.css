@@ -498,12 +498,7 @@ ul ul ul {
 }
 
 .doc .abstract blockquote {
-  /* font-size: 0.9375rem; */
   margin: 0;
-  /* font-weight: var(--weight-light);
-  border-left: 2px solid var(--color-brand-gray5); */
-  padding-left: 1.125rem;
-  padding-right: 6.125rem;
 }
 
 .doc .quoteblock + .paragraph {
@@ -513,6 +508,11 @@ ul ul ul {
 .doc blockquote * {
   font-weight: inherit;
 }
+
+
+/* Use this for a working pseudo element before an [abstract] attribute-marked block in the documentation.
+  This one adds the words "Quick Summary" before any text inside the [abstract] block. */
+
 /* 
  .doc .abstract blockquote::before {
   content: "Quick Summary \a";
