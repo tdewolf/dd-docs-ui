@@ -509,12 +509,11 @@ ul ul ul {
   font-weight: inherit;
 }
 
-
 /* Use this for a working pseudo element before an [abstract] attribute-marked block in the documentation.
   This one adds the words "Quick Summary" before any text inside the [abstract] block. */
 
-/* 
- .doc .abstract blockquote::before {
+/*
+.doc .abstract blockquote::before {
   content: "Quick Summary \a";
   white-space: pre;
   color: var(--color-muted);
