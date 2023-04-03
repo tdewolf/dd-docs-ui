@@ -153,7 +153,7 @@ site:
       url: /sync-gateway/2.1/index.html
     home:
       latest: &home_latest
-        version: master
+        version: ''
         title: Home
         url: *home_url
       versions:

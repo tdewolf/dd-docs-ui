@@ -10,13 +10,13 @@
       <div class="component_list-version">
         <span class="component_list_title">{{{./title}}}</span>
         {{#with (or (and (eq @root.page.component.name componentName) @root.page.version) (lookup ../../latestVersions componentName)) as |activeVersion|}}
-        {{#unless (eq activeVersion 'master')}}
+        {{#if (and activeVersion (ne activeVersion 'master'))}}
         <select class="version_list" data-component="{{{componentName}}}">
           {{#each ../versions}}
           <option value="{{./version}}" data-url="{{{relativize ./url}}}"{{#if (eq ./version activeVersion)}} selected{{/if}}>{{or ./displayVersion ./version}}</option>
           {{/each}}
         </select>
-        {{/unless}}
+        {{/if}}
         {{/with}}
       </div>
       {{#each ./versions}}
