@@ -70,10 +70,10 @@
       var componentTitleEl = createElement('span', 'component_list_title')
       componentTitleEl.appendChild(document.createTextNode(componentNavData.title))
       componentVersionsEl.appendChild(componentTitleEl)
-      
+
       var versioned = componentNavData.versions.length > 1
       // var versioned = selectedVersion && selectedVersion !== 'master'
-      
+
       if (versioned) {
         var componentVersionSelectEl
         if (componentName === page.component && pageVersions) {
