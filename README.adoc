@@ -375,7 +375,7 @@ This UI provides integration with JIRA feedback.
 The JIRA feedback widget is configured in the file [.path]_src/partials/footer-scripts.hbs_.
 You can test the feedback widget directly from the preview site by setting the `FEEDBACK_BUTTON=true` environment variable in your shell.
 
-The configuration for the widget is currently hardcoded into the partial template.
+The configuration for the widget is currently hardcoded into the partial template, but this can be overriden by setting the `JIRA_COLLECTOR_ID` environment variable.
 
 == View Latest and Canonical URL
 
