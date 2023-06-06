@@ -1,0 +1,91 @@
+/* Starting point:
+ * Asciidoctor Tabs | Copyright (c) 2018-present Dan Allen | MIT License
+ * Then hand-edited to match previous style as well as possible */
+
+.tabs {
+  margin-top: 2em;
+  margin-bottom: 1.25em;
+  border: solid 1px #dcdcdc;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  padding-top: 1em;
+  border-radius: 8px;
+}
+
+.tablist > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tablist > ul li {
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  color: #262626;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0.25em 1em;
+  position: relative;
+  margin: 0;
+}
+
+.tablist > ul li:focus-visible {
+  outline: none;
+}
+
+.tablist.ulist {
+  margin: 0;
+}
+
+.tablist.ulist > ul li + li {
+  margin-left: 0.25em;
+  margin-top: 0; /* override style in site.css */
+}
+
+.tabs.is-loading .tablist li:first-child::after,
+.tabs:not(.is-loading) .tablist li.is-selected::after,
+.tabs:not(.is-loading) .tablist li:hover::after {
+  background-color: var(--color-active-tabset);
+  content: "";
+  display: block;
+  height: 3px; /* Chrome doesn't always paint the line accurately, so add a little extra */
+  position: absolute;
+  bottom: -1.5px;
+  left: 0;
+  right: 0;
+}
+
+.tablist > ul p {
+  line-height: inherit;
+  margin: 0;
+}
+
+.tabpanel {
+  background-color: #fff;
+  padding: 1.25em;
+}
+
+.tablist > ul li,
+.tabpanel {
+  border: none;
+}
+
+.tabs.is-loading .tabpanel + .tabpanel,
+.tabs:not(.is-loading) .tabpanel.is-hidden {
+  display: none;
+}
+
+.tablecontainer {
+  overflow-x: auto;
+}
+
+#content .tablecontainer {
+  margin-bottom: 1.25em;
+}
+
+#content .tablecontainer > table.tableblock {
+  margin-bottom: 0;
+}
