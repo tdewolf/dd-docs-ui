@@ -70,10 +70,12 @@
   --height-spacer: 1.1rem;
   --height-navbar: 6rem;
   --height-version-control: 4.5rem;
+  --height-footer: 310px;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
   --height-toc-sidebar: calc(var(--height-min-body));
-  --height-nav: calc(var(--height-min-body) + var(--height-spacer));
+  --height-nav-container: calc(100vh - var(--height-footer));
+  --height-nav: calc(var(--height-min-body) + var(--height-spacer) - var(--height-footer));
   --height-nav-with-version: calc(100vh - var(--height-to-body) - var(--height-version-control));
   --nav-menu-top-space: calc(var(--height-to-body) + var(--height-version-control));
   --h2-heading-top-space: calc(var(--height-to-body) + 0.5rem);
@@ -84,6 +86,7 @@
   --width-container-gutter: 1.25rem;
   --width-nav: 20rem;
   --width-toc: 13rem;
+  --width-page-area: calc(var(--width-container) + var(--width-nav) + var(--width-toc));
   /* Font weight */
   --weight-light: 300;
   --weight-normal: 400;

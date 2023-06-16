@@ -2,16 +2,21 @@
   'use strict'
 
   var nav = document.querySelector('.nav')
+  var footer = document.querySelector('.footer')
   var menuExpandToggle = nav && nav.querySelector('.menu-expand-toggle')
   if (menuExpandToggle) {
     menuExpandToggle.addEventListener('click', function (e) {
       e.preventDefault()
       nav.classList.toggle('collapse-menu')
+      footer.classList.toggle('remove-margin')
     })
   }
-
   var navContainer = document.querySelector('.nav-container')
-  if (!navContainer) return
+  if (!navContainer) {
+    footer.classList.toggle('remove-margin')
+    return
+  }
+
   if (!navContainer.querySelector('.components')) {
     if (!window.siteNavigationData) return
     var siteNavigationData = window.siteNavigationData.reduce(function (accum, entry) {
