@@ -35,7 +35,7 @@
 
     var dataSource = document.createElement('span')
     dataSource.className = 'data-source'
-    dataSource.innerHTML += displayLangs[codeBlock.dataset.lang] || codeBlock.dataset.lang
+    dataSource.innerHTML += displayLangs[codeBlock.dataset.lang] || codeBlock.dataset.lang || ''
 
     var fadeShadow = document.createElement('span')
     fadeShadow.className = 'fade-shadow'
