@@ -129,7 +129,7 @@ main p {
     padding-right: var(--width-main-gutter);
     padding-left: var(--width-main-gutter);
     margin: 0 auto;
-    max-width: 55em;
+    max-width: clamp(55em, 60%, var(--width-container));
   }
 
   main.home {
