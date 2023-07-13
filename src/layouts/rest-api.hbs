@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
 {{> head-first}}
+
 <title>{{{detag (or page.title 'landing page')}}}{{#if site.title}} | {{{site.title}}}{{/if}}</title>
 {{> head-last}}
+<style>
+#redoc { width: 100%} 
+</style>
+<meta name='viewport' content='width=device-width, initial-scale=1' />
 </head>
-<body class="landing-page">
+<body class="rest-api">
 {{> header}}
 
 <div class="body container">
 
-<redoc id='redoc-container'></redoc>
-<script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.64/bundles/redoc.standalone.js"></script>
-<script>
-    Redoc.init('{{page.attributes.apipath}}',
-    {scrollYOffset: '.toolbar'},
-    document.getElementById('redoc-container'))
-</script>
+
+{{{page.contents}}}
+
+{{> toc-only-feedback}}
 
 </div>
 
