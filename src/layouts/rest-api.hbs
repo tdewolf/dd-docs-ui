@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{> head-first}}
+<title>{{{detag (or page.title 'landing page')}}}{{#if site.title}} | {{{site.title}}}{{/if}}</title>
+{{> head-last}}
+</head>
+<body class="landing-page">
+{{> header}}
+
+<div class="body container">
+
+<redoc id='redoc-container'></redoc>
+<script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.64/bundles/redoc.standalone.js"></script>
+<script>
+    Redoc.init('{{page.attributes.apipath}}',
+    {scrollYOffset: '.toolbar'},
+    document.getElementById('redoc-container'))
+</script>
+
+</div>
+
+
+{{> footer}}
+</body>
+</html>

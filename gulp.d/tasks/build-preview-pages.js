@@ -255,7 +255,7 @@ function compileLayouts (src) {
 }
 
 function copyImages (src, dest) {
-  return vfs.src('**/*.{png,svg}', { base: src, cwd: src }).pipe(vfs.dest(dest))
+  return vfs.src('**/*.{png,svg,yaml}', { base: src, cwd: src }).pipe(vfs.dest(dest))
 }
 
 function exportSiteNavigationData (components) {
