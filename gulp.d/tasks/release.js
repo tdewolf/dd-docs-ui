@@ -70,6 +70,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (
   const readmeBlob = await octokit.git
     .createBlob({ owner, repo, content: readmeContent, encoding: 'utf-8' })
     .then((result) => result.data.sha)
+
   let tree = await octokit.git.getCommit({ owner, repo, commit_sha: commit }).then((result) => result.data.tree.sha)
   tree = await octokit.git
     .createTree({
@@ -83,6 +84,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (
     .createCommit({ owner, repo, message, tree, parents: [commit] })
     .then((result) => result.data.sha)
   if (updateBranch) await octokit.git.updateRef({ owner, repo, ref, sha: commit })
+
   const uploadUrl = await octokit.repos
     .createRelease({
       owner,
@@ -92,6 +94,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateBranch) => async (
       name: tagName,
     })
     .then((result) => result.data.upload_url)
+
   await octokit.repos.uploadReleaseAsset({
     url: uploadUrl,
     data: fs.createReadStream(bundleFile),
