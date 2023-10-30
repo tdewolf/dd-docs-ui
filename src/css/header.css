@@ -72,11 +72,11 @@
 }
 
 .navbar.navbar-new-bottom {
-  background: var(--color-brand-blue-secondary);
+  background: var(--color-brand-black);
 }
 
 .header-bottom-row {
-  background: var(--color-brand-blue-secondary);
+  background: var(--color-brand-black);
   display: none;
   transition: all 0.3s;
 }
@@ -86,7 +86,7 @@
 }
 
 .navbar-nav .nav-link {
-  color: #ffffffbf;
+  color: var(--color-brand-white);
   text-transform: uppercase;
   opacity: 1;
   font-size: 1.125rem;

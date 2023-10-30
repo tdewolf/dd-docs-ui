@@ -618,8 +618,8 @@ ul ul ul {
   overflow-wrap: normal;
   word-wrap: normal;
   overflow-x: auto;
-  background: #0074e00e;
-  border: 1px solid var(--color-brand-gray8);
+  background: var(--color-brand-accent-light);
+  border: 1px solid var(--color-brand-accent-light);
   border-radius: 0 0 3px 3px;
   position: relative;
 }
