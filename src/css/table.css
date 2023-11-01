@@ -39,7 +39,7 @@ table.tableblock thead th {
   padding-top: var(--base-space);
   padding-bottom: var(--base-space);
   text-align: left;
-  border-bottom: 2px solid var(--color-brand-blue-secondary);
+  border-bottom: 2px solid var(--color-brand-accent);
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: var(--weight-semibold);

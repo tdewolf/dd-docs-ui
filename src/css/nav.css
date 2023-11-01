@@ -189,7 +189,7 @@ a.menu_link.is-current-page {
   right: -1rem;
   z-index: var(--z-index-nav-toggle);
   font-size: 24px;
-  color: var(--color-brand-blue-secondary);
+  color: var(--color-brand-accent);
   background-color: var(--color-brand-gray7);
   border-radius: 50%;
 }
@@ -223,7 +223,7 @@ a.menu_link.is-current-page {
     transform: rotate(180deg);
     right: -1.35rem;
     opacity: 1;
-    color: var(--color-brand-blue-secondary);
+    color: var(--color-brand-accent);
   }
 
   .nav a.menu-expand-toggle {
@@ -285,7 +285,7 @@ a.menu_link.is-current-page {
     right: -4.3rem;
     opacity: 1;
     color: #fff;
-    background-color: var(--color-brand-blue-secondary);
+    background-color: var(--color-brand-accent);
     border-radius: 0;
     top: 60px;
     font-size: 18px;

@@ -15,8 +15,8 @@
   padding: 5px 15px;
   font-weight: 600;
   margin-left: var(--column-space);
-  border: 2px solid var(--color-brand-blue);
-  background: var(--color-brand-blue);
+  border: 2px solid var(--color-brand-black);
+  background: var(--color-brand-black);
   color: var(--color-brand-white);
 }
 

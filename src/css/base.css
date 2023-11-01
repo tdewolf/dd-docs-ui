@@ -67,7 +67,7 @@ pre {
 }
 
 code {
-  background-color: #0074e00e;
+  background-color: var(--color-brand-peach);
   word-spacing: -0.125em;
   color: var(--color-brand-gray1);
 }

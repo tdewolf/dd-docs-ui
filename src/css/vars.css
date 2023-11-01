@@ -1,14 +1,27 @@
 :root {
   /* NOTE tint colors are 15% transparent */
   /* primary */
-  --color-brand-primary: #262626;
-  --color-brand-black: #000;
-  --color-brand-red: #ea2328;
-  --color-brand-red-tint: #fcdedf;
-  --color-brand-white: #fff;
-  /* secondary */
-  --color-brand-secondary: #fff;
+  --color-brand-black: #000; /* Beta Black 2023 */
+  --color-brand-red: #ec1218; /* Couchbase Red 2023 */
+  --color-brand-orange: #fc9c0c; /* System Orange 2023 */
+  --color-brand-peach: #fff0db; /* Schematic Peach 2023 */
+  --color-brand-red-tint: var(--color-brand-peach);
+  --color-brand-white: #fff; /* Display White 2023 */
+  --color-brand-primary: var(--color-brand-black);
+  --color-brand-couchbase: var(--color-brand-red);
+  --color-brand-accent: var(--color-brand-orange);
+  --color-brand-accent-light: var(--color-brand-peach);
+
+  /* secondary (we need these for docs semantics, despite brand guidelines) */
   --color-brand-blue: #4287d6;
+  --color-brand-blue-secondary: #0074e0;
+  --color-brand-blue-secondary-light: #2689e5;
+  --color-brand-blue-secondary-extra-light: #73b3ee;
+  --color-link: var(--color-brand-blue-secondary);
+  --color-link-active: var(--color-brand-blue-secondary-light);
+  --color-link-hover: var(--color-brand-blue-secondary-extra-light);
+
+  /* legacy secondary */
   --color-blue-rgb: 87, 160, 255;
   --color-brand-light-blue: #00ace0;
   --color-brand-light-blue-tint: #d9f3fb;
@@ -34,12 +47,8 @@
   --color-brand-gray9: #bfbfbf;
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
-  --color-brand-blue-secondary: #0074e0;
-  --color-brand-blue-secondary-light: #2689e5;
-  --color-brand-blue-secondary-extra-light: #73b3ee;
   --color-brand-blue-tint: #d9eafb;
   --color-brand-grey: #666;
-  --color-brand-orange: #fc9c0c;
   --color-brand-orange-tint: #fff0da;
   --color-muted: var(--color-brand-gray);
   --color-text: #333;
@@ -47,11 +56,6 @@
   --color-border: var(--color-brand-silver);
   --checkbox-border-color: var(--color-brand-gray9);
   --color-yellow: #d2a908;
-
-  /* Color for URL */
-  --color-link: var(--color-brand-blue-secondary);
-  --color-link-active: var(--color-brand-blue-secondary-light);
-  --color-link-hover: var(--color-brand-blue-secondary-extra-light);
 
   /* --color-border-table: #666; */
   --color-border-table: #dadada;
