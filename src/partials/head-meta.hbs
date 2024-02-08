@@ -62,6 +62,19 @@
 <meta name="dcterms.identifier" content="{{page.version}}">
 <meta name="page-url" content="{{page.url}}">
 <meta name="page-nav-header-levels" content="{{or page.attributes.nav-header-levels 0}}">
+
+
+<meta name="docsearch:component" content="{{page.component.name}}">
+<meta name="docsearch:cversion" content="{{page.version}}">
+<meta name="docsearch:component-version" content="{{page.component.name}}@{{page.version}}">
+<meta name="docsearch:module" content="{{#with page.attributes.module}}{{#if (ne this "ROOT")}}{{this}}{{/if}}{{/with}}">
+<meta name="docsearch:breadcrumbs" content="{{> crumbs-meta}}">
+<meta name="docsearch:topic-type" content="{{page.attributes.topic-type}}">
+<meta name="docsearch:version-rank" content="{{page.attributes.version-rank}}">
+<meta name="docsearch:status" content="{{page.attributes.status}}">
+<meta name="docsearch:edition" content="{{page.attributes.edition}}">
+
+
 {{#with page.attributes.meta-zd-site-verification}}
 <meta name="zd-site-verification" content="{{this}}">
 {{/with}}
