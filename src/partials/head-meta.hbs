@@ -63,7 +63,8 @@
 <meta name="page-url" content="{{page.url}}">
 <meta name="page-nav-header-levels" content="{{or page.attributes.nav-header-levels 0}}">
 
-
+{{! meta tags starting docsearch: are automatically extracted by Algolia }}
+{{! docsearch:version has special handling so we use `cversion` }}
 <meta name="docsearch:component" content="{{page.component.name}}">
 <meta name="docsearch:cversion" content="{{page.version}}">
 <meta name="docsearch:component-version" content="{{page.component.name}}@{{page.version}}">
