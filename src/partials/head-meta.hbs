@@ -66,12 +66,13 @@
 {{! meta tags starting docsearch: are automatically extracted by Algolia }}
 {{! docsearch:version has special handling so we use `cversion` }}
 <meta name="docsearch:component" content="{{page.component.name}}">
+<meta name="docsearch:component_title" content="{{page.component.title}}">
 <meta name="docsearch:cversion" content="{{page.version}}">
-<meta name="docsearch:component-version" content="{{page.component.name}}@{{page.version}}">
+<meta name="docsearch:component_version" content="{{page.component.name}}@{{page.version}}">
 <meta name="docsearch:module" content="{{#with page.attributes.module}}{{#if (ne this "ROOT")}}{{this}}{{/if}}{{/with}}">
 <meta name="docsearch:breadcrumbs" content="{{> crumbs-meta}}">
-<meta name="docsearch:topic-type" content="{{page.attributes.topic-type}}">
-<meta name="docsearch:version-rank" content="{{page.attributes.version-rank}}">
+<meta name="docsearch:topic_type" content="{{page.attributes.topic-type}}">
+<meta name="docsearch:version_rank" content="{{page.attributes.version-rank}}">
 <meta name="docsearch:status" content="{{page.attributes.status}}">
 <meta name="docsearch:edition" content="{{page.attributes.edition}}">
 
