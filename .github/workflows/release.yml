@@ -3,8 +3,7 @@ name: Release UI bundle
 on:
   push:
     branches:
-      - master
-      - sandbox
+      - '*'
 
 jobs:
   release:
