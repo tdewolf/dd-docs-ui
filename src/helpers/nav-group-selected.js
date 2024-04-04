@@ -8,7 +8,8 @@ module.exports = module.exports = (navGroup, {
   if (navGroup === 'home') {
     // FAKE value to signal that we instead check all the navgroups
     const navGroups = site.keys.navGroups
-    // NB this must be called after nav-groups has already prepared the data (:scream:)
+    // NB this relies on variable stored in site.keys, so must be called
+    // *after* nav-groups has already prepared the data
     const possible = navGroups.filter((it) => selected(it, page))
     return possible.length === 1 && possible[0].title === 'Home'
   } else {

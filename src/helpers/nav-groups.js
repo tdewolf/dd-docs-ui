@@ -48,7 +48,6 @@ module.exports = ({
   }
 
   navGroups._compiled = true
-  console.log(navGroups)
 
   site.keys.navGroups = navGroups
   return navGroups
@@ -69,9 +68,6 @@ function compileNavGroup (navGroup, componentNamesInGroup, contentCatalog, compo
       return latestVersionMap
     }, {})
   }
-  // if ((navGroup.url === page?.url) || componentNamesInGroup.includes(page.component.name)) {
-  //   navGroup.selected = true
-  // }
   return navGroup
 }
 
