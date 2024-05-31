@@ -72,6 +72,11 @@ code {
   color: var(--color-brand-gray1);
 }
 
+a code {
+  color: var(--color-link);
+  background-color: transparent;
+}
+
 html code {
   hyphens: none;
 }
