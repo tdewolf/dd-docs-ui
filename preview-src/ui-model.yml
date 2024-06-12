@@ -1,5 +1,5 @@
 antoraVersion: '2.3.1'
-navMode: template # set value to client to generate navigation on the client
+navMode: client # set value to client to generate navigation on the client
 site:
   title: Couchbase Docs
   url: http://localhost:5252
@@ -65,6 +65,8 @@ site:
               urlType: fragment
             - content: Monitoring Statistics
               url: /index.html
+            - content: Glossaries
+              url: /index.html#_glossaries
             - content: Monitoring XDCR Timestamp-based Conflict Resolution
               url: '#'
               urlType: fragment
