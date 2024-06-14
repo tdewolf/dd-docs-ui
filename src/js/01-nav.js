@@ -218,7 +218,7 @@
         navTextEl.href = relativize(page.url, item.url)
         if (page.url === item.url) {
           navItemEl.classList.add('is-current-page')
-          navTextEl.classList.add('is-current-page')
+          navTextEl.classList.add('is-current-page', 'is-initial-page')
         }
       } else {
         navTextEl = createElement('span', 'menu_title menu_text')
@@ -245,6 +245,39 @@
       navListEl.appendChild(navItemEl)
     })
     return parent.appendChild(navListEl)
+  }
+
+  function onHashChange () {
+    var navLink
+    var hash = window.location.hash
+    if (hash) {
+      if (hash.indexOf('%')) hash = decodeURIComponent(hash)
+      navLink = navContainer.querySelector('a.menu_link[href="' + hash + '"]')
+    }
+    if (!(navLink || (navLink = navContainer.querySelector('a.is-initial-page')))) return
+    var currentPageLink = navContainer.querySelector('a.is-current-page')
+    if (navLink === currentPageLink) return
+    if (currentPageLink) toggleCurrentPath(navContainer, currentPageLink, 'clear')
+    toggleCurrentPath(navContainer, navLink, 'activate')
+    scrollItemToMidpoint(nav.querySelector('.components'), navLink)
+    return true
+  }
+
+  function toggleCurrentPath (container, navLink, operation) {
+    navLink.classList[operation === 'clear' ? 'remove' : 'add']('is-current-page')
+    var navItem = navLink.parentNode.parentNode
+    var ancestor = navLink.parentNode
+    while (ancestor !== container) {
+      if (ancestor.tagName === 'LI') {
+        var ancestorClassList = ancestor.classList
+        if (ancestor === navItem) {
+          ancestorClassList[operation === 'clear' ? 'remove' : 'add']('is-current-page')
+        } else if (ancestorClassList.contains('is-parent')) {
+          ancestorClassList[operation === 'clear' ? 'add' : 'remove']('closed')
+        }
+      }
+      ancestor = ancestor.parentNode
+    }
   }
 
   function relativize (from, to) {
@@ -316,7 +349,12 @@
 
     var components = container.querySelector('.components')
 
-    scrollItemToMidpoint(components, container.querySelector('a.is-current-page'))
+    let scrolled
+    if (container.querySelector('a.menu_link[href^="#"]')) {
+      window.location.hash && (scrolled = onHashChange())
+      window.addEventListener('hashchange', onHashChange)
+    }
+    scrolled || scrollItemToMidpoint(components, container.querySelector('a.is-current-page'))
 
     if (!components.classList.contains('is-revealed')) {
       find('a.is-current-page', container).forEach(function (currentPage) {
