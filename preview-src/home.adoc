@@ -1,49 +1,56 @@
-= Welcome to the new Couchbase Docs!
+= Welcome to the Datadobi Documentation!
 :page-layout: home
 :page-component-name: home
 :!sectids:
 
 The new documentation site, now in Beta, is a huge leap forward in our content strategy.
 As we work out the kinks, we'd love to get your feedback on what we're doing well, and what we could be doing better.
-To let us know, please use the btn:[Feedback?] button at the bottom-right corner of any page, or send an email to docs@couchbase.com.
+To let us know, please use the btn:[Feedback?] button at the bottom-right corner of any page, or send an email to docs@datadobi.com.
 We look forward to hearing from you!
 
-[.hint]
-Looking for the old documentation site?
-You can find it over at the https://developer.couchbase.com[Developer Portal].
 
-[.cards.cards-4.personas.conceal-title]
+
+[.cards.cards-5.personas.conceal-title]
 == {empty}
 
 [.card]
-=== Couchbase for Administrators
+=== StorageMAP for Analysts
 
-If you are a Couchbase administrator wanting to configure, deploy, and manage Couchbase Data Platform
+If you are a StorageMAP analyst wanting to analyze your storage infrastructure
 
-* xref:server:install:get-started.adoc[Deployment Options]
-* xref:server:security:security-intro.adoc[Security]
-* xref:server:backup-restore:backup-restore.adoc[Backup and Restore]
-
-[.card]
-=== Couchbase for Developers
-
-If you are a Couchbase user wanting to develop on an existing installation
-
-* xref:java-sdk::start-using-sdk.adoc[Quick Install]
-* xref:java-sdk:common:sample-application.adoc[Sample Application]
-* xref:java-sdk:common:core-operations.adoc[CRUD]
+* xref:server:install:get-started.adoc[Analytics]
+* xref:server:security:security-intro.adoc[Dashboards]
+* xref:server:backup-restore:backup-restore.adoc[Analyses]
 
 [.card]
-=== Couchbase for SQL Developers
+=== StorageMAP for Storage Administrators
 
-If you are a Couchbase user wanting to understand how to develop queries
+If you are a StorageMAP administrator wanting to optimize the storage usage
 
-* xref:server:getting-started:do-a-quick-install.adoc[Quick Install]
-* xref:server:getting-started:try-a-query.adoc[Try a N1QL Query]
-* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL Language Reference]
+* xref:server:install:get-started.adoc[Migration]
+* xref:server:security:security-intro.adoc[Copy & Move]
+* xref:server:backup-restore:backup-restore.adoc[Replication]
 
 [.card]
-=== Couchbase for App Developers
+=== StorageMAP for System Administrators
+
+If you are a StorageMAP system administrator wanting to install and upgrade StorageMAP
+
+* xref:java-sdk::start-using-sdk.adoc[OVA Install]
+* xref:java-sdk:common:sample-application.adoc[RPM Install]
+* xref:java-sdk:common:core-operations.adoc[Prerequisites]
+
+[.card]
+=== DobiMigrate Users
+
+If you are a DobiMigrate User
+
+* xref:server:getting-started:do-a-quick-install.adoc[Migration]
+* xref:server:getting-started:try-a-query.adoc[Set Up]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[WORM Migrations]
+
+[.card]
+=== StorageMAP for Developers
 
 If you are a Couchbase user wanting to develop for applications on the edge
 
@@ -55,28 +62,39 @@ If you are a Couchbase user wanting to develop for applications on the edge
 == Browse Documentation
 
 [.tile]
-.xref:server:introduction:intro.adoc[Server]
-* xref:server:n1ql:n1ql-language-reference/index.adoc[N1QL]
-* xref:server:fts:full-text-intro.adoc[Full Text Search]
-* xref:server:analytics:introduction.adoc[Analytics (Developer Preview)]
-* xref:server:eventing:eventing-Introduction.adoc[Eventing]
-* xref:server:sdk:overview.adoc[SDKs]
+.Analytics
+* xref:server:introduction:intro.adoc[Dashboards]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[Analyses]
+* xref:server:fts:full-text-intro.adoc[Reporting]
+
 
 [.tile]
-.Couchbase Mobile
-* https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html[Lite]
-* https://developer.couchbase.com/documentation/mobile/current/guides/sync-gateway/index.html[Sync Gateway]
+.Storage Administration
+* xref:server:introduction:intro.adoc[Migration]
+* xref:server:fts:full-text-intro.adoc[Switchovers]
+* xref:server:n1ql:n1ql-language-reference/index.adoc[List-based Copy]
+* xref:server:fts:full-text-intro.adoc[List-based Move]
+* xref:server:fts:full-text-intro.adoc[Replication]
+* xref:server:fts:full-text-intro.adoc[WORM Migration]
+
 
 [.tile]
-.Couchbase Cloud
-* https://info.couchbase.com/rs/302-GJY-034/images/10min_to_Cloud_vF.pdf[Public Cloud]
-* xref:operator::overview.adoc[Autonomous Operator]
+.DobiMigrate
+* https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html[Migration Setup]
+* https://developer.couchbase.com/documentation/mobile/current/guides/sync-gateway/index.html[Migration Management]
 
 [.tile]
-.xref:serever:connectors:intro.adoc[Connectors]
-* xref:server:connectors:elasticsearch/overview.adoc[Elasticsearch]
-* xref:server:connectors:hadoop-1.2/hadoop.adoc[Hadoop]
-* xref:server:connectors:kafka/kafka-intro.adoc[Kafka]
-* xref:server:connectors:spark-2.2/spark-intro.adoc[Spark]
-* xref:server:connectors:talend/talend.adoc[Talend]
-* xref:server:connectors:odbc-jdbc-drivers.adoc[SQL (ODBC/JDBC)]
+.Installation
+* https://info.couchbase.com/rs/302-GJY-034/images/10min_to_Cloud_vF.pdf[Prerequisites]
+* xref:operator::overview.adoc[OVA Installation]
+* xref:operator::overview.adoc[RPM Installation]
+* xref:operator::overview.adoc[Configuration]
+
+
+[.tile]
+.xref:serever:connectors:intro.adoc[Developer Area]
+* xref:server:connectors:elasticsearch/overview.adoc[REST API]
+* xref:server:connectors:hadoop-1.2/hadoop.adoc[DQL]
+* xref:server:connectors:kafka/kafka-intro.adoc[Use Cases]
+* xref:server:connectors:spark-2.2/spark-intro.adoc[Reference Guide]
+

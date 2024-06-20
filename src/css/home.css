@@ -110,6 +110,10 @@
   background-color: var(--color-brand-orange);
 }
 
+.home .card:nth-of-type(5) {
+  background-color: var(--color-brand-purple);
+}
+
 .home .card h3 {
   font-size: 1.5rem;
   line-height: 2rem;

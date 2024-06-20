@@ -118,7 +118,8 @@
 
 .menu_list.is-current-page > .menu_line {
   /* background: #4287d60f; */
-  border-right: 4px solid rgba(66, 135, 214, 0.44);
+  /* border-right: 4px solid rgba(66, 135, 214, 0.44); */
+  border-right: 4px solid var(--color-active-tabset);
   font-weight: var(--weight-semibold);
 }
 
@@ -137,7 +138,8 @@ a.menu_link {
 }
 
 a.menu_link.is-current-page {
-  color: var(--color-link);
+  /* color: var(--color-link); */
+  color: var(--color-active-tabset);
 }
 
 .nav .nav-container,

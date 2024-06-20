@@ -102,6 +102,7 @@
 .toc ul li a.is-active {
   font-weight: var(--weight-semibold);
   letter-spacing: -0.008em;
+  color: var(--color-active-tabset);
 }
 
 .toc ul li a.is-active:focus,

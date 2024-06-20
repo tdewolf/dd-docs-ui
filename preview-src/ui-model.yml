@@ -1,15 +1,16 @@
 antoraVersion: '2.3.1'
 navMode: client # set value to client to generate navigation on the client
 site:
-  title: Couchbase Docs
+  title: Datadobi Docs
   url: http://localhost:5252
   homeUrl: &home_url /home.html
   keys:
     navGroups: |
       [
-        { "title": "Server", "startPage": "home::server.adoc", "components": ["server", "*-connector"], "url": "/index.html" },
-        { "title": "Mobile", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"], "url": "#" },
-        { "title": "Cloud", "startPage": "home::cloud.adoc", "components": ["operator"], "url": "#" }
+        { "title": "StorageMAP", "startPage": "home::server.adoc", "components": ["server", "*-connector"], "url": "/index.html" },
+        { "title": "DobiMigrate", "startPage": "home::mobile.adoc", "components": ["couchbase-lite", "sync-gateway"], "url": "#" },
+        { "title": "Installation", "startPage": "home::cloud.adoc", "components": ["operator"], "url": "#" },
+        { "title": "Developer", "startPage": "home::cloud.adoc", "components": ["operator"], "url": "#" }
       ]
   components:
     server:

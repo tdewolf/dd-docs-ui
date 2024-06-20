@@ -3,6 +3,7 @@
   /* primary */
   --color-brand-black: #000; /* Beta Black 2023 */
   --color-brand-red: #ec1218; /* Couchbase Red 2023 */
+  --color-brand-dd-green: #b7c708;
   --color-brand-orange: #fc9c0c; /* System Orange 2023 */
   --color-brand-peach: #fff0db; /* Schematic Peach 2023 */
   --color-brand-red-tint: var(--color-brand-peach);
@@ -19,7 +20,8 @@
   --color-brand-blue-secondary-extra-light: #73b3ee;
   --color-link: var(--color-brand-blue-secondary);
   --color-link-active: var(--color-brand-blue-secondary-light);
-  --color-link-hover: var(--color-brand-blue-secondary-extra-light);
+  /* --color-link-hover: var(--color-brand-blue-secondary-extra-light); */
+  --color-link-hover: var(--color-active-tabset);
 
   /* legacy secondary */
   --color-blue-rgb: 87, 160, 255;
@@ -108,7 +110,8 @@
   --z-index-nav: 1;
 
   /* Color brand tabsets */
-  --color-active-tabset: #57a1ff;
+  /* --color-active-tabset: #57a1ff; */
+  --color-active-tabset: #b7c708;
 
   /* New  design font style */
 
